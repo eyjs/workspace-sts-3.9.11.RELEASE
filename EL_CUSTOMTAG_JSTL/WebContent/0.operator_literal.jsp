@@ -39,7 +39,7 @@
 </h1><hr/>
 <ol>
 	<li>-----EL리터럴----</li>
-	<li>${214748364743324}</li>
+	<li>${2147483}</li>
 	<li>${3.14159}</li>
 	<li>${'문자'}</li>
 	<li>${"문자"}</li>
@@ -63,7 +63,7 @@
 	<li>${empty emptyList}</li>
 	<li>${empty emptyMap}</li>
 	<li>${empty(null)}</li>
-	<li>${empty('')}</li>
+	<li>${empty("")}</li>
 	<li>${empty ''}</li>
 </ol>
 
