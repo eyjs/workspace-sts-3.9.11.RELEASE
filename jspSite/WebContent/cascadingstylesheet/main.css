@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.mainp {
+	padding-left: 30px;
+	color: blue;
+	text-decoration: underline;
+}
+
+#supermain {
+	color: red;
+	font-weight: bold;
+}

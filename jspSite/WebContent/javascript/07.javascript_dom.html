@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		width: 60%;
+		margin: 0  auto 0 auto;
+	}
+</style>
+<script type="text/javascript">
+	function access_form(){
+		var fElement = document.getElementById("f");
+		fElement.id.value='guard';
+		fElement.irum.value='가아드';
+		/*
+		fElement.action='test.jsp';
+		fElement.method='POST';
+		fElement.submit();
+		*/
+	}
+	function access_div(){
+		var div1E = document.getElementById("div1");
+		var divContent = div1E.innerHTML;
+		alert("div내용:"+divContent);
+		div1E.innerHTML+="<ol>";
+		div1E.innerHTML+="<li>김태희</li>";
+		div1E.innerHTML+="<li>고소영</li>";
+		div1E.innerHTML+="</ol>";
+		div1E.innerHTML+="<img src='penguin1.gif'>";
+	}
+	var count=0;
+	function access_img(){
+		count=count%3;
+		count++;
+		document.getElementById('img1').src='penguin'+count+'.gif';
+	}
+	var show=true;
+	function form_display(){
+		var fE = document.getElementById("f");
+		if(show){
+			fE.style.display='none';
+			fE.style.border='1px solid blue';
+		}else{
+			fE.style.display='block';
+			
+		}
+		show=!show;
+	}
+</script>
+</head>
+<body>
+<h1>javascript dom[document object model]</h1><hr/>
+<form action="" name="f" id="f">
+	아이디:<input type="text" name="id" id="id"><br/>
+	이  름:<input type="text" name="irum" id="irum"><br/>
+</form>
+<div id="div1">
+	div1 content
+</div>
+<div>
+	<img id="img1" width="100" height="100" src="penguin1.gif">
+	<span id="span1">span content</span>
+</div>
+<div>
+	<input type="button" value="access form" onclick="access_form();">
+	<input type="button" value="access div" onclick="access_div();">
+	<input type="button" value="access img" onclick="access_img();">
+	<input type="button" value="form display" onclick="form_display();">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

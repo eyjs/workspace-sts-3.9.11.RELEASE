@@ -1,0 +1,13 @@
+@charset "UTF-8";
+form{
+	color: black;
+	font-size: 15px;
+}
+.txtfld{
+	border: 1px solid blue;
+	color:blue;
+}
+.passfld{
+	border: 1px dotted red;
+	color:red;
+}

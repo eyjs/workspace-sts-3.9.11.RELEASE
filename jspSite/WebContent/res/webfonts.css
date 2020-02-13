@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../fonts/en/roboto-v18-vietnamese_latin-ext_latin-regular.woff2') format('woff2'), 
+    url('../../fonts/en/roboto-v18-vietnamese_latin-ext_latin-regular.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../fonts/en/roboto-v18-vietnamese_latin-ext_latin-500.woff2') format('woff2'), 
+    url('../../fonts/en/roboto-v18-vietnamese_latin-ext_latin-500.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../fonts/en/roboto-v18-vietnamese_latin-ext_latin-700.woff2') format('woff2'), 
+    url('../../fonts/en/roboto-v18-vietnamese_latin-ext_latin-700.woff') format('woff'); 
+}
+
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../fonts/ko/noto-sans-kr-v8-korean-regular.woff2') format('woff2'), 
+    url('../../fonts/ko/noto-sans-kr-v8-korean-regular.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../fonts/ko/noto-sans-kr-v8-korean-500.woff2') format('woff2'), 
+    url('../../fonts/ko/noto-sans-kr-v8-korean-500.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../fonts/ko/noto-sans-kr-v8-korean-700.woff2') format('woff2'), 
+    url('../../fonts/ko/noto-sans-kr-v8-korean-700.woff') format('woff'); 
+}

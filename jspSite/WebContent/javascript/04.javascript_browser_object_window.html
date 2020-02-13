@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function window_use(){
+	window.alert("alert message!!!");
+	var isOk = window.confirm("삭제하시겠습니까?");
+	if(isOk){
+		window.document.write("삭제<br/>")
+	}else{
+		window.document.write("취소<br/>")
+	}
+	var ageStr = 
+		window.prompt("나이를 입력하세요", '20');
+	var ageInt = window.parseInt(ageStr);
+	
+	var msg='';
+	switch (ageInt) {
+	case 20:
+		msg='청년';
+		break;
+	case 30:
+		msg='아저씨';
+		break;
+	default:
+		msg="20,30이외의값입력"
+		break;
+	}
+	document.write(msg+"<br/>");
+	
+	var name = window.encodeURI("김경호");
+	document.write("encode:"+name+"<br/>");
+	var name = window.decodeURI(name);
+	document.write("decode:"+name+"<br/>");
+	window.open("../1.hello.jsp");
+	
+	
+}
+</script>
+</head>
+<body>
+<h1>BOM(window)</h1><hr/>
+<script type="text/javascript">
+	window_use();
+</script>
+</body>
+</html>

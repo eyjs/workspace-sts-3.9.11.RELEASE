@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function head_function(){
+			window.document.write("head_function()<br/>");
+		}
+		function hello(){
+			/*
+			local변수
+			*/
+			var name='GUEST';
+			var msg='안녕하세요!!!';
+			window.document.write(name+' 님'+ msg+"[hello]<br/>");
+		}
+		function hello1(msg){
+			var name='GUEST';
+			window.document.write(name+' 님'+ msg+"[hello1]<br/>");
+		}
+		function hello2(name,msg){
+			window.document.write(name+' 님'+ msg+"[hello2]<br/>");
+		}
+		function hello3(name,count){
+			for(var i=0;i<count;i++){
+				window.document.write(name+' 님'+ "안녕하세요[hello3]<br/>");
+			}
+		}
+		function hello4(name,msg,count){
+			if(name == undefined){
+				var name='GUEST';
+			}
+			if(msg==undefined){
+				var msg='안뇽하세요!!';
+			}
+			if(count==undefined){
+				var count=1;
+			}
+			for(var i=0;i<count;i++){
+				window.document.write(name+' 님'+ msg+"[hello4]<br/>");
+			}
+			
+		}
+		
+		function add(a,b){
+			var r = a+b;
+			return r;
+		}
+		function sub(a,b){
+			return a-b;
+		}
+		/*
+		function alert(msg){
+			document.write("내가만든경고함수["+msg+"]<br/>")
+		}
+		*/
+		window.xxxx = 'xxxxxx';
+		window.yyyy = function(){
+			window.document.write("yyyy function property<br/>")
+		};
+		
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	function body_function(){
+		window.document.write("body_function()<br/>");
+	}
+</script>
+<h1>javascript function</h1><hr/>
+<script type="text/javascript">
+	head_function();
+	window.head_function();
+	body_function();
+	window.body_function();
+	/*
+	body_end_function();
+	window.body_end_function()
+	*/
+	window.hello();
+	hello1("새해복많이받으세요!!");
+	hello2('김수로', '요즘영화 안찍으세요!!!');
+	hello3('김태희', 5);
+	hello4();
+	hello4("KIM");
+	hello4("KIM","안뇽..");
+	hello4("KIM","안뇽",2);
+	var r1 = add(23, 34);
+	var r2 = add("김", "경호");
+	window.document.write("add(23,34)-->"+r1+"<br/>")
+	window.document.write("add('김','경호')-->"+r2+"<br/>")
+	
+	window.alert("윈도우에있는경고함수");
+	//window.xxxx();
+	window.yyyy();
+	
+</script>
+<script type="text/javascript">
+	function body_end_function(){
+		window.document.write("body_end_function()<br/>");
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+

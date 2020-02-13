@@ -1,0 +1,25 @@
+@CHARSET "EUC-KR";
+/*
+	class selector
+	*/
+.TXTFLD {
+	border-width: 1px;
+	border-color: blue;
+	border-style: solid;
+	color: blue;
+}
+
+.TXTFLD1 {
+	border-width: 1px;
+	border-color: red;
+	border-style: dotted;
+	color: red;
+}
+
+/*
+	id selector
+	*/
+#jointbl {
+	background-color: orange;
+	border: 2px solid red;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function load_focus(){
+		window.document.joinFrm.id.focus();
+	}
+	function join_form_submit_button(){
+		//alert("submit button");
+		var joinFrm=window.document.joinFrm;
+		var id = joinFrm.id.value;
+		if(id==null || id==''){
+			alert('아이디를 입력하세요');
+			joinFrm.id.focus();
+			return false;
+		}
+		var password = joinFrm.password.value;
+		if(password==null || password==''){
+			alert('패쓰워드를 입력하세요');
+			joinFrm.password.focus();
+			return false;
+		}
+		var repassword = joinFrm.repassword.value;
+		if(repassword==null || repassword==''){
+			alert('패쓰워드확인을 입력하세요');
+			joinFrm.repassword.focus();
+			return false;
+		}
+		//password,repassword
+		if(password!=repassword){
+			alert('패쓰워드와 패쓰워드확인은 일치하여야합니다');
+			joinFrm.repassword.select();
+			return false;
+		}
+		return true;
+			
+	}
+	function join_form_button(){
+		
+		var joinFrm=window.document.joinFrm;
+		var id = joinFrm.id.value;
+		if(id==null || id==''){
+			alert('아이디를 입력하세요');
+			joinFrm.id.focus();
+			return;
+		}
+		var password = joinFrm.password.value;
+		if(password==null || password==''){
+			alert('패쓰워드를 입력하세요');
+			joinFrm.password.focus();
+			return ;
+		}
+		var repassword = joinFrm.repassword.value;
+		if(repassword==null || repassword==''){
+			alert('패쓰워드확인을 입력하세요');
+			joinFrm.repassword.focus();
+			return;
+		}
+		//password,repassword
+		if(password!=repassword){
+			alert('패쓰워드와 패쓰워드확인은 일치하여야합니다');
+			joinFrm.repassword.select();
+			return ;
+		}
+		joinFrm.action='gaip.jsp';
+		joinFrm.method='POST';
+		joinFrm.submit();
+		return;
+		
+	}
+	
+</script>
+</head>
+<body onload="load_focus();">
+	<h1>회원가입폼의 유효성체크[BOM]</h1><hr>
+	<form id="joinFrm" name="joinFrm" action="join.jsp" method="get" 
+		onsubmit="return join_form_submit_button();">
+		아이디-------<input id="id" type="text" name="id"><br>
+		패쓰워드-----<input id="password" type="password" name="password"><br>
+		패쓰워드확인<input  id="repassword" type="password" name="repassword"><br>
+		이름---------<input id="name"type="text" name="name"><br>
+		주소---------<input id="address" type="text" name="address"><br><br>
+		<input type="submit" value="가입[submit button]">
+		<input type="image" src='bbs_write.gif' 
+		value="가입[submit button]">
+		
+	</form>
+	<br/>
+	
+	<input type="button" value="가입[button]" onclick="join_form_button();">
+	<a href="javascript:join_form_button();">가입</a>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,6 @@
+﻿1.site[jspSite] 안에있는 META-INF 폴더안에 context.xml 파일추가
+
+
+
+
+  
