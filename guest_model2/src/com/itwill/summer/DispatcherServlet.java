@@ -136,6 +136,7 @@ public class DispatcherServlet extends HttpServlet {
 		} else if (isRedirect.equals("forward")) {
 			RequestDispatcher rd = request.getRequestDispatcher(forwardPath);
 			rd.forward(request, response);
+			
 		}
 	}
 

@@ -2,10 +2,6 @@
 <%@page import="com.itwill.guest.GuestService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	Guest guest=(Guest)request.getAttribute("guest");
-%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -54,37 +50,37 @@
 					</tr>
 				</table> <!-- view Form  -->
 				<form name="f" method="post">
-					<input type="hidden" name="guest_no" value="<%=guest.guest_no%>" />
+					<input type="hidden" name="guest_no" value="${guest.guest_no}" />
 					<table border="0" cellpadding="0" cellspacing="1" width="590"
 						bgcolor="BBBBBB">
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">번호</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><%=guest.guest_no%></td>
+								style="padding-left: 10px">${guest.guest_no}</td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><%=guest.guest_name%></td>
+								style="padding-left: 10px">${guest.guest_name}</td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">날짜</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><%=guest.guest_date.substring(0,10)%></td>
+								style="padding-left: 10px">${guest.guest_date.substring(0,10)}</td>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">홈페이지</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><%=guest.guest_homepage %></td>
+								style="padding-left: 10px">${guest.guest_homepage}</td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><%=guest.guest_title%></td>
+								style="padding-left: 10px">${guest.guest_title}</td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="110">내용</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><%=guest.guest_content%></td>
+								style="padding-left: 10px">${guest.guest_content}</td>
 						</tr>
 					</table>
 				</form> <br />
