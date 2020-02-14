@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%
 	session.setAttribute("sUserId", "user");
-	request.setAttribute("level",5);
+	request.setAttribute("level","5");
 %>  
 <!DOCTYPE html>
 <html>
