@@ -18,6 +18,27 @@
 		<tagclass>com.itwill.simpleTag.HelloTag</tagclass> 
 		<bodycontent>empty</bodycontent>	
  	</tag>
+ 	<tag>
+		<name>helloAttr</name>
+		<tagclass>com.itwill.simpleTag.HelloAttributeTag</tagclass> 
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>	
+ 	</tag>
+ 	<tag>
+		<name>If</name>
+		<tagclass>com.itwill.simpleTag.IfTag</tagclass> 
+		<bodycontent>JSP</bodycontent>
+		<attribute>
+			<name>test</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>	
+ 	</tag>
+ 	
 </taglib>
 
 
