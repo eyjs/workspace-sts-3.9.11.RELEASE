@@ -11,6 +11,10 @@
 <h2>형태:&lt;jsp:include page="xxx.jsp"&gt;</h2>
 <hr/>
 <jsp:include page="6-2.action_tag_included_top.jsp"/>
+<%--
+	RequestDispatcher rd= request.getRequestDispatcher("6-2.action_tag_included_top.jsp");
+	rd.include(request, response);
+--%>
 
 <ol type="A">
 	<li>content</li>
