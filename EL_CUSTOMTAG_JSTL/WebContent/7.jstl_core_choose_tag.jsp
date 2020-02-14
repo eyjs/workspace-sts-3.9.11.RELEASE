@@ -35,7 +35,6 @@
 			<a href="user_login_form.jsp">로그인</a><br>
 		</c:otherwise>	
 	</c:choose>
-	
 	<c:choose>
 		<c:when test="${level == 1}">
 			초보시군요[${level}]<br>
