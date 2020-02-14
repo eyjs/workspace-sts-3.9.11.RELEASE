@@ -1,1 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                        web-jsptaglibrary_2_0.xsd"
+    version="2.4">
+    
+    <description>Simple 스타일의 커스텀 태그 예제</description>
+    <display-name>Simple스타일예제</display-name>
+    <tlib-version>2.0</tlib-version>
+    <short-name>simpleTag</short-name>
+    <uri>http://www.itwill.co.kr/jsp/simpleTag</uri>
+	<info>
+        A simple sample tag library
+    </info>
+ 	<tag>
+		<name>hello</name>
+		<tagclass>com.itwill.simpleTag.HelloTag</tagclass> 
+		<bodycontent>empty</bodycontent>	
+ 	</tag>
+</taglib>
+
+
+
+
+
+
+
