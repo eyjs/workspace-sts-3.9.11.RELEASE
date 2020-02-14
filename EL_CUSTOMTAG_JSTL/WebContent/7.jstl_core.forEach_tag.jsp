@@ -42,7 +42,7 @@
 <h1>JSTL core forEach tag</h1><hr>
 	<ul>
 		<li>---------array List--------------</li>
-		<c:forEach var="guest" items="${guestArray}" varStatus="status">
+		<c:forEach items="${guestArray}" var="guest"  varStatus="status">
 			<li>${status.index} --> ${guest.guest_no},${guest.guest_name}</li>		
 		</c:forEach>
 		<c:forEach 	var="guest" 

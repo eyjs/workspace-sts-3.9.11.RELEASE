@@ -42,7 +42,7 @@
 		<c:when test="${level==2}">
 			좀하시는군요[${level}]<br>
 		</c:when>
-		<c:when test="${level==3 }">
+		<c:when test="${level==3}">
 			잘하시는군요[${level}]<br>
 		</c:when>
 		<c:when test="${level>3 && level<=5}">
