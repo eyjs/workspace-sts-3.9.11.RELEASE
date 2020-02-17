@@ -6,8 +6,8 @@
 	<strong>메 뉴</strong>
 </p>
 <ul>
-	<li><a href="guest_list.do">방명록리스트</a></li>
-	<li><a href="guest_write_form.do">방명록쓰기</a></li>
+	<li><a href="guest_list.do"><fmt:message key="menu.list"/></a></li>
+	<li><a href="guest_write_form.do"><fmt:message key="menu.write"/></a></li>
 	<li><a href="index.jsp?language=ko">korean</a>|<a href="index.jsp?language=en">english</a></li>
 
 </ul>
