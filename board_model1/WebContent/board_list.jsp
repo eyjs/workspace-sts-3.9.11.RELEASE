@@ -4,7 +4,8 @@
 <%@page import="com.itwill.util.BoardListPageDto"%>
 <%@page import="com.itwill.board.BoardService"%>
 <%@page import="com.itwill.util.PageInputDto"%>
-<%!public String getTitleString(Board board) {
+<%!
+public String getTitleString(Board board) {
 		StringBuilder title = new StringBuilder(128);
 		String t = board.getTitle();
 		if (t.length() > 15) {
@@ -25,7 +26,8 @@
 		title.append(t.replace(" ", "&nbsp;"));
 		
 		return title.toString();
-	}%>
+}
+%>
 
 <%
 //1.요청페이지번호	
