@@ -29,10 +29,12 @@
 </head>
 <body>
 <h1>JSTL EL function</h1><hr/>
+<%--
 ${fn:toLowerCase('ABC') }<br/>
 ${fn:toUpperCase('abc') }<br/>
-${'ABC'.toLowerCase() }<br/>
+${'ABC'.toLowerCase()}<br/>
 ${fn:substring(title,4,7) }<br/>
+ --%>
 ${title.substring(4,7) }<br/>
 ${"1"+"2"}<br/>
 {"1"+"a"}[X]<br/>
