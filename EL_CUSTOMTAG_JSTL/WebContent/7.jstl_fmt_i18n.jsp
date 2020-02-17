@@ -1,9 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	request.setAttribute("userId", "guard");
+%>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-<fmt:setLocale value="${pageContext.request.locale.language}" scope="session"/>
-<fmt:setBundle basename="com/itwill/i18n/guest"  scope="session"/>   
+<fmt:setLocale value="${pageContext.request.locale.language}" />
+<%-- 
+<fmt:setLocale value="ja" />
+ --%>
+<fmt:setBundle basename="com/itwill/i18n/guest" />   
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +32,28 @@
 	<li>${LIST}이다</li>
 	<li>${VIEW}이다</li>
 	<li>${WRITE}이다</li>
+	<li>
+		<fmt:message key="error.msg">
+			<fmt:param value="${userId}"/>
+		</fmt:message>
+	</li>
+	<li>
+		<fmt:message key="error.msg">
+			<fmt:param value="xxxx"/>
+		</fmt:message>
+	</li>
+	<li>
+		<fmt:message key="nv.bc">
+			<fmt:param value="메인"/>
+			<fmt:param value="리스트"/>
+		</fmt:message>
+	</li>
+	<li>
+		<fmt:message key="nv.bc">
+			<fmt:param value="메인"/>
+			<fmt:param value="로그인"/>
+		</fmt:message>
+	</li>
 </ol>
 </body>
 </html>
