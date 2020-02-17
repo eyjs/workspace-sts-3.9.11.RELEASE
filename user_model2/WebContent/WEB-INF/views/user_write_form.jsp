@@ -1,17 +1,23 @@
 <%@page import="com.itwill.user.User"%>
+<%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String msg=(String)request.getAttribute("msg");
-	if(msg==null)msg="";
-	
-	User fuser=(User)request.getAttribute("fuser");
+	/*********   case2********************
+	String msg = request.getParameter("msg");
+	if(msg==null){
+		msg="";
+	}
+	msg=URLDecoder.decode(msg,"UTF-8");
+	*/
+	User fuser = (User)request.getAttribute("fuser");
 	if(fuser==null){
 		fuser=new User("","","","");
 	}
-
-%>
-
+	String msg=(String)request.getAttribute("msg");
+	if(msg==null)msg="";
+	
+%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,42 +31,42 @@
 	function userCreate() {
 		if (document.f.userId.value == "") {
 			alert("사용자 아이디를 입력하십시요.");
-			f.userId.focus();
+			document.f.userId.focus();
 			return false;
 		}
-		if (document.f.password.value == "") {
+		if (f.password.value == "") {
 			alert("비밀번호를 입력하십시요.");
 			f.password.focus();
 			return false;
 		}
-		if (document.f.password2.value == "") {
+		if (f.password2.value == "") {
 			alert("비밀번호확인을 입력하십시요.");
 			f.password2.focus();
 			return false;
 		}
-		if (document.f.name.value == "") {
+		if (f.name.value == "") {
 			alert("이름을 입력하십시요.");
 			f.name.focus();
 			return false;
 		}
-		if (document.f.email.value == "") {
+		if (f.email.value == "") {
 			alert("이메일 주소를 입력하십시요.");
 			f.email.focus();
 			return false;
 		}
-		if (document.f.password.value != f.password2.value) {
+		if (f.password.value != f.password2.value) {
 			alert("비밀번호와 비밀번호확인은 일치하여야합니다.");
 			f.password.focus();
 			f.password.select();
 			return false;
 		}
-		document.f.action = "user_write_action.jsp";
-		document.f.method='POST';
-		document.f.submit();
+		f.action = "user_write_action.do";
+		f.method='POST';
+		f.submit();
 	}
 
 	function userList() {
-		f.action = "user_list.jsp";
+		f.action = "user_list.do";
 		f.submit();
 	}
 </script>
@@ -107,7 +113,7 @@
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="userId"
-											value="<%=fuser.getUserId()%>">&nbsp;&nbsp;<font color="red"><%=msg %></font>
+											value="<%=fuser.getUserId()%>">&nbsp;&nbsp;<font color="red"><%=msg%></font>
 										</td>
 									</tr>
 									<tr>
@@ -145,9 +151,11 @@
 
 							<table border=0 cellpadding=0 cellspacing=1>
 								<tr>
-									<td align=center><input type="button" value="회원 가입"
-										onclick="userCreate();"> &nbsp; <input type="button"
-										value="목록" onClick="userList()"></td>
+									<td align=center>
+										<input type="button" value="회원 가입"
+											onclick="userCreate();"> &nbsp; 
+										<input type="button"
+											value="취소" onClick=""></td>
 								</tr>
 							</table>
 

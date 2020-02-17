@@ -1,41 +1,17 @@
 <%@page import="com.itwill.user.User"%>
-<%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%
-	/*
-	http://192.168.15.31/user_model1/user_login_form.jsp
-	http://192.168.15.31/user_model1/user_login_form.jsp?msg1=xxx
-	http://192.168.15.31/user_model1/user_login_form.jsp?msg2=yyy
-	*/
-	//request.setCharacterEncoding("UTF-8");
-	
-    /****************case1[redirect]*********
-	String msg1=request.getParameter("msg1");
+	String msg1=(String)request.getAttribute("msg1");
 	if(msg1==null)msg1="";
-	msg1=URLDecoder.decode(msg1, "UTF-8");
-	String msg2=request.getParameter("msg2");
+	String msg2=(String)request.getAttribute("msg2");
 	if(msg2==null)msg2="";
-	msg2=URLDecoder.decode(msg2, "UTF-8");
-	*****************************************/
-	/****************case2[forward]*********/
-	String msg1=(String)request.getAttribute("msg1"); 
-	if(msg1==null)msg1="";
-	String msg2=(String)request.getAttribute("msg2"); 
-	if(msg2==null)msg2="";
-	
-	User fUser=(User)request.getAttribute("fUser");
-	if(fUser==null){
-		fUser=new User("","","","");
+	User fuser=(User)request.getAttribute("fuser");
+	if(fuser==null){
+		fuser=new User("","","","");
 	}
-	/*
-	String fUserId =request.getParameter("userId");
-	if(fUserId==null)fUserId="";
-	String fPassword =request.getParameter("password");
-	if(fPassword==null)fPassword="";
-	*/
-%>
+	
+%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,25 +19,28 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
 <script type="text/javascript">
-	function userCreate() {
-		f.action = "user_write_form.do";
-		f.submit();
+	function userCreateForm() {
+		/*
+		document.f.action = "user_write_form.jsp";
+		document.f.submit();
+		*/
+		window.location.href='user_write_form.do';
 	}
-
 	function login() {
-		if (f.userId.value == "") {
+		if (document.f.userId.value == "") {
 			alert("사용자 아이디를 입력하십시요.");
-			f.userId.focus();
+			document.f.userId.focus();
 			return false;
 		}
-		if (f.password.value == "") {
+		if (document.f.password.value == "") {
 			alert("비밀번호를 입력하십시요.");
-			f.password.focus();
+			document.f.password.focus();
 			return false;
 		}
 
-		f.action = "user_login_action.do";
-		f.submit();
+		document.f.action = "user_login_action.do";
+		document.f.method='POST';
+		document.f.submit();
 	}
 </script>
 </head>
@@ -107,13 +86,13 @@
 											아이디</td>
 										<td width=490 align="left" bgcolor="ffffff"
 											style="padding-left: 10px"><input type="text"
-											style="width: 150" name="userId" value="<%=fUser.getUserId()%>">&nbsp;&nbsp;<font color="red"><%=msg1%></font></td>
+											style="width: 150" name="userId" value="<%=fuser.getUserId()%>">&nbsp;&nbsp;<font color="red"><%=msg1%></font></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
 										<td width=490 align="left" bgcolor="ffffff"
 											style="padding-left: 10px"><input type="password"
-											style="width: 150" name="password" value="<%=fUser.getPassword()%>">&nbsp;&nbsp;<font color="red"><%=msg2%></font></td>
+											style="width: 150" name="password" value="<%=fuser.getPassword()%>">&nbsp;&nbsp;<font color="red"><%=msg2%></font></td>
 									</tr>
 								</table>
 							</form> <br />
@@ -121,7 +100,7 @@
 								<tr>
 									<td align=center><input type="button" value="로그인"
 										onClick="login();"> &nbsp; <input type="button"
-										value="회원가입" onClick="userCreate()"></td>
+										value="회원가입" onClick="userCreateForm()"></td>
 								</tr>
 							</table></td>
 					</tr>

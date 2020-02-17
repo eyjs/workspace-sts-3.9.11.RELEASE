@@ -1,26 +1,13 @@
+
 <%@page import="com.itwill.user.User"%>
 <%@page import="com.itwill.user.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="user_login_check.jspf" %>
+<%@ include file="user_login_check.jspf" %>  
 <%
-	if(request.getMethod().equalsIgnoreCase("GET")){
-		response.sendRedirect("user_main.jsp");
-		return;
-	}
-	//request.setCharacterEncoding("UTF-8");
-	String userId=request.getParameter("userId");
-	User user=null;
-	try{
-		UserService userService=UserService.getInstance();
-		user = userService.findUser(userId);
-	}catch(Exception e){
-		e.printStackTrace();
-		response.sendRedirect("user_error.jsp");
-		return;
-	}
+	User user=(User)request.getAttribute("user");
+%>
 
-%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,11 +17,13 @@
 <link rel=stylesheet href="css/user.css" type="text/css">
 <script type="text/javascript">
 	function userModify() {
-		f.action = "user_modify_action.jsp";
-		f.submit();
+		document.f.method='POST';
+		document.f.action = "user_modify_action.do";
+		document.f.submit();
+		
 	}
 	function userList() {
-		f.action = "user_list.jsp";
+		f.action = "user_list.do";
 		f.submit();
 	}
 </script>
@@ -76,7 +65,7 @@
 								</tr>
 							</table> <!-- update Form  -->
 							<form name="f" method="post">
-								<input type="hidden" name="userId" value="<%=user.getUserId()%>" />
+								<input type="hidden" name="userId" value="<%=user.getUserId() %>" />
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
@@ -132,7 +121,7 @@
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/>
+			<jsp:include page="include_common_bottom.jsp"/>	
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

@@ -1,15 +1,17 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="com.itwill.user.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.itwill.user.UserService"%>
-<%@page import="com.itwill.user.User"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="user_login_check.jspf" %>
+<%@ include file="user_login_check.jspf" %>   
+    
 <%
-	ArrayList<User> userList = 
-	(ArrayList<User>)request.getAttribute("userList");
-%>
+	String USER_NOT_FOUND_MSG = (String)request.getAttribute("USER_NOT_FOUND_MSG");
+	ArrayList<User> userList = (ArrayList<User>)request.getAttribute("userList");
 
+%>    
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,11 +20,9 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
 <script type="text/javascript">
-
-function userList() {
-		f.action = "user_write_form.jsp";
-		f.submit();
-}
+<%if(USER_NOT_FOUND_MSG!=null){%>
+	alert('<%=USER_NOT_FOUND_MSG%>')
+<%}%>
 </script>
 	
 <style type="text/css" media="screen">
@@ -36,6 +36,7 @@ function userList() {
 		<div id="header">
 			<!-- include_common_top.jsp start-->
 			<jsp:include page="include_common_top.jsp"/>
+			
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
@@ -70,35 +71,33 @@ function userList() {
 										<td align=center bgcolor="E6ECDE">이름</td>
 										<td align=center bgcolor="E6ECDE">이메일</td>
 									</tr>
-									<!-- loop start -->
 									<%
 									for(User user:userList){
-										
+										if(!user.getUserId().equals(sUserId)){
 									%>
+									<!-- loop start -->
 									<tr>
 										<td width=190 align=center bgcolor="ffffff" height="20">
 											<%=user.getUserId() %>
 										</td>
 										<td width=200 bgcolor="ffffff" style="padding-left: 10">
-											<a href="user_view.jsp?userId=<%=user.getUserId()%>"
-											class="user"><%=user.getName() %></a>
+											<a href="user_view.do?userId=<%=URLEncoder.encode(user.getUserId(),"UTF-8")%>"
+											class="user"> <%=user.getName() %>
+										</a>
 										</td>
-										<td width=200 align=center bgcolor="ffffff"><%=user.getEmail() %>
+										<td width=200 align=center bgcolor="ffffff"><%=user.getEmail()%>
 										</td>
 									</tr>
-									
-									<%
-										
-									}
-									%>
 									<!-- loop end -->
-									
-									
-								</table>
+									<%	
+										}
+									}
+									%>								
+									</table>
 							</form> <br />
 							<table border="0" cellpadding="0" cellspacing="1">
 								<tr>
-									<td align="right"><!-- input type="button" value="사용자 추가"  onclick="userList();"/-->
+									<td align="right">
 									</td>
 								</tr>
 							</table></td>
@@ -111,7 +110,7 @@ function userList() {
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/>
+			<jsp:include page="include_common_bottom.jsp" />
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>
