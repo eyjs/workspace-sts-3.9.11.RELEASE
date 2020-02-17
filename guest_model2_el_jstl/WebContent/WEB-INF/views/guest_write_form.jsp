@@ -5,13 +5,49 @@
 <head>
 <title>방명록 관리</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <link rel="stylesheet"
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
+<script type="text/javascript">
+function guestList(){
+	document.f.action='guest_list.do';
+	document.f.method='POST';
+	document.f.submit();
+}
+function guestWrite(){
+	
+	if (document.f.guest_name.value == "") {
+		alert("이름을 입력하십시요.");
+		document.f.guest_name.focus();
+		return false;
+	}
+	if (document.f.guest_email.value == "") {
+		alert("이메일을 입력하십시요.");
+		document.f.guest_email.focus();
+		return false;
+	}
+	if (document.f.guest_homepage.value == "") {
+		alert("홈페이지를 입력하십시요.");
+		document.f.guest_homepage.focus();
+		return false;
+	}
 
-<script	src="js/guest.js"></script>
+	if (document.f.guest_title.value == "") {
+		alert("제목을 입력하십시요.");
+		document.f.guest_title.focus();
+		return false;
+	}
+	if (document.f.guest_content.value == "") {
+		alert("내용을 입력하십시요.");
+		document.f.guest_content.focus();
+		return false;
+	}
+	document.f.action='guest_write_action.do';
+	document.f.method='POST';
+	document.f.submit();
+}
+</script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -20,14 +56,14 @@
 		<!-- header start -->
 		<div id="header">
 		<!-- include_common_top.jsp start-->
-		<jsp:include page="include_common_top.jsp"/> 
+		<jsp:include page="include_common_top.jsp"/>
 		<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/> 
+			<jsp:include page="include_common_left.jsp"/>
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
@@ -84,9 +120,9 @@
 				</form> <br />
 				<table width=590 border=0 cellpadding=0 cellspacing=0>
 					<tr>
-						<td align=center><input type="button" value="방명록쓰기"
-							onClick="guestCreate();"> &nbsp; <input type="button"
-							value="방명록목록" onClick="guestList()"></td>
+						<td align=center>
+						<input type="button" value="방명록쓰기" onClick="guestWrite();"> &nbsp; 
+						<input type="button" value="방명록목록" onClick="guestList()"></td>
 					</tr>
 				</table>
 			</td>
@@ -99,7 +135,7 @@
 		<!-- footer start-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/> 
+			<jsp:include page="include_common_bottom.jsp"/>
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

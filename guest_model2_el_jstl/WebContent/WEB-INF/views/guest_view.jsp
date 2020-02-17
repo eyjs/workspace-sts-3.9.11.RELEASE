@@ -1,6 +1,5 @@
 <%@page import="com.itwill.guest.Guest"%>
-<%@page import="com.itwill.guest.GuestService"%>
-<%@page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,7 +10,27 @@
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
-<script	src="js/guest.js"></script>
+<script type="text/javascript">
+	function guestList(){
+		document.f.action='guest_list.do';
+		document.f.method='POST';
+		document.f.submit();
+	}
+	function guestRemove(){
+		
+		if(window.confirm('삭제하시겠습니까?')){
+			document.f.action='guest_delete_action.do';
+			document.f.method='POST';
+			document.f.submit();
+		}
+		
+	}
+	function guestModifyForm() {
+		document.f.action = "guest_modify_form.do";
+		document.f.method='POST';
+		document.f.submit();
+	}
+</script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -20,14 +39,14 @@
 		<!-- header start -->
 		<div id="header">
 		<!-- include_common_top.jsp start-->
-		<jsp:include page="include_common_top.jsp"/> 	
+		<jsp:include page="include_common_top.jsp"/>
 		<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/> 
+			<jsp:include page="include_common_left.jsp"/>
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
@@ -66,7 +85,7 @@
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">날짜</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">${guest.guest_date.substring(0,10)}</td>
+								style="padding-left: 10px">${guest.guest_date.substring(0, 10)}</td>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">홈페이지</td>
 							<td width=490 bgcolor="ffffff" align="left"
@@ -87,9 +106,9 @@
 				<table width=590 border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td align=center>
-						<input type="button" value="수정" onclick="guestModify();"> &nbsp; 
-						<input type="button" value="삭제" onclick="guestRemove();"> &nbsp; 
-						<input type="button" value="목록" onclick="guestList()"></td>
+						<input type="button" value="수정" onClick="guestModifyForm();">&nbsp;
+						<input type="button" value="삭제" onClick="guestRemove();">&nbsp;
+						<input type="button" value="목록" onClick="guestList();"></td>
 					</tr>
 				</table>
 			</td>
@@ -103,7 +122,7 @@
 		<!-- footer start-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/> 
+			<jsp:include page="include_common_bottom.jsp"/>
 			<!-- include_common_bottom.jsp end-->
 		</div>
 		<!-- footer end -->
