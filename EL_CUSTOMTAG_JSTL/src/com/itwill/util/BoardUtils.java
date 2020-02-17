@@ -2,8 +2,6 @@
 
 import java.io.UnsupportedEncodingException;
 
-import com.itwill.board.Board;
-
 public class BoardUtils {
 	/*
 	 * \r\n 을 html의 <br>로 convert한다
@@ -44,7 +42,7 @@ public class BoardUtils {
 		//character의 코드를 바꾸어준다.
 		return new String(str.getBytes("KSC5601"), "8859_1");
 	}
-	public String getTitleString(Board board) {
+	public static String getTitleString(Board board) {
 		StringBuilder title = new StringBuilder(128);
 		String t = board.getTitle();
 		if (t.length() > 15) {

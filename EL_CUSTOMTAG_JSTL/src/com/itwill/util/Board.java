@@ -1,5 +1,4 @@
-﻿package com.itwill.bean;
-
+﻿package com.itwill.util;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -16,17 +15,8 @@ public class Board {
 	private int groupNo;
 	private int step;
 	private int depth;
-	
-	
-	
-	public Board(int boardNo, String title, String writer, String content, Date regDate) {
-		super();
-		this.boardNo = boardNo;
-		this.title = title;
-		this.writer = writer;
-		this.content = content;
-		this.regDate = regDate;
-		
+	public Board() {
+		// TODO Auto-generated constructor stub
 	}
 	public int getBoardNo() {
 		return boardNo;
