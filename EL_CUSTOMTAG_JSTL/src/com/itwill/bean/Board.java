@@ -17,6 +17,17 @@ public class Board {
 	private int step;
 	private int depth;
 	
+	
+	
+	public Board(int boardNo, String title, String writer, String content, Date regDate) {
+		super();
+		this.boardNo = boardNo;
+		this.title = title;
+		this.writer = writer;
+		this.content = content;
+		this.regDate = regDate;
+		
+	}
 	public int getBoardNo() {
 		return boardNo;
 	}
