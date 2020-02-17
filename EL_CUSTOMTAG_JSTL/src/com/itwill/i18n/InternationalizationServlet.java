@@ -20,12 +20,12 @@ public class InternationalizationServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=EUC-KR");
 		PrintWriter out=response.getWriter();
-		
 		Locale defaultLocale = Locale.getDefault();
-		
 		Locale requestLocale = request.getLocale();
+		
 		Locale usLocale=new Locale("en", "US");
 		Locale jpLocale=new Locale("ja", "JP");
+		Locale zhLocale=new Locale("zh", "CN");
 		
 		Locale locale = requestLocale;
 		
@@ -44,6 +44,7 @@ public class InternationalizationServlet extends HttpServlet {
 		out.println("<li>"+rb.getString("write.label.homepage")+"</li>");
 		out.println("<li>"+rb.getString("write.label.email")+"</li>");
 		out.println("<li>"+rb.getString("write.label.title")+"</li>");
+		
 		out.println("</ol>");
 
 		

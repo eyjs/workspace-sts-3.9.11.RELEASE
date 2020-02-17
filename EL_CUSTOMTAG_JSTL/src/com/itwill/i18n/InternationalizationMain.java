@@ -9,7 +9,9 @@ import java.util.ResourceBundle;
 public class InternationalizationMain {
 
 	public static void main(String[] args) {
+		
 		Locale currentLocale = Locale.getDefault();
+		
 		String language = currentLocale.getLanguage();
 		String country = currentLocale.getCountry();
 		System.out.println(language+"_"+country);
@@ -31,7 +33,7 @@ public class InternationalizationMain {
 		 * ResourceBundle객체생성
 		 */
 		ResourceBundle resBundle1 = 
-				ResourceBundle.getBundle("com/itwill/i18n/guest",locale);
+				ResourceBundle.getBundle("com/itwill/i18n/guest",jpLocale);
 		System.out.println("----------------locale["+language+"_"+country+"]-----------");
 		System.out.println(resBundle1.getString("title.main"));
 		System.out.println(resBundle1.getString("title.list"));
