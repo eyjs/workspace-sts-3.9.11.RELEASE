@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>       
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>방명록 관리</title>
+<title><fmt:message key="title.main"/></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="css/styles.css">
@@ -78,39 +80,38 @@ function guestWrite(){
 				<table style="padding-left: 10px" border=0 cellpadding=0
 					cellspacing=0>
 					<tr>
-						<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>방명록 관리 -
-								방명록 쓰기</b></td>
+						<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b><fmt:message key="title.write"/></b></td>
 					</tr>
 				</table> <!-- guest write Form  -->
 				<form name="f" method="post">
 					<table border="0" cellpadding="0" cellspacing="1" width="590"
 						bgcolor="BBBBBB">
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="write.label.name"/></td>
 							<td width=490 align="left" bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 150" name="guest_name"></td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">이메일</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="write.label.email"/></td>
 							<td width=490 align="left" bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 150" name="guest_email"></td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">홈페이지</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="write.label.homepage"/></td>
 							<td width=490 align="left" bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 150" name="guest_homepage"></td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">타이틀</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="write.label.title"/></td>
 							<td width=490 align="left" bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 240" name="guest_title"></td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="write.label.content"/></td>
 							<td width=490 align="left" bgcolor="ffffff"
 								style="padding-left: 10px">
 								<textarea wrap="soft" style="width:240px" rows="10" name="guest_content"></textarea>
@@ -121,8 +122,8 @@ function guestWrite(){
 				<table width=590 border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td align=center>
-						<input type="button" value="방명록쓰기" onClick="guestWrite();"> &nbsp; 
-						<input type="button" value="방명록목록" onClick="guestList()"></td>
+						<input type="button" value="<fmt:message key="write.button.write"/>" onClick="guestWrite();"> &nbsp; 
+						<input type="button" value="<fmt:message key="write.button.list"/>" onClick="guestList()"></td>
 					</tr>
 				</table>
 			</td>
