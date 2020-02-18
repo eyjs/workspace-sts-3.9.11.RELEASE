@@ -3,10 +3,16 @@
  */
 package com.mybatis3.util;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
+import org.apache.ibatis.datasource.DataSourceFactory;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.jdbc.ScriptRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,14 +25,14 @@ public class TestDataPopulatorMain {
 	private static final Properties PROPERTIES = new Properties();
 	/**************** ScriptRunner **********************/
 	static {
-		/*
+		
 		try {
 			InputStream is = DataSourceFactory.class.getResourceAsStream("/jdbc.properties");
 			PROPERTIES.load(is);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		*/
+		
 	}
 	
 	public static void main(String[] args) {
@@ -50,7 +56,7 @@ public class TestDataPopulatorMain {
 	}
 	/*******************************************************/
 	public static void initDatabase() {
-		/*
+		
 		Connection connection = null;
 		Reader reader = null;
 		try {
@@ -71,6 +77,6 @@ public class TestDataPopulatorMain {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-		*/
+			
 	}
 }

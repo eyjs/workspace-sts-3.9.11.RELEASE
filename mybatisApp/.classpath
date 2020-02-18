@@ -9,9 +9,10 @@
 	<classpathentry kind="lib" path="myLib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="myLib/log4j-api-2.13.0.jar"/>
 	<classpathentry kind="lib" path="myLib/log4j-core-2.13.0.jar"/>
-	<classpathentry kind="lib" path="myLib/mybatis-3.5.4.jar"/>
+	<classpathentry kind="lib" path="myLib/mybatis-3.5.4.jar" sourcepath="C:/JAVA_SPRING/06.FRAMEWORK/01.MyBatis/lib/mybatis-3-mybatis-3.5.4.zip"/>
 	<classpathentry kind="lib" path="myLib/ognl-3.2.12.jar"/>
 	<classpathentry kind="lib" path="myLib/slf4j-api-1.7.30.jar"/>
 	<classpathentry kind="lib" path="myLib/slf4j-log4j12-1.7.30.jar"/>
+	<classpathentry kind="lib" path="myLib/ojdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
