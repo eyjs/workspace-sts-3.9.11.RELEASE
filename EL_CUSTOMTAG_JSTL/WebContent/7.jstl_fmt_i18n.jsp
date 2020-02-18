@@ -5,11 +5,14 @@
 %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-<fmt:setLocale value="${pageContext.request.locale.language}" />
+<%-- 
+<fmt:setLocale value="${pageContext.request.locale.language}" scope="session" />
+--%>
+<fmt:setLocale value="ko" scope="session" />
 <%-- 
 <fmt:setLocale value="ja" />
  --%>
-<fmt:setBundle basename="com/itwill/i18n/guest" />   
+<fmt:setBundle basename="com/itwill/i18n/guest" scope="session"/>   
 <!DOCTYPE html>
 <html>
 <head>
