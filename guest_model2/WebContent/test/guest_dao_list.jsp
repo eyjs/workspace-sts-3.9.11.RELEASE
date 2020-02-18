@@ -1,8 +1,7 @@
-<%@page import="com.itwill.guest.GuestDao"%>
+<%@page import="com.itwill.guest.GuestDaoImplJDBC"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	GuestDao guestDao=new GuestDao();
-	
+	GuestDaoImplJDBC guestDao=new GuestDaoImplJDBC();
 %>
 <%=guestDao.selectAll()%>
