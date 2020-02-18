@@ -13,6 +13,4 @@
 <ul>
 	<li><a href="guest_list.do"><fmt:message key="menu.list"/></a></li>
 	<li><a href="guest_write_form.do"><fmt:message key="menu.write"/></a></li>
-	
-
 </ul>
