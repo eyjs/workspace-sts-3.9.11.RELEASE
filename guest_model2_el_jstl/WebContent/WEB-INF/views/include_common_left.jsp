@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <p>
-	<strong>메 뉴</strong>
+	<strong><fmt:message key="menu.title"/></strong>
 </p>
 <ul>
 	<li><a href="guest_list.do"><fmt:message key="menu.list"/></a></li>
