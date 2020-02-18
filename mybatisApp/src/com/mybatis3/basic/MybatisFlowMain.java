@@ -39,6 +39,7 @@ public class MybatisFlowMain {
 		sqlSession.commit();
 		sqlSession.close();
 		
+		
 	}
 
 }
