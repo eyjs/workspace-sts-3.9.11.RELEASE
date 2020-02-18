@@ -25,6 +25,7 @@
 		
 	</environments>
 	<mappers>
+		<mapper resource="com/mybatis3/mapper/StudentMapper.xml"/>
 	</mappers>
 </configuration>
 

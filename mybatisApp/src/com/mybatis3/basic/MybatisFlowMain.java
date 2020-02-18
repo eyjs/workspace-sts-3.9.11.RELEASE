@@ -33,15 +33,13 @@ public class MybatisFlowMain {
 		 * 4.SqlSession사용(CRUD) 
 		 */
 		System.out.println("SqlSession:"+sqlSession);
-		
-		Student student=sqlSession.selectOne("",new Integer(1));
+		Student student=sqlSession.selectOne(
+				"com.mybatis3.mapper.StudentMapper.findStudentById",
+				new Integer(4));
 		System.out.println("#### "+student);
 		sqlSession.commit();
 		sqlSession.close();
-		
-		
 	}
-
 }
 
 
