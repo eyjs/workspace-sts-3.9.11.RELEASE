@@ -38,7 +38,7 @@ public class Student
 	@Override
 	public String toString() {
 		return "Student [studId=" + studId + ", name=" + name + ", email="
-				+ email + ", dob=" + dob + ",address="+address+"]";
+				+ email + ", dob=" + dob + ",address="+address+"]\n";
 	}
 	public Address getAddress() {
 		return address;

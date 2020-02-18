@@ -1,6 +1,7 @@
 package com.mybatis3.basic;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -37,6 +38,10 @@ public class MybatisFlowMain {
 				"com.mybatis3.mapper.StudentMapper.findStudentById",
 				new Integer(4));
 		System.out.println("#### "+student);
+		List<Student> studentList = 
+				sqlSession.selectList(
+				"com.mybatis3.mapper.StudentMapper.findAllStudents");
+		System.out.println("#### "+studentList);
 		sqlSession.commit();
 		sqlSession.close();
 	}
