@@ -33,6 +33,8 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/mybatis3/mapper/StudentMapper.xml"/>
+		<mapper resource="com/mybatis3/mapper/AddressMapper.xml"/>
+		<mapper resource="com/mybatis3/mapper/TutorMapper.xml"/>
 	</mappers>
 </configuration>
 

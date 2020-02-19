@@ -8,9 +8,98 @@
 		<result column="EMAIL" property="email"/>
 		<result column="dob" property="dob"/>
 	</resultMap>
+	<resultMap 	id="studentWithAddressResultMap" 
+				type="com.mybatis3.domain.Student" >
+		<result column="STUD_ID" property="studId"/>
+		<result column="NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+		<result column="dob" property="dob"/>
+		<result column="ADDR_ID" property="address.addrId"/>
+		<result column="STREET" property="address.street"/>
+		<result column="STATE" property="address.state"/>
+		<result column="CITY" property="address.city"/>
+		<result column="ZIP" property="address.zip"/>
+		<result column="COUNTRY" property="address.country"/>
+	</resultMap>
+	
+	<resultMap 	id="studentExtendsWithAddressResultMap" 
+				type="com.mybatis3.domain.Student"
+				extends="studentResultMap" >
+		<result column="ADDR_ID" property="address.addrId"/>
+		<result column="STREET" property="address.street"/>
+		<result column="STATE" property="address.state"/>
+		<result column="CITY" property="address.city"/>
+		<result column="ZIP" property="address.zip"/>
+		<result column="COUNTRY" property="address.country"/>
+	</resultMap>
+	
+	<resultMap 	id="studentAssociateAddressResultMap" 
+				type="com.mybatis3.domain.Student" >
+		<result column="STUD_ID" property="studId"/>
+		<result column="NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+		<result column="dob" property="dob"/>
+		<association property="address" 
+					 javaType="com.mybatis3.domain.Address"
+					 autoMapping="true">
+			<result column="ADDR_ID" property="addrId" />
+			<!-- 
+			<result column="STREET" property="street"/>
+			<result column="STATE" property="state"/>
+			<result column="ZIP" property="zip"/>
+			<result column="CITY" property="city"/>
+			<result column="COUNTRY" property="country"/>
+			 -->
+		</association>
+	</resultMap>
+	
+	<resultMap 	id="studentAssociateAddressAddressMapperResultMap" 
+				type="com.mybatis3.domain.Student" >
+		<result column="STUD_ID" property="studId"/>
+		<result column="NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+		<result column="dob" property="dob"/>
+		<association property="address" 
+					 resultMap="com.mybatis3.mapper.AddressMapper.addressResultMap"
+					 autoMapping="true"/>
+	
+	</resultMap>
+	<resultMap 	id="studentAssociateAddressNestedSelectResultMap" 
+				type="com.mybatis3.domain.Student" >
+		<result column="STUD_ID" property="studId"/>
+		<result column="NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+		<result column="dob" property="dob"/>
+		<association property="address" 
+					 column="addr_id"
+					 select="com.mybatis3.mapper.AddressMapper.findAddressByIdResultMap"/>
+	</resultMap>
+	
 	
 	<!-- ######################################## -->
 	<!-- @@@@@@@@@@@@@@@ select @@@@@@@@@@@@@@@@@ -->
+	
+	<!-- resultMap: Student(DTO)[STUDENTS 조인아님] 2회 select -->
+	<select id="findStudentsByIdWithAddressNestedSelectResultMap"
+	        parameterType="int"
+	        resultMap="studentAssociateAddressNestedSelectResultMap">
+		select stud_id,name,email,dob,addr_id
+		from students
+		where stud_id=#{studId}
+	</select>
+	
+	<!-- resultMap: Student(DTO)[STUDENTS + ADDRESSES 조인] -->
+	<select id="findStudentsByIdWithAddressResultMap" 
+			parameterType="int"
+			resultMap="studentAssociateAddressAddressMapperResultMap">
+		select stud_id, name, email,phone, a.addr_id, street, city, state, zip, country
+  		FROM students s 
+	    left outer join addresses a 
+	    on s.addr_id=a.addr_id
+	    where s.stud_id=#{studId}
+	</select>
+	
+	
 	<!-- resultType: Student(DTO),List<Student> -->
 	<select id="findStudentById" 
 			parameterType="java.lang.Integer" 

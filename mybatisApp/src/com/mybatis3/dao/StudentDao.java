@@ -89,6 +89,25 @@ public class StudentDao {
 		sqlSession.close();
 		return insertRowCount;
 	}
+	/*
+	 @@@@@@@@@@@@@@@@@@@@@@@select[join]@@@@@@@@@@@@@@@@@@@ 
+	 */
+	public Student findStudentsByIdWithAddressResultMap(Integer studId) {
+		SqlSession sqlSession=sqlSessionFactory.openSession(true);
+		Student student=sqlSession.selectOne(
+				NAMESPACE+"findStudentsByIdWithAddressResultMap", 
+				studId);
+		sqlSession.close();
+		return student;
+	}
+	public Student findStudentsByIdWithAddressNestedSelectResultMap(Integer studId) {
+		SqlSession sqlSession=sqlSessionFactory.openSession(true);
+		Student student=sqlSession.selectOne(
+				NAMESPACE+"findStudentsByIdWithAddressNestedSelectResultMap", 
+				studId);
+		sqlSession.close();
+		return student;
+	}
 	
 	
 	/*
