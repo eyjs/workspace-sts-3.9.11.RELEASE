@@ -16,14 +16,7 @@
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
-<script type="text/javascript">
-  function guestWriteForm(){
-	  document.f.action='guest_write_form.do';
-	  document.f.method='POST';
-	  document.f.submit();
-  }
-
-</script>
+<script type="text/javascript" src="js/guest.js"></script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>

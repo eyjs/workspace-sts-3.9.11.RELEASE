@@ -13,9 +13,7 @@
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
-<script type="text/javascript">
-	
-</script>
+<script type="text/javascript" src="js/guest.js"></script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>

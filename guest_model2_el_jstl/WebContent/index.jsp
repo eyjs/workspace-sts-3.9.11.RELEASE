@@ -9,6 +9,4 @@
 	<fmt:setLocale value="ko" scope="session"/>
 </c:if>
 <fmt:setBundle basename="com/itwill/guest/guest" scope="session"/>       
-<%
-	response.sendRedirect("guest_main.do");
-%>
+<c:redirect url="guest_main.do"/>

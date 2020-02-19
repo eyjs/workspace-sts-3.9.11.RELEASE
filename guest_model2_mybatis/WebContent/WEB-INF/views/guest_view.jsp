@@ -13,27 +13,7 @@
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
-<script type="text/javascript">
-	function guestList(){
-		document.f.action='guest_list.do';
-		document.f.method='POST';
-		document.f.submit();
-	}
-	function guestRemove(){
-		
-		if(window.confirm('삭제하시겠습니까?')){
-			document.f.action='guest_remove_action.do';
-			document.f.method='POST';
-			document.f.submit();
-		}
-		
-	}
-	function guestModifyForm() {
-		document.f.action = "guest_modify_form.do";
-		document.f.method='POST';
-		document.f.submit();
-	}
-</script>
+<script type="text/javascript" src="js/guest.js"></script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -108,9 +88,9 @@
 				<table width=590 border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td align=center>
-						<input type="button" value="수정" onClick="guestModifyForm();">&nbsp;
-						<input type="button" value="삭제" onClick="guestRemove();">&nbsp;
-						<input type="button" value="목록" onClick="guestList();"></td>
+						<input type="button" value="<fmt:message key='view.button.label.modify'/>" onClick="guestModifyForm();">&nbsp;
+						<input type="button" value="<fmt:message key='view.button.label.delete'/>" onClick="guestRemove();">&nbsp;
+						<input type="button" value="<fmt:message key='view.button.label.list'/>" onClick="guestList();"></td>
 					</tr>
 				</table>
 			</td>
