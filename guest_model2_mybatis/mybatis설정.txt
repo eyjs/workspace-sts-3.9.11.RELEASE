@@ -1,5 +1,0 @@
-﻿1. 라이브러리 WEB-INF/lib에 위치시킨다.
-2. mybatis-config.xml 파일생성
-   a.  db.properties파일
-3. UserMapper.xml 파일 생성 
-4. mybatis-config.xml 파일에 mapper설정 

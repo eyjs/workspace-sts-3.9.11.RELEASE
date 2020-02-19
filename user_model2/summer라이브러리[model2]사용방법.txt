@@ -33,11 +33,3 @@ C.인코딩필터클래스설정  web.xml설정
 		
 D. Controller작성(Controller interface implement)
 E. properties파일에설정(mapping)	
-
-
-
-
-
-
-
-	
