@@ -67,10 +67,10 @@
 					<c:forEach items="${guestList}" var="guest">
 					<!-- guest start -->
 					<tr>
-						<td width=50 align=center bgcolor="ffffff" height="20">43</td>
+						<td width=50 align=center bgcolor="ffffff" height="20">${guest.guest_no}</td>
 						<td width=300 bgcolor="ffffff" style="padding-left: 10"><a
 							href="guest_view.do?guest_no=${guest.guest_no}" class="user">
-								${guest.guest_title}
+								<c:out value="${guest.guest_title}"/>
 						</a></td>
 						<td width=120 align=center bgcolor="ffffff">${guest.guest_name}</td>
 						<td width=120 align=center bgcolor="ffffff">${guest.guest_date.substring(0,10)}</td>

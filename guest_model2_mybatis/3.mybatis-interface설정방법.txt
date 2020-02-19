@@ -1,0 +1,57 @@
+A. MyBatis 라이브러리 WEB-INF/lib에 위치시킨다.
+
+B. mybatis-config.xml 파일생성(복사)[/src 디렉토리에(classpath root위치)]
+
+   B-1. db.properties파일생성[/src 디렉토리에(classpath root위치) ]
+   B-2. mybatis-config.xml 파일에 jdbc.properties 파일설정 
+   		<properties resource="jdbc.properties"/>
+   B-3. mybatis-config.xml과 db.properties파일을 /src(classpath root위치) 디렉토리에 위치시킨다.
+
+C. com/itwill/guest/mapper/ 디렉토리에 GuestMapper.xml 파일 생성 
+
+D. com.itwill.guest.mapper 패키지에 GuestMapper.java 파일 생성 
+
+D. mybatis-config.xml 파일에 mapper interface설정
+		D-1. com.itwill.guest.mapper.GuestMapper 인터페이스와 
+		    	동일한패키지(디렉토리)에있는(com/mybatis3/mapper)
+		    	인터페이스이름과 동일한 이름의 
+		    	GuestMapper.xml파일을 자동으로읽는다 
+		
+	 	<mappers>
+			<mapper class="com.itwill.guest.mapper.GuestMapper"/>
+		</mappers>
+E. GuestMapper.xml 파일 에 sql문작성
+	
+	<select id="selectByNo" resultType="com.itwill.guest.Guest" 
+		parameterType="int">
+		select * from guest where guest_no=#{guest_no}
+	</select>
+	
+F. GuestMapper.java 파일 에 메쏘드작성
+	 F-1. 메쏘드이름은 	GuestMapper.xml 파일의 id와일치
+	 F-2. 메쏘드인자타입은 GuestMapper.xml 파일의 parameterType 와일치
+	 F-3. 메쏘드리턴타입은 GuestMapper.xml 파일의 resultType 와일치
+	
+F. GuestDaoImplMybatisMapperInterface작성
+	
+	메쏘드예>
+	
+	public Guest selectByNo(int no) throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		GuestMapper guestMapper=sqlSession.getMapper(GuestMapper.class);
+		Guest guest=guestMapper.selectByNo(no);
+		sqlSession.close();
+		return guest;
+	}
+
+
+
+
+
+
+
+
+
+
+
+

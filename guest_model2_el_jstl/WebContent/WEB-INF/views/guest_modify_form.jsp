@@ -94,7 +94,7 @@
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.content"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><textarea wrap="soft"
-									style="width: 240px" rows="10" name="guest_content">${guest.guest_content %></textarea>
+									style="width: 240px" rows="10" name="guest_content">${guest.guest_content}</textarea>
 
 							</td>
 						</tr>

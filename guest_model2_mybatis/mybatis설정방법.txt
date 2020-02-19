@@ -1,8 +1,0 @@
-﻿A. MyBatis 라이브러리 WEB-INF/lib에 위치시킨다.
-B. mybatis-config.xml 파일생성
-   B-1. db.properties파일생성
-   B-2. mybatis-config.xml과 db.properties파일을 classpath 에위치시킨다.[/src root]
-C. UserMapper.xml 파일 생성 
-D. mybatis-config.xml 파일에 mapper설정 
-E. UserMapper.xml 파일 에 sql문작성
-F. UserDao작성

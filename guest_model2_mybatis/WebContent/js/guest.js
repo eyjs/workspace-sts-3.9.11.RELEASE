@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 function guestCreateForm() {
 	document.f.action = 'guest_write_form.do';
 	document.f.submit();

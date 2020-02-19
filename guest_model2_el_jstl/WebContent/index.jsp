@@ -8,5 +8,14 @@
 <c:if test="${empty(param.language)}">
 	<fmt:setLocale value="ko" scope="session"/>
 </c:if>
-<fmt:setBundle basename="com/itwill/guest/guest" scope="session"/>       
+<fmt:setBundle basename="com/itwill/guest/guest" scope="session"/>
+<script>
+	if(window.document.referrer){
+		location.href=window.document.referrer;
+	}else{
+		location.href="guest_main.do";
+	}
+</script> 
+<%--       
 <c:redirect url="guest_main.do"/>
+--%>

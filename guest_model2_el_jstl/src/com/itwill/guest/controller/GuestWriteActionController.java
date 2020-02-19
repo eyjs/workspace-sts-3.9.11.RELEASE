@@ -21,6 +21,7 @@ public class GuestWriteActionController implements Controller {
 			String guest_homepage = request.getParameter("guest_homepage");
 			String guest_title = request.getParameter("guest_title");
 			String guest_content = request.getParameter("guest_content");
+			
 			try {
 				GuestService guestService = new GuestService();
 				boolean insertOK = guestService

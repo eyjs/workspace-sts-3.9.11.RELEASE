@@ -5,10 +5,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 	
 <fmt:setBundle basename="com/itwill/guest/guest" scope="session"/>    
-<%
-	Guest guest=(Guest)request.getAttribute("guest");
-%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -58,47 +54,47 @@
 					</tr>
 				</table> <!-- modify Form  -->
 				<form name="f" method="post">
-					<input type="hidden" name="guest_no" value="<%=guest.guest_no%>" />
+					<input type="hidden" name="guest_no" value="${guest.guest_no}" />
 					<table border="0" cellpadding="0" cellspacing="1" width="590"
 						bgcolor="BBBBBB">
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.no"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
-								style="padding-left: 10px"><%=guest.guest_no %></td>
+								style="padding-left: 10px">${guest.guest_no}</td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.name"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 150" name="guest_name" 
-								value="<%=guest.guest_name %>"></td>
+								value="${guest.guest_name }"></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.homepage"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 150" name="guest_homepage"
-								value="<%=guest.guest_homepage%>"></td>
+								value="${guest.guest_homepage}"></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.email"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 240" name="guest_email"
-								value="<%=guest.guest_email%> "></td>
+								value="${guest.guest_email}"></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.title"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 240" name="guest_title"
-								value="<%=guest.guest_title%>"></td>
+								value="${guest.guest_title}"></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="modify.label.content"/></td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><textarea wrap="soft"
-									style="width: 240px" rows="10" name="guest_content"><%=guest.guest_content %></textarea>
+									style="width: 240px" rows="10" name="guest_content">${guest.guest_content}</textarea>
 
 							</td>
 						</tr>
