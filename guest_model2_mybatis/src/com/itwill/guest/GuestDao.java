@@ -1,12 +1,13 @@
 package com.itwill.guest;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface GuestDao {
 	/*
 	 * READ ALL
 	 */
-	ArrayList<Guest> selectAll() throws Exception;
+	List<Guest> selectAll() throws Exception;
 
 	/*
 	 * CREATE
@@ -21,11 +22,11 @@ public interface GuestDao {
 	/*
 	 * DELETE
 	 */
-	boolean deleteGuest(int no);
+	boolean deleteGuest(int no) throws Exception;
 
 	/*
 	 * UPDATE
 	 */
-	boolean updateGuest(Guest guest);
+	boolean updateGuest(Guest guest) throws Exception;
 
 }

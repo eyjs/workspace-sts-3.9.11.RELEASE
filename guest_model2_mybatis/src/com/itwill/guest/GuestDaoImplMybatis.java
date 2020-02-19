@@ -1,45 +1,81 @@
 package com.itwill.guest;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
 public class GuestDaoImplMybatis  implements GuestDao{
 
-	@Override
-	public ArrayList<Guest> selectAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	private SqlSessionFactory sqlSessionFactory;
+	public final static String NAMESPACE=
+			"com.itwill.guest.mapper.GuestMapper.";
+	
+	public GuestDaoImplMybatis() throws Exception {
+		InputStream in=null;
+		try {
+			in=Resources.getResourceAsStream("mybatis-config.xml");
+			this.sqlSessionFactory = 
+					new SqlSessionFactoryBuilder()
+					.build(in);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	@Override
+	/*
+	 * READ ALL
+	 */
+	public List<Guest> selectAll() throws Exception {
+		List<Guest> guestList = new ArrayList<Guest>();
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		guestList = sqlSession.selectList(NAMESPACE+"selectAll");
+		sqlSession.close();
+		return guestList;
+	}
+	
+	/*
+	 * CREATE
+	 */
 	public boolean insertGuest(Guest guest) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isSuccess = false;
+		
+		return isSuccess;
 	}
 
-	@Override
+	/*
+	 * READ ONE
+	 */
 	public Guest selectByNo(int no) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		Guest guest =sqlSession.selectOne(NAMESPACE+"selectByNo",no);
+		sqlSession.close();
+		return guest;
 	}
-
-	@Override
-	public boolean deleteGuest(int no) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	
+	
+	/*
+	 * DELETE
+	 */
+	public boolean deleteGuest(int no) throws Exception{
+		boolean deleteOK=false;
+		
+		return deleteOK;
 	}
-
-	@Override
-	public boolean updateGuest(Guest guest) {
-		// TODO Auto-generated method stub
-		return false;
+	/*
+	 * UPDATE
+	 */
+	public boolean updateGuest(Guest updateGuest) throws Exception{
+		boolean updateOK=true;
+		
+		return updateOK;
 	}
 	
 

@@ -1,6 +1,6 @@
 ﻿package com.itwill.guest;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class GuestService {
 	
@@ -12,7 +12,7 @@ public class GuestService {
 	/*
 	 * 방명록 리스트
 	 */
-	public ArrayList<Guest> selectAll() throws Exception {
+	public List<Guest> selectAll() throws Exception {
 		return guestDao.selectAll();
 	}
 	/*
