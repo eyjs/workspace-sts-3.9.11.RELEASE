@@ -7,7 +7,8 @@ public class GuestService {
 	private GuestDao guestDao;
 
 	public GuestService() throws Exception{
-		guestDao=new GuestDaoImplJDBC();
+		//guestDao=new GuestDaoImplJDBC();
+		guestDao=new GuestDaoImplMybatis();
 	}
 	/*
 	 * 방명록 리스트
