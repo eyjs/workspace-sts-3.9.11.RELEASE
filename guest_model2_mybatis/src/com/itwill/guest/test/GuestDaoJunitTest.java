@@ -12,6 +12,7 @@ import org.junit.Test;
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestDao;
 import com.itwill.guest.GuestDaoImplJDBC;
+import com.itwill.guest.GuestDaoImplMapperInterfaceMybatis;
 import com.itwill.guest.GuestDaoImplMybatis;
 
 public class GuestDaoJunitTest {
@@ -19,7 +20,8 @@ public class GuestDaoJunitTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		//guestDao = new GuestDaoImplJDBC();
-		guestDao = new GuestDaoImplMybatis();
+		//guestDao = new GuestDaoImplMybatis();
+		guestDao = new GuestDaoImplMapperInterfaceMybatis();
 	}
 
 	@AfterClass
