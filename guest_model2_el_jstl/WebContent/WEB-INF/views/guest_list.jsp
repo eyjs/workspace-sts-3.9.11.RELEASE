@@ -57,8 +57,7 @@
 			<table style="padding-left: 10px" border=0 cellpadding=0
 				cellspacing=0>
 				<tr>
-					<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>방명록 관리 -
-							리스트</b></td>
+					<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b><fmt:message key="title.list"/></b></td>
 				</tr>
 			</table>
 			<form name="f" method="post">

@@ -67,8 +67,7 @@
 				<table style="padding-left: 10px" border=0 cellpadding=0
 					cellspacing=0>
 					<tr>
-						<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>방명록 관리 -
-								방명록 상세보기</b></td>
+						<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b><fmt:message key="title.view"/></b></td>
 					</tr>
 				</table> <!-- view Form  -->
 				<form name="f" method="post">
@@ -76,31 +75,31 @@
 					<table border="0" cellpadding="0" cellspacing="1" width="590"
 						bgcolor="BBBBBB">
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">번호</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.no"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_no}</td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.name"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_name}</td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">날짜</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.date"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_date.substring(0, 10)}</td>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">홈페이지</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.homepage"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_homepage}</td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.title"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_title}</td>
 						</tr>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="110">내용</td>
+							<td width=100 align=center bgcolor="E6ECDE" height="110"><fmt:message key="view.label.content"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_content}</td>
 						</tr>
