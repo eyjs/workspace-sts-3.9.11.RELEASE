@@ -12,12 +12,14 @@ import org.junit.Test;
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestDao;
 import com.itwill.guest.GuestDaoImplJDBC;
+import com.itwill.guest.GuestDaoImplMybatis;
 
 public class GuestDaoJunitTest {
 	static GuestDao guestDao;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		guestDao = new GuestDaoImplJDBC(JavaSeDataSource.getDataSource());
+		//guestDao = new GuestDaoImplJDBC();
+		guestDao = new GuestDaoImplMybatis();
 	}
 
 	@AfterClass
@@ -43,13 +45,13 @@ public class GuestDaoJunitTest {
 		이외에도 다양한 단정문이 존재합니다. 
 			http://junit.sourceforge.net/javadoc/org/junit/Assert.html
 		 */
-		GuestDao guestDao=new GuestDaoImplJDBC(JavaSeDataSource.getDataSource());
+		
 		assertNotEquals(0,guestDao.selectAll().size());
 		assertNotNull(guestDao.selectAll());
 	}
 	@Test
 	public void selectByNo() throws Exception{
-		GuestDao guestDao=new GuestDaoImplJDBC(JavaSeDataSource.getDataSource());
+		
 		assertNull(guestDao.selectByNo(345234324));
 	}
 	

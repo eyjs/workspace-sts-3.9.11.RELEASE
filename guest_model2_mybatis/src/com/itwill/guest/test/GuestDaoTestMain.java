@@ -1,6 +1,5 @@
 package com.itwill.guest.test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.itwill.guest.Guest;
@@ -9,7 +8,7 @@ import com.itwill.guest.GuestDaoImplJDBC;
 
 public class GuestDaoTestMain {
 	public static void main(String[] args)throws Exception {
-		GuestDao guestDao=new GuestDaoImplJDBC(JavaSeDataSource.getDataSource());
+		GuestDao guestDao=new GuestDaoImplJDBC();
 		System.out.println("---------selectAll---------");
 		List<Guest> guestList=guestDao.selectAll();
 		for (int i = 0; i < guestList.size(); i++) {

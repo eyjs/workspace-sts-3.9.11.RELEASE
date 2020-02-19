@@ -6,10 +6,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setBundle basename="com/itwill/guest/guest" scope="session"/>        
-<%
-	ArrayList<Guest> guestList=
-		(ArrayList<Guest>)request.getAttribute("guestList");
-%>    
+   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -60,8 +57,7 @@
 			<table style="padding-left: 10px" border=0 cellpadding=0
 				cellspacing=0>
 				<tr>
-					<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>방명록 관리 -
-							리스트</b></td>
+					<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b><fmt:message key="title.list"/></b></td>
 				</tr>
 			</table>
 			<form name="f" method="post">
@@ -69,27 +65,26 @@
 				<table border="0" cellpadding="0" cellspacing="1" width="590"
 					bgcolor="BBBBBB">
 					<tr>
-						<td width=50 align=center bgcolor="E6ECDE" height="22">번호</td>
-						<td width=300 align=center bgcolor="E6ECDE">제목</td>
-						<td width=120 align=center bgcolor="E6ECDE">이름</td>
-						<td width=120 align=center bgcolor="E6ECDE">날짜</td>
+						<td width=50 align=center bgcolor="E6ECDE" height="22"><fmt:message key="list.label.no"/></td>
+						<td width=300 align=center bgcolor="E6ECDE"><fmt:message key="list.label.title"/></td>
+						<td width=120 align=center bgcolor="E6ECDE"><fmt:message key="list.label.name"/></td>
+						<td width=120 align=center bgcolor="E6ECDE"><fmt:message key="list.label.date"/></td>
 					</tr>
-					<%
-					for(int i=0;i < guestList.size();i++){
-						Guest guest=guestList.get(i);	
-					%>
+					
+					<c:forEach items="${guestList}" var="guest">
 					<!-- guest start -->
 					<tr>
 						<td width=50 align=center bgcolor="ffffff" height="20">43</td>
 						<td width=300 bgcolor="ffffff" style="padding-left: 10"><a
-							href="guest_view.do?guest_no=<%=guest.guest_no%>" class="user">
-								<%=guest.guest_title%>
+							href="guest_view.do?guest_no=${guest.guest_no}" class="user">
+								${guest.guest_title}
 						</a></td>
-						<td width=120 align=center bgcolor="ffffff"><%=guest.guest_name%></td>
-						<td width=120 align=center bgcolor="ffffff"><%=guest.guest_date.substring(0,10)%></td>
+						<td width=120 align=center bgcolor="ffffff">${guest.guest_name}</td>
+						<td width=120 align=center bgcolor="ffffff">${guest.guest_date.substring(0,10)}</td>
 					</tr>
 					<!-- guest end -->
-					<%} %>
+					</c:forEach>
+					
 				</table>
 			</form> <!-- button -->
 			<table border="0" cellpadding="0" cellspacing="1" width="590">
