@@ -13,7 +13,6 @@ public class StudentDaoWithAddressMain {
 		System.out.println("### "+studentDao.findStudentsByIdWithAddressResultMap(7));
 		System.out.println("-------findStudentsByIdWithAddressNestedSelectResultMap----------");
 		System.out.println("### "+studentDao.findStudentsByIdWithAddressNestedSelectResultMap(3));
-		
 		/*
 		System.out.println("-------insertStudentParameterMap(parameter Map)----");
 		System.out.println("-------updateStudentDynamicSql---------");

@@ -2,11 +2,6 @@ package com.mybatis3.domain;
 
 import java.io.Serializable;
 import java.util.List;
-
-/**
- * @author Siva
- *
- */
 public class Tutor implements Serializable
 {
 	private static final long serialVersionUID = 1L;
