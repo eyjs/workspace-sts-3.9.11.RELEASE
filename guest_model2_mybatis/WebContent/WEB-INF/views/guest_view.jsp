@@ -76,12 +76,12 @@
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.title"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">${guest.guest_title}</td>
+								style="padding-left: 10px"><c:out value="${guest.guest_title}"/></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="110"><fmt:message key="view.label.content"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">${guest.guest_content}</td>
+								style="padding-left: 10px"><c:out value="${guest.guest_content}"/></td>
 						</tr>
 					</table>
 				</form> <br />

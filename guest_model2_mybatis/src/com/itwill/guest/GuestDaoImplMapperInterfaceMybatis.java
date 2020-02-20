@@ -10,6 +10,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.itwill.guest.mapper.GuestMapper;
+
 
 public class GuestDaoImplMapperInterfaceMybatis  implements GuestDao{
 
@@ -19,7 +21,7 @@ public class GuestDaoImplMapperInterfaceMybatis  implements GuestDao{
 	public GuestDaoImplMapperInterfaceMybatis() throws Exception {
 		InputStream in=null;
 		try {
-			in=Resources.getResourceAsStream("mybatis-config-mapper_interface.xml");
+			in=Resources.getResourceAsStream("mybatis-config-mapper-interface.xml");
 			this.sqlSessionFactory = 
 					new SqlSessionFactoryBuilder()
 					.build(in);
@@ -32,8 +34,10 @@ public class GuestDaoImplMapperInterfaceMybatis  implements GuestDao{
 	 * READ ALL
 	 */
 	public List<Guest> selectAll() throws Exception {
-		List<Guest> guestList = new ArrayList<Guest>();
-		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		GuestMapper guestMapper=sqlSession.getMapper(GuestMapper.class);
+		List<Guest> guestList=guestMapper.selectAll();
+		sqlSession.close();
 		return guestList;
 	}
 	
@@ -51,9 +55,10 @@ public class GuestDaoImplMapperInterfaceMybatis  implements GuestDao{
 	 */
 	public Guest selectByNo(int no) throws Exception {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
+		GuestMapper guestMapper=sqlSession.getMapper(GuestMapper.class);
+		Guest guest=guestMapper.selectByNo(no);
 		sqlSession.close();
-		return null;
+		return guest;
 	}
 	
 	
