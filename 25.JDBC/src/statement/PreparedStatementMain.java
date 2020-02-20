@@ -1,4 +1,4 @@
-package statement;
+ï»¿package statement;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,16 +11,16 @@ import java.util.regex.Pattern;
 
 /*
 <<PreparedStatement>>
-1. sql¹®ÀÛ¼º
-    - ?(ÆÄ¶ó¸ŞÅ¸) ¸¦ »ç¿ëÇØ¼­ ³ªÁß¿¡ ¿ÜºÎ¿¡¼­ µ¥ÀÌÅ¸(¸®ÅÍ·²)¸¦ ¹ŞÀ»¼öÀÖ°ÔÇÑ´Ù.
+1. sqlë¬¸ì‘ì„±
+    - ?(íŒŒë¼ë©”íƒ€) ë¥¼ ì‚¬ìš©í•´ì„œ ë‚˜ì¤‘ì— ì™¸ë¶€ì—ì„œ ë°ì´íƒ€(ë¦¬í„°ëŸ´)ë¥¼ ë°›ì„ìˆ˜ìˆê²Œí•œë‹¤.
       ex> insert into emp(empno,ename,job,manager,hiredate,sal,comm,deptno) values(?,?,?,?,?,?,?,?)	
-    - Å×ÀÌºíÀÌ¸§,ÄÃ·³ÀÌ¸§µîÀº ? ¸¦ »ç¿ëÇØ¼­ ¿ÜºÎ¿¡¼­ ÀÔ·Â¹ŞÀ»¼ö¾ø´Ù.
+    - í…Œì´ë¸”ì´ë¦„,ì»¬ëŸ¼ì´ë¦„ë“±ì€ ? ë¥¼ ì‚¬ìš©í•´ì„œ ì™¸ë¶€ì—ì„œ ì…ë ¥ë°›ì„ìˆ˜ì—†ë‹¤.
       ex> select * from ? 
           select ?,? from emp    
-2. PreparedStatement °´Ã¼»ı¼º½Ã ÀÎÀÚ·Î sql¹®À» ³Ö¾î¼­»ı¼ºÇÑ´Ù
+2. PreparedStatement ê°ì²´ìƒì„±ì‹œ ì¸ìë¡œ sqlë¬¸ì„ ë„£ì–´ì„œìƒì„±í•œë‹¤
    ex> PreparedStatement pstmt = con.prepareStatement(sql);
-3. »ı¼ºµÈ PreparedStatement °´Ã¼¿¡ ÆÄ¶ó¸ŞÅ¸¸¦ setting ÇÑ´Ù
-    - sql ÁÂÃø ? ºÎÅÍ 1,2,3...
+3. ìƒì„±ëœ PreparedStatement ê°ì²´ì— íŒŒë¼ë©”íƒ€ë¥¼ setting í•œë‹¤
+    - sql ì¢Œì¸¡ ? ë¶€í„° 1,2,3...
    ex> 	pstmt.setInt(1,1234);              
  	   	pstmt.setString(2,"KIM");              
    		pstmt.setString(3,"MANAGER");              
@@ -29,8 +29,8 @@ import java.util.regex.Pattern;
    		pstmt.setDouble(6,1000.12);              
    		pstmt.setInt(7,0);              
    		pstmt.setInt(8,10);              
- 4.  ½ÇÇà
-    - ½ÇÇà½Ã sql¹®À» ÀÎÀÚ·Î ³ÖÁö¾È´Â´Ù.
+ 4.  ì‹¤í–‰
+    - ì‹¤í–‰ì‹œ sqlë¬¸ì„ ì¸ìë¡œ ë„£ì§€ì•ˆëŠ”ë‹¤.
     ex> pstmt.executeUpdate();         
         pstmt.executeQuery();         
 */
@@ -72,7 +72,7 @@ public class PreparedStatementMain {
 		PreparedStatement pstmt =con.prepareStatement(selectSql2);
 		System.out.println(pstmt);
 //		pstmt.getOriginalSql();
-		System.out.println("-----PreparedStatement¹İº¹1------");
+		System.out.println("-----PreparedStatementë°˜ë³µ1------");
 		pstmt.setInt(1, startSal);
 		pstmt.setInt(2, endSal);
 		pstmt.setString(3, job);
@@ -84,7 +84,7 @@ public class PreparedStatementMain {
 			double sal=rs.getDouble("sal");
 			System.out.println(empno+"\t"+ename+"\t"+jobs+"\t"+sal);
 		}
-		System.out.println("-----PreparedStatement¹İº¹2------");
+		System.out.println("-----PreparedStatementë°˜ë³µ2------");
 		startSal=1000;
 		endSal=5000;
 		job="SALESMAN";
@@ -143,7 +143,7 @@ public class PreparedStatementMain {
 		/*
 		pstmt = con.prepareStatement(insertSql2);
 		pstmt.setInt(1,4545);
-		pstmt.setString(2, "È«±æµ¿");
+		pstmt.setString(2, "í™ê¸¸ë™");
 		pstmt.setString(3, "MANAGER");
 		pstmt.setInt(4, Types.NULL);
 		pstmt.setString(5, "2020/01/05");

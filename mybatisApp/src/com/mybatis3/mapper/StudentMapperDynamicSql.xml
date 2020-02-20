@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis3.mapper.StudentMapperDynamicSql">
+	<!-- ParameterType Map -->
+	<select id="findStudentsByIdRange" 
+		parameterType="java.util.HashMap"
+		resultType="com.mybatis3.domain.Student">
+		select stud_id as studId ,name,email,dob 
+		from students
+		<trim prefix="where">
+			stud_id >= #{studId1} and stud_id &lt;= #{studId2}
+		</trim>
+		
+	</select>
+	
+	
+	<!-- 외부에서 sql을 직접받기 ${} -->
+	<select id="findAllStudentsOrder" 
+			parameterType="string"
+			resultType="Student">
+		select stud_id as studId,name,email,dob
+		from students
+		order by ${_parameter}
+	</select>
+	<!-- 
+	<select id="findStudents" 
+			parameterType="com.mybatis3.domain.Student" 
+			resultType="com.mybatis3.domain.Student">
+		select stud_id as studId ,name,email,dob
+		from students
+		<if test="_parameter!=null">
+			where name=#{name}
+		</if>
+	</select>
+	 -->
+	 <select id="findStudents" 
+			parameterType="com.mybatis3.domain.Student" 
+			resultType="com.mybatis3.domain.Student">
+		select stud_id as studId ,name,email,dob
+		from students
+		<!-- 
+		<where>
+			<trim suffixOverrides="or|and">	
+				<if test="studId!=null">
+					stud_id=#{studId} or
+				</if>
+				<if test="name!=null">
+					name=#{name} or
+				</if>
+				<if test="email!=null">
+					email=#{email} or
+				</if>
+				<if test="dob!=null">
+					dob &lt;= #{dob}
+				</if>
+			</trim>	
+		</where>
+		 -->
+		<!-- 
+		<trim prefix="where" suffixOverrides="or|and">	
+				<if test="studId!=null">
+					stud_id=#{studId} or
+				</if>
+				<if test="name!=null">
+					name=#{name} or
+				</if>
+				<if test="email!=null">
+					email=#{email} or
+				</if>
+				<if test="dob!=null">
+					dob &lt;= #{dob} 
+				</if>
+		</trim>	
+		 -->
+		 <trim prefix="where" prefixOverrides="or|and">	
+				<if test="studId!=null">
+				    stud_id=#{studId}
+				</if>
+				<if test="name!=null">
+					or name=#{name} 
+				</if>
+				<if test="email!=null">
+					or email=#{email} 
+				</if>
+				<if test="dob!=null">
+					or dob &lt;= #{dob}
+				</if>
+		</trim>	
+	</select>
+	
+	<select id="findStudentsByNameLike"
+	        parameterType="java.lang.String"
+	        resultType="com.mybatis3.domain.Student">
+	    <bind name="namePattern" value="'%'+_parameter+'%'"/>    
+		select stud_id as studId,name,email,dob
+		from students 
+		where name like #{namePattern}
+		<!-- 
+		where name like '%'||#{name}||'%'
+		where name like '%'||#{_parameter}||'%'
+		 -->
+	</select>
+	<update id="updateStudentById"
+	        parameterType="com.mybatis3.domain.Student">
+		update students 
+		<!-- 
+		<set>
+			<trim suffixOverrides=",">	
+			   <if test="name!=null">
+			 		name=#{name},
+			 	</if>
+			 	<if test="email!=null">
+					email=#{email},
+				</if>
+				<if test="dob!=null">
+					dob=#{dob}
+				</if>
+			</trim>
+		</set>
+		 -->
+		 
+		<trim prefix="set"  suffixOverrides=",">	
+			 <if test="name!=null">
+			 		name=#{name},
+			 </if>
+			 <if test="email!=null">
+					email=#{email},
+			 </if>
+			 <if test="dob!=null">
+					dob=#{dob}
+			 </if>
+		</trim>
+		
+		<where>
+		   <if test="studId!=null">  	
+		    	stud_id=#{studId}
+		   </if>
+		</where>    
+		    
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

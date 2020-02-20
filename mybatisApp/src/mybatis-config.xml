@@ -5,12 +5,11 @@
 <configuration>
 	<properties resource="jdbc.properties"/>
 	<typeAliases>
-		
 		<typeAlias type="com.mybatis3.domain.Student" alias="Student"/>
+		<typeAlias type="com.mybatis3.domain.Address" alias="Address"/>
+		<typeAlias type="com.mybatis3.domain.Tutor" alias="Tutor"/>
+		<typeAlias type="com.mybatis3.domain.Course" alias="Course"/>
 	</typeAliases>
-	
-	
-	
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -33,6 +32,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/mybatis3/mapper/StudentMapper.xml"/>
+		<mapper resource="com/mybatis3/mapper/StudentMapperDynamicSql.xml"/>
 		<mapper resource="com/mybatis3/mapper/AddressMapper.xml"/>
 		<mapper resource="com/mybatis3/mapper/TutorMapper.xml"/>
 		<mapper resource="com/mybatis3/mapper/CourseMapper.xml"/>

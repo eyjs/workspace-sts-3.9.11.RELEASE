@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis3.mapper.TutorMapper">
+	<!-- @@@@@@@@@@@@@@@@@ resultMap @@@@@@@@@@@@@@@@@@@@@@ -->
+	<!-- 
+	<resultMap  id="tutorResultMap" 
+				type="com.mybatis3.domain.Tutor" 
+				autoMapping="true" >
+		<id column="TUTOR_ID" property="tutorId"/>
+		<result column="NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+	</resultMap>
+	 -->
+	<resultMap   id="tutorWithCoursesAndAddressResultMap" 
+				 type="com.mybatis3.domain.Tutor">
+		<result column="TUTOR_ID" property="tutorId"/>
+		<result column="TUTOR_NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+		<association property="address"
+					 resultMap="com.mybatis3.mapper.AddressMapper.addressResultMap"/>
+		<collection property="courses" 
+					resultMap="com.mybatis3.mapper.CourseMapper.courseResultMap"/>
+		
+	</resultMap>
+	
+	<!-- @@@@@@@@@@@@@@@@@ select @@@@@@@@@@@@@@@@@@@@@@ -->
+	<select id="findTutorWithCoursesAndAddressById"
+		        parameterType="int"
+		        resultMap="tutorWithCoursesAndAddressResultMap">
+		SELECT t.tutor_id, t.name as tutor_name, email, a.addr_id, street, city, state, zip, country,
+       			course_id, c.name, description, start_date, end_date
+	      FROM tutors t 
+	      left outer join addresses a 
+	      on t.addr_id=a.addr_id
+		  left outer join courses c on t.tutor_id=c.tutor_id
+	      where t.tutor_id=#{tutorId} 
+	</select>
+	<select id="findTutorById" 
+			parameterType="int"
+			resultMap="tutorWithCoursesAndAddressResultMap">
+		SELECT tutor_id ,name as tutor_name,email,phone,dob,addr_id
+       	FROM tutors 
+      	where tutor_id=#{tutorId} 
+	</select>
+	<select id="findTutorWithCoursesById" 
+			parameterType="int"
+			resultMap="tutorWithCoursesAndAddressResultMap">
+		SELECT t.tutor_id, t.name as tutor_name, email,course_id, c.name, description, start_date, end_date
+       	FROM tutors t 
+      	left outer join courses c 
+      	on t.tutor_id=c.tutor_id
+      	where t.tutor_id=#{tutorId} 
+	</select>
+
+	
+	
+</mapper>

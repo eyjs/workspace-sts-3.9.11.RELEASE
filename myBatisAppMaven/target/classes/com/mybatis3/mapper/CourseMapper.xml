@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis3.mapper.CourseMapper">
+	<resultMap id="courseResultMap" type="com.mybatis3.domain.Course">
+		<result column="COURSE_ID" property="courseId"/>
+		<result column="NAME" property="name"/>
+		<result column="DESCRIPTION" property="description"/>
+		<result column="START_DATE" property="startDate"/>
+		<result column="END_DATE" property="endDate"/>
+	</resultMap>
+	
+	<select id="findCourseById" 
+			resultMap="courseResultMap" 
+			parameterType="int">
+		select course_id,name,description,start_date,end_date 
+		from courses 
+		where course_id=#{courseId}
+	</select>
+</mapper>
