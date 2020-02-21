@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	<!-- 
+	 <appender name="FILEAPPENDER" class="org.apache.log4j.RollingFileAppender">
+        <param name="append" value="false"/>
+        
+        <param name="file" value="c:/log/log4jSample.log"/>
+        <param name="maxFileSize" value="10MB"/>
+        <param name="maxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%p - %C{1}.%M(%L) | %m%n"/>
+        </layout>
+    </appender> 
+	 -->
+	 <!-- 콘솔로 보기(디버그) -->
+    <appender name="CONSOLE-debug" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+      	<param name="ConversionPattern" value="[%d{yyyy-MM-dd}]%-5p%c{1}.%M - %m%n"/>
+        </layout>
+    </appender>
+   
+    <!-- 콘솔로 보기(인포) -->
+    <appender name="CONSOLE-info" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m ---%d %n"/>
+        </layout>
+    </appender>
+   
+    <!-- 매 날짜별 로그 파일 남기기 -->
+    <appender name="LOGFILE-DAILY" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="test-daily.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%t] %-17c{2} (%13F:%L) %3x - %m%n"/>
+        </layout>
+    </appender>
+   
+     <!-- 매 날짜별 로그 파일 남기기(로그인) -->
+    <appender name="LOGFILE-DAILY-LOGIN" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="test-daily-login.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %m%n"/>
+        </layout>
+    </appender>
+   
+     <!-- 매 날짜별 로그 파일 남기기(가입) -->
+    <appender name="LOGFILE-DAILY-JOIN" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="test-daily-join.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %m%n"/>
+        </layout>
+    </appender>
+   
+     <!-- 매 날짜별 로그 파일 남기기(탈퇴) -->
+    <appender name="LOGFILE-DAILY-JOINBREAK" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="test-daily-joinbreak.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %m%n"/>
+        </layout>
+    </appender>
+   
+    <!-- 로그 파일 100KB마다 새로 남기기 -->
+    <appender name="LOGFILE-SIZE" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="test-Size.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="100KB"/>
+
+       <param name="MaxBackupIndex" value="5"/>  
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%t] %-17c{2} (%13F:%L) %3x - %m%n"/>
+        </layout>
+    </appender>
+   
+    <!-- XML 형태로 로그 파일 남기기 -->
+    <appender name="LOGFILE-XML" class="org.apache.log4j.FileAppender">
+        <param name="file" value="test-XML.log"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.xml.XMLLayout"/>
+    </appender>
+	<!-- 
+	http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
+	
+	%p : debug, info, warn, error, fatal 등의 priority 가 출력된다. 
+	%m : 로그내용이 출력됩니다 
+	%d : 로깅 이벤트가 발생한 시간을 기록합니다.
+		 포맷은 %d{HH:mm:ss, SSS}, %d{yyyy MMM dd HH:mm:ss, SSS}같은 형태로 사용하며 SimpleDateFormat에 따른 포맷팅을 하면 된다 
+	%t : 로그이벤트가 발생된 쓰레드의 이름을 출력합니다. 
+	%% : % 표시를 출력하기 위해 사용한다. 
+	%n : 플랫폼 종속적인 개행문자가 출력된다. \r\n 또는 \n 일것이다. 
+	%c : 카테고리를 표시합니다 
+		예) 카테고리가 a.b.c 처럼 되어있다면 %c{2}는 b.c가 출력됩니다. 
+	%C : 클래스명을 포시합니다. 
+		예)클래스구조가 org.apache.xyz.SomeClass 처럼 되어있다면 %C{2}는 xyz.SomeClass 가 출력됩니다 
+	%F : 로깅이 발생한 프로그램 파일명을 나타냅니다. 
+	%l : 로깅이 발생한 caller의 정보를 나타냅니다 
+	%L : 로깅이 발생한 caller의 라인수를 나타냅니다 
+	%M : 로깅이 발생한 method 이름을 나타냅니다. 
+	%r : 어플리케이션 시작 이후 부터 로깅이 발생한 시점의 시간(milliseconds) 
+	%x : 로깅이 발생한 thread와 관련된 NDC(nested diagnostic context)를 출력합니다. 
+	%X : 로깅이 발생한 thread와 관련된 MDC(mapped diagnostic context)를 출력합니다.
+	 -->
+	 
+	
+	<!-- Application Loggers -->
+	<logger name="com.itwill0.log">
+		<level value="error" />
+	</logger>
+	
+	<!-- 3rdparty Loggers -->
+	<logger name="org.apache">
+        <level value="info"/>
+    </logger>
+	
+	<logger name="org.springframework.core">
+		<level value="info" />
+	</logger>	
+	
+	<logger name="org.springframework.beans">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.context">
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="info" />
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="CONSOLE-debug" />
+		<appender-ref ref="LOGFILE-DAILY" />
+	</root>
+	
+</log4j:configuration>

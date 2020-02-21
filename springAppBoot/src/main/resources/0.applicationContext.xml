@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="springBean" class="com.itwill0.context.SpringBean"/>
+	<bean id="productDao" class="com.itwill0.context.ProductDao"/>
+	<bean id="productService" class="com.itwill0.context.ProductService"/>
+</beans>

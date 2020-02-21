@@ -1,0 +1,5 @@
+com\itwill0\context\SpringApplicationContextMain.class
+com\itwill0\context\Product.class
+com\itwill0\context\ProductDao.class
+com\itwill0\context\SpringBean.class
+com\itwill0\context\ProductService.class

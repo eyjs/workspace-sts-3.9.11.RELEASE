@@ -1,0 +1,16 @@
+2020-02-21 11:18:34,833 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:11)     - start김경호
+2020-02-21 11:18:34,836 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:12)     - start김경호
+2020-02-21 11:18:34,836 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:13)     - start김경호
+2020-02-21 11:18:34,836 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:14)     - start김경호
+2020-02-21 11:18:34,837 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:17)     - end김경호
+2020-02-21 11:18:34,837 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:18)     - end김경호
+2020-02-21 11:18:34,838 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:19)     - end김경호
+2020-02-21 11:18:34,839 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:20)     - end김경호
+2020-02-21 11:18:34,839 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:11)     - start최경녀
+2020-02-21 11:18:34,839 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:12)     - start최경녀
+2020-02-21 11:18:34,839 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:13)     - start최경녀
+2020-02-21 11:18:34,839 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:14)     - start최경녀
+2020-02-21 11:18:34,839 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:17)     - end최경녀
+2020-02-21 11:18:34,839 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:18)     - end최경녀
+2020-02-21 11:18:34,839 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:19)     - end최경녀
+2020-02-21 11:18:34,839 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:20)     - end최경녀
