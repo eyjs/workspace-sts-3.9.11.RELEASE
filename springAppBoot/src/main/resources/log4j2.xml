@@ -3,7 +3,7 @@
   <Appenders>
     <!-- Console Appender -->
     <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="[%-5level]%c{2} - %msg%n" />
+      <PatternLayout pattern="%highlight{[%-5level]%c{2} - %msg%n}{FATAL=white, ERROR=red, WARN=blue, INFO=black, DEBUG=green, TRACE=blue}" />
     </Console>
     <!-- File Appender -->
     <File name="File" fileName="app.log">
@@ -41,9 +41,10 @@
 	<logger name="jdbc.resultsettable"  level="info" additivity="false"> 
 		<appender-ref ref="console"/> 
 	</logger> 
-    <Root level="info">
+	-->
+    <Root level="debug">
       <AppenderRef ref="Console" />
     </Root>
-    -->
+   
   </Loggers>
 </Configuration>

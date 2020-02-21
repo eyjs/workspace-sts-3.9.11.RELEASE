@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- init-method , destroy-method -->
+	<bean id="initDestroyBean" init-method="myInit"
+		destroy-method="myDestroy"
+		class="com.itwill1.bean.attr.InitDestroyBean" />
+	<!-- lazy init -->
+	<bean lazy-init="true" id="lazyInitBean"
+		class="com.itwill1.bean.attr.LazyInitBean" />
+	<!-- scope -->
+	<bean id="singletonBean" scope="singleton"
+		class="com.itwill1.bean.attr.SingletonScopeBean" />
+	<bean id="prototypeBean" scope="prototype"
+		class="com.itwill1.bean.attr.PrototypeScopeBean" />
+	<!-- depends-on -->
+	<bean id="dependsOnA" depends-on="dependsOnB"
+		class="com.itwill1.bean.attr.DependsOnA" />
+	<bean id="dependsOnB" class="com.itwill1.bean.attr.DependsOnB" />
+
+
+
+</beans>

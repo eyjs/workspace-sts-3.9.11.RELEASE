@@ -3,7 +3,7 @@
   <Appenders>
     <!-- Console Appender -->
     <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a}%-5level %logger{36} - %msg%n" />
+      <PatternLayout pattern="%highlight{%d{yyyy-MMM-dd HH:mm:ss a}%-5level %logger{36} - %msg}%n" />
     </Console>
     <!-- File Appender -->
     <File name="File" fileName="app.log">

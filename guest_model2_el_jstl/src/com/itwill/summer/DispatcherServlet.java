@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,10 @@ import com.itwill.guest.controller.GuestWriteFormController;
 /*
  *  모든요청의 진입점(Controller)
  */
+//@WebServlet(value = {"/a.do","/b.do","/c.do"})
+//@WebServlet("*.do")
+//@WebServlet(value = {"/a.do"})
+
 public class DispatcherServlet extends HttpServlet {
 	private HashMap<String, Controller> controllerMap;
 

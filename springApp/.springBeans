@@ -9,6 +9,8 @@
 	<configs>
 		<config>src/main/java/com/itwill0/context/0.applicationContext.xml</config>
 		<config>src/main/java/com/itwill1/bean/create/1.bean_create.xml</config>
+		<config>src/main/java/com/itwill1/bean/annotation/1.bean_annotation.xml</config>
+		<config>src/main/java/com/itwill/user/client/99.user.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
