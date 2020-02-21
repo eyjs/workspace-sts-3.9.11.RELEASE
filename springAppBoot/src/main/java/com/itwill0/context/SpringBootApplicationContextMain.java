@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @ComponentScan
-@ImportResource({"classpath:0.applicationContext.xml"})
+//@ImportResource({"classpath:0.applicationContext.xml"})
 public class SpringBootApplicationContextMain {
 
 	public static void main(String[] args) {

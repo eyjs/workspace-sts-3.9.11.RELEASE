@@ -12,9 +12,7 @@
   </Appenders>
   <Loggers>
     <!-- Log everything in custom package -->
-     <Logger name="com.itwill.guest" level="debug" additivity="false">
-      <AppenderRef ref="Console" />
-    </Logger>
+     
     
     <!-- Log everything in Spring Boot -->
     <Logger name="org.springframework.boot" level="debug" additivity="false">
@@ -24,24 +22,7 @@
     <Logger name="org.springframework.core" level="debug" additivity="false">
       <AppenderRef ref="Console" />
     </Logger>
-	<!-- SQL Logger 
-	<logger name="jdbc.sqltiming"   level="warn" additivity="false">
-		
-		<appender-ref ref="console"/> 
-	</logger>
-	<logger name="jdbc.sqlonly"  level="debug" additivity="false"> 
-		<appender-ref ref="console"/> 
-	</logger>
-	<logger name="jdbc.audit"   level="info" additivity="false"> 
-		<appender-ref ref="console"/> 
-	</logger> 
-	<logger name="jdbc.resultset"    level="info" additivity="false">
-		<appender-ref ref="console"/> 
-	</logger>
-	<logger name="jdbc.resultsettable"  level="info" additivity="false"> 
-		<appender-ref ref="console"/> 
-	</logger> 
-	-->
+	
     <Root level="debug">
       <AppenderRef ref="Console" />
     </Root>

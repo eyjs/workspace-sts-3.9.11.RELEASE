@@ -1,14 +1,12 @@
 package com.itwill1.bean.create;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-public class ApplicationContextMain {
-
+@SpringBootApplication
+public class SpringBootApplicationContextMain {
 	public static void main(String[] args) {
 		System.out.println("------------Spring Container 초기화시작---------");
-		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext(
-						"com/itwill1/bean/create/1.brean_create.xml");
+		ApplicationContext applicationContext=SpringApplication.run(SpringBootApplicationContextMain.class);
 		System.out.println("------------Spring Container 초기화끝---------");
 		CreateBean1 cb1=
 				(CreateBean1)applicationContext.getBean("createBean1");
