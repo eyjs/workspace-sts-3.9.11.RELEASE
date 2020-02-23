@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
-  <Appenders>
-    <!-- Console Appender -->
-    <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="%highlight{[%-5level]%c{2} - %msg%n}{FATAL=white, ERROR=red, WARN=blue, INFO=black, DEBUG=green, TRACE=blue}" />
-    </Console>
-    <!-- File Appender -->
-    <File name="File" fileName="app.log">
-      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
-    </File>
-  </Appenders>
-  <Loggers>
-    <!-- Log everything in custom package -->
-     
-    
-    <!-- Log everything in Spring Boot -->
-    <Logger name="org.springframework.boot" level="debug" additivity="false">
-      <AppenderRef ref="Console" />
-    </Logger>
-    <!-- Log everything in Spring Core -->
-    <Logger name="org.springframework.core" level="debug" additivity="false">
-      <AppenderRef ref="Console" />
-    </Logger>
-	
-    <Root level="debug">
-      <AppenderRef ref="Console" />
-    </Root>
-   
-  </Loggers>
+	<Appenders>
+		<!-- Console Appender -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%-5level]%c{2} - %msg%n" />
+		</Console>
+		<!-- File Appender -->
+		<File name="File" fileName="app.log">
+			<PatternLayout
+				pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<RollingFile name="RollingFile">
+			<FileName>mylog.log</FileName>
+			<FilePattern>time-based-logs/%d{yyyy-MM-dd-hh-mm}.log.zip
+			</FilePattern>
+			<PatternLayout>
+				<Pattern>%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} -
+					%msg%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="2"
+					modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+	</Appenders>
+	<!-- Log everything in custom package -->
+	<Loggers>
+		<!-- Log everything in Spring Boot -->
+		<Logger name="org.springframework.boot" level="debug"
+			additivity="false">
+			<AppenderRef ref="RollingFile" />
+			<AppenderRef ref="Console" />
+		</Logger>
+		<!-- Log everything in Spring Core -->
+		<Logger name="org.springframework.core" level="debug"
+			additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="File" />
+		</Root>
+	</Loggers>
 </Configuration>

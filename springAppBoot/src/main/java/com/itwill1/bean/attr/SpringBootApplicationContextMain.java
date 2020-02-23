@@ -37,9 +37,10 @@ public class SpringBootApplicationContextMain {
 		System.out.println("### "+prototypeBean1);
 		System.out.println("### "+prototypeBean2);
 		System.out.println("### "+prototypeBean3);
-		DisposableBean context=(DisposableBean)applicationContext;
+		System.out.println(applicationContext);
+		DisposableBean context=(DisposableBean)applicationContext.getParentBeanFactory();
 		context.destroy();
-
+		
 	}
 
 }
