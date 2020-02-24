@@ -11,6 +11,7 @@
 		<config>src/main/java/com/itwill1/bean/create/1.bean_create.xml</config>
 		<config>src/main/java/com/itwill1/bean/annotation/1.bean_annotation.xml</config>
 		<config>src/main/java/com/itwill/user/client/99.user.xml</config>
+		<config>src/main/java/com/itwill2/di/2.bean_dependency.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

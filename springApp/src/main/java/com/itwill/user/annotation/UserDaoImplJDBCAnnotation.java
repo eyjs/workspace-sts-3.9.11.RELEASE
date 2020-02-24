@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
 
-@Component(value = "userDao")
-public class UserDaoImplAnnotation implements UserDao {
-	public UserDaoImplAnnotation() {
-		System.out.println("#### UserDaoImplAnnotation() : 디폴트생성자 호출  ");
+@Component(value = "userDaoJDBC")
+public class UserDaoImplJDBCAnnotation implements UserDao {
+	public UserDaoImplJDBCAnnotation() {
+		System.out.println("#### UserDaoImplJDBCAnnotation() : 디폴트생성자 호출  ");
 	}
 
 
@@ -24,7 +24,7 @@ public class UserDaoImplAnnotation implements UserDao {
 	 */
 	@Override
 	public int create(User user) throws Exception {
-		System.out.println("#### UserDaoImplAnnotation : create() 호출  ");
+		System.out.println("#### UserDaoImplJDBCAnnotation : create() 호출  ");
 		return 0;
 	}
 
@@ -36,7 +36,7 @@ public class UserDaoImplAnnotation implements UserDao {
 	 */
 	@Override
 	public int update(User user) throws Exception {
-		System.out.println("#### UserDaoImplAnnotation : update() 호출  ");
+		System.out.println("#### UserDaoImplJDBCAnnotation : update() 호출  ");
 		return 0;
 	}
 
@@ -48,7 +48,7 @@ public class UserDaoImplAnnotation implements UserDao {
 	 */
 	@Override
 	public int remove(String userId) throws Exception {
-		System.out.println("#### UserDaoImplAnnotation : remove() 호출  ");
+		System.out.println("#### UserDaoImplJDBCAnnotation : remove() 호출  ");
 		return 0;
 	}
 	
@@ -61,7 +61,7 @@ public class UserDaoImplAnnotation implements UserDao {
 	 */
 	@Override
 	public User findUser(String userId) throws Exception {
-		System.out.println("#### UserDaoImplAnnotation : findUser() 호출  ");
+		System.out.println("#### UserDaoImplJDBCAnnotation : findUser() 호출  ");
 		return null;
 	}
 	/*
@@ -73,7 +73,7 @@ public class UserDaoImplAnnotation implements UserDao {
 	 */
 	@Override
 	public List<User> findUserList() throws Exception {
-		System.out.println("#### UserDaoImplAnnotation : findUserList 호출  ");
+		System.out.println("#### UserDaoImplJDBCAnnotation : findUserList 호출  ");
 		return null;
 	}
 	/*
@@ -84,7 +84,7 @@ public class UserDaoImplAnnotation implements UserDao {
 	 */
 	@Override
 	public boolean existedUser(String userId)throws Exception{
-		System.out.println("#### UserDaoImplAnnotation : existedUser() 호출  ");
+		System.out.println("#### UserDaoImplJDBCAnnotation : existedUser() 호출  ");
 		return true;
 	}
 	

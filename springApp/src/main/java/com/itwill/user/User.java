@@ -13,6 +13,13 @@ public class User {
 		
 	}
 
+	public User(String userId,String password) {
+		super();
+		this.userId = userId;
+		this.password = password;
+		System.out.println("#### User : User(String userId,String password) : 생성자호출");
+		
+	}
 	public User(String userId, String password, String name, String email) {
 		super();
 		this.userId = userId;
@@ -27,6 +34,7 @@ public class User {
 	}
 
 	public void setUserId(String userId) {
+		System.out.println("#### User.setUserId("+userId+")메쏘드호출");
 		this.userId = userId;
 	}
 
