@@ -69,6 +69,11 @@
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_date.substring(0, 10)}</td>
 						<tr>
+							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.email"/></td>
+							<td width=490 bgcolor="ffffff" align="left"
+								style="padding-left: 10px">${guest.guest_email}</td>
+						</tr>
+						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.homepage"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_homepage}</td>

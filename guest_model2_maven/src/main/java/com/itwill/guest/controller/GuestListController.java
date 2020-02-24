@@ -1,6 +1,7 @@
 package com.itwill.guest.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +16,7 @@ public class GuestListController implements Controller{
 		String forwardPath="";
 		try {
 			GuestService guestService=new GuestService();
-			ArrayList<Guest> guestList=guestService.selectAll();
+			List<Guest> guestList=guestService.selectAll();
 			request.setAttribute("guestList", guestList);
 			forwardPath = "forward:/WEB-INF/views/guest_list.jsp";
 			

@@ -2,7 +2,7 @@ package com.itwill.guest;
 
 public class GuestSQL {
 	public final static String GUEST_SELECT_ALL
-	="select * from guest order by guest_date desc";
+	="select * from guest";
 	public final static String GUEST_SELECT_BY_NO
 	="select * from guest where guest_no=?";
 	public final static String GUEST_UPDATE

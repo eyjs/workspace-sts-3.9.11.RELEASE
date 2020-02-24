@@ -6,7 +6,7 @@
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d{yyyy-MM-dd}[%-5p]%c{1}.%M() - %m%n" />
+			<param name="ConversionPattern" value="%d{yyyy-mm-dd}[%-5p]%c - %m%n" />
 		</layout>
 	</appender>
 	<!-- 
@@ -124,8 +124,14 @@
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
+	<logger name="java.sql">
+        <level value="debug"/>
+    </logger>
 	<logger name="org.apache">
-        <level value="info"/>
+        <level value="debug"/>
+    </logger>
+	<logger name="org.mybatis">
+        <level value="debug"/>
     </logger>
 	<logger name="org.springframework">
 		<level value="debug" />

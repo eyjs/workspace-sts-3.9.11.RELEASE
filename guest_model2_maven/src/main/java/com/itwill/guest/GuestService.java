@@ -1,21 +1,24 @@
 ﻿package com.itwill.guest;
 
-import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GuestService {
 	
 	private GuestDao guestDao;
-	private Logger logger = Logger.getLogger(GuestService.class);
+	private Log log=LogFactory.getLog(GuestService.class);
 	public GuestService() throws Exception{
-		guestDao=new GuestDao();
+		//guestDao=new GuestDaoImplJDBC();
+		//guestDao=new GuestDaoImplMybatis();
+		guestDao=new GuestDaoImplMapperInterfaceMybatis();
 	}
 	/*
 	 * 방명록 리스트
 	 */
-	public ArrayList<Guest> selectAll() throws Exception {
-		logger.debug("start");
+	public List<Guest> selectAll() throws Exception {
+		log.debug("start");
 		return guestDao.selectAll();
 	}
 	/*
