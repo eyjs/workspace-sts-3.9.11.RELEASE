@@ -3,7 +3,9 @@ package com.itwill.guest.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.itwill.summer.Controller;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
 
 /*
  * - DispatcherServlet이 요청command당 1개씩생성하는 객체
@@ -13,10 +15,11 @@ import com.itwill.summer.Controller;
 public class GuestMainController implements Controller {
 
 	@Override
-	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		String forwardPath = "";
-
 		forwardPath = "forward:/WEB-INF/views/guest_main.jsp";
-		return forwardPath;
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName(forwardPath);
+		return mv;
 	}
 }
