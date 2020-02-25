@@ -22,7 +22,7 @@ public class UserDaoImplMyBatisMapperInterfaceMain {
 		System.out.println("### userDao:"+userDao);
 		System.out.println("### "+userDao.findUserList());
 		System.out.println("### "+userDao.create(new User("x3", "x3","x3","x3")));
-		System.out.println("### "+userDao.findUser("x23"));
+		System.out.println("### "+userDao.findUser("x3"));
 		System.out.println("### "+userDao.update(new User("x3", "x3변경","x23변경","x3변경")));
 		System.out.println("### "+userDao.findUser("x3"));
 		System.out.println("### "+userDao.remove("x3"));

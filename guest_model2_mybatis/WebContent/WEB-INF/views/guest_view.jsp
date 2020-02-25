@@ -1,4 +1,5 @@
 <%@page import="com.itwill.guest.Guest"%>
+<%@page import="com.itwill.guest.GuestUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -69,11 +70,6 @@
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_date.substring(0, 10)}</td>
 						<tr>
-							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.email"/></td>
-							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">${guest.guest_email}</td>
-						</tr>
-						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22"><fmt:message key="view.label.homepage"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
 								style="padding-left: 10px">${guest.guest_homepage}</td>
@@ -86,7 +82,12 @@
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="110"><fmt:message key="view.label.content"/></td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px"><c:out value="${guest.guest_content}"/></td>
+								style="padding-left: 10px">
+								<%--
+								<c:out value="${guest.guest_content}"/>
+								 --%>
+								<c:out value="${guest.guest_content}"/>
+								</td>
 						</tr>
 					</table>
 				</form> <br />

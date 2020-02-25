@@ -20,20 +20,30 @@
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="apacheDataSource" />
-		<property name="typeAliases">
-			<array>
-				<value>com.itwill.user.User</value>
-			</array>
-		</property>
-				
 	</bean>
+	<!-- 
 	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.itwill.user.mapper.UserMapper"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-	<bean id="userDao" class="com.itwill.user.UserDaoImplMyBatisMapperInterface">
-		<property name="userMapper" ref="userMapper" />
+	-->
+	<!-- 
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
 	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
+	     <property name="annotationClass" value="com.itwill.user.mapper.MyMapper" />
+	</bean>
+	-->
+	
+	<bean id="userDao" class="com.itwill.user.UserDaoImplMyBatis">
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+
+
+
+
 </beans>
 
 
