@@ -7,10 +7,9 @@
 <%@ include file="user_login_check.jspf" %>   
     
 <%
-	String USER_NOT_FOUND_MSG = (String)request.getAttribute("USER_NOT_FOUND_MSG");
-	ArrayList<User> userList = (ArrayList<User>)request.getAttribute("userList");
-
-%>    
+       	String USER_NOT_FOUND_MSG = (String)request.getAttribute("USER_NOT_FOUND_MSG");
+                     	ArrayList<User> userList = (ArrayList<User>)request.getAttribute("userList");
+       %>    
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -72,8 +71,8 @@
 										<td align=center bgcolor="E6ECDE">이메일</td>
 									</tr>
 									<%
-									for(User user:userList){
-										if(!user.getUserId().equals(sUserId)){
+										for(User user:userList){
+																															if(!user.getUserId().equals(sUserId)){
 									%>
 									<!-- loop start -->
 									<tr>

@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
 import com.itwill.user.UserService;
+import com.itwill.user.annotation.UserAnnotation;
 
 public class SpringApplicationContextAnnotationMain {
 
@@ -18,6 +19,8 @@ public class SpringApplicationContextAnnotationMain {
 		ApplicationContext applicationContext=
 				new ClassPathXmlApplicationContext("com/itwill2/di/2.bean_dependency_annotation.xml");
 		System.out.println("-------------Spring Container초기화끝----------");
+		UserAnnotation user=(UserAnnotation)applicationContext.getBean("userAnnotation");
+		System.out.println("### "+user);
 		UserService userService=
 				(UserService)applicationContext.getBean("userService");
 		userService.findUser("xxx");

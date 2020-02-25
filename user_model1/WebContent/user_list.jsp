@@ -72,8 +72,7 @@ function userList() {
 									</tr>
 									<!-- loop start -->
 									<%
-									for(User user:userList){
-										
+										for(User user:userList){
 									%>
 									<tr>
 										<td width=190 align=center bgcolor="ffffff" height="20">

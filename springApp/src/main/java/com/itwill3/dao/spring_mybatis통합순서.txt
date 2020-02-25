@@ -1,0 +1,57 @@
+1.pom.xml  
+	A.mybatis 라이브러리 dependency 추가
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.4.6</version>
+	</dependency>
+	B.mybatis,spring 통합라이브러리 dependency 추가
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>1.3.2</version>
+	</dependency>
+	
+2. mybatis-config.xml파일생성 클래스패쓰 root[resources폴더의 root]에위치	
+	###########mybatis-config.xml###################
+	<!DOCTYPE configuration
+	  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	<configuration>
+		<typeAliases></typeAliases>
+	</configuration>
+	#################################################
+	
+3. org.mybatis.spring.SqlSessionFactoryBean	을 
+   applicationContext.xml에 등록 
+	###############applicationContext.xml############
+	<bean  id="sqlSessionFactory" 
+			class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="apacheDataSource"/>
+		<property name="configLocation" 
+		          value="classpath:mybatis-config.xml"/>
+		<property name="mapperLocations">
+			<list>
+				<value>com/itwill3/dao/UserMapper.xml</value>
+			</list>
+		</property>          
+	</bean>
+	<bean id="sqlSession" 
+			class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory"/>
+	</bean>
+	<bean id="userDao" class="com.itwill.user.UserDaoImplMyBatis">
+		<property name="sqlSession" ref="sqlSession"/>
+	</bean>
+	
+	###############################################
+
+
+
+
+
+
+
+
+
+	

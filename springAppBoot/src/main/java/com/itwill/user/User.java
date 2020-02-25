@@ -1,19 +1,26 @@
 package com.itwill.user;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class User {
-	
+	@Value("guard")
 	private String userId;
+	@Value("xxxx")
 	private String password;
+	@Value("이름")
 	private String name;
+	@Value("guard@gmail.com")
 	private String email;
 
 	public User() {
 		System.out.println("#### User : 디폴트생성자호출");
 		
 	}
-
-	public User(String userId, String password, String name, String email) {
+	
+	//@Autowired
+	public User(@Value(value = "yyyy") String userId, @Value(value = "1111")String password, @Value(value = "이름")String name, @Value(value = "이메일")String email) {
 		super();
 		this.userId = userId;
 		this.password = password;
@@ -55,7 +62,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "user:"+userId+","+password+","+name+","+email;
+		return "user:"+userId+","+password+","+name+","+email+"\n";
 	}
 	/*
 	 *패쓰워드 일치여부 검사 

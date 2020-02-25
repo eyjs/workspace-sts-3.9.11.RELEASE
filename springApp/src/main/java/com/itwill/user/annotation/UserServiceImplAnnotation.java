@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
@@ -15,10 +16,10 @@ import com.itwill.user.exception.UserNotFoundException;
 
 
 
-@Component(value = "userService")
+@Service(value = "userService")
 public class UserServiceImplAnnotation implements UserService {
 	@Autowired
-	@Qualifier(value = "userDaoJDBC")
+	@Qualifier("userDao")
 	private UserDao userDao;
 	
 	private UserServiceImplAnnotation(){

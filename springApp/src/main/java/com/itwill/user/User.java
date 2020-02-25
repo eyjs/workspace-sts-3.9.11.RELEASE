@@ -63,7 +63,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "user:"+userId+","+password+","+name+","+email;
+		return "user:"+userId+","+password+","+name+","+email+"\n";
 	}
 	/*
 	 *패쓰워드 일치여부 검사 

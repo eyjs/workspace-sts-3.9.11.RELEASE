@@ -17,10 +17,10 @@
 		userService.update(new User(userId,password,name,email));
 		/*
 		response.sendRedirect("user_view.jsp?userId="
-			+URLEncoder.encode(userId,"EUC-KR"));
+	+URLEncoder.encode(userId,"EUC-KR"));
 		*/
 		RequestDispatcher rd=
-			request.getRequestDispatcher("user_view.jsp");
+	request.getRequestDispatcher("user_view.jsp");
 		rd.forward(request, response);
 		
 	}catch(Exception e){

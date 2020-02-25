@@ -29,7 +29,7 @@
 		request.setAttribute("msg1",e.getMessage());
 		
 		RequestDispatcher rd=
-			request.getRequestDispatcher("user_login_form.jsp");
+	request.getRequestDispatcher("user_login_form.jsp");
 		rd.forward(request, response);
 		
 		/**************************************************/
@@ -41,14 +41,14 @@
 		/*****************case2[forward]********************/
 		request.setAttribute("msg2", e.getMessage());
 		RequestDispatcher rd=
-				request.getRequestDispatcher("user_login_form.jsp");
+		request.getRequestDispatcher("user_login_form.jsp");
 		rd.forward(request, response);
 		/***************************************************/
 	}catch(Exception e){
 		e.printStackTrace();
 		//response.sendRedirect("user_error.jsp");
 		RequestDispatcher rd=
-				request.getRequestDispatcher("user_error.jsp");
-			rd.forward(request, response);
+		request.getRequestDispatcher("user_error.jsp");
+	rd.forward(request, response);
 	}
 %>

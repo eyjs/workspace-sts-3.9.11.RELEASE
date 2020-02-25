@@ -46,7 +46,16 @@ public class GuestDaoImplMapperInterfaceMybatis  implements GuestDao{
 	 */
 	public boolean insertGuest(Guest guest) throws Exception {
 		boolean isSuccess = false;
-		
+		SqlSession sqlSession=sqlSessionFactory.openSession(true);
+		GuestMapper guestMapper=sqlSession.getMapper(GuestMapper.class);
+		int insertRowCount=guestMapper.insertGuest(guest); 
+		if(insertRowCount==1) {
+			isSuccess=true;
+		}else {
+			isSuccess=false;
+		}
+		sqlSession.commit();
+		sqlSession.close();
 		return isSuccess;
 	}
 
@@ -64,19 +73,38 @@ public class GuestDaoImplMapperInterfaceMybatis  implements GuestDao{
 	
 	
 	/*
+	 /*
 	 * DELETE
 	 */
-	public boolean deleteGuest(int no) throws Exception{
+	public boolean deleteGuest(int guest_no) throws Exception{
 		boolean deleteOK=false;
-		
+		SqlSession sqlSession=sqlSessionFactory.openSession(true);
+		GuestMapper guestMapper=sqlSession.getMapper(GuestMapper.class);
+		int deleteRowCount=guestMapper.deleteGuest(guest_no); 
+		if(deleteRowCount==1) {
+			deleteOK=true;
+		}else {
+			deleteOK=false;
+		}
+		sqlSession.commit();
+		sqlSession.close();
 		return deleteOK;
 	}
 	/*
 	 * UPDATE
 	 */
 	public boolean updateGuest(Guest updateGuest) throws Exception{
-		boolean updateOK=true;
-		
+		boolean updateOK=false;
+		SqlSession sqlSession=sqlSessionFactory.openSession(true);
+		GuestMapper guestMapper=sqlSession.getMapper(GuestMapper.class);
+		int updateRowCount=guestMapper.updateGuest(updateGuest);
+		if(updateRowCount==1) {
+			updateOK=true;
+		}else {
+			updateOK=false;
+		}
+		sqlSession.commit();
+		sqlSession.close();
 		return updateOK;
 	}
 	

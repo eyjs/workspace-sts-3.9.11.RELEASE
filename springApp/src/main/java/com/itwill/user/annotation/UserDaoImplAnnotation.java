@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
 
-@Component(value = "userDao")
+@Repository(value = "userDao")
 public class UserDaoImplAnnotation implements UserDao {
 	public UserDaoImplAnnotation() {
 		System.out.println("#### UserDaoImplAnnotation() : 디폴트생성자 호출  ");

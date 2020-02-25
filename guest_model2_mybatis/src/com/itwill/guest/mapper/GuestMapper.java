@@ -3,6 +3,7 @@ package com.itwill.guest.mapper;
 import java.util.List;
 
 import com.itwill.guest.Guest;
+import com.sun.javafx.scene.traversal.Hueristic2D;
 
 public interface GuestMapper {
 	/*
@@ -23,4 +24,7 @@ public interface GuestMapper {
 	</select>
 	 */
 	public List<Guest> selectAll();
+	public int insertGuest(Guest guest);
+	public int deleteGuest(int guest_no);
+	public int updateGuest(Guest guest);
 }

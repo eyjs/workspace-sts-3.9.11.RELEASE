@@ -15,31 +15,29 @@ public void jspInit(){
     pageEncoding="UTF-8"%>
 <%@include file="user_login_check.jspf" %> 
 <%
-	request.setCharacterEncoding("UTF-8");
-	String userId = request.getParameter("userId");
-	if(userId==null|| userId.equals("")){
-		response.sendRedirect("user_main.jsp");
-		return;
-	}
-	User user=null;
-	try{
-		UserService userService=UserService.getInstance();
-		user = userService.findUser(userId);
-	}catch(UserNotFoundException e){
-		out.println("<script>");
-		out.println("alert('"+e.getMessage()+"');");
-		out.println("location.href='user_list.jsp';");
-		out.println("</script>");
-		return;
-		
-	}catch(Exception e){
-		e.printStackTrace();
-		response.sendRedirect("user_error.jsp");
-		return;
-	}
-	
-	
-%>   
+ 	request.setCharacterEncoding("UTF-8");
+   	String userId = request.getParameter("userId");
+   	if(userId==null|| userId.equals("")){
+   		response.sendRedirect("user_main.jsp");
+   		return;
+   	}
+   	User user=null;
+   	try{
+   		UserService userService=UserService.getInstance();
+   		user = userService.findUser(userId);
+   	}catch(UserNotFoundException e){
+   		out.println("<script>");
+   		out.println("alert('"+e.getMessage()+"');");
+   		out.println("location.href='user_list.jsp';");
+   		out.println("</script>");
+   		return;
+   		
+   	}catch(Exception e){
+   		e.printStackTrace();
+   		response.sendRedirect("user_error.jsp");
+   		return;
+   	}
+ %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

@@ -4,13 +4,9 @@ import java.util.List;
 
 
 public class UserDaoImpl implements UserDao {
-	
-
 	public UserDaoImpl() {
 		System.out.println("#### UserDaoImpl() : 디폴트생성자 호출  ");
 	}
-
-
 	/*
 	 * 사용자관리테이블에 새로운사용자생성
 	 */
