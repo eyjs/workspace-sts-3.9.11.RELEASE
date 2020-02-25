@@ -10,6 +10,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	<!-- Controller객체를 Spring Container에등록 -->
 	<bean id="guestMainController" class="com.itwill.guest.controller.GuestMainController"/>
+	<bean id="guestListController" class="com.itwill.guest.controller.GuestListController"/>
 	
 	<!-- Controller객체를 Mapping해줄객체를 SpringContainer에등록 -->
 	<bean id="handlerMapping" 
@@ -17,6 +18,7 @@
 		<property name="mappings">
 			<props>
 				<prop key="/guest_main.do">guestMainController</prop>
+				<prop key="/guest_list.do">guestListController</prop>
 			</props>
 		</property>
 	</bean>

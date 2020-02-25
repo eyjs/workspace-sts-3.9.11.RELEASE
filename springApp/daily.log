@@ -2232,3 +2232,19 @@ java.lang.IllegalArgumentException: Mapped Statements collection already contain
 2020-02-25 13:24:25,916 DEBUG [main] support.DefaultListableBeanFactory (AbstractBeanFactory.java:251)     - Returning cached instance of singleton bean 'sqlSessionFactory'
 2020-02-25 13:24:25,917 DEBUG [main] env.PropertySourcesPropertyResolver (PropertySourcesPropertyResolver.java:92)     - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source
 2020-02-25 13:24:25,918 DEBUG [main] support.DefaultListableBeanFactory (AbstractBeanFactory.java:251)     - Returning cached instance of singleton bean 'userDao'
+2020-02-25 18:15:12,795 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:11)     - start김경호
+2020-02-25 18:15:12,798 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:12)     - start김경호
+2020-02-25 18:15:12,798 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:13)     - start김경호
+2020-02-25 18:15:12,798 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:14)     - start김경호
+2020-02-25 18:15:12,799 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:17)     - end김경호
+2020-02-25 18:15:12,799 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:18)     - end김경호
+2020-02-25 18:15:12,800 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:19)     - end김경호
+2020-02-25 18:15:12,801 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:20)     - end김경호
+2020-02-25 18:15:12,801 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:11)     - start최경녀
+2020-02-25 18:15:12,801 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:12)     - start최경녀
+2020-02-25 18:15:12,801 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:13)     - start최경녀
+2020-02-25 18:15:12,801 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:14)     - start최경녀
+2020-02-25 18:15:12,801 INFO  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:17)     - end최경녀
+2020-02-25 18:15:12,801 WARN  [main] log.HelloWorldLog4J (HelloWorldLog4J.java:18)     - end최경녀
+2020-02-25 18:15:12,801 ERROR [main] log.HelloWorldLog4J (HelloWorldLog4J.java:19)     - end최경녀
+2020-02-25 18:15:12,801 FATAL [main] log.HelloWorldLog4J (HelloWorldLog4J.java:20)     - end최경녀

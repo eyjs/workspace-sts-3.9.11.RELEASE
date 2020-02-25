@@ -6,14 +6,18 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
-import com.itwill.summer.Controller;
+
 
 public class GuestListController implements Controller{
 	
-	public String handleRequest(HttpServletRequest request,HttpServletResponse response) {
+	public ModelAndView handleRequest(HttpServletRequest request,HttpServletResponse response) {
 		String forwardPath="";
+		ModelAndView mv=new ModelAndView();
 		try {
 			GuestService guestService=new GuestService();
 			List<Guest> guestList=guestService.selectAll();
@@ -24,7 +28,7 @@ public class GuestListController implements Controller{
 			request.setAttribute("error_msg", e.getMessage());
 			forwardPath = "forward:/WEB-INF/views/guest_error.jsp";
 		}
-		
-		return forwardPath;
+		mv.setViewName(forwardPath);
+		return mv;
 	}
 }

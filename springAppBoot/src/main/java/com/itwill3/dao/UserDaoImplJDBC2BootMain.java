@@ -18,7 +18,6 @@ public class UserDaoImplJDBC2BootMain {
 		UserDao userDao=(UserDao)applicationContext.getBean("userDaoJDBC2");
 		System.out.println("### "+userDao.findUser("a"));
 		System.out.println("### "+userDao.findUserList());
-		
 	}
 }
 
