@@ -1,4 +1,4 @@
-package com.itwill.annotation;
+package com.itwill.java.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

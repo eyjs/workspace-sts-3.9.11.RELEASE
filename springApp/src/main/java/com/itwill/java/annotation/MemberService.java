@@ -1,4 +1,4 @@
-package com.itwill.annotation;
+package com.itwill.java.annotation;
 @MyComponent
 public class MemberService {
 	@TestAnnotation(age = 23,value = "")

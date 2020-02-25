@@ -1,4 +1,4 @@
-package com.itwill.annotation;
+package com.itwill.java.annotation;
 @TestAnnotation(age = 23,strArray = {"a","b","c"},value = "test")
 public class TestAnnotationBean {
 	@TestAnnotation(age = 23,strArray = {},value = "")

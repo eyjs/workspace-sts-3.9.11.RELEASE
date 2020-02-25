@@ -1,4 +1,4 @@
-package com.itwill.annotation;
+package com.itwill.java.annotation;
 
 public class SpringApplicationContextMain {
 	public static void main(String[] args) throws IllegalAccessException, InstantiationException {

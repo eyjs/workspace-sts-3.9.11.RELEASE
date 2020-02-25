@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
 
-public class UserDaoImplMyBatisMain {
+public class UserDaoImplMyBatisAnnotationMain {
 
 	public static void main(String[] args) throws Exception{
 		/*
@@ -16,9 +16,9 @@ public class UserDaoImplMyBatisMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-3.user_dao_mybatis.xml");
+				new ClassPathXmlApplicationContext("com/itwill3/dao/3-3.user_dao_mybatis_annotation.xml");
 		System.out.println("-------------Spring Container초기화끝----------");
-		UserDao userDao=(UserDao)applicationContext.getBean("userDao");
+		UserDao userDao=(UserDao)applicationContext.getBean("userDaoMyBatis");
 		System.out.println("### userDao:"+userDao);
 		System.out.println("### "+userDao.findUserList());
 		System.out.println("### "+userDao.create(new User("x3", "x3","x3","x3")));

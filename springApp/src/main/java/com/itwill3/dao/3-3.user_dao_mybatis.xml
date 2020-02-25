@@ -18,13 +18,21 @@
 	<bean  id="sqlSessionFactory" 
 			class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="apacheDataSource"/>
+		<!-- 
 		<property name="configLocation" 
 		          value="classpath:mybatis-config.xml"/>
+		 -->          
 		<property name="mapperLocations">
 			<list>
 				<value>com/itwill3/dao/UserMapper.xml</value>
 			</list>
-		</property>          
+		</property> 
+		<!-- 
+		<property name="mapperLocations" 
+				 value="classpath:/com/itwill3/dao/*.xml" />
+		<property name="mapperLocations" 
+				 value="classpath:/com/itwill3/dao/**/*.xml" />
+          -->
 	</bean>
 	<bean id="sqlSession" 
 			class="org.mybatis.spring.SqlSessionTemplate">
