@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itwill.user.mapper.UserMapper">
+<
+	<select id="findUser" 
+			parameterType="java.lang.String"
+			resultType="com.itwill.user.User">
+		select userId,password,name,email
+		from userinfo where userId=#{userId}			
+	</select>
+	<select id="findUserList"
+	        resultType="com.itwill.user.User">
+		select userId,password,name,email
+		from userinfo
+	</select>
+	<insert id="create" parameterType="com.itwill.user.User">
+		insert into userinfo values(#{userId},#{password},#{name},#{email})
+	</insert>
+	<update id="update" parameterType="com.itwill.user.User">
+		update userinfo 
+		set password=#{password},
+		name=#{name},
+		email=#{email} 
+		where userId=#{userId}
+	</update>
+	<delete id="remove" parameterType="java.lang.String">
+		delete from userinfo 
+		where userId=#{userId}
+	</delete>
+	<select id="selectCountByUserId" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*) cnt from userinfo where userId=#{userId}
+	</select>
+	
+</mapper>

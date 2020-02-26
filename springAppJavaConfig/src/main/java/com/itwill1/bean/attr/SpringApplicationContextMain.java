@@ -3,7 +3,8 @@ package com.itwill1.bean.attr;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class SpringApplicationContextMain {
 
@@ -14,8 +15,7 @@ public class SpringApplicationContextMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext(
-						"com/itwill1/bean/attr/1.bean_attr.xml");
+				new AnnotationConfigApplicationContext(RootConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		LazyInitBean lazyInitBean=
 				(LazyInitBean)applicationContext.getBean("lazyInitBean");

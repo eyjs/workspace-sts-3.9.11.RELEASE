@@ -2,7 +2,8 @@ package com.itwill1.bean.create;
 
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class SpringApplicationContextMain {
 
@@ -13,8 +14,7 @@ public class SpringApplicationContextMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext(
-						"com/itwill1/bean/create/1.bean_create.xml");
+				new AnnotationConfigApplicationContext(RootConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		CreateBean1 createBean1=
 				(CreateBean1)applicationContext.getBean("createBean1");

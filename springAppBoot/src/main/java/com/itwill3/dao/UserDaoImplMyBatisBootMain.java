@@ -24,8 +24,6 @@ public class UserDaoImplMyBatisBootMain {
 		UserDao userDao=(UserDao)applicationContext.getBean("userDaoMyBatis");
 		System.out.println("### "+userDao.findUser("a"));
 		System.out.println("### "+userDao.findUserList());
-		
-		
 	}
 }
 

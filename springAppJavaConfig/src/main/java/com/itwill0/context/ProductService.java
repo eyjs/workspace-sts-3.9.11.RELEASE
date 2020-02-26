@@ -9,6 +9,9 @@ public class ProductService {
 	@Autowired
 	private ProductDao productDao=null;
 	
+	public ProductDao getProductDao() {
+		return productDao;
+	}
 	public ProductService() {
 		System.out.println("1.### ProductService()생성자");
 	}
