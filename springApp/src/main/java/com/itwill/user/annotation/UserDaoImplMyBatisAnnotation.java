@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
 
-//@Repository("userDaoMyBatis")
+@Repository("userDaoMyBatis")
 public class UserDaoImplMyBatisAnnotation implements UserDao {
 	public static String NAMESPACE="com.itwill3.dao.UserMapper.";
 	@Autowired

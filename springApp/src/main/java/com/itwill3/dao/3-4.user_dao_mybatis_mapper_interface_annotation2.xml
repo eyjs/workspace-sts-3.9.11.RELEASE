@@ -12,10 +12,11 @@
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplJDBC2Annotation"/>
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplJDBCAnnotation"/>
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisAnnotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation"/>
 	</context:component-scan>
 	
-	<mybatis-spring:scan base-package="com.itwill.user.mapper" />
-	 
+	<mybatis-spring:scan base-package="com.itwill.user.annotation.mapper" />
+	
 	<!-- properties file사용설정 -->
 	<context:property-placeholder
 		location="classpath:jdbc.properties" />

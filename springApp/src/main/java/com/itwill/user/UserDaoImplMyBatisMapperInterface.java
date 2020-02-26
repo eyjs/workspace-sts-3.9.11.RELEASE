@@ -8,6 +8,7 @@ import com.itwill.user.mapper.UserMapper;
 
 
 public class UserDaoImplMyBatisMapperInterface implements UserDao {
+	
 	private UserMapper userMapper;
 	public UserDaoImplMyBatisMapperInterface() {
 		System.out.println("#### UserDaoImplMyBatisMapperInterface() : 디폴트생성자 호출  ");

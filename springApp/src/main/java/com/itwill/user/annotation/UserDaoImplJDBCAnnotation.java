@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
 
-//@Repository(value = "userDaoJDBC")
+@Repository(value = "userDaoJDBC")
 public class UserDaoImplJDBCAnnotation implements UserDao {
 	public UserDaoImplJDBCAnnotation() {
 		System.out.println("#### UserDaoImplJDBCAnnotation() : 디폴트생성자 호출  ");

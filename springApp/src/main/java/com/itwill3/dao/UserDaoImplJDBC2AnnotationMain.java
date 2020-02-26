@@ -1,16 +1,10 @@
 package com.itwill3.dao;
 
 
-import java.sql.Connection;
-
-import javax.sql.DataSource;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.itwill.user.User;
 import com.itwill.user.UserDao;
-import com.itwill.user.UserService;
 
 public class UserDaoImplJDBC2AnnotationMain {
 
