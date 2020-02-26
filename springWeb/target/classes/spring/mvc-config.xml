@@ -8,6 +8,10 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	<context:annotation-config/>
+	<context:component-scan 
+		base-package="com.itwill.controller.annotation"/>
+	<mvc:annotation-driven/>
 	<!-- Controller객체를 Spring Container에등록 -->
 	<bean 	id="helloController" 
 			class="com.itwill.controller.HelloController"/>
