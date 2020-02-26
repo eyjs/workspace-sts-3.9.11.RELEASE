@@ -72,6 +72,12 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- apache datasource -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>

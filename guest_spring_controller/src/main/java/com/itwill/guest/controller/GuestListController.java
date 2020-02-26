@@ -1,6 +1,5 @@
 package com.itwill.guest.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,15 +10,25 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
+import com.itwill.guest.GuestServiceImpl;
 
 
 public class GuestListController implements Controller{
-	
+	private GuestService guestService;
+	public GuestListController() {
+		System.out.println("### GuestListController()생성자 호출");
+	}
+	public void setGuestService(GuestService guestService) {
+		System.out.println("### GuestListController : setGuestService("+guestService+") 메쏘드 호출");
+		this.guestService = guestService;
+	}
+
+
 	public ModelAndView handleRequest(HttpServletRequest request,HttpServletResponse response) {
+		System.out.println("### GuestListController : handleRequest() 메쏘드 호출");
 		String forwardPath="";
 		ModelAndView mv=new ModelAndView();
 		try {
-			GuestService guestService=new GuestService();
 			List<Guest> guestList=guestService.selectAll();
 			request.setAttribute("guestList", guestList);
 			forwardPath = "forward:/WEB-INF/views/guest_list.jsp";

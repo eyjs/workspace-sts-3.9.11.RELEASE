@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
+import com.itwill.guest.GuestServiceImpl;
 import com.itwill.summer.Controller;
 
 public class GuestWriteActionController implements Controller {
@@ -22,7 +23,7 @@ public class GuestWriteActionController implements Controller {
 			String guest_title = request.getParameter("guest_title");
 			String guest_content = request.getParameter("guest_content");
 			try {
-				GuestService guestService = new GuestService();
+				GuestService guestService = new GuestServiceImpl();
 				boolean insertOK = guestService
 						.insertGuest(new Guest(0, guest_name, "", guest_email, guest_homepage, guest_title, guest_content));
 				if (insertOK) {

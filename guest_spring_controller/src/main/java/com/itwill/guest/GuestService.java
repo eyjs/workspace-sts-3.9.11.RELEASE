@@ -1,48 +1,32 @@
-﻿package com.itwill.guest;
+package com.itwill.guest;
 
 import java.util.List;
 
-public class GuestService {
-	
-	private GuestDao guestDao;
+public interface GuestService {
 
-	public GuestService() throws Exception{
-		//guestDao=new GuestDaoImplJDBC();
-		//guestDao=new GuestDaoImplMybatis();
-		guestDao=new GuestDaoImplMapperInterfaceMybatis();
-	}
 	/*
 	 * 방명록 리스트
 	 */
-	public List<Guest> selectAll() throws Exception {
-		return guestDao.selectAll();
-	}
+	List<Guest> selectAll() throws Exception;
+
 	/*
 	 * CREATE
 	 */
-	public boolean insertGuest(Guest guest) throws Exception{
-		return guestDao.insertGuest(guest);
-	}
+	boolean insertGuest(Guest guest) throws Exception;
+
 	/*
 	 * READ ONE
 	 */
-	public Guest selectByNo(int no) throws Exception{
-		return guestDao.selectByNo(no);
-	}
+	Guest selectByNo(int no) throws Exception;
+
 	/*
 	 * DELETE
 	 */
-	public boolean deleteGuest(int no) throws Exception{
-		return guestDao.deleteGuest(no);
-	}
+	boolean deleteGuest(int no) throws Exception;
+
 	/*
 	 * UPDATE
 	 */
-	public boolean updateGuest(Guest updateGuest) throws Exception{
-		return guestDao.updateGuest(updateGuest);
-	}
-	
-	
-	
+	boolean updateGuest(Guest updateGuest) throws Exception;
 
 }

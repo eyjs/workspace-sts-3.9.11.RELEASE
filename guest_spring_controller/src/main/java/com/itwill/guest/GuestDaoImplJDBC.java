@@ -16,14 +16,20 @@ public class GuestDaoImplJDBC implements GuestDao  {
 	 * SE Test DataSource
 	 */
 	public GuestDaoImplJDBC(DataSource dataSource) throws Exception{
+		System.out.println("### GuestDaoImplJDBC("+dataSource+") 생성자");
 		this.dataSource =dataSource;
 	}
 	
 	public GuestDaoImplJDBC() throws Exception{
-		InitialContext ic=new InitialContext();
-		dataSource =(DataSource)ic.lookup("java:/comp/env/jdbc/OracleDB");
+		System.out.println("### GuestDaoImplJDBC() 기본생성자");
 	}
 	
+	
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+		System.out.println("### GuestDaoImplJDBC : setDataSource("+dataSource+") 메쏘드");
+	}
+
 	/*
 	 * READ ALL
 	 */

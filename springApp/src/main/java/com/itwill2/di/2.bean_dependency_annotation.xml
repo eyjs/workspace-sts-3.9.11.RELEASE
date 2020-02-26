@@ -5,9 +5,48 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 
+	annotation
+ 		클래스에 지정한 어노테이션이 적용됐는지의 여부. expression 속성에는 "org.example.SomeAnnotation"와 같이 어노테이션 이름을 입력
+ 	assignable  클래스가 지정한 타입으로 할당 가능한지의 여부. expression 속성에는 "org.example.SomeClass"와 같이 타입 이름을 입력 
+ 	regex
+ 		클래스 이름이 정규 표현식에 매칭되는 지의 여부. expression 속성에는 "org.example.Default.*"와 같이 정규 표현식을 입력
+ 	aspectj
+ 		클래스 이름이 AspectJ의 표현식에 매칭되는 지의 여부. expression 속성에는 "org.example..*Service+"와 같이 AspectJ의 표현식을 입력
+	public class ComponentScanCustomFilter implements TypeFilter {
+ 
+    @Override
+    public boolean match(MetadataReader metadataReader,
+	      MetadataReaderFactory metadataReaderFactory) throws IOException {
+	        ClassMetadata classMetadata = metadataReader.getClassMetadata();
+	        String fullyQualifiedName = classMetadata.getClassName();
+	        String className = fullyQualifiedName.substring(fullyQualifiedName.lastIndexOf(".") + 1);
+	        return className.length() > 5 ? true : false;
+	      }
+	}
+
+	@Configuration
+	@ComponentScan(includeFilters = @ComponentScan.Filter(type = FilterType.CUSTOM,
+	  classes = ComponentScanCustomFilter.class))
+	public class ComponentScanCustomFilterApp { }
+	
+	 -->
+	
 	<context:annotation-config/>
-	<context:component-scan base-package="com.itwill.user.annotation"/>	
-		
+	<context:component-scan base-package="com.itwill.user.annotation">
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplJDBC2Annotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisAnnotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplJDBCAnnotation"/>
+	</context:component-scan>	
+	<!-- 	
+	ComponentScan(basePackages = "com.concretepage",
+	     includeFilters = @Filter(type = FilterType.REGEX, pattern="com.concretepage.*.*Util"),
+	     excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = IUserService.class))  Here FilterType values are FilterType.ANNOTATION, FilterType.ASPECTJ, FilterType.ASSIGNABLE_TYPE, FilterType.REGEX and FilterType.CUSTOM. Include and exclude filter syntax using XML configuration is given below.
+	<context:component-scan base-package="com.concretepage">
+		<context:include-filter type="regex" expression="com.concretepage.*.*Util"/>
+	        <context:exclude-filter type="assignable" expression="com.concretepage.service.IUserService"/>		        
+	</context:component-scan>  
+	 -->		
 </beans>
 
 

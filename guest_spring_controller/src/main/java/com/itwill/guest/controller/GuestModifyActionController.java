@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
+import com.itwill.guest.GuestServiceImpl;
 import com.itwill.summer.Controller;
 public class GuestModifyActionController implements Controller {
 	@Override
@@ -20,7 +21,7 @@ public class GuestModifyActionController implements Controller {
 				String guest_homepage = request.getParameter("guest_homepage");
 				String guest_title = request.getParameter("guest_title");
 				String guest_content = request.getParameter("guest_content");
-				GuestService guestService = new GuestService();
+				GuestService guestService = new GuestServiceImpl();
 				Guest updateGuest = new Guest(Integer.parseInt(guest_noStr), guest_name, "", guest_email, guest_homepage,
 						guest_title, guest_content);
 				boolean updateOK = guestService.updateGuest(updateGuest);

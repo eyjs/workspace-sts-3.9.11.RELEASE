@@ -11,6 +11,45 @@ import com.itwill.user.UserServiceImpl;
 
 @Configuration
 public class RootConfig {
+	/*
+	 <!-- 1.Constructor Injection -->
+	<!-- primitive type -->
+	<bean id="constructorUser0" class="com.itwill.user.User"/>
+	<bean id="constructorUser1" class="com.itwill.user.User">
+		<constructor-arg value="guard" index="0"/>
+		<constructor-arg value="1111" index="1"/>
+		<constructor-arg value="김미숙" index="2"/>
+		<constructor-arg value="guard@gmail.com" index="3"/>
+	</bean>	
+	<bean id="constructorUser2" class="com.itwill.user.User">
+		<constructor-arg value="xxxx" index="0"/>
+		<constructor-arg value="2222" index="1"/>
+	</bean>
+	<!-- ref(Bean) type -->
+	<bean id="userDao" class="com.itwill.user.UserDaoImpl"/>
+	<bean id="userService" class="com.itwill.user.UserServiceImpl">
+		<constructor-arg ref="userDao" index="0"/>
+	</bean>
+	<!-- 2.Setter Injection -->
+	<!-- primitive type -->
+	<bean id="setUser1" class="com.itwill.user.User">
+		<property name="userId" value="guard"/>
+		<property name="name" value="가아드"/>
+		<property name="email" value="guard@google.com"/>
+		<property name="password" value="xxxx"/>
+	</bean>
+	<bean id="setUser2" 
+	      p:userId="yyyy"
+	      p:name="와이맨"
+	      p:password="1111"
+	      p:email="y@korea.com"
+		  class="com.itwill.user.User"/>
+	<!-- ref(Bean) type -->
+	<bean id="setUserService" class="com.itwill.user.UserServiceImpl">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	 */
 	@Bean("constructorUser0")
 	public User user1() {
 		return new User();

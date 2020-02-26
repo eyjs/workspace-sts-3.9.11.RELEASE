@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
+import com.itwill.guest.GuestServiceImpl;
 import com.itwill.summer.Controller;
 
 public class GuestModifyFormController implements Controller {
@@ -18,7 +19,7 @@ public class GuestModifyFormController implements Controller {
 		}else {
 			try {
 				String guest_noStr3 = request.getParameter("guest_no");
-				GuestService guestService = new GuestService();
+				GuestService guestService = new GuestServiceImpl();
 				Guest guest = guestService.selectByNo(Integer.parseInt(guest_noStr3));
 				request.setAttribute("guest", guest);
 				forwardPath="forward:/WEB-INF/views/guest_modify_form.jsp";

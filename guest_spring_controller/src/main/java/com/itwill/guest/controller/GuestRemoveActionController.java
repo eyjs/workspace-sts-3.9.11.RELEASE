@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.itwill.guest.GuestService;
+import com.itwill.guest.GuestServiceImpl;
 import com.itwill.summer.Controller;
 
 public class GuestRemoveActionController implements Controller {
@@ -17,7 +18,7 @@ public class GuestRemoveActionController implements Controller {
 		}else {
 			try {
 				String guest_noStr2 = request.getParameter("guest_no");
-				GuestService guestService = new GuestService();
+				GuestService guestService = new GuestServiceImpl();
 				boolean insertOK = guestService.deleteGuest(Integer.parseInt(guest_noStr2));
 				if (insertOK) {
 					//response.sendRedirect("guest_list.jsp");

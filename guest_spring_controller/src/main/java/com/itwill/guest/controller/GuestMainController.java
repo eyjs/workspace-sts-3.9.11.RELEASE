@@ -13,9 +13,12 @@ import org.springframework.web.servlet.mvc.Controller;
  * - DispatcherServlet에게 forwardPath를 반환 
  */
 public class GuestMainController implements Controller {
-
+	public GuestMainController() {
+		System.out.println("### GuestMainController() 생성자");
+	}
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("### GuestMainController : handleRequest() 메쏘드 호출");
 		String forwardPath = "";
 		forwardPath = "forward:/WEB-INF/views/guest_main.jsp";
 		ModelAndView mv=new ModelAndView();
