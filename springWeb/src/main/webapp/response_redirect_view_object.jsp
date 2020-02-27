@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>response_redirect_view_object.jsp</h1><hr/>
+<a href='4.response_menu.jsp'>메뉴</a>
 <ol>
 	<li>파라메타</li>
 	<li>${param.id}</li>

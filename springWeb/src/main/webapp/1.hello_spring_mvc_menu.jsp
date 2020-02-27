@@ -10,6 +10,7 @@
 	</head> 
 	<body>
 		<h1>Welcome Spring MVC</h1><hr/>
+		<a href='./'>메인메뉴</a>
 		<ol>
 			<li><a href='hello.do'>hello.do</a></li>
 			<li><a href='hello1.do'>hello1.do[annotation]</a></li>

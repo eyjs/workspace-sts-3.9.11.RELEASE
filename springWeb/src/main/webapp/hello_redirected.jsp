@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>hello_redirected.jsp</h1><hr/>
+<a href='1.hello_spring_mvc_menu.jsp'>메뉴</a>
 <ol>
 	<li>/hello_redirect_jsp.do</li>
 	<li>

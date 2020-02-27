@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Spring Model</h1><hr/>
+<a href='./'>메인메뉴</a>
 <h2>Spring Controller에서 JSP로 데이타전달</h2>
 <ol>
 	<li><a href="model_request.do">model_request.do</a></li>

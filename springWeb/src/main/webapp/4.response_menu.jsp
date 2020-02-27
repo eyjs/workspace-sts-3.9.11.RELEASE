@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>response_menu.jsp</h1><hr/>
+	<a href='./'>메인메뉴</a>
 	<ol>
 		<li><a href='response_view_name.do'>Controller가 view name 을반환 [forward]</a></li>
 		<li><a href='response_view_object.do'>Controller가 view 객체[InternalResourceView]를반환 [forward]</a></li>

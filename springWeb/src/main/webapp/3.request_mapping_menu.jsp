@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>request_mapping_menu.jsp</h1><hr/>
+	<a href='./'>메인메뉴</a>
 	<ol>
 		<li><a href='login.do'>로그인폼[GET,POST]</a></li>
 		<li><a href='parameter_guest_write_form.do'>방명록쓰기폼</a></li>
