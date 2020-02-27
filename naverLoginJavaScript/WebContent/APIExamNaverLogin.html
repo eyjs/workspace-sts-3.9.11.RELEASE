@@ -12,11 +12,11 @@
   <!-- //네이버아이디로로그인 버튼 노출 영역 -->
   <script type="text/javascript">
     var clientId="01Z_PsNimf4i71bPC9as";
-	var callbackUrl="http://192.168.12.31/naverLoginJavaScript/naver_login_callback.html";
+	var callbackUrl="http://192.168.15.31/naverLoginJavaScript/naver_login_callback.html";
 	var naver_id_login = new naver_id_login(clientId, callbackUrl);
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("white", 2,40);
-  	naver_id_login.setDomain("http://192.168.12.31");
+  	naver_id_login.setDomain("http://192.168.15.31");
   	naver_id_login.setState(state);
   	naver_id_login.setPopup();
   	naver_id_login.init_naver_id_login();
