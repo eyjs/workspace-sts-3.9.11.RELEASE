@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+            <Manager pathname="" />
+            -->
+    <!-- Uncomment this to enable Comet connection tacking (provides events
+                 on session expiration as well as webapp lifecycle) -->
+    <!--
+            <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
+            -->
+     <!--        
+     <Resource name="jdbc/OracleDB" 
+					auth="Container" 
+					type="javax.sql.DataSource" 
+					username="javaspring31" 
+					password="javaspring31" 
+					driverClassName="oracle.jdbc.driver.OracleDriver" 
+					factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+					url="jdbc:oracle:thin:@182.237.126.19:1521:XE" 
+					maxTotal="8"
+					maxIdle="100"
+					 />
+	 -->			         
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+</Context>
