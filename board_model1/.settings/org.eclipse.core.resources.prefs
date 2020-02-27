@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//WebContent/sql/board_insert.sql=UTF-8
+encoding//WebContent/sql/board_list.sql=UTF-8
+encoding//WebContent/sql/board_table.sql=UTF-8
+encoding//src/com/itwill/board/BoardDao.java=UTF-8
+encoding//src/com/itwill/board/BoardException.java=UTF-8

@@ -1,0 +1,17 @@
+@WebServlet  애노테이션의 주요 속성
+
+- name
+	서블릿의 이름을 설정하는 속성
+		@WebServlet(name = "서블릿 이름")
+
+- urlPatterns
+	서블릿의 URL 목록을 설정하는 속성 
+		@WebServlet(urlPatterns = "/hello.do")
+		@WebServlet(urlPatterns = {"/hello.do"})
+		@WebServlet(urlPatterns = {"/hello.do","/hello.naver", "hello.itwill"}  )
+
+- value
+	urlPatterns와 같은 용도이다. value는 속성 이름 없이 값만 설정 할 수 있다.
+	@WebServlet ("/hello.do")
+
+* value속성 외에 다른 속성의 값도 함께 사용 할 시 이름을 생략할 수 없다.
