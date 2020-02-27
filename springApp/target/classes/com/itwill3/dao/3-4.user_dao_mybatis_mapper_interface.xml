@@ -20,35 +20,36 @@
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="apacheDataSource" />
+		<!-- 
 		<property name="typeAliases">
 			<array>
 				<value>com.itwill.user.User</value>
 			</array>
 		</property>
-				
+		 -->		
 	</bean>
 	 <!--************************case 1**********************************
 	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.itwill.user.mapper.UserMapper"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-	*******************************************************************-->
+	******************************************************************-->
 	
-	<!--************************case 2*********************************
+	<!--************************case 2********************************
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 	     <property name="basePackage" value="com.itwill.user.mapper" />
 	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
 	</bean>
-	*******************************************************************-->
+	*****************************************************************-->
 	
 	
-	<!-- ************************case 3*********************************-->
+	<!-- ************************case 3********************************-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 	     <property name="basePackage" value="com.itwill.user.mapper" />
 	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
-	     <property name="annotationClass" value="com.itwill.user.mapper.MyMapper" />
+	     <property name="annotationClass" value="com.itwill.user.mapper.SojinMapper" />
 	</bean>
-	<!-- ******************************************************************-->
+	<!-- ****************************************************************-->
 	<bean id="userDao" class="com.itwill.user.UserDaoImplMyBatisMapperInterface">
 		<property name="userMapper" ref="userMapper" />
 	</bean>
