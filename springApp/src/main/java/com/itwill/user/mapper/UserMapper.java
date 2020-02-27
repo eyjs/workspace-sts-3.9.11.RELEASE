@@ -13,6 +13,7 @@ import com.itwill.user.User;
 /*
 별도의 mapper xml을 만들 필요는 없지만, dynamic query를 사용하지 못하는 등의 제약사항이 따름
  */
+@MyMapper
 //@Mapper
 public interface UserMapper {
 	//@Select("select userId,password,name,email from userinfo where userId=#{userId}")

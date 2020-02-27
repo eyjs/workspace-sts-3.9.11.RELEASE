@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
-import com.itwill.user.annotation.mapper.UserMapper;
-
+import com.itwill.user.mapper2.UserMapper;
 @Repository("userDaoMyBatisMapper2")
 //@MapperScan(basePackages = "com.itwill.user.annotation.mapper")
 public class UserDaoImplMyBatisMapperInterfaceAnnotation2 implements UserDao {

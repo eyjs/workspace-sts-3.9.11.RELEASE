@@ -1,0 +1,113 @@
+1. pom.xml파일 java compiler설정
+
+   A. java compiler설정
+	
+	<build>
+       <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <compilerArguments>
+                        <Xlint/>
+                    </compilerArguments>
+                    <verbose>true</verbose>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+       </plugins> 
+    </build>
+     
+    B.java.version 와 spring-framework.version 설정
+    
+    <properties>
+		<!-- Generic properties -->
+		<java.version>1.8</java.version> 
+		<!-- Spring -->
+		<spring-framework.version>4.2.4.RELEASE</spring-framework.version>
+		..
+	</properties>  
+	
+	C. log4j dependency설정
+	
+		 <dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		 </dependency>
+	  
+	     log4j.xml파일을 resources 디렉토리에 생성(classpath root)
+	  
+   D. oracle driver dependency설정
+   	
+	   	<repositories>
+			<repository>
+				<id>jahia</id>
+				<url>http://maven.jahia.org/maven2/</url>
+			</repository>
+	 	</repositories>
+	 	
+	 	<!-- oracle driver -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>12.1.0.2</version>
+		</dependency>
+   
+2. web.xml파일 설정
+
+     A. spring 인코딩 필터설정
+     
+	     <filter>
+	    	<filter-name>encodingFilter</filter-name>
+		    <filter-class>
+		   			org.springframework.web.filter.CharacterEncodingFilter
+		  	</filter-class>
+		    <init-param>
+		      <param-name>encoding</param-name>
+		      <param-value>UTF-8</param-value>
+		    </init-param>
+	   	 </filter>
+	   	 <filter-mapping>
+	    	<filter-name>encodingFilter</filter-name>
+	    	<url-pattern>/*</url-pattern>
+	  	 </filter-mapping>  
+   
+     B.  DisptcherServlet 설정(application-config.xml,mvc-config.xml)
+     
+	     <context-param>
+	        <param-name>contextConfigLocation</param-name>
+	        <param-value>classpath:spring/application-config.xml</param-value>
+	     </context-param>
+	    
+	     <listener>
+	        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	     </listener>
+    
+	    
+	    <!--
+			- Servlet that dispatches request to registered handlers (Controller implementations).
+		-->
+		
+	    <servlet>
+	        <servlet-name>dispatcherServlet</servlet-name>
+	        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	        <init-param>
+	            <param-name>contextConfigLocation</param-name>
+	            <param-value>classpath:spring/mvc-config.xml</param-value>
+	        </init-param>
+	        <load-on-startup>1</load-on-startup>
+	    </servlet>
+	
+	    <servlet-mapping>
+	        <servlet-name>dispatcherServlet</servlet-name>
+	        <url-pattern>*.do</url-pattern>
+	    </servlet-mapping>
+     
+   
+    
+    
+    

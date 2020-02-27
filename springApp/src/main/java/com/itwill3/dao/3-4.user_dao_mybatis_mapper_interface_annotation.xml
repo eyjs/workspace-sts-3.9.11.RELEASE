@@ -12,6 +12,7 @@
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplJDBC2Annotation"/>
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplJDBCAnnotation"/>
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisAnnotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation2"/>
 	</context:component-scan>
 	
 	<mybatis-spring:scan base-package="com.itwill.user.mapper" />

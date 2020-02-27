@@ -15,7 +15,9 @@
 		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation"/>
 	</context:component-scan>
 	
-	<mybatis-spring:scan base-package="com.itwill.user.annotation.mapper" />
+	<mybatis-spring:scan 
+		base-package="com.itwill.user.mapper2" 
+		marker-interface="com.itwill.user.mapper2.MyMapper" />
 	
 	<!-- properties file사용설정 -->
 	<context:property-placeholder

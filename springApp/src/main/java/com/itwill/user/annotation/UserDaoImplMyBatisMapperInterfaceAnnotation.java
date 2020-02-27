@@ -2,7 +2,6 @@ package com.itwill.user.annotation;
 
 import java.util.List;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
