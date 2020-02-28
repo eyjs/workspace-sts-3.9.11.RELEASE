@@ -19,15 +19,15 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	@Autowired
 	private DataSource dataSource;
 	public UserDaoImplJDBC2Annotation() {
-		System.out.println("#### UserDaoImplJDBC2() : 디폴트생성자 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation() : 디폴트생성자 호출  ");
 		
 	}
 	public UserDaoImplJDBC2Annotation(DataSource dataSource) {
-		System.out.println("#### UserDaoImplJDBC2(DataSource dataSource) : 생성자 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation(DataSource dataSource) : 생성자 호출  ");
 		this.dataSource = dataSource;
 	}
 	public void setDataSource(DataSource dataSource) {
-		System.out.println("#### UserDaoImplJDBC2.setDataSource("+dataSource+") : 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation.setDataSource("+dataSource+") : 호출  ");
 		this.dataSource = dataSource;
 	}
 
@@ -40,7 +40,7 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	 */
 	@Override
 	public int create(User user) throws Exception {
-		System.out.println("#### UserDaoImplJDBC2 : create() 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation : create() 호출  ");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String insertQuery = "insert into userinfo values(?,?,?,?)";
@@ -70,7 +70,7 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	 */
 	@Override
 	public int update(User user) throws Exception {
-		System.out.println("#### UserDaoImplJDBC2 : update() 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation : update() 호출  ");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String updateQuery = "update userinfo set password=?,name=?,email=? where userid=?";
@@ -99,7 +99,7 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	 */
 	@Override
 	public int remove(String userId) throws Exception {
-		System.out.println("#### UserDaoImplJDBC2 : remove() 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation : remove() 호출  ");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String removeQuery = "delete from userinfo where userid=?";
@@ -126,7 +126,7 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	 */
 	@Override
 	public User findUser(String userId) throws Exception {
-		System.out.println("#### UserDaoImplJDBC2 : findUser() 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation : findUser() 호출  ");
 		User user = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -161,7 +161,7 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	 */
 	@Override
 	public List<User> findUserList() throws Exception {
-		System.out.println("#### UserDaoImplJDBC2 : findUserList 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation : findUserList 호출  ");
 		ArrayList<User> userList= new ArrayList<User>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -196,7 +196,7 @@ public class UserDaoImplJDBC2Annotation implements UserDao {
 	 */
 	@Override
 	public boolean existedUser(String userId)throws Exception{
-		System.out.println("#### UserDaoImplJDBC2 : existedUser() 호출  ");
+		System.out.println("#### UserDaoImplJDBC2Annotation : existedUser() 호출  ");
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;

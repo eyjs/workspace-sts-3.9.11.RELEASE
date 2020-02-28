@@ -16,13 +16,13 @@ import lombok.extern.log4j.Log4j;
 public class ExampleConfigurationTests {
 	@Autowired
 	private ProductService productService;
-	@Test
+	//@Test
 	public void getProductService() throws Exception {
 		assertNotNull(productService);
 	}
 	@Test
 	public void productList()throws Exception{
-		log.info(productService.productList().toString());
+		//log.info(productService.productList().toString());
 	}
 	
 	
