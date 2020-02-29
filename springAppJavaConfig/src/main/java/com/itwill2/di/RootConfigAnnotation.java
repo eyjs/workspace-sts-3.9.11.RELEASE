@@ -19,6 +19,8 @@ import com.itwill.user.UserServiceImpl;
 import com.itwill.user.annotation.UserDaoImplJDBC2Annotation;
 import com.itwill.user.annotation.UserDaoImplJDBCAnnotation;
 import com.itwill.user.annotation.UserDaoImplMyBatisAnnotation;
+import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation;
+import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation2;
 
 @Configuration
 //@Import({AConfig.class, BConfig.class})
@@ -27,12 +29,11 @@ import com.itwill.user.annotation.UserDaoImplMyBatisAnnotation;
 			  excludeFilters={
 					  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplJDBCAnnotation.class),
 					  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplJDBC2Annotation.class),
-					  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplMyBatisAnnotation.class)
+					  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplMyBatisAnnotation.class),
+					  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplMyBatisMapperInterfaceAnnotation.class),
+					  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplMyBatisMapperInterfaceAnnotation2.class)
 				})
 
 public class RootConfigAnnotation {
-	/*
-	<context:annotation-config/>
-	<context:component-scan base-package="com.itwill.user.annotation"/>	
-	*/
+	
 }

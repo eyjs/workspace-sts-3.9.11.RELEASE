@@ -2,6 +2,7 @@ package com.itwill3.dao;
 
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
@@ -16,7 +17,7 @@ public class UserDaoImplMyBatisMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-3.user_dao_mybatis.xml");
+				new AnnotationConfigApplicationContext(UserDaoImplMyBatisConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		UserDao userDao=(UserDao)applicationContext.getBean("userDao");
 		System.out.println("### userDao:"+userDao);
