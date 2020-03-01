@@ -17,7 +17,7 @@ import com.itwill.user.User;
 import com.itwill.user.UserDao;
 import com.itwill.user.UserService;
 
-public class SpringJdbcTemplateMain {
+public class SpringJdbcTemplateConfigMain {
 
 	public static void main(String[] args) throws Exception{
 		/*

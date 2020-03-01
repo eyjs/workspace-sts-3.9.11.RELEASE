@@ -7,8 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
+import com.itwill.user.UserDaoImplMyBatisMapperInterface;
 
-public class UserDaoImplMyBatisMain {
+public class UserDaoImplMyBatisMapperInterfaceConfigMain {
 
 	public static void main(String[] args) throws Exception{
 		/*
@@ -17,7 +18,7 @@ public class UserDaoImplMyBatisMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new AnnotationConfigApplicationContext(UserDaoImplMyBatisConfig.class);
+				new AnnotationConfigApplicationContext(UserDaoImplMyBatisMapperInterfaceConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		UserDao userDao=(UserDao)applicationContext.getBean("userDao");
 		System.out.println("### userDao:"+userDao);
