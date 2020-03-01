@@ -6,6 +6,7 @@ import java.sql.Connection;
 import javax.sql.DataSource;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
@@ -22,7 +23,7 @@ public class UserDaoImplJdbcTemplateConfigMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-7.user_dao_jdbc_template.xml");
+				new AnnotationConfigApplicationContext(UserDaoImplJdbcTemplateConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		UserDao userDao=
 				(UserDao)applicationContext.getBean("userDao");

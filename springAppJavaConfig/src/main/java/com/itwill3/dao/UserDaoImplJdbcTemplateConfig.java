@@ -11,6 +11,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.itwill.user.User;
+import com.itwill.user.UserDao;
+import com.itwill.user.UserDaoImplJDBC2;
+import com.itwill.user.UserDaoImplJdbcTemplate;
 
 @Configuration
 @PropertySource("classpath:jdbc.properties")
@@ -37,6 +40,12 @@ public class UserDaoImplJdbcTemplateConfig {
 		JdbcTemplate jdbcTemplate=new JdbcTemplate();
 		jdbcTemplate.setDataSource(apacheDataSource());
 		return jdbcTemplate;
+	}
+	@Bean
+	public UserDao userDao() {
+		UserDaoImplJdbcTemplate userDao= new UserDaoImplJdbcTemplate();
+		userDao.setJdbcTemplate(jdbcTemplate());
+		return userDao;
 	}
 	
 }

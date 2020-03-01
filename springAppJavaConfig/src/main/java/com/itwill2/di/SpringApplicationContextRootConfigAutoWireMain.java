@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.itwill.user.User;
 import com.itwill.user.UserService;
 
-public class SpringApplicationContextAutoWireMain {
+public class SpringApplicationContextRootConfigAutoWireMain {
 
 	public static void main(String[] args) throws Exception{
 		/*

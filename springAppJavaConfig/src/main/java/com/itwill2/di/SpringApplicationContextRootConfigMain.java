@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.itwill.user.User;
 import com.itwill.user.UserService;
 
-public class SpringApplicationContextMain {
+public class SpringApplicationContextRootConfigMain {
 
 	public static void main(String[] args) throws Exception{
 		/*
