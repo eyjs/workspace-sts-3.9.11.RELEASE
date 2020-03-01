@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,8 +26,9 @@ public class SpringJdbcTemplateMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-6.spring_jdbc_template.xml");
+				new AnnotationConfigApplicationContext(SpringJdbcTemplateConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
+		
 		JdbcTemplate jdbcTemplate=
 				(JdbcTemplate)applicationContext.getBean(JdbcTemplate.class);
 		/*
@@ -65,14 +67,17 @@ public class SpringJdbcTemplateMain {
 		/*
 		 * update[insert delete update]
 		 */
-		int rowCount = jdbcTemplate.update(
+		int insertRowCount = jdbcTemplate.update(
 				"insert into userinfo values(?,?,?,?)",
-					"id1",
+					"id",
 					"pass",
 					"email",
 					"name"
 				);
-		System.out.println("### "+rowCount);
+		System.out.println("### insertRowCount : "+insertRowCount);		
+		int deleteRowCount = jdbcTemplate.update(
+				"delete from userinfo where userid = ?","id");
+		System.out.println("### deleteRowCount : "+deleteRowCount);
 	}
 }
 

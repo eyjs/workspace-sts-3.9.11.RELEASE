@@ -23,7 +23,7 @@ public class SpringDataSourceMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new AnnotationConfigApplicationContext(SpringDataSourceRootConfig.class);
+				new AnnotationConfigApplicationContext(SpringDataSourceConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		DataSource apacheDataSource=
 				(DataSource)applicationContext.getBean("apacheDataSource");

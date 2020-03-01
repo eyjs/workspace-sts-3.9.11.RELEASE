@@ -13,7 +13,7 @@ import com.itwill.user.User;
 
 @Configuration
 @PropertySource("classpath:jdbc.properties")
-public class SpringDataSourceRootConfig {
+public class SpringDataSourceConfig {
 	@Value("${jdbc.driverClassName}")
 	String driverClassName;
 	@Value("${jdbc.url}")
@@ -34,10 +34,10 @@ public class SpringDataSourceRootConfig {
 	@Bean
 	public DataSource springDataSource() {
 		DriverManagerDataSource dataSource=new  DriverManagerDataSource();
-		dataSource.setDriverClassName(driverClassName);
-		dataSource.setUrl(url);
-		dataSource.setUsername(username);;
-		dataSource.setPassword(password);
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		dataSource.setUrl("jdbc:oracle:thin:@182.237.126.19:1521:XE");
+		dataSource.setUsername("javaspring31");
+		dataSource.setPassword("javaspring31");
 		return dataSource;
 	}
 	

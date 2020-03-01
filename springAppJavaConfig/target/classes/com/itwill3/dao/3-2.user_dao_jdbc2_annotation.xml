@@ -6,7 +6,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<context:annotation-config/>
-	<context:component-scan base-package="com.itwill.user.annotation"/>
+	<context:component-scan base-package="com.itwill.user.annotation">
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisAnnotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation2"/>
+	</context:component-scan>
 	<!-- properties file사용설정 -->
 	<context:property-placeholder location="classpath:jdbc.properties"/>
 	<!-- Apache DataSource -->

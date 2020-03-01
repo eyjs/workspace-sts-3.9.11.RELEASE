@@ -2,10 +2,12 @@ package com.itwill3.dao;
 
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
+import com.itwill.user.UserDaoImplMyBatisMapperInterface;
 
 public class UserDaoImplMyBatisMapperInterfaceMain {
 
@@ -16,7 +18,7 @@ public class UserDaoImplMyBatisMapperInterfaceMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-4.user_dao_mybatis_mapper_interface.xml");
+				new AnnotationConfigApplicationContext(UserDaoImplMyBatisMapperInterfaceConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		UserDao userDao=(UserDao)applicationContext.getBean("userDao");
 		System.out.println("### userDao:"+userDao);

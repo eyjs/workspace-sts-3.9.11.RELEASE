@@ -13,7 +13,7 @@ import com.itwill.user.User;
 
 //@MyMapper
 //@Mapper
-@SojinMapper
+//@SojinMapper
 public interface UserMapper {
 	public User findUser(@Param("userId") String userId);
 	public List<User> findUserList();

@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.itwill.user.UserDao;
@@ -39,8 +41,16 @@ public class UserDaoImplMyBatisConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception{
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(springDataSource());
-        factoryBean.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml"));
+		/********case1*******
+		factoryBean.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml"));
         factoryBean.setMapperLocations(applicationContext.getResources("classpath:/com/itwill3/dao/UserMapper.xml"));
+		**********************/
+		Resource[] myBatisConfigResource=new PathMatchingResourcePatternResolver()
+			       .getResources("classpath:mybatis-config.xml");
+		Resource[] mapperResource=new PathMatchingResourcePatternResolver()
+				.getResources("classpath:com/itwill3/dao/UserMapper.xml");
+		factoryBean.setConfigLocation(myBatisConfigResource[0]);
+        factoryBean.setMapperLocations(mapperResource);
         return factoryBean.getObject();
     }
 	@Bean
