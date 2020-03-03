@@ -21,6 +21,7 @@ import com.itwill.user.annotation.UserDaoImplMyBatisAnnotation;
 import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation;
 import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation2;
 import com.itwill.user.mapper.UserMapper;
+import com.itwill.user.mapper2.MyMapper;
 @Configuration
 @ComponentScan(	basePackages = {"com.itwill.user.annotation"},
 				excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE,
@@ -28,12 +29,12 @@ import com.itwill.user.mapper.UserMapper;
 											UserDaoImplJDBC2Annotation.class,
 											UserDaoImplJdbcTemplateAnnotation.class,
 											UserDaoImplMyBatisAnnotation.class,
-											UserDaoImplMyBatisMapperInterfaceAnnotation2.class
+											UserDaoImplMyBatisMapperInterfaceAnnotation.class
 										  }
 										)
 			  )
-@MapperScan(basePackages = "com.itwill.user.mapper")
-public class UserDaoImplMyBatisMapperInterfaceAnnotationConfig {
+@MapperScan(basePackages = "com.itwill.user.mapper2",annotationClass = MyMapper.class)
+public class UserDaoImplMyBatisMapperInterfaceAnnotation2Config {
 	@Bean
 	public DataSource springDataSource() {
 		DriverManagerDataSource dataSource=new  DriverManagerDataSource();

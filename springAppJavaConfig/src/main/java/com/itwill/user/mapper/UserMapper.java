@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Update;
 import com.itwill.user.User;
 
 //@MyMapper
-//@Mapper
+@Mapper
 public interface UserMapper {
 	public User findUser(@Param("userId") String userId);
 	public List<User> findUserList();
