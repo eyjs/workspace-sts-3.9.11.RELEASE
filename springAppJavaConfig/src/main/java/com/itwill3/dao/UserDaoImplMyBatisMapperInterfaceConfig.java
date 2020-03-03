@@ -2,22 +2,22 @@ package com.itwill3.dao;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.itwill.user.UserDao;
 import com.itwill.user.UserDaoImplMyBatisMapperInterface;
+import com.itwill.user.mapper.MyMapper;
 import com.itwill.user.mapper.UserMapper;
 
 @Configuration
-@MapperScan(value="com.itwill.user.mapper")
 public class UserDaoImplMyBatisMapperInterfaceConfig {
-	
 	@Bean
 	public DataSource springDataSource() {
 		DriverManagerDataSource dataSource=new  DriverManagerDataSource();
@@ -32,20 +32,61 @@ public class UserDaoImplMyBatisMapperInterfaceConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception{
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(springDataSource());
-        return factoryBean.getObject();
+		return factoryBean.getObject();
     }
+	/*****************************case1***************************
+	/*
+		<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+			<property name="mapperInterface" value="com.itwill.user.mapper.UserMapper"/>
+			<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		</bean>
+	*************************************************************/
 	@Bean
-	public MapperFactoryBean<UserMapper> userMapper() throws Exception {
-	  MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<>(UserMapper.class);
+	public UserMapper userMapper() throws Exception {
+	  MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<>();
 	  factoryBean.setSqlSessionFactory(sqlSessionFactory());
-	  return factoryBean;
+	  factoryBean.setMapperInterface(UserMapper.class);
+	  factoryBean.afterPropertiesSet();
+	  return factoryBean.getObject();
+	}
+	/*****************************case2***************************
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
+	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
+	</bean>
+	*************************************************************/
+	//@Bean
+	public MapperScannerConfigurer mapperScannerConfigurer1() {
+	    MapperScannerConfigurer configurer = new MapperScannerConfigurer();
+	    configurer.setBasePackage("com.itwill.user.mapper");
+	    configurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
+	    return configurer;
 	}
 	
+	/*************************case 3********************************
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
+	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
+	     <property name="annotationClass" value="com.itwill.user.mapper.MyMapper" />
+	</bean>
+	*************************************************************/
+	//@Bean
+	public MapperScannerConfigurer mapperScannerConfigurer2() {
+	    MapperScannerConfigurer scannerConfigurer = new MapperScannerConfigurer();
+	    scannerConfigurer.setBasePackage("com.itwill.user.mapper");
+	    scannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
+	    //scannerConfigurer.setAnnotationClass(Mapper.class);
+	    scannerConfigurer.setAnnotationClass(MyMapper.class);
+	    return scannerConfigurer;
+	}
+	
+	
+	
 	@Bean
-	public UserDao userDao() throws Exception{
-		UserDaoImplMyBatisMapperInterface userDao=
+	public UserDao userDao(UserMapper userMapper) throws Exception{
+		  UserDaoImplMyBatisMapperInterface userDao=
 				new UserDaoImplMyBatisMapperInterface();
-		userDao.setUserMapper(userMapper().getObject());
+		  userDao.setUserMapper(userMapper);
 		return userDao;
 	}
 	

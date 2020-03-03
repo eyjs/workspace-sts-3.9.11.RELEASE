@@ -1,13 +1,20 @@
 package com.itwill3.dao;
 
 
+import java.sql.Connection;
+
+import javax.sql.DataSource;
+
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
+import com.itwill.user.UserDaoImplJdbcTemplate;
+import com.itwill.user.UserService;
 
-public class UserDaoImplMyBatisAnnotationMain {
+public class UserDaoImplJdbcTemplateAnnotationConfigMain {
 
 	public static void main(String[] args) throws Exception{
 		/*
@@ -16,18 +23,12 @@ public class UserDaoImplMyBatisAnnotationMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-3.user_dao_mybatis_annotation.xml");
+				new AnnotationConfigApplicationContext(UserDaoImplJdbcTemplateAnnotationConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
-		UserDao userDao=(UserDao)applicationContext.getBean("userDaoMyBatis");
-		System.out.println("### userDao:"+userDao);
+		UserDao userDao=
+				(UserDao)applicationContext.getBean("userDaoJdbcTemplate");
+		System.out.println("### "+userDao.findUser("a"));
 		System.out.println("### "+userDao.findUserList());
-		System.out.println("### "+userDao.create(new User("x3", "x3","x3","x3")));
-		System.out.println("### "+userDao.findUser("x3"));
-		System.out.println("### "+userDao.update(new User("x3", "x3변경","x23변경","x3변경")));
-		System.out.println("### "+userDao.findUser("x3"));
-		System.out.println("### "+userDao.remove("x3"));
-		System.out.println("### "+userDao.findUserList());
-		
 		
 	}
 }

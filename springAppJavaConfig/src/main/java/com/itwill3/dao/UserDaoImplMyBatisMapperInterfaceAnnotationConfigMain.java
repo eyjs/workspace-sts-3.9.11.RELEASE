@@ -1,14 +1,9 @@
 package com.itwill3.dao;
-
-
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
-
-public class UserDaoImplMyBatisMapperInterfaceAnnotationMain {
-
+public class UserDaoImplMyBatisMapperInterfaceAnnotationConfigMain {
 	public static void main(String[] args) throws Exception{
 		/*
 		 * ApplicationContext[BeanFactory]객체생성
@@ -16,7 +11,8 @@ public class UserDaoImplMyBatisMapperInterfaceAnnotationMain {
 		 */
 		System.out.println("-------------Spring Container초기화시작--------");
 		ApplicationContext applicationContext=
-				new ClassPathXmlApplicationContext("com/itwill3/dao/3-4.user_dao_mybatis_mapper_interface_annotation.xml");
+				new AnnotationConfigApplicationContext(
+						UserDaoImplMyBatisMapperInterfaceAnnotationConfig.class);
 		System.out.println("-------------Spring Container초기화끝----------");
 		UserDao userDao=(UserDao)applicationContext.getBean("userDaoMyBatisMapper");
 		System.out.println("### userDao:"+userDao);
@@ -27,16 +23,5 @@ public class UserDaoImplMyBatisMapperInterfaceAnnotationMain {
 		System.out.println("### "+userDao.findUser("x3"));
 		System.out.println("### "+userDao.remove("x3"));
 		System.out.println("### "+userDao.findUserList());
-		
-		
 	}
 }
-
-
-
-
-
-
-
-
-
