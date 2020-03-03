@@ -1,0 +1,40 @@
+<< RequestMappingHandlerMapping 사용 방법은 세가지>>
+
+1.선언하지 않는 방법
+2.<mvc:annotation-driven/>을 선언하는 방법
+3.RequestMappingHandlerMapping을 직접 선언하는 방법
+
+# 1.선언하지 않는 방법
+	
+	RequestMappingHandlerMapping은 기본 HandlerMapping이므로 지정하지 않아도 사용가능하다. 아래와 같이 컴포넌트 스캔할 패키지를 지정해 주면,
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+					http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	 
+	       <context:component-scan base-package="org.mycode.controller" />
+	 
+	</beans>
+	패키지 org.mycode.controller 아래의 @Controller중에 @RequestMapping에 선언된 URL과 해당 @Controller 클래스의 메소드와 매핑한다.
+
+# 2.<mvc:annotation-driven/>을 선언하는 방법
+	
+	@MVC사용 시 필요한 빈들을 등록해주는 <mvc:annotation-driven/>을 설정하면 내부에서
+	org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping ,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter 이 구성된다.
+	기존 Spring 3.0버전에서 <mvc:annotation-driven/>는 DefaultAnnotationHandlerMapping, AnnotationMethodHandlerAdapter를 구성해주었다.
+	<mvc:annotation-driven>은 다음과 같이 사용한다.
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans ... 생략>
+	  <mvc:annotation-driven/>
+	<!-- 생략 -->
+	</beans>
+	여기서 주의할 점은, CommandMap을 사용할 경우 mvc:annotation-driven을 선언하면 안된다. CommandMap을 사용할 경우 EogvRequestMappingHandlerAdapter와 RequestMappingHandlerMapping을 직접 선언해주어야한다.
+
+# 3.RequestMappingHandlerMapping을 직접 선언하는 방법
+
+	다른 HandlerMapping과 함께 사용할 때 선언한다.
+  	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+  	<!--생략-->
