@@ -1,5 +1,7 @@
 package com.itwill.config;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.validation.MessageCodesResolver;
@@ -8,10 +10,14 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import com.itwill.controller.HelloController;
+
 import java.util.List;
+import java.util.Properties;
 /*
 mvc-config.xml을 대신할 java 클래스
  - @EnableWebMvc: web mvc을 이용하는데 있어서 spring container가 가져야할 기본적인 bean component 등록. 
@@ -22,13 +28,27 @@ mvc-config.xml을 대신할 java 클래스
  - @ComponentScan: Controller, Service, Repository, Component 어노테이션이 붙을 클래스를 찾아 스프링 컨테이너가 관리
 */
 @EnableWebMvc
+@Configuration
 @ComponentScan(basePackages = {"com.itwill.controller.annotation"})
+
 public class ServletConfig implements WebMvcConfigurer {
+	
+	@Bean
+	public SimpleUrlHandlerMapping sampleServletMapping() {
+		SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
+		Properties urlProperties = new Properties();
+		urlProperties.put("/hello.do", "helloController");
+		mapping.setMappings(urlProperties);
+		return mapping;
+	}
+	@Bean
+	public HelloController helloController() {
+		return new HelloController();
+	}
 	/*
     jsp를 view로 사용할 때 사용
     Controller에서 리턴하는 뷰 이름에 접두, 접미어를 붙여서 jsp 경로를 찾는다.
     */
-	
     @Override
     public void configureViewResolvers(ViewResolverRegistry viewResolverRegistry) {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
@@ -62,7 +82,7 @@ public class ServletConfig implements WebMvcConfigurer {
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer defaultServletHandlerConfigurer) {
-
+    	//defaultServletHandlerConfigurer.enable();
     }
 
     @Override

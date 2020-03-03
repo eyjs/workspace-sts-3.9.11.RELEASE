@@ -32,7 +32,7 @@ public class GuestController {
 			request.setAttribute("error_msg", e.getMessage());
 			forwardPath = "forward:/WEB-INF/views/guest_error.jsp";
 		}
-		return "/WEB-INF/views/guest_list.jsp";
+		return forwardPath;
 	}
 	
 	
