@@ -7,8 +7,7 @@ import java.util.List;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
-@Component(value = "userDaoImplJdbcTemplate")
+
 public class UserDaoImplJdbcTemplate implements UserDao {
 	private JdbcTemplate jdbcTemplate;
 

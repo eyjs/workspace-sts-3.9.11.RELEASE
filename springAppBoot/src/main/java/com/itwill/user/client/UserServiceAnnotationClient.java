@@ -12,8 +12,8 @@ public class UserServiceAnnotationClient {
 		
 		UserService userService = (UserService)applicationContext.getBean("userService");
 		userService.findUser("id");
-		userService.remove("id");
-		userService.findUserList();
+		//userService.remove("id");
+		//userService.findUserList();
 		
 	}
 }

@@ -1,8 +1,10 @@
 package com.itwill1.bean.attr;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class SpringBootApplicationContextMain {
 
@@ -38,8 +40,8 @@ public class SpringBootApplicationContextMain {
 		System.out.println("### "+prototypeBean2);
 		System.out.println("### "+prototypeBean3);
 		System.out.println(applicationContext);
-		DisposableBean context=(DisposableBean)applicationContext.getParentBeanFactory();
-		context.destroy();
+		ConfigurableApplicationContext context=(ConfigurableApplicationContext)applicationContext;
+		context.close();
 		
 	}
 

@@ -8,12 +8,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component(value = "userDaoJDBC2")
 public class UserDaoImplJDBC2 implements UserDao {
-	@Autowired
 	private DataSource dataSource;
 	public UserDaoImplJDBC2() {
 		System.out.println("#### UserDaoImplJDBC2() : 디폴트생성자 호출  ");

@@ -2,21 +2,17 @@ package com.itwill.user;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.apache.ibatis.session.SqlSession;
 
 import com.itwill.user.mapper.UserMapper;
 
-@Component(value = "userDaoImplMyBatisMapperInterface")
+
 public class UserDaoImplMyBatisMapperInterface implements UserDao {
-	@Autowired
+	
 	private UserMapper userMapper;
 	public UserDaoImplMyBatisMapperInterface() {
 		System.out.println("#### UserDaoImplMyBatisMapperInterface() : 디폴트생성자 호출  ");
 	}
-	
-	
-
 	public void setUserMapper(UserMapper userMapper) {
 		this.userMapper = userMapper;
 	}

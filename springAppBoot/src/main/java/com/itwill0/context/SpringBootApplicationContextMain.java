@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ComponentScan
+@ComponentScan(basePackages ="com.itwill0.context" )
 //@ImportResource({"classpath:0.applicationContext.xml"})
 public class SpringBootApplicationContextMain {
 
