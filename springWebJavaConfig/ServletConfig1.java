@@ -119,6 +119,3 @@ public class ServletConfig implements WebMvcConfigurer {
         return null;
     }
 }
-
-
-출처: https://sofies.tistory.com/41 [소피의 세계]

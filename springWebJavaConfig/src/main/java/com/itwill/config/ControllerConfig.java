@@ -7,9 +7,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 
 import com.itwill.controller.HelloController;
+import com.itwill.controller.annotation.XMLView;
 
 @Configuration
-public class HelloControllerConfig {
+public class ControllerConfig {
+	
+	@Bean("xmlView") 
+	public XMLView xmlView() {
+		return new XMLView();
+	}
+	
 	@Bean
 	public SimpleUrlHandlerMapping sampleServletMapping() {
 		SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();

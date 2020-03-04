@@ -22,6 +22,7 @@ public class WebApplicationInitializerConfig implements WebApplicationInitialize
 
 		AnnotationConfigWebApplicationContext servletAppContext = new AnnotationConfigWebApplicationContext();
 		servletAppContext.register(ServletConfig.class);
+		servletAppContext.register(ControllerConfig.class);
 
 		DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
 
