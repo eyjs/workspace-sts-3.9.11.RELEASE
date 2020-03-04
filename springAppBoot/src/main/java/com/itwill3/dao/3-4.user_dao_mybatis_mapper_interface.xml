@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- properties file사용설정 -->
+	<context:property-placeholder
+		location="classpath:jdbc.properties" />
+	<!-- Apache DataSource -->
+	<bean id="apacheDataSource"
+		class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="apacheDataSource" />
+			
+	</bean>
+	 <!--************************case 1**********************************
+	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.itwill.user.mapper.UserMapper"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	******************************************************************-->
+	
+	<!--************************case 2********************************-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
+	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
+	</bean>
+	<!--*****************************************************************-->
+	
+	
+	<!-- ************************case 3********************************
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
+	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
+	     <property name="annotationClass" value="com.itwill.user.mapper.SojinMapper" />
+	</bean>
+	************************case 3********************************-->
+	<!-- ****************************************************************-->
+	<bean id="userDao" class="com.itwill.user.UserDaoImplMyBatisMapperInterface">
+		<property name="userMapper" ref="userMapper" />
+	</bean>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

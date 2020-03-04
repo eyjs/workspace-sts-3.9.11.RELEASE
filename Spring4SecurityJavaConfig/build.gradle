@@ -1,0 +1,13 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+archivesBaseName = 'spring4javaconfig'
+version = '1' 
+repositories {
+    mavenCentral()
+}
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-security:1.3.3.RELEASE'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.3.3.RELEASE'    
+} 
