@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
-@Repository
+@Repository(value = "userDaoJdbcTemplate")
 public class UserDaoImplJdbcTemplateAnnotation implements UserDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

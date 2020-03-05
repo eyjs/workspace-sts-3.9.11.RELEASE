@@ -25,14 +25,14 @@ import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation2;
 						  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=UserDaoImplMyBatisMapperInterfaceAnnotation2.class)
 							}
 			  )
-public class SpringBootApplicationContextMain {
+public class SpringApplicationContextBootMain {
 	public static void main(String[] args) throws Exception{
 		/*
 		 * ApplicationContext[BeanFactory]객체생성
 		 *  - Spring Container객체생성
 		 */
 		System.out.println("------------Spring Container 초기화시작---------");
-		ApplicationContext applicationContext=SpringApplication.run(SpringBootApplicationContextMain.class);
+		ApplicationContext applicationContext=SpringApplication.run(SpringApplicationContextBootMain.class);
 		System.out.println("------------Spring Container 초기화끝---------");
 		System.out.println("***********constructor,setter injection***************");
 		System.out.println("1.기본형");

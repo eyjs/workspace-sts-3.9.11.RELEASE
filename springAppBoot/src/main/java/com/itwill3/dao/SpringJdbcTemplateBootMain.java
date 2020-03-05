@@ -3,23 +3,53 @@ package com.itwill3.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.itwill.user.User;
+import com.itwill.user.annotation.UserDaoImplJDBC2Annotation;
+import com.itwill.user.annotation.UserDaoImplJdbcTemplateAnnotation;
+import com.itwill.user.annotation.UserDaoImplMyBatisAnnotation;
+import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation;
+import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation2;
+@SpringBootApplication
 
-public class SpringJdbcTemplateMain {
+@ComponentScan(	basePackages = {"com.itwill3.dao"},
+excludeFilters = {@Filter(type = FilterType.ASSIGNABLE_TYPE,
+						 classes = {
+								/*
+								 UserDaoImplAnnotation.class,
+								 UserDaoImplJDBCAnnotation.class,
+								 UserDaoImplJdbcTemplateAnnotation.class,
+								 
+								 UserDaoImplJDBC2Annotation.class,
+								 UserDaoImplMyBatisAnnotation.class,
+								 UserDaoImplMyBatisMapperInterfaceAnnotation.class,
+								 UserDaoImplMyBatisMapperInterfaceAnnotation2.class
+								*/
+						  }	),
+					@Filter(type = FilterType.ANNOTATION, classes = {SpringBootApplication.class,Configuration.class})
+					}
+)
+
+public class SpringJdbcTemplateBootMain {
 
 	public static void main(String[] args) throws Exception {
 		/*
 		 * ApplicationContext[BeanFactory]객체생성 - Spring Container객체생성
 		 */
-		System.out.println("-------------Spring Container초기화시작--------");
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-				"com/itwill3/dao/3-6.spring_jdbc_template.xml");
-		System.out.println("-------------Spring Container초기화끝----------");
+		System.out.println("------------Spring Container 초기화시작---------");
+		ApplicationContext applicationContext=
+				SpringApplication.run(SpringJdbcTemplateBootMain.class);
+		System.out.println("------------Spring Container 초기화끝---------");
 		JdbcTemplate jdbcTemplate = (JdbcTemplate) applicationContext.getBean(JdbcTemplate.class);
 		/*
 		 * queryForObject [String,Wrapper,Bean]

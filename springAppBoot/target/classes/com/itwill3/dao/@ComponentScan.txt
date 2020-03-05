@@ -1,0 +1,13 @@
+@ComponentScan(	basePackages = {"com.itwill.user.annotation"},
+excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE,
+						 classes = {
+								 UserDaoImplAnnotation.class,
+								 UserDaoImplJDBCAnnotation.class,
+								 UserDaoImplJDBC2Annotation.class,
+								 UserDaoImplJdbcTemplateAnnotation.class,
+								 UserDaoImplMyBatisAnnotation.class,
+								 UserDaoImplMyBatisMapperInterfaceAnnotation.class,
+								 UserDaoImplMyBatisMapperInterfaceAnnotation2.class
+						  }
+						)
+)

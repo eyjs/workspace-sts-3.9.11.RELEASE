@@ -5,13 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.UserDao;
-import com.itwill.user.annotation.UserDaoImplAnnotation;
 import com.itwill.user.annotation.UserDaoImplJDBC2Annotation;
-import com.itwill.user.annotation.UserDaoImplJDBCAnnotation;
 import com.itwill.user.annotation.UserDaoImplJdbcTemplateAnnotation;
 import com.itwill.user.annotation.UserDaoImplMyBatisAnnotation;
 import com.itwill.user.annotation.UserDaoImplMyBatisMapperInterfaceAnnotation;
@@ -23,24 +22,27 @@ excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE,
 								 /*
 								 UserDaoImplAnnotation.class,
 								 UserDaoImplJDBCAnnotation.class,
-								 UserDaoImplJDBC2Annotation.class
-								 */
 								 UserDaoImplJdbcTemplateAnnotation.class,
+								 */
+								 UserDaoImplJDBC2Annotation.class,
 								 UserDaoImplMyBatisAnnotation.class,
 								 UserDaoImplMyBatisMapperInterfaceAnnotation.class,
 								 UserDaoImplMyBatisMapperInterfaceAnnotation2.class
 						  }
 						)
 )
-public class UserDaoImplJDBC2BootMain {
+public class UserDaoImplJdbcTemplateBootMain {
+
 	public static void main(String[] args) throws Exception{
 		System.out.println("------------Spring Container 초기화시작---------");
 		ApplicationContext applicationContext=
-				SpringApplication.run(UserDaoImplJDBC2BootMain.class);
+				SpringApplication.run(UserDaoImplJdbcTemplateBootMain.class);
 		System.out.println("------------Spring Container 초기화끝---------");
-		UserDao userDao=(UserDao)applicationContext.getBean("userDaoJDBC2");
+		UserDao userDao=
+				(UserDao)applicationContext.getBean("userDaoJdbcTemplate");
 		System.out.println("### "+userDao.findUser("a"));
 		System.out.println("### "+userDao.findUserList());
+		
 	}
 }
 

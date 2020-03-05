@@ -6,10 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itwill.user.User;
 import com.itwill.user.UserDao;
@@ -21,7 +20,7 @@ excludeFilters = {
 							 pattern = "*..*.*UserDaoImpl* "
 							 		+ "&& !*..*.UserDaoImplAnnotation"
 							 		+ "&& !*..*.UserDaoImplJDBCAnnotation"
-							 		+ "&& !*..*.UserDaoImplMyBatisMapperInterfaceAnnotation"
+							 		+ "&& !*..*.UserDaoImplMyBatisMapperInterfaceAnnotation2"
 							),
 					@Filter(type = FilterType.ANNOTATION, 
 							classes = {
@@ -31,8 +30,9 @@ excludeFilters = {
 							)
 				}
 )
-@MapperScan(basePackages = "com.itwill.user.mapper")
-public class UserDaoImplMyBatisMapperInterfaceBootMain {
+@MapperScan(basePackages = "com.itwill.user.mapper2")
+public class UserDaoImplMyBatisMapperInterface2BootMain {
+
 	public static void main(String[] args) throws Exception{
 		/*
 		 * ApplicationContext[BeanFactory]객체생성
@@ -40,9 +40,9 @@ public class UserDaoImplMyBatisMapperInterfaceBootMain {
 		 */
 		System.out.println("------------Spring Container 초기화시작---------");
 		ApplicationContext applicationContext=
-				SpringApplication.run(UserDaoImplMyBatisMapperInterfaceBootMain.class);
+				SpringApplication.run(UserDaoImplMyBatisMapperInterface2BootMain.class);
 		System.out.println("------------Spring Container 초기화끝---------");
-		UserDao userDao=(UserDao)applicationContext.getBean("userDaoMyBatisMapper");
+		UserDao userDao=(UserDao)applicationContext.getBean("userDaoMyBatisMapper2");
 		System.out.println("### userDao:"+userDao);
 		System.out.println("### "+userDao.findUserList());
 		System.out.println("### "+userDao.create(new User("x3", "x3","x3","x3")));
@@ -51,6 +51,8 @@ public class UserDaoImplMyBatisMapperInterfaceBootMain {
 		System.out.println("### "+userDao.findUser("x3"));
 		System.out.println("### "+userDao.remove("x3"));
 		System.out.println("### "+userDao.findUserList());
+		
+		
 	}
 }
 

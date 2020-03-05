@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
-public class SpringBootApplicationContextMain {
+public class SpringApplicationContextBootMain {
 
 	public static void main(String[] args) throws Exception{
 		System.out.println("------------Spring Container 초기화시작---------");
-		ApplicationContext applicationContext=SpringApplication.run(SpringBootApplicationContextMain.class, args);
+		ApplicationContext applicationContext=SpringApplication.run(SpringApplicationContextBootMain.class, args);
 		System.out.println("------------Spring Container 초기화끝---------");
 		System.out.println("--------- 1.lazyInit --------------");
 		LazyInitBean lazyInitBean1=

@@ -5,11 +5,29 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 import com.itwill.user.UserDao;
 @SpringBootApplication
-@ComponentScan(basePackages = "com.itwill.user")
+@ComponentScan(	basePackages = {"com.itwill.user.annotation"},
+
+excludeFilters = {
+					@Filter( type = FilterType.ASPECTJ,
+							 pattern = "*..*.*UserDaoImpl* "
+							 		+ "&& !*..*.UserDaoImplAnnotation "
+							 		+ "&& !*..*.UserDaoImplJDBCAnnotation"
+							 		+ "&& !*..*.UserDaoImplMyBatisAnnotation"
+							),
+					@Filter(type = FilterType.ANNOTATION, 
+							classes = {
+										SpringBootApplication.class,
+										Configuration.class
+									}
+							)
+				}
+)
 public class UserDaoImplMyBatisBootMain {
 
 	public static void main(String[] args) throws Exception{

@@ -3,14 +3,23 @@ import java.sql.Connection;
 
 import javax.sql.DataSource;
 
-import org.apache.logging.log4j.core.Filter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 @SpringBootApplication
-@ComponentScan(basePackages ="com.itwill3.dao" ,excludeFilters = Filter.ELEMENT_TYPE)
-public class SpringBootDataSourceMain {
+
+@ComponentScan(basePackages ="com.itwill3.dao" ,
+			   excludeFilters   = {
+					   			   @Filter(type = FilterType.ASPECTJ,pattern = "*..*BootMain"),
+					   			   @Filter(type = FilterType.ANNOTATION, classes = {SpringBootApplication.class,Configuration.class} )
+			   					  }
+			  )
+			  
+public class SpringDataSourceBootMain {
 
 	public static void main(String[] args) throws Exception{
 		/*
@@ -19,8 +28,14 @@ public class SpringBootDataSourceMain {
 		 */
 		System.out.println("------------Spring Container 초기화시작---------");
 		ApplicationContext applicationContext=
-				SpringApplication.run(SpringBootDataSourceMain.class);
+				SpringApplication.run(SpringDataSourceBootMain.class);
 		System.out.println("------------Spring Container 초기화끝---------");
+		DataSource dataSource=
+				(DataSource)applicationContext.getBean(DataSource.class);
+		Connection con = dataSource.getConnection();
+		System.out.println("### dataSource:"+dataSource);
+		System.out.println("### dataSource Connection:"+con);
+		/*
 		DataSource apacheDataSource=
 				(DataSource)applicationContext.getBean("apacheDataSource");
 		Connection con1 = apacheDataSource.getConnection();
@@ -33,6 +48,7 @@ public class SpringBootDataSourceMain {
 		System.out.println("### springDataSource Connection:"+con2);
 		con1.close();
 		con2.close();
+		*/
 		
 	}
 }
