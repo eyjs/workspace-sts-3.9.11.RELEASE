@@ -1,0 +1,63 @@
+[2020-03-05 22:41:44:2313][main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2020-03-05 22:41:44:2313][main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1481 ms
+[2020-03-05 22:41:44:2383][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/hello.do] in 'sampleServletMapping'
+[2020-03-05 22:41:44:2457][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+[2020-03-05 22:41:44:2464][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/] in 'viewControllerHandlerMapping'
+[2020-03-05 22:41:44:2483][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
+[2020-03-05 22:41:44:2515][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2020-03-05 22:41:44:2548][main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2020-03-05 22:43:34:2104][main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2020-03-05 22:43:34:2104][main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1335 ms
+[2020-03-05 22:43:34:2175][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/hello.do] in 'sampleServletMapping'
+[2020-03-05 22:43:35:2250][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+[2020-03-05 22:43:35:2259][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/] in 'viewControllerHandlerMapping'
+[2020-03-05 22:43:35:2277][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
+[2020-03-05 22:43:35:2307][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2020-03-05 22:43:35:2338][main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2020-03-05 22:45:05:2151][main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2020-03-05 22:45:05:2152][main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1442 ms
+[2020-03-05 22:45:05:2234][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/hello.do] in 'sampleServletMapping'
+[2020-03-05 22:45:05:2324][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+[2020-03-05 22:45:05:2332][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/] in 'viewControllerHandlerMapping'
+[2020-03-05 22:45:05:2353][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
+[2020-03-05 22:45:05:2389][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2020-03-05 22:45:05:2421][main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2020-03-05 22:45:42:38864][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2020-03-05 22:45:42:38864][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2020-03-05 22:45:42:38870][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2020-03-05 22:45:42:38870][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+[2020-03-05 22:45:42:38879][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2020-03-05 22:45:42:38888][http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ParameterizableViewController [view="redirect:index.jsp"]
+[2020-03-05 22:45:42:38894][http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+[2020-03-05 22:45:42:38896][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2020-03-05 22:45:46:43134][http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/response_xml_view_object.do", parameters={}
+[2020-03-05 22:45:46:43137][http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.itwill.controller.annotation.ResponseController#response_xml_view_object(Model)
+[2020-03-05 22:45:46:43151][http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2020-03-05 22:45:49:46531][http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/response_xml_view_name.do", parameters={}
+[2020-03-05 22:45:49:46532][http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.itwill.controller.annotation.ResponseController#response_xml_view_name(Model)
+[2020-03-05 22:45:49:46537][http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2020-03-05 22:45:52:49410][http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/response_xml_view_name.do", parameters={}
+[2020-03-05 22:45:52:49411][http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.itwill.controller.annotation.ResponseController#response_xml_view_name(Model)
+[2020-03-05 22:45:52:49413][http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2020-03-05 22:45:55:51975][http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/response_xml_view_name.do", parameters={}
+[2020-03-05 22:45:55:51976][http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.itwill.controller.annotation.ResponseController#response_xml_view_name(Model)
+[2020-03-05 22:45:55:51977][http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2020-03-05 22:45:58:55181][http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/response_xml_view_name.do", parameters={}
+[2020-03-05 22:45:58:55182][http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.itwill.controller.annotation.ResponseController#response_xml_view_name(Model)
+[2020-03-05 22:45:58:55183][http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2020-03-05 22:47:42:2235][main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2020-03-05 22:47:42:2235][main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1393 ms
+[2020-03-05 22:47:42:2306][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/hello.do] in 'sampleServletMapping'
+[2020-03-05 22:47:43:2382][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+[2020-03-05 22:47:43:2389][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/] in 'viewControllerHandlerMapping'
+[2020-03-05 22:47:43:2407][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
+[2020-03-05 22:47:43:2440][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2020-03-05 22:47:43:2468][main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2020-03-05 22:51:54:2366][main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2020-03-05 22:51:54:2367][main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1558 ms
+[2020-03-05 22:51:54:2450][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/hello.do] in 'sampleServletMapping'
+[2020-03-05 22:51:54:2539][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+[2020-03-05 22:51:54:2548][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/] in 'viewControllerHandlerMapping'
+[2020-03-05 22:51:54:2569][main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
+[2020-03-05 22:51:54:2602][main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2020-03-05 22:51:54:2629][main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
