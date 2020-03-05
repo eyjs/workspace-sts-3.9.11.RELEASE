@@ -1,5 +1,4 @@
 1. pom.xml파일 java compiler설정
-
    A. java compiler설정
 	
 	<build>
