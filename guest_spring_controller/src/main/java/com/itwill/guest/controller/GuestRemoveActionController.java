@@ -3,14 +3,23 @@ package com.itwill.guest.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
 import com.itwill.guest.GuestService;
 import com.itwill.guest.GuestServiceImpl;
-import com.itwill.summer.Controller;
 
 public class GuestRemoveActionController implements Controller {
-
+	private GuestService guestService;
+	public GuestRemoveActionController() {
+		System.out.println("### GuestRemoveActionController()생성자 호출");
+	}
+	public void setGuestService(GuestService guestService) {
+		System.out.println("### GuestRemoveActionController : setGuestService("+guestService+") 메쏘드 호출");
+		this.guestService = guestService;
+	}
 	@Override
-	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		String forwardPath="";
 		
 		if(request.getMethod().equalsIgnoreCase("GET")) {
@@ -18,7 +27,6 @@ public class GuestRemoveActionController implements Controller {
 		}else {
 			try {
 				String guest_noStr2 = request.getParameter("guest_no");
-				GuestService guestService = new GuestServiceImpl();
 				boolean insertOK = guestService.deleteGuest(Integer.parseInt(guest_noStr2));
 				if (insertOK) {
 					//response.sendRedirect("guest_list.jsp");
@@ -32,7 +40,9 @@ public class GuestRemoveActionController implements Controller {
 				forwardPath="forward:/WEB-INF/views/guest_error.jsp";
 			}
 		}
-		return forwardPath;
+		ModelAndView modelAndView=new ModelAndView();
+		modelAndView.setViewName(forwardPath);
+		return modelAndView;
 	}
 
 }

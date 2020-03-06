@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
-import com.itwill.guest.GuestServiceImpl;
+
 
 
 public class GuestListController implements Controller{
