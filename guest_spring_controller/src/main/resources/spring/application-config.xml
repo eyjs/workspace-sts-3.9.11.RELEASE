@@ -19,7 +19,5 @@
 	<bean id="guestService" class="com.itwill.guest.GuestServiceImpl">
 		<property name="guestDao" ref="guestDao"/>
 	</bean>
-	
-	
 
 </beans>

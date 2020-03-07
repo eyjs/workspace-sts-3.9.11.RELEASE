@@ -14,7 +14,7 @@
 			- RequestMappingHandlerMapping
 			- BeanNameUrlHandlerMapping
 	-->
-	<!--*************************BeanNameUrlHandlerMapping***********************************-->
+	<!--*************************BeanNameUrlHandlerMapping***********************************
 	<bean name="/guest_main.do" class="com.itwill.guest.controller.GuestMainController"/>
 	<bean name="/guest_list.do" class="com.itwill.guest.controller.GuestListController">
 		<property name="guestService" ref="guestService"/>
@@ -36,9 +36,9 @@
 		<property name="guestService" ref="guestService"/>
 	</bean>	
 	<bean name="/guest_write_form.do" class="com.itwill.guest.controller.GuestWriteFormController"/>
-	<!--*******************************************************************************************-->
+	*******************************************************************************************-->
 	
-	<!--**********************************SimpleUrlHandlerMapping**********************************
+	<!--**********************************SimpleUrlHandlerMapping********************************-->
 	<bean id="guestMainController" 
 		  class="com.itwill.guest.controller.GuestMainController"/>
 	<bean id="guestListController" 
@@ -86,5 +86,5 @@
 			</props>
 		</property>
 	</bean>
-	*************************************************************************************-->
+	<!-- *************************************************************************************-->
 </beans>
