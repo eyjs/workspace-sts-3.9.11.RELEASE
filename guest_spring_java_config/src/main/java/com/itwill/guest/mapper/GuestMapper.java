@@ -1,10 +1,7 @@
 package com.itwill.guest.mapper;
 
 import java.util.List;
-
 import com.itwill.guest.Guest;
-import com.sun.javafx.scene.traversal.Hueristic2D;
-
 public interface GuestMapper {
 	/*
 	 * 메쏘드이름은 	GuestMapper.xml 파일의 id와일치
