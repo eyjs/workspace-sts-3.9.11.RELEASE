@@ -3,7 +3,7 @@
 <mapper 
 namespace="com.itwill.guest.mapper.GuestMapper">
 	<select id="selectAll" resultType="com.itwill.guest.Guest">
-		SELECT * FROM GUEST
+		SELECT * FROM GUEST ORDER BY GUEST_NO DESC
 	</select>
 	<select id="selectByNo" 
 			parameterType="java.lang.Integer" 
