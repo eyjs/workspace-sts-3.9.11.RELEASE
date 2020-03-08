@@ -2,6 +2,7 @@
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.itwill.guest.Guest;
@@ -9,7 +10,7 @@ import com.itwill.guest.GuestDao;
 import com.itwill.guest.GuestService;
 @Service
 public class GuestServiceImplAnnotation implements GuestService {
-	
+	@Autowired
 	private GuestDao guestDao;
 
 	public GuestServiceImplAnnotation() throws Exception{

@@ -2,13 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	     http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<context:component-scan base-package="com.itwill.guest.annotation">
-		<context:include-filter type="assignable" expression="com.itwill.guest.controller.annotation.GuestDaoImplJDBCAnnotation"/>
-		<context:include-filter type="assignable" expression="com.itwill.guest.controller.annotation.GuestDaoImplMyBatisAnnotation"/>
-		<context:include-filter type="assignable" expression="com.itwill.guest.controller.annotation.GuestDaoImplMyBatisMapperInterfaceAnnotation"/>
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.guest.annotation.GuestDaoImplJDBCAnnotation"/>
+		<context:exclude-filter type="assignable" expression="com.itwill.guest.annotation.GuestDaoImplMyBatisMapperInterfaceAnnotation"/>
+		<!-- 
+		<context:exclude-filter type="assignable" expression="com.itwill.guest.annotation.GuestDaoImplMyBatisAnnotation"/>
+		  -->
+		
 	</context:component-scan>
 	<context:property-placeholder location="classpath:db/jdbc.properties"/>
 	<!-- Apache DataSource -->
@@ -19,6 +24,7 @@
 	      <property name="username" value="${jdbc.username}"/>
 	      <property name="password" value="${jdbc.password}"/>
 	</bean>
+	<!--*******************MyBatis start[GuestDaoImplMyBatisAnnotation]*****************************-->
 	<bean  id="sqlSessionFactory" 
 			class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="apacheDataSource"/>
@@ -30,11 +36,11 @@
 			</list>
 		</property>          
 	</bean>
-	
 	<bean id="sqlSession" 
 			class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory"/>
 	</bean>
+	<!--*******************************MyBatis end[GuestDaoImplMyBatisAnnotation]*******************-->
 	
 
 </beans>

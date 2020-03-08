@@ -3,6 +3,7 @@ package com.itwill.guest.annotation;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.itwill.guest.Guest;
@@ -10,6 +11,7 @@ import com.itwill.guest.GuestDao;
 import com.itwill.guest.mapper.GuestMapper;
 @Repository
 public class GuestDaoImplMyBatisMapperInterfaceAnnotation  implements GuestDao{
+	@Autowired
 	private GuestMapper guestMapper;
 	public GuestDaoImplMyBatisMapperInterfaceAnnotation(GuestMapper guestMapper) throws Exception {
 		this.guestMapper=guestMapper;

@@ -18,9 +18,6 @@
 		<property name="dataSource" ref="apacheDataSource"/>
 		<property name="configLocation" 
 		          value="classpath:mybatis-config-mapper-interface.xml"/>
-		<!-- 
-		<property name="typeAliasesPackage" value="com.itwill.guest" />
-		 -->
 	</bean>
 	 <!--************************case 1**********************************-->
 	<bean id="guestMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">

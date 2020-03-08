@@ -33,6 +33,7 @@ public class GuestController {
 			forwardPath = "forward:/WEB-INF/views/guest_list.jsp";
 			
 		}catch (Exception e) {
+			e.printStackTrace();
 			request.setAttribute("error_msg", e.getMessage());
 			forwardPath = "forward:/WEB-INF/views/guest_error.jsp";
 		}

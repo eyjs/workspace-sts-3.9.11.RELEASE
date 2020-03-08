@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestDao;
 @Repository
 public class GuestDaoImplMyBatisAnnotation  implements GuestDao{
+	@Autowired
 	private SqlSession sqlSession;
 	public final static String NAMESPACE=
 			"com.itwill.guest.mapper.GuestMapper.";

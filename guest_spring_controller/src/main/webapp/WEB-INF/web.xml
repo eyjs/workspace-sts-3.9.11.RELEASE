@@ -24,8 +24,12 @@
 		<!-- 
 		<param-value>classpath:spring/application-config-jdbc.xml</param-value>
 		<param-value>classpath:spring/application-config-mybatis.xml</param-value>
-		 -->
 		<param-value>classpath:spring/application-config-mybatis-mapper.xml</param-value>
+		<param-value>classpath:spring/annotation/application-config-jdbc-annotation.xml</param-value>
+		<param-value>classpath:spring/annotation/application-config-mybatis-annotation.xml</param-value>
+		<param-value>classpath:spring/annotation/application-config-mybatis-mapper-annotation.xml</param-value>
+		 -->
+		<param-value>classpath:spring/annotation/application-config-mybatis-mapper-scan-annotation.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener
@@ -39,9 +43,9 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<!-- 
-			<param-value>classpath:spring/mvc-config-annotation.xml</param-value> 
-			-->
 			<param-value>classpath:spring/mvc-config.xml</param-value>
+			-->
+			<param-value>classpath:spring/annotation/mvc-config-annotation.xml</param-value> 
 
 		</init-param>
 		<load-on-startup>1</load-on-startup>

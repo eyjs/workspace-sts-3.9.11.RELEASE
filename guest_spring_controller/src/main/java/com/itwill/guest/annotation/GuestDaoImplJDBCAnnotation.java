@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.itwill.guest.Guest;
@@ -16,7 +17,7 @@ import com.itwill.guest.GuestSQL;
 
 @Repository
 public class GuestDaoImplJDBCAnnotation implements GuestDao  {
-	
+	@Autowired
 	private DataSource dataSource;
 	/*
 	 * SE Test DataSource
