@@ -4,12 +4,14 @@ package com.itwill.guest;
 import java.util.List;
 
 import com.itwill.guest.mapper.GuestMapper;
-public class GuestDaoImplMapperInterfaceMyBatis  implements GuestDao{
+public class GuestDaoImplMyBatisMapperInterface  implements GuestDao{
 	private GuestMapper guestMapper;
-	public GuestDaoImplMapperInterfaceMyBatis(GuestMapper guestMapper) throws Exception {
+	public GuestDaoImplMyBatisMapperInterface(GuestMapper guestMapper) throws Exception {
 		this.guestMapper=guestMapper;
 	}
-	
+	public GuestDaoImplMyBatisMapperInterface() {
+		// TODO Auto-generated constructor stub
+	}
 	public GuestMapper getGuestMapper() {
 		return guestMapper;
 	}

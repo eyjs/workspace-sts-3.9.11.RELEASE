@@ -71,7 +71,7 @@
 		class="com.itwill.guest.controller.GuestWriteFormController"/>
 	
 	<bean id="handlerMapping" 
-	class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/guest_main.do">guestMainController</prop>
