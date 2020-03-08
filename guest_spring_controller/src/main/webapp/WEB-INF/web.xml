@@ -23,8 +23,9 @@
 		<param-name>contextConfigLocation</param-name>
 		<!-- 
 		<param-value>classpath:spring/application-config-jdbc.xml</param-value>
-		 -->
 		<param-value>classpath:spring/application-config-mybatis.xml</param-value>
+		 -->
+		<param-value>classpath:spring/application-config-mybatis-mapper.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener
