@@ -17,7 +17,7 @@
 			class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="apacheDataSource"/>
 		<property name="configLocation" 
-		          value="classpath:mybatis-config.xml"/>
+		          value="classpath:mybatis-config-mapper-interface.xml"/>
 		<!-- 
 		<property name="typeAliasesPackage" value="com.itwill.guest" />
 		 -->
