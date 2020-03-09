@@ -9,7 +9,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 web.xml을 대신할 java 클래스
  - DispatcherServlet 초기화
 */
-public class WebConfig  /*extends AbstractAnnotationConfigDispatcherServletInitializer */{
+public class WebConfig  extends AbstractAnnotationConfigDispatcherServletInitializer{
 	//@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class[] { RootConfig.class };
