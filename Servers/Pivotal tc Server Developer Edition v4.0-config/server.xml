@@ -20,7 +20,7 @@
 				
 				
 				
-			<Context docBase="user_spring" path="/user_spring" reloadable="true" source="org.eclipse.jst.jee.server:user_spring"/><Context docBase="guest_spring_controller" path="/guest_spring_controller" reloadable="true" source="org.eclipse.jst.jee.server:guest_spring_controller"/></Host>
+			<Context docBase="user_spring" path="/user_spring" reloadable="true" source="org.eclipse.jst.jee.server:user_spring"/><Context docBase="guest_spring_controller" path="/guest_spring_controller" reloadable="true" source="org.eclipse.jst.jee.server:guest_spring_controller"/><Context docBase="user_model2" path="/user_model2" reloadable="true" source="org.eclipse.jst.jee.server:user_model2"/></Host>
 		</Engine>
 		<Connector URIEncoding="UTF-8" acceptCount="100" connectionTimeout="20000" executor="tomcatThreadPool" maxKeepAliveRequests="15" port="${nio.http.port}" protocol="org.apache.coyote.http11.Http11NioProtocol" redirectPort="${nio.https.port}"/>
 	</Service>
