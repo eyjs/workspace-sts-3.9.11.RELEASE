@@ -14,7 +14,7 @@
 		//request.setCharacterEncoding("UTF-8");
 		String userId=request.getParameter("userId");
 		String password=request.getParameter("password");
-		UserService userService=UserService.getInstance();
+		UserService userService=new UserService();
 		User loginUser=userService.login(userId,password);
 		session.setAttribute("sUserId", userId);
 		session.setAttribute("sUser", loginUser);

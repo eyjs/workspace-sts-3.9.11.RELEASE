@@ -30,7 +30,7 @@
 <p>
 	- Spring Custom Tag : Spring에서 정의한태그<br/>
 	- SPEL(Spring Expression Language)
-	     Spring CustomTag 의 속성의 표현식
+	     Spring CustomTag(eval) 의 속성(expression)의 표현식
 </p>
 <ul>
 	<li>문자열리터럴:<s:eval expression="'KIM'.substring(1)"/></li>
@@ -76,6 +76,7 @@
 		- @elBean.member1:<s:eval expression="@elBean.member1"/><br/>
 		- @elBean.printMembers():
 		<s:eval expression="@elBean.printMembers()"/><br/>
+		<s:eval expression="@userService.toString()"/><br/>
 	</li>
 	
 	
