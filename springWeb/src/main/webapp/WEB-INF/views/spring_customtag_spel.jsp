@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="s" uri="http://www.springframework.org/tags" %> 
+<%@taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%--
 	request.setAttribute("price0", 345345435);
 	request.setAttribute("name0", "kim eun hi");
@@ -66,8 +66,7 @@
 		<br/>
 		<s:eval 
 		expression=
-			"new java.text.DecimalFormat('###,###.0')
-			.format(new Integer(price1))"/><br/>
+			"new java.text.DecimalFormat('###,###.0').format(new Integer(price1))"/><br/>
 		<s:eval expression=
 			"new java.util.Date().toLocaleString()"/>
 	</li>
