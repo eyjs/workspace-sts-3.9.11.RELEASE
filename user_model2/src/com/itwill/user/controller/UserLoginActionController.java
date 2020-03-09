@@ -25,6 +25,7 @@ public class UserLoginActionController implements Controller {
 				password=request.getParameter("password");
 				UserService userService=UserService.getInstance();
 				User loginUser=userService.login(userId,password);
+				
 				request.getSession().setAttribute("sUserId", userId);
 				request.getSession().setAttribute("sUser", loginUser);
 				forwardPath="redirect:user_main.do";

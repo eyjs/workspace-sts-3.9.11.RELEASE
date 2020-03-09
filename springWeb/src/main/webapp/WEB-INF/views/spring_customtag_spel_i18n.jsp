@@ -31,14 +31,14 @@
 	<!-- 
 		exception.userexisted =  {0} 사용자가 존재합니다..!!
 	 -->
-	<li><s:message code="exception.userexisted" arguments="guard"/></li>
+	<li><s:message code="exception.userexisted" arguments="tomato"/></li>
 	<li><s:message code="exception.userexisted" arguments="${id}"/></li>
 	<li>
 	<!-- 
 		nv.bc={0}/{1}
 	 -->
 		<s:message code="nv.bc" 
-			arguments="GUEST,GUEST LIST" 
+			arguments="게스트,게스트 리스트" 
 			argumentSeparator=","/>
 	</li>
 	<li>-----SPEL----</li>

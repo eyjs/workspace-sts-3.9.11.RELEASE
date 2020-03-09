@@ -11,6 +11,10 @@ import com.itwill.dto.Guest;
 
 @Controller
 public class SpringCustomTagSPELController {
+	@RequestMapping("/spring_customtag_spel_i18n.do")
+	public String spring_customtag_spel_i18n() {
+		return "spring_customtag_spel_i18n";
+	}
 	@RequestMapping("/jstl_fmt_i18n.do")
 	public String jstl_fmt_i18n() {
 		return "jstl_fmt_i18n";
@@ -36,5 +40,7 @@ public class SpringCustomTagSPELController {
 						"Sping EL에대해 공부합니다"));
 		return "spring_customtag_spel";
 	}
+	
+	
 
 }
