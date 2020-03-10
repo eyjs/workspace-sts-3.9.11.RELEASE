@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		변수,상수,리터럴
+	*/
+	var a1 ='test1';
+	let a2 ='test2';
+	
+	var b=123;
+	var c=123.4
+	var d=true;
+	
+	var a1 = 'test11';
+	
+	//let a2 = 'test22';//Uncaught SyntaxError: Identifier 'a2' has already been declared
+	/*
+	호이스팅이란
+	자바스크립트 함수는 실행되기 전에 함수 안에 필요한 변수값들을
+	모두 모아서 유효 범위의 최상단에 선언한다
+	*/
+	e = '김태희';
+	var e;
+	/*
+	상수선언
+	*/
+	const f='KIM';
+	//f='LEE'; //Uncaught TypeError: Assignment to constant variable.
+	
+	var g;
+	var h=null;
+	
+	
+	console.log(window.a1);
+	console.log(typeof window.a1);
+	console.log(b);
+	console.log(typeof b);
+	console.log(c);
+	console.log(typeof c);
+	console.log(d);
+	console.log(typeof d);
+	console.log(g);
+	console.log(g == undefined);
+	console.log(typeof g);
+	
+	console.log(h);
+	console.log(h == null);
+	console.log(typeof h);
+
+</script>
+</head>
+<body>
+<h1>javascript variable</h1><hr>
+
+</body>
+</html>
