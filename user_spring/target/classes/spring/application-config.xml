@@ -8,7 +8,7 @@
 	
 	<import resource="datasource-config.xml"/>
 	<bean id="userDao" class="com.itwill.user.UserDaoImpl">
-		<property name="dataSource" ref="apacheDataSource"/>
+		<property name="dataSource" ref="jndiDataSource"/>
 	</bean>
 	<bean id="userService" class="com.itwill.user.UserServiceImpl">
 		<constructor-arg ref="userDao" index="0"/>
