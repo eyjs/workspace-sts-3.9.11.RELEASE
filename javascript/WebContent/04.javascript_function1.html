@@ -1,0 +1,130 @@
+<!-- 
+
+자바스크립트(함수형 프로그래밍)
+	- 자바스크립트 함수는 일급 함수다.
+	- 자바스크립트 함수는 객체다.
+
+일급 함수(First-Class Function)
+	컴퓨터 과학자 Christopher Strachey가 만든 조어
+	함수가 런타임에도 생성
+	함수의 인자로 전달되고 함수의 결과로서 리턴되며, 변수에 할당
+	함수도 데이터처럼 구성이 가능해짐(Composability)
+
+일급 객체 ( First Class Obejct )
+	대부분의 스크립트 언어에서 객체는 일급 객체이며, 함수도 객체입니다.
+	일급 객체란 다음의 조건을 만족하는 객체를 의미합니다. 
+		1) 변수나 데이터 구조안에 담을 수 있다.
+		2) 파라미터로 전달 할 수 있다.
+		3) 반환 값(return value)으로 사용할 수 있다.
+		4) 할당에 사용된 이름과 관계없이 고유한 구별이 가능하다.
+		5) 동적으로 프로퍼티 할당이 가능하다.
+
+<< 함수형 프로그래밍 >>
+함수형 프로그래밍은 자료 처리를 수학적 함수의 계산으로 취급하고 
+상태와 가변 데이터를 멀리하는 프로그래밍 패러다임의 하나이다. 
+명령형 프로그래밍에서는 상태를 바꾸는 것을 강조하는 것과는 달리, 
+함수형 프로그래밍은 함수의 응용을 강조한다. 
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var var1="변수값1";
+	var msg1="메세지1";
+	var msg2="메세지2";
+	window.msg3="메세지3";
+	/*
+	A.선언적함수
+	*/
+	function func1(){
+		var localMsg="func1() local변수메세지";
+		document.write("func1() 내부에서실행:localMsg="+localMsg+"<br>");
+	}
+	function func2(msg){
+		if(msg==undefined){
+			msg='디폴트';
+		}
+		document.write("func2(msg)실행-->"+msg+"<br>");
+	}
+	function add(a,b){
+		var returnMsg='bad call...';
+		if(a!=undefined && b!=undefined){
+			if(typeof a == 'number' && typeof b=='number'){
+				returnMsg = a+b;
+			}else if(typeof a=='string' && typeof b=='string'){
+				returnMsg = "문자:"+a+b;
+			}
+		}
+		return returnMsg;
+	}
+	/*
+		1.함수를 변수에대입(일급함수)
+	*/
+	function func3(){
+		document.write("func3()실행<br>");
+	}
+	function func4(arg){
+		document.write("func4("+arg+")실행<br>");
+	}
+	var funcVar3 = func3;
+	var funcVar4 = func4;
+	var myAlert = window.alert;
+	/*
+	B.익명함수
+	*/
+	var funcVar5 = function(){
+		document.write("funcVar5()익명함수실행<br>");
+	};
+	var funcVar6 = function(a,b){
+		document.write("funcVar6("+a+","+b+")익명함수실행<br>");
+	};
+	
+	(function() {
+		document.write("익명함수1 실행<br>");
+	})();
+	
+	(function(arg1,arg2) {
+		document.write("익명함수2 실행("+arg1+","+arg2+")<br>");
+	})('KIM','LEE');
+	
+</script>
+
+</head>
+<body>
+<h1>자바스크립트 함수1</h1><hr>
+<script type="text/javascript">
+	window.func1();
+	//document.write("func1() 외부에서실행:localMsg= "+ localMsg+"<br>");
+	document.write(typeof window.func1+"<br>");	
+	if(window.func1 != null){
+		window.func1();
+	}
+	func2();
+	func2("인자메세지");
+	document.write("add()-->"+add()+"<br>");
+	document.write("add(1,2)-->"+add(1,2)+"<br>");
+	document.write("add('김','은희')-->"+add('김','은희')+"<br>");
+	//func3();
+	funcVar3();
+	//func4('인자1');
+	funcVar4('인자1');
+	myAlert("나의알럿!!!");
+	funcVar5();
+	funcVar6('인자1','인자2');
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

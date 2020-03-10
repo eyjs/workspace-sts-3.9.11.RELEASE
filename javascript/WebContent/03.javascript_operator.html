@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h1>자바스크립트 연산자</h1><hr>
+<script type="text/javascript">
+	var str1="KIM";
+	var str2=new String("KIM");
+	if(str1==str2){
+		console.log("값이일치");
+	}
+	if(str1 === str2){
+		console.log("값과 타입이일치");
+	}else{
+		console.log("값과 타입이일치하지 않는다");
+	}
+	var no=23;
+	switch (no % 2) {
+	case 0:
+		console.log(no+" 는 짝수");
+		break;
+	case 1:
+		console.log(no+" 는 홀수");
+		break;
+	}
+	console.log("---------- 3항연산자------------");
+	
+	let a = 12;
+	let b = 20;
+	let result = (a > b) ? a : b; 
+	console.log("result="+result);
+	
+	let a1 = 12;
+	let b1 = 20;
+	let result1;
+	(a1 > b1) ? result1=a1 : result1=b1; 
+	console.log("result1="+result1);
+	
+	var level = 78;
+	var msg=(level > 0)? '양수':'음수';
+	console.log(msg);
+	
+	var input=window.prompt("수를 입력하세요");
+	var number = Number(input);
+	var number = window.parseInt(input);
+	var result3=(number%2==0)?console.log('짝수'):console.log('홀수');
+	console.log(result3);
+</script>
+</body>
+</html>
+
+
+
+
+
+
