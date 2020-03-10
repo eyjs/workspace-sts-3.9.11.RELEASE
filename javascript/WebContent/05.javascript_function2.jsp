@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="kQuery.js"></script>
 <script type="text/javascript" src="05.javascript_function2_lib.js"></script>
 <script type="text/javascript" >
 	/*
@@ -71,7 +73,7 @@
 	},function(){
 		document.write("### func10(funcArg1,funcArg2)실행시에두번째인자로 대입한익명함수실행<br>");
 	});
-	
+	document.write("***********kQuey******************<br>");
 	hello(function(recvMsg){
 		/*
 		 hello function에서 내가 인자로전달한 익명함수를 
@@ -82,8 +84,17 @@
 	hello(function(recvMsg){
 		document.write(recvMsg+"<br/>");
 	}, "이소라");
+	var nameArray=["김경호","김은희","신명숙","정봉화","최경녀"]
 	
+	forEach(nameArray, function(index,e){
+		document.write(index+":"+e+"<br>");
+	});
 	
+	document.write("**********jQuey*******************<br>");	
+	
+	$.each(nameArray,function(index,e){
+		document.write(index+":"+e+"<br>");	
+	});
 	
 </script>
 </body>

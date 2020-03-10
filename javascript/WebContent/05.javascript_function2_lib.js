@@ -1,3 +1,5 @@
+
+
 function func3(f1) {
 	document.write("func3(f1)실행 start()<br>")
 	f1();
@@ -34,13 +36,6 @@ function func10(funcArg1,funcArg2){
 	document.write("func10(funcArg1,funcArg2)실행 end()<br>")
 }
 
-function hello(fArg,name){
-	if(name==undefined){
-		name="GUEST";
-	}
-	var msg =name+" 님 안녕하세요!!";
-	fArg(msg);
-}
 
 
 

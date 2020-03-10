@@ -33,6 +33,39 @@
 	var g;
 	var h=null;
 	
+	/***************Array*************/
+	/*
+	1.Array객체생성
+	    A . JavaScript Object Notation
+	     ex> [ , ] , : , { , } 
+	*/
+	console.log("------------Array-------------------")
+	var nameArray=['KIM','LEE','PARK','CHOI','SIM'];	
+	var scoreArray=[34,99,89,56,10];	
+	console.log(nameArray[0]);
+	console.log(scoreArray[0]);
+	
+	for (var i = 0; i < nameArray.length; i++) {
+		console.log(nameArray[i]+","+scoreArray[i]);
+	}
+	/*
+	console.log("------------sort전-------------------")
+	
+	scoreArray.forEach(function(score,i){
+		console.log(i+","+score+" *********");
+	});
+	
+	scoreArray.sort(function(a,b) {
+		return b-a;
+	});
+	console.log("------------sort후-------------------")
+	
+	scoreArray.forEach(function(score,i){
+		console.log(i+","+score+" *********");
+	});
+	*/
+	
+	console.log("------------------------------------")
 	
 	console.log(window.a1);
 	console.log(typeof window.a1);
