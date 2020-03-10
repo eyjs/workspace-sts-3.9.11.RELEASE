@@ -25,7 +25,7 @@ public class GuestController {
 
 	@RequestMapping("/guest_main.do")
 	public String guest_main() {
-		return "/WEB-INF/view/guest_main.jsp";
+		return "forward:/WEB-INF/view/guest_main.jsp";
 	}
 
 	@RequestMapping("/guest_list.do")
@@ -40,7 +40,7 @@ public class GuestController {
 			forwardPath = "forward:/WEB-INF/view/guest_error.jsp";
 			e.printStackTrace();
 		}
-		return "/WEB-INF/view/guest_list.jsp";
+		return "forward:/WEB-INF/view/guest_list.jsp";
 	}
 
 	@RequestMapping("/guest_view.do")
@@ -153,7 +153,7 @@ public class GuestController {
 
 	@RequestMapping(value = "/guest_error.do")
 	public String guest_error() {
-		String forwardPath="/WEB-INF/view/guest_error.jsp";
+		String forwardPath="forward:/WEB-INF/view/guest_error.jsp";
 		return forwardPath;
 	}
 
