@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	
+	var object=new Object();
+	var str=new String("문자열");
+	var num=new Number(21321);
+	var array=new Array();
+		
+	학생객체를생성하기위한  <<< 생성자 함수 >>> 작성
+	*/
+	function Student(id,name,kor,eng,math){
+		this.id=id;
+		this.name=name;
+		this.kor=kor;
+		this.eng=eng;
+		this.math=math;
+		this.tot=0;
+		this.avg=0.0;
+		this.calculateTot=function(){
+			this.tot=this.kor+this.eng+this.math;
+		};
+		this.calculateAvg=function(){
+			this.avg=this.tot/3.0;
+		};
+		this.toString=function(){
+			return '['+this.id+']'+this.name+","+
+	        this.kor+","+this.eng+","+
+	        this.math+","+this.tot+","+this.avg;
+		}
+		
+	}
+	/*
+	/*
+	학생객체 생성자 함수호출
+		1. Student(1,'kim',23,45,78);//잘못된 호출방법
+		2. var student1 = new Student(1,'kim',23,45,78);
+		    2-1. Object객체생성-->this
+		    2-2. this.property추가(대입)
+		    2-3. return this
+		  
+	*/
+	//window.Student(1,'김수한무',23,45,78);//잘못된 호출방법
+	//window.Student(2,'거북이와',78,98,88);//잘못된 호출방법
+	var student1 = new Student(1,"김수한무",34,67,88);
+	var student2 = new Student(2,"거북이와",68,87,90);
+	
+	var studentArray=[	student1,
+						student2,
+						new Student(3, "두루미", 78, 58,99)]
+	
+</script>
+</head>
+<body>
+<h1>java script 생성자 함수3</h1><hr>
+<script type="text/javascript">
+	document.write("---------Student 객체-------------<br>");
+	student1.calculateTot();
+	student1.calculateAvg();
+	document.write(student1.toString()+"<br>");
+	document.write("---------Student 리스트-------------<br>");
+	for (var i = 0; i < studentArray.length; i++) {
+		studentArray[i].calculateTot();
+		studentArray[i].calculateAvg();
+		document.write(studentArray[i].toString()+"<br>");
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

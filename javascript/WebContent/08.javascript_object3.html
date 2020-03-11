@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	학생객체를 생성하기위한 <<< 함수 >>> 작성
+	*/
+	function createStudent(id,name,kor,eng,math){
+		var studentObject={
+				'id':id,
+				'name':name,
+				'kor':kor,
+				'eng':eng,
+				'math':math,
+				'tot':0,
+				'avg':0.0,
+				'calculateTot':function(){
+					this.tot=this.kor+this.eng+this.math;
+				},
+				'calculateAvg':function(){
+					this.avg=this.tot/3.0;
+				},
+				'toString':function(){
+					return '['+this.id+']'+this.name+","+
+					        this.kor+","+this.eng+","+
+					        this.math+","+this.tot+","+this.avg;
+				}
+				
+			}
+		return studentObject;
+	}
+	
+	/**********학생성적처리************/
+	 var studentObject1 = createStudent('xxx','엑스맨',34,67,88);
+	 var studentObject2 = createStudent('yyy','와이맨',89,90,22);
+	 var studentObject3 = createStudent('zzz','제트맨',83,79,69);
+	 var studentArray=[ studentObject1,
+		 				studentObject2,
+		 				studentObject3,
+		 				createStudent('ccc', "씨이맨", 92, 93, 91)];
+	
+</script>
+</head>
+<body>
+<h1>java script 생성자 함수2</h1><hr>
+<script type="text/javascript">
+	document.write("---------Student 리스트-------------<br>")
+	for (var i = 0; i < studentArray.length; i++) {
+		
+		studentArray[i].calculateTot();
+		studentArray[i].calculateAvg();
+		document.write(studentArray[i].toString()+"<br>");
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

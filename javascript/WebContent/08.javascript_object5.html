@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="student_prototype.js"></script>
+<script type="text/javascript">
+	/*
+	학생객체를생성하기위한  <<< 생성자 함수 >>> 작성[prototype]
+	*/
+	/*
+	function Student(id,name,kor,eng,math){
+		this.id=id;
+		this.name=name;
+		this.kor=kor;
+		this.eng=eng;
+		this.math=math;
+		this.tot=0;
+		this.avg=0.0;
+	}
+	Student.prototype.calculateTot =function(){
+		this.tot=this.kor+this.eng+this.math;
+	} 
+	Student.prototype.calculateAvg =function(){
+		this.avg=this.tot/3.0;
+	} 
+	Student.prototype.toString =function(){
+		return '['+this.id+']'+this.name+","+
+        this.kor+","+this.eng+","+
+        this.math+","+this.tot+","+this.avg;
+	} 
+	*/
+	
+	
+	/*
+	학생객체 생성자 함수호출
+	*/
+	var student1 = new Student(1,"김수한무",34,67,88);
+	var student2 = new Student(2,"거북이와",68,87,90);
+	
+	var studentArray=[	student1,
+						student2,
+						new Student(3, "두루미", 78, 58,99)]
+	
+</script>
+</head>
+<body>
+<h1>java script 생성자 함수5[prototype]</h1><hr>
+<script type="text/javascript">
+	document.write("---------Student 객체-------------<br>");
+	student1.calculateTot();
+	student1.calculateAvg();
+	document.write(student1.toString()+"<br>");
+	document.write("---------Student 리스트-------------<br>");
+	for (var i = 0; i < studentArray.length; i++) {
+		studentArray[i].calculateTot();
+		studentArray[i].calculateAvg();
+		document.write(studentArray[i].toString()+"<br>");
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

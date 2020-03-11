@@ -14,7 +14,6 @@
 	     - { , } ,[ , ] , : , ,
 	*/
 	/***************Object******************/
-	
 	var studentObject1 = {
 	    		 'id':'aaa',
 	    		 'name':'김태희',
@@ -41,7 +40,17 @@
 		return  "["+this.id+"]"+this.name+","+this.age+","+this.married+","+this.weight;
 	};
 	
-	document.write("--------------Object출력-------------");
+	
+	var object1={};
+	var object2=new Object();
+	
+	
+	document.write("--------------Object출력-------------<br>");
+	document.write(object1.toString()+"<br>");
+	document.write(object2.toString()+"<br>");
+	document.write("<br>");
+	
+	
 	document.write(studentObject1.id+"<br>");
 	document.write(studentObject1.name+"<br>");
 	document.write(studentObject1.age+"<br>");
@@ -55,11 +64,112 @@
 	document.write(studentObject2.married+"<br>");
 	document.write(studentObject2.weight+"<br>");
 	document.write(studentObject2.toString()+"<br>");
+	/***************Array******************/	
+	document.write("-----------Array객체-----------------<br>");
+	var idArray1=["aaa","bbb","ccc"];
+	var nameArray1=["KIM","LEE","PARK"];
+	var ageArray1=[34,23,46];
+	/*
+	var idArray2=new Array("aaa","bbb","ccc");
+	var nameArray2=new Array("KIM","LEE","PARK");
+	var ageArray2=new Array(34,23,46);
+	idArray2.push("ddd");
+	nameArray2.push("디디디");
+	ageArray2.push(17);
+	*/
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
+	document.write("-----------Array.push()---------------<br>");
+	idArray1.push("ddd");
+	nameArray1.push("디디디");
+	ageArray1.push(17);
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
+	document.write("-----------Array.pop()---------------<br>");
+	document.write(idArray1.pop()+"<br>");
+	document.write(nameArray1.pop()+"<br>");
+	document.write(ageArray1.pop()+"<br>");
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
+	document.write("-----------Array.shift()---------------<br>");
+	idArray1.shift();
+	nameArray1.shift();
+	ageArray1.shift();
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
+	document.write("-----------Array.unshift()---------------<br>");
+	idArray1.unshift("zzz");
+	nameArray1.unshift("강수지");
+	ageArray1.unshift(55);
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
+	document.write("-----------Array.join()---------------<br>");
+	var str1=idArray1.join(",");
+	var str2=nameArray1.join(":");
+	var str3=ageArray1.join("%");
+	document.write(str1+"<br>");
+	document.write(str2+"<br>");
+	document.write(str3+"<br>");
+	document.write("-----------Array.sort()---------------<br>");
+	idArray1.sort(function(a,b){
+		if( a > b){
+			return -1;//안바꿈
+		}else if(a < b){
+			return 1;//바꿈
+		}else if(a==b){
+			return 0;
+		}
+	});
+	nameArray1.sort(function(a,b){
+		if( a > b){
+			return -1;
+		}else if(a < b){
+			return 1;
+		}else if(a==b){
+			return 0;
+		}
+	})
+	ageArray1.sort(function(a,b){
+		return b-a;
+	})
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
 	
-	     
+	/*
+	var studentArray=[studentObject1,studentObject2];
+	var objectArray=[{},{}];
+	*/
 	
 	
+	
+	document.write("-----------Array.reverse()---------------<br>");
+	idArray1.reverse();
+	nameArray1.reverse();
+	ageArray1.reverse();
+	
+	document.write(idArray1+"<br>");
+	document.write(nameArray1+"<br>");
+	document.write(ageArray1+"<br>");
 	
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

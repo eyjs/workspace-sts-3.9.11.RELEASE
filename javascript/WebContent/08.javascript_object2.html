@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	 생성자함수
+	*/
+	var object=new Object();
+	var str=new String("문자열");
+	var num=new Number(21321);
+	var array=new Array();
+	//var student=new Student(1,'김',23,67,89);
+	/**********학생성적처리************/
+	var studentObject1={
+		'id':'zzz',
+		'name':'sim',
+		'kor':67,
+		'eng':89,
+		'math':97,
+		'tot':0,
+		'avg':0.0,
+		'calculateTot':function(){
+			this.tot=this.kor+this.eng+this.math;
+		},
+		'calculateAvg':function(){
+			this.avg=this.tot/3.0;
+		},
+		'toString':function(){
+			return '['+this.id+']'+this.name+","+
+			        this.kor+","+this.eng+","+
+			        this.math+","+this.tot+","+this.avg;
+		}
+		
+	};
+	var studentObject2={
+			'id':'xxx',
+			'name':'엑스맨',
+			'kor':45,
+			'eng':67,
+			'math':23,
+			'tot':0,
+			'avg':0.0,
+			'calculateTot':function(){
+				this.tot=this.kor+this.eng+this.math;
+			},
+			'calculateAvg':function(){
+				this.avg=this.tot/3.0;
+			},
+			'toString':function(){
+				return '['+this.id+']'+this.name+","+
+				        this.kor+","+this.eng+","+
+				        this.math+","+this.tot+","+this.avg;
+			}
+			
+		};
+	var studentObject3={
+			'id':'yyy',
+			'name':'와이맨',
+			'kor':88,
+			'eng':98,
+			'math':99,
+			'tot':0,
+			'avg':0.0,
+			'calculateTot':function(){
+				this.tot=this.kor+this.eng+this.math;
+			},
+			'calculateAvg':function(){
+				this.avg=this.tot/3.0;
+			},
+			'toString':function(){
+				return '['+this.id+']'+this.name+","+
+				        this.kor+","+this.eng+","+
+				        this.math+","+this.tot+","+this.avg;
+			}
+			
+		};
+	 var studentArray=[studentObject1,studentObject2,studentObject3];
+	
+</script>
+</head>
+<body>
+<h1>java script 생성자 함수1</h1><hr>
+<script type="text/javascript">
+	document.write("---------Student 리스트-------------<br>")
+	for (var i = 0; i < studentArray.length; i++) {
+		
+		studentArray[i].calculateTot();
+		studentArray[i].calculateAvg();
+		document.write(studentArray[i].toString()+"<br>");
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
