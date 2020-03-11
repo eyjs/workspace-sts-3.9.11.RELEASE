@@ -15,7 +15,7 @@ public class SpringModelController {
 		@RequestMapping("/model_request.do")
 		public String request(HttpServletRequest request) {
 			request.setAttribute("req", "리퀘스트데이타");
-			return "/WEB-INF/views/spring_model.jsp";
+			return "forward:/WEB-INF/views/spring_model.jsp";
 		}
 		
 		@RequestMapping("/model_map.do")
@@ -26,7 +26,7 @@ public class SpringModelController {
 			*/
 			System.out.println("### "+map.getClass().getSimpleName()+":"+map);
 			
-			return "/WEB-INF/views/spring_model.jsp";
+			return "forward:/WEB-INF/views/spring_model.jsp";
 		}
 		@RequestMapping("/model_model.do")
 		public String model(Model model) {
@@ -34,7 +34,7 @@ public class SpringModelController {
 			/*
 			request.setAttribute("model", "모델데이타");
 			*/
-			return "/WEB-INF/views/spring_model.jsp";
+			return "forward:/WEB-INF/views/spring_model.jsp";
 		}
 		@RequestMapping("/model_modelmap.do")
 		public String modelmap(ModelMap modelMap) {
@@ -42,7 +42,7 @@ public class SpringModelController {
 			/*
 			request.setAttribute("modelmap", "모델맵데이타");
 			*/
-			return "/WEB-INF/views/spring_model.jsp";
+			return "forward:/WEB-INF/views/spring_model.jsp";
 		}
 		@RequestMapping("/model_modelandview.do")
 		public ModelAndView modelandview() {
@@ -51,10 +51,9 @@ public class SpringModelController {
 			/*
 			request.setAttribute("modelAndView", "모델앤드뷰데이타");
 			*/
-			modelAndView.setViewName("/WEB-INF/views/spring_model.jsp");
+			modelAndView.setViewName("forward:/WEB-INF/views/spring_model.jsp");
 			return modelAndView;
 		}
-		
 		@RequestMapping("model_all.do")
 		public String model_all(HttpServletRequest request,
 								Model model,
@@ -64,22 +63,12 @@ public class SpringModelController {
 			map.put("map", "맵데이타");
 			model.addAttribute("model", "모델데이타");
 			modelMap.addAttribute("modelmap", "모델맵데이타");
-			
 			/*
 			 request.setAttribute("req", "리퀘스트데이타");
 			 request.setAttribute("map", "맵데이타");
 			 request.setAttribute("model", "모델데이타");
 			 request.setAttribute("modelmap", "모델맵데이타");
 			 */
-			
-			return "/WEB-INF/views/spring_model.jsp";
+			return "forward:/WEB-INF/views/spring_model.jsp";
 		}
-		
-		
-		
-		
-		
-		
-		
-	
 }

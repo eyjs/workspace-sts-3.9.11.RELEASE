@@ -16,7 +16,7 @@ public class RequestMappingParameterController {
 	
 	@RequestMapping(value = "/parameter_guest_write_form.do")
 	public String parameter_guest_write_form() {
-		return "/WEB-INF/views/guest_write_form.jsp";
+		return "forward:/WEB-INF/views/guest_write_form.jsp";
 	}
 	@RequestMapping(value = "/parameter_guest_write_action.do",
 			method = RequestMethod.GET)
@@ -43,7 +43,7 @@ public class RequestMappingParameterController {
 		 * GuestService메쏘드호출
 		 */
 		this.guestList();
-		return "/WEB-INF/views/guest_write_result.jsp";
+		return "forward:/WEB-INF/views/guest_write_result.jsp";
 	}
 	
 	private @ModelAttribute(name="guestList") ArrayList<Guest> guestList(){
@@ -86,7 +86,7 @@ public class RequestMappingParameterController {
 			 * request.setAttribute("guest",guest);
 			 */
 			
-		return "/WEB-INF/views/guest_write_result.jsp";
+		return "forward:/WEB-INF/views/guest_write_result.jsp";
 	}
 }
 

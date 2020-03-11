@@ -30,6 +30,6 @@ public class RequestMappingServletAPIParameterController {
 		System.out.println("### "+sessionId);
 		System.out.println("### "+requestLocale);
 		System.out.println("####################################");
-		return "/WEB-INF/views/controller_servletapi.jsp";
+		return "forward:/WEB-INF/views/controller_servletapi.jsp";
 	}
 }

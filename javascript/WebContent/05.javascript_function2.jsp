@@ -92,7 +92,7 @@
 	
 	document.write("**********jQuey*******************<br>");	
 	
-	$.each(nameArray,function(index,e){
+	jQuery.each(nameArray,function(index,e){
 		document.write(index+":"+e+"<br>");	
 	});
 	

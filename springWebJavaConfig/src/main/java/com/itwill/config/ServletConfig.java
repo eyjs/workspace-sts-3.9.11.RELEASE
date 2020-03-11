@@ -39,9 +39,7 @@ mvc-config.xml을 대신할 java 클래스
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"com.itwill.controller.annotation"})
-
 public class ServletConfig implements WebMvcConfigurer {
-	
 	/*
 	@Bean
 	public SimpleUrlHandlerMapping sampleServletMapping() {

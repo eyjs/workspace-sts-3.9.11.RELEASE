@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RequestMappingGETPOSTController {
 	@RequestMapping(value = "/login.do",method = RequestMethod.GET)
 	public String login_form_get() {
-		return "/WEB-INF/views/get_login_form.jsp";
+		return "forward:/WEB-INF/views/get_login_form.jsp";
 	}
 	@RequestMapping(value = "/login.do",method = RequestMethod.POST)
 	public String login_action_post(@RequestParam(value = "id",required = true,defaultValue = "") String id,
@@ -22,6 +22,6 @@ public class RequestMappingGETPOSTController {
 		if(isLogin) {
 			session.setAttribute("sUserId", id);
 		}
-		return "/WEB-INF/views/post_login_result.jsp";
+		return "forward:/WEB-INF/views/post_login_result.jsp";
 	}
 }

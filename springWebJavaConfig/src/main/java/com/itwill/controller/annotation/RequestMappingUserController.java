@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RequestMappingUserController {
 	@RequestMapping("/list.do")
 	public String list() {
-		return "/WEB-INF/views/user/list.jsp";
+		return "forward:/WEB-INF/views/user/list.jsp";
 	}
 	@RequestMapping("/view.do")
 	public String view() {
-		return "/WEB-INF/views/user/view.jsp";
+		return "forward:/WEB-INF/views/user/view.jsp";
 	}
 	
 	//@RequestMapping("/user/list.do")
 	public String list1() {
-		return "/WEB-INF/views/user/list.jsp";
+		return "forward:/WEB-INF/views/user/list.jsp";
 	}
 	//@RequestMapping("/user/view.do")
 	public String view1() {
-		return "/WEB-INF/views/user/view.jsp";
+		return "forward:/WEB-INF/views/user/view.jsp";
 	}
 }

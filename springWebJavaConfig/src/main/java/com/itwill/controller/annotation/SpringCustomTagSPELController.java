@@ -17,9 +17,9 @@ import com.itwill.service.UserService;
 
 @Controller
 public class SpringCustomTagSPELController {
-	@Autowired
+	//@Autowired
 	private MessageSource messageSource;
-	@Autowired
+	//@Autowired
 	private UserService userService;
 	/**********Service 생성[i18n]************/
 	@RequestMapping("/spring_service_i18n.do")

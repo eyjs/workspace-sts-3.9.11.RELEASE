@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>javascript core객체 Object,Array[JSON]</h1><hr>
+<script type="text/javascript">
+	/*
+	 1. JSON(JavaScript Object Notation)을 사용한 객체생성
+	 2. 생성자 함수를 사용한객체생성
+	   JSON(자바스크립트객체생성기호) 
+	     - { , } ,[ , ] , : , ,
+	*/
+	/***************Object******************/
+	
+	var studentObject1 = {
+	    		 'id':'aaa',
+	    		 'name':'김태희',
+	    		 'age':34,
+	    		 'married':true,
+	    		 'weight': 67.67,
+	    		 'toString':function(){
+	    			 return  "["+this.id+"]"+this.name+","+this.age+","+this.married+","+this.weight;
+	    		 }
+	     		  	
+	     };
+	     
+	studentObject1.address="서울시";    
+	     
+	var studentObject2 = new Object();
+	studentObject2.id='bbb';
+	studentObject2.name='이효리';
+	studentObject2.age=42;
+	studentObject2.married=true;
+	studentObject2.weight=78.89;
+	studentObject2.address="경기도";
+	
+	studentObject2.toString = function(){
+		return  "["+this.id+"]"+this.name+","+this.age+","+this.married+","+this.weight;
+	};
+	
+	document.write("--------------Object출력-------------");
+	document.write(studentObject1.id+"<br>");
+	document.write(studentObject1.name+"<br>");
+	document.write(studentObject1.age+"<br>");
+	document.write(studentObject1.married+"<br>");
+	document.write(studentObject1.weight+"<br>");
+	document.write(studentObject1.toString()+"<br>");
+	document.write("<br>");
+	document.write(studentObject2.id+"<br>");
+	document.write(studentObject2.name+"<br>");
+	document.write(studentObject2.age+"<br>");
+	document.write(studentObject2.married+"<br>");
+	document.write(studentObject2.weight+"<br>");
+	document.write(studentObject2.toString()+"<br>");
+	
+	     
+	
+	
+	
+</script>
+</body>
+</html>

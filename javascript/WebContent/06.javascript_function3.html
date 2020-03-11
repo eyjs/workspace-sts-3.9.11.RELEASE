@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	1. function객체를 변수에대입(일급함수)
+	2. function객체를 파라메타데이타로사용
+	3. function객체를 반환
+	
+	inner function(nested function)
+    내부함수
+    
+    클로저는 내부함수가 참조하는 외부함수의 지역변수가 
+    외부함수에 의해 내부함수가 반환된 이후에도 환경(life-cycle)이 
+    유지되는 것을 의미한다.
+    
+    클로저는 독립적인 (자유) 변수를 가리키는 함수이다.
+    또는,클로저 안에 정의된 함수는 만들어진 환경을 ‘기억한다’.
+	*/
+	function outer_function1(){
+		var outer_var="outer data";
+		function inner_function1(){
+			var inner_var="inner data";
+			document.write("inner1-->outer_var:"+outer_var+"<br>");
+			document.write("inner1-->inner_var:"+inner_var+"<br>");
+		}
+		inner_function1();
+		
+		document.write("outer1-->outer_var"+outer_var+"<br>");
+		document.write("outer1-->inner_var:inner_var is not defined<br>");
+		return inner_function1;
+	}
+	function outer_function2(){
+		var outer_var="outer data";
+		return function(){
+			var inner_var="inner_data";
+			document.write("inner2-->outer_var:"+outer_var+"<br>");
+			document.write("inner2-->inner_var:"+inner_var+"<br>");
+		};
+	}
+	
+	function outer_function3(arg_var){
+		var outer_var="outer data";
+		return function(){
+			var inner_var="inner_data";
+			document.write("inner3-->arg_var:"+arg_var+"<br>");
+			document.write("inner3-->outer_var:"+outer_var+"<br>");
+			document.write("inner3-->inner_var:"+inner_var+"<br>");
+		};
+	}
+	function outer_function4(a,b){
+		var c = a + b;
+		return function(){
+			var result = c;
+			document.write("inner4-->a:"+a+"<br>");
+			document.write("inner4-->b:"+b+"<br>");
+			document.write("inner4-->c:"+c+"<br>");
+			document.write("inner4-->result:"+result+"<br>");
+		};
+	}
+</script>
+</head>
+<body>
+	<h1>javascript inner function,closure </h1><hr>
+	<script type="text/javascript">
+		var returnInnerFunc1Var = outer_function1();
+		document.write("---반환받은 inner_function1실행------<br>")
+		returnInnerFunc1Var();
+		//document.write(returnInnerFunc1Var+"<br>");
+		/*
+		inner_function1 is not defined
+		inner_function1();
+		*/
+		var returnInnerFunc2Var = outer_function2();
+		returnInnerFunc2Var();
+		var returnInnerFunc3Var = outer_function3("인자1");
+		returnInnerFunc3Var();
+		returnInnerFunc3Var();
+		var returnInnerFunc4Var=outer_function4(1111,8888);
+		returnInnerFunc4Var();
+		returnInnerFunc4Var();
+		
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

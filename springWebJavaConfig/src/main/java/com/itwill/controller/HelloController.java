@@ -14,7 +14,7 @@ public class HelloController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mv=new ModelAndView();
-		mv.setViewName("/WEB-INF/views/hello.jsp");
+		mv.setViewName("forward:/WEB-INF/views/hello.jsp");
 		request.setAttribute("msg", "안녕 SpringMVC!!!");
 		return mv;
 	}
