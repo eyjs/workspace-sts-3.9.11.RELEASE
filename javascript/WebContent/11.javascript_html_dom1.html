@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function findById(){
+		var htmlE = document.documentElement;
+		printMessage(htmlE.tagName);
+		var div1E=document.getElementById("div1");
+		var div2E=document.getElementById("div2");
+		div1E.innerHTML="";
+		div1E.innerHTML+="<form>";
+		div1E.innerHTML+="검색어:<input type='text'>";
+		div1E.innerHTML+="<input type='submit' value='검색'/>";
+		div1E.innerHTML+="</form>";
+		printMessage(div2.innerHTML);
+		div2.innerHTML="div2 change";
+		div2.style.border='3px dotted red';
+		
+		var div3E = document.getElementById('div3');
+		div3E.innerHTML='';
+		div3E.innerHTML="<img width='30' height='30' src='image/p_current.png'>";
+		
+		var div4E=document.getElementById('div4');
+		div4E.style.display='none';
+		//div4E.style.display='block';
+	}
+	function findByClass(){
+		var divNodeList = document.getElementsByClassName("menu");
+		for (var i = 0; i < divNodeList.length; i++) {
+			divNodeList.item(i).style.backgroundColor='yellow';
+			divNodeList.item(i).style.color='purple';
+			divNodeList.item(i).style.border='2px dashed pink';
+			
+		}
+	}
+	var count=0;
+	function findByTagName(){
+		var h1NodeList = document.getElementsByTagName("h1");
+		var h1E = h1NodeList.item(0);
+		h1E.innerHTML='h1변경'+ count++;
+		/*
+		var h1TextNode = h1E.firstChild;
+		h1TextNode.nodeValue = 'h1변경'+ count++;;
+		*/
+		var divNodeList = document.getElementsByTagName("div");
+		printMessage("div tag-->"+divNodeList.length+" 개");
+		
+		for (var i = 0; i < divNodeList.length; i++) {
+			divNodeList.item(i).style.color = 'blue';
+		}
+	}
+	
+	function printMessage(msg){
+		document.getElementById("resultDiv").innerHTML+=msg+"<br>";
+	}
+	
+
+</script>
+</head>
+<body>
+<h1>HTML DOM객체 찾기</h1><hr>
+<div id="div1">
+	id=div1
+</div>
+<div id="div2">
+	id=div2
+</div>
+<div id="div3">
+	id=div3
+</div>
+<div id="div4">
+	id=div4
+</div>
+<div class="menu">
+	class=menu
+</div>
+<div class="menu">
+	class=menu
+</div>
+<div id="resultDiv" style="border: 1px solid blue;width: 70%">
+	id=resultDiv<br>
+</div>
+<div>
+	<input type="button" value="id로찾기" onclick="findById()">
+	<input type="button" value="class로찾기" onclick="findByClass()">
+	<input type="button" value="tagName으로찾기" onclick="findByTagName()">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

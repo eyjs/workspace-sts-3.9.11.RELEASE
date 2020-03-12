@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var count=0;
+	function create(){
+		/*
+		1.div Element 생성
+		*/
+		var newDivE = document.createElement('div');
+		newDivE.setAttribute("id",'newDiv'+ ++count)
+		newDivE.style.border='1px dotted gold';
+		newDivE.style.display='block';
+		/*
+		2.DOM Tree에 추가
+		*/
+		var parentDiv=document.getElementById('parent');
+		parentDiv.appendChild(newDivE);
+	};
+	function remove(){
+		
+	};
+	function update(){
+		
+	};
+</script>
+</head>
+<body>
+<h1>HTML DOM객체 CRUD</h1><hr>
+<div id="parent">
+
+</div>
+<div id="menu">
+	<input type="button" value="추가" onclick="create()">
+	<input type="button" value="삭제" onclick="remove()">
+	<input type="button" value="수정" onclick="update()">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

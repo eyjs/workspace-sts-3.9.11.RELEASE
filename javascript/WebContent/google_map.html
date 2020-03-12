@@ -32,10 +32,9 @@ html, body {
 					lat : -34.397,
 					lng : 150.644
 				},
-				zoom : 18
+				zoom : 16
 			});
 			infoWindow = new google.maps.InfoWindow;
-
 			// Try HTML5 geolocation.
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function(position) {
@@ -43,14 +42,16 @@ html, body {
 						lat : position.coords.latitude,
 						lng : position.coords.longitude
 					};
-					
 					var currentIcon = new google.maps.MarkerImage(
 							"image/p_current.png", null, null, null,new google.maps.Size(80, 80));
 					
 					var marker = new google.maps.Marker({
 						position : pos,
 						map:map,
-						label : "현재위치",
+						label : {color: 'red', // <= HERE
+					          	 fontSize: '20px',
+					          	 fontWeight: '900',
+					          	 text: '현재위치'},
 						icon:currentIcon
 					});
 					
@@ -62,7 +63,7 @@ html, body {
 					*/
 					map.setCenter(pos);
 					downloadUrl('google_map_proxy.jsp?lat=' + pos.lat + '&lng='
-							+ pos.lng + '&m=1200', function(data) {
+							+ pos.lng + '&m=2000', function(data) {
 						var jsonObject = JSON.parse(data.responseText);
 						console.log(jsonObject);
 						console.log(jsonObject.stores);
@@ -111,7 +112,10 @@ html, body {
 							var marker = new google.maps.Marker({
 								position : myLatLng,
 								map : map,
-								label : stores[i].name,
+								label:{ color: 'blue', // <= HERE
+						          	 	fontSize: '13px',
+						          	 	fontWeight: '500',
+						          	 text: stores[i].name},
 								title : stores[i].addr,
 								icon:myIcon
 							});
