@@ -13,6 +13,27 @@
 		newDivE.setAttribute("id",'newDiv'+ ++count)
 		newDivE.style.border='1px dotted gold';
 		newDivE.style.display='block';
+		//newDivE.innerHTML="text "+count;
+		/*
+		 1-1. TextNode생성
+		*/
+		var newTextNode = 
+			document.createTextNode("새로생성된DIV"+count+"의 TextNode");
+		newDivE.appendChild(newTextNode);
+		/*
+		 1-2. img Element생성
+		*/
+		var imgE = document.createElement('img');
+		imgE.setAttribute('src','image/p_red.png');
+		imgE.setAttribute('width', '20px');
+		imgE.setAttribute('height', '20px');
+		newDivE.appendChild(imgE);
+		
+		var imgE2 = document.createElement('img');
+		imgE2.setAttribute('src','image/p_blue.png');
+		imgE2.setAttribute('width', '20px');
+		imgE2.setAttribute('height', '20px');
+		newDivE.insertBefore(imgE2,newTextNode);
 		/*
 		2.DOM Tree에 추가
 		*/
@@ -20,10 +41,19 @@
 		parentDiv.appendChild(newDivE);
 	};
 	function remove(){
-		
+		if(count==0)return;
+		var parentDivE=document.getElementById("parent");
+		var removeDivE = document.getElementById("newDiv"+count);
+		parentDivE.removeChild(removeDivE);
+		count--;
 	};
 	function update(){
-		
+		var bodyNodeList = document.getElementsByTagName('body');
+		var bodyE=bodyNodeList.item(0);
+		console.log(bodyE);
+		bodyE.style.background="url('image/p_blue2.png')";
+		bodyE.style.backgroundRepeatX='no-repeat';
+		bodyE.style.backgroundRepeatY='no-repeat';
 	};
 </script>
 </head>

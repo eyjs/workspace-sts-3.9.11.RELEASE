@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		border: 1px dotted blue;
+		
+	}
+</style>
+<script type="text/javascript">
+	function eventPropagationCancle(event){
+		alert('start bubble p');
+		/*
+		이벤트버블링취소
+		*/
+		event.stopPropagation();
+	}
+</script>
+</head>
+<body onclick="alert('body');">
+	<div onclick="alert('outer div');">
+		<div onclick="alert('inner div');">
+			<h1 onclick="alert('h1');">
+				<p onclick="eventPropagationCancle(event);">java script event bubbling</p>
+			</h1>
+		</div>
+	</div>
+	<br/>
+	<br/>
+</body>
+</html>
