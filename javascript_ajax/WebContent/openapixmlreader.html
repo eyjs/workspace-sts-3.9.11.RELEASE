@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	li{
+		list-style: none;
+	}
+</style>
+<script type="text/javascript" src='httpRequest.js'></script>
+<script type="text/javascript">
+	function requestOpenApi(){
+		
+		
+	}
+	
+	function displayResult(){
+		
+		}
+	}
+</script>
+</head>
+<body>
+<h1 onclick="requestOpenApi();">OPEN API XML[클릭시요청]</h1>
+<hr/>
+
+책검색<input type="text" id='searchBook' 
+		onkeyup="if(event.keyCode==13)requestOpenApi();" name='searchBook' >
+<input type="button" value="검색" onclick="requestOpenApi();">
+
+<br/>
+<div id="printDiv" style="border: 1px solid blue;width: 70%">
+	
+</div>
+</body>
+</html>

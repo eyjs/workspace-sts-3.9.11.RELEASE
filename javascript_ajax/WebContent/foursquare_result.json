@@ -1,0 +1,1628 @@
+{
+	"meta": {
+		"code": 200,
+		"requestId": "5d9e9238cad1b6002c36ba22"
+	},
+	"notifications": [
+		{
+			"type": "notificationTray",
+			"item": {
+				"unreadCount": 1
+			}
+		}
+	],
+	"response": {
+		"suggestedFilters": {
+			"header": "눌러서 보기:",
+			"filters": [
+				{
+					"name": "지금 오픈한",
+					"key": "openNow"
+				}
+			]
+		},
+		"headerLocation": "역삼1동",
+		"headerFullLocation": "역삼1동, 서울특별시",
+		"headerLocationGranularity": "neighborhood",
+		"totalResults": 13,
+		"suggestedBounds": {
+			"ne": {
+				"lat": 37.50184700225,
+				"lng": 127.0342027552304
+			},
+			"sw": {
+				"lat": 37.49734699775,
+				"lng": 127.02854124476961
+			}
+		},
+		"groups": [
+			{
+				"type": "Recommended Places",
+				"name": "recommended",
+				"items": [
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "592d4f48e679bc1e30c5d314",
+							"name": "두껍삼",
+							"contact": {
+								
+							},
+							"location": {
+								"address": "강남구 테헤란로8길 17",
+								"crossStreet": "역삼직영점",
+								"lat": 37.497755090122794,
+								"lng": 127.03176906804286,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.497755090122794,
+										"lng": 127.03176906804286
+									}
+								],
+								"distance": 208,
+								"cc": "KR",
+								"city": "Gangnamgu",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로8길 17 (역삼직영점)",
+									"역삼1동",
+									"Gangnamgu",
+									"서울특별시"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d1df931735",
+									"name": "바비큐 전문점",
+									"pluralName": "바비큐 전문점",
+									"shortName": "바비큐",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/bbqalt_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 3,
+								"usersCount": 129,
+								"checkinsCount": 239
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 8.1,
+							"ratingColor": "73CF42",
+							"ratingSignals": 18,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5cb44f66f129b50025f57dfe",
+								"createdAt": 1555320678,
+								"text": "One of the best Korean style  Pork BBQ.",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5cb44f66f129b50025f57dfe",
+								"logView": true,
+								"agreeCount": 0,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "888706",
+									"firstName": "Jay",
+									"lastName": "Kim",
+									"gender": "male",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/SUOJWWGKWDGSBNOW.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-592d4f48e679bc1e30c5d314-0"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "59255750b6eedb5394213a90",
+							"name": "육전식당",
+							"contact": {
+								"phone": "0234526373",
+								"formattedPhone": "02-3452-6373"
+							},
+							"location": {
+								"address": "강남구 테헤란로8길 11-4",
+								"crossStreet": "4호점",
+								"lat": 37.49823896237228,
+								"lng": 127.03182755514693,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.49823896237228,
+										"lng": 127.03182755514693
+									}
+								],
+								"distance": 156,
+								"postalCode": "06234",
+								"cc": "KR",
+								"neighborhood": "역삼1동",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로8길 11-4 (4호점)",
+									"역삼1동",
+									"강남구",
+									"서울특별시",
+									"06234"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d1df931735",
+									"name": "바비큐 전문점",
+									"pluralName": "바비큐 전문점",
+									"shortName": "바비큐",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/bbqalt_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 7,
+								"usersCount": 185,
+								"checkinsCount": 251
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 8.0,
+							"ratingColor": "73CF42",
+							"ratingSignals": 21,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"hours": {
+								"isOpen": false,
+								"isLocalHoliday": false
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5c052d491b0ea5002cefdd21",
+								"createdAt": 1543843145,
+								"text": "너무 맛있어요! 다른집 삼겹살은 이제 못먹을듯!",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5c052d491b0ea5002cefdd21",
+								"photo": {
+									"id": "5c052d55d48ec1002cd6e87f",
+									"createdAt": 1543843157,
+									"source": {
+										"name": "Foursquare for iOS",
+										"url": "https:\/\/foursquare.com\/download\/#\/iphone"
+									},
+									"prefix": "https:\/\/fastly.4sqi.net\/img\/general\/",
+									"suffix": "\/53177488_xF3-F9iitQYmGdJXVW7xbowa9_V5bi9CpC3lxV8naoE.jpg",
+									"width": 1920,
+									"height": 1440,
+									"visibility": "public"
+								},
+								"photourl": "https:\/\/fastly.4sqi.net\/img\/general\/original\/53177488_xF3-F9iitQYmGdJXVW7xbowa9_V5bi9CpC3lxV8naoE.jpg",
+								"logView": true,
+								"agreeCount": 0,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "53177488",
+									"firstName": "Hs",
+									"lastName": "Kim",
+									"gender": "male",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/blank_boy.png",
+										"default": true
+									}
+								}
+							}
+						],
+						"referralId": "e-0-59255750b6eedb5394213a90-1"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "54a12bb3498e81619d877b11",
+							"name": "단풍나무집",
+							"contact": {
+								"phone": "025698200",
+								"formattedPhone": "02-569-8200"
+							},
+							"location": {
+								"address": "테헤란로 113 B1",
+								"crossStreet": "강남역점",
+								"lat": 37.49872416933112,
+								"lng": 127.02976425192627,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.49872416933112,
+										"lng": 127.02976425192627
+									}
+								],
+								"distance": 172,
+								"postalCode": "06134",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"테헤란로 113 B1 (강남역점)",
+									"역삼1동",
+									"강남구",
+									"서울특별시",
+									"06134"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d113941735",
+									"name": "한식당",
+									"pluralName": "한식당",
+									"shortName": "한식",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/korean_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 2,
+								"usersCount": 183,
+								"checkinsCount": 235
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 7.9,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 10,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5b92fe2f23a2e6002b2eeecd",
+								"createdAt": 1536359983,
+								"text": "음식이 달고. 주차가 불편하나. 호감가는 서비스. 소보다는 돼지 드시고.",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5b92fe2f23a2e6002b2eeecd",
+								"logView": true,
+								"agreeCount": 0,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "130921566",
+									"firstName": "Sangwoo",
+									"lastName": "Han",
+									"gender": "male",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/130921566-PYN1F5JSNEMU1MB0.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-54a12bb3498e81619d877b11-2"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "4ce752c0f1c6236af01a59f0",
+							"name": "갓덴스시",
+							"contact": {
+								"phone": "0220511477",
+								"formattedPhone": "02-2051-1477"
+							},
+							"location": {
+								"address": "강남구 테헤란로 109",
+								"crossStreet": "강남점",
+								"lat": 37.49851022684609,
+								"lng": 127.02923841916396,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.49851022684609,
+										"lng": 127.02923841916396
+									}
+								],
+								"distance": 223,
+								"postalCode": "135-934",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로 109 (강남점)",
+									"역삼1동",
+									"서울특별시",
+									"서울특별시",
+									"135-934"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d1d2941735",
+									"name": "스시 전문점",
+									"pluralName": "스시 전문점",
+									"shortName": "Sushi",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/sushi_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 39,
+								"usersCount": 1315,
+								"checkinsCount": 2453
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 8.0,
+							"ratingColor": "73CF42",
+							"ratingSignals": 122,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"hours": {
+								"status": "오후 11:00까지 개점",
+								"richStatus": {
+									"entities": [],
+									"text": "오후 11:00까지 개점"
+								},
+								"isOpen": true,
+								"isLocalHoliday": false
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "51e8ac6b498e700068c409f7",
+								"createdAt": 1374202987,
+								"text": "런치 납득세트 만칠백원인데 좋음",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/51e8ac6b498e700068c409f7",
+								"likes": {
+									"count": 3,
+									"groups": [],
+									"summary": "3명이 좋아함"
+								},
+								"logView": true,
+								"agreeCount": 3,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "4038405",
+									"firstName": "Yeji",
+									"lastName": "Park",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/4038405_GpBjaFqu_cpBAZ23DRpexgYN1zfw7XG4kdGz5LkyKD-yWmCFeQBneJ-Rvkr06WpgEVDSvXZJI.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-4ce752c0f1c6236af01a59f0-3"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "584b95c29343e03b16edfaea",
+							"name": "Soi 19# Coffee",
+							"contact": {
+								
+							},
+							"location": {
+								"address": "테헤란로 19길",
+								"lat": 37.500896,
+								"lng": 127.03336,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.500896,
+										"lng": 127.03336
+									}
+								],
+								"distance": 227,
+								"cc": "KR",
+								"city": "강남구",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"테헤란로 19길",
+									"역삼1동",
+									"강남구",
+									"서울특별시"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d1e0931735",
+									"name": "커피숍",
+									"pluralName": "커피숍",
+									"shortName": "커피숍",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/coffeeshop_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 4,
+								"usersCount": 27,
+								"checkinsCount": 56
+							},
+							"price": {
+								"tier": 1,
+								"message": "저렴",
+								"currency": "\u20a9"
+							},
+							"rating": 7.9,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 14,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5cce602f535d6f002c57d098",
+								"createdAt": 1557028911,
+								"text": "Good selection of house and guest blends, and a quieter coffee shop than the chain establishments around the main streets of Gangnam.",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5cce602f535d6f002c57d098",
+								"logView": true,
+								"agreeCount": 0,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "5096603",
+									"firstName": "Ankur",
+									"lastName": "Banerjee",
+									"gender": "male",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/5096603_VVOef5e3_UVuEsJFDNfuKfkQ5nV9Wmdfb66yccYcBS-Qywr2zSVllyekS8x1SCU64r0xhKSxE.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-584b95c29343e03b16edfaea-4"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "5020f7b9e4b042bc29f97251",
+							"name": "Pandora Cocktail Lounge",
+							"contact": {
+								"phone": "025016253",
+								"formattedPhone": "02-501-6253"
+							},
+							"location": {
+								"address": "강남구 강남대로94길 28",
+								"lat": 37.499542515133534,
+								"lng": 127.02944759698933,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.499542515133534,
+										"lng": 127.02944759698933
+									}
+								],
+								"distance": 170,
+								"postalCode": "135-912",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 강남대로94길 28",
+									"역삼1동",
+									"서울특별시",
+									"서울특별시",
+									"135-912"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d11e941735",
+									"name": "칵테일 바",
+									"pluralName": "칵테일 바",
+									"shortName": "칵테일",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/cocktails_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 8,
+								"usersCount": 171,
+								"checkinsCount": 291
+							},
+							"url": "http:\/\/pandorabar.co.kr",
+							"price": {
+								"tier": 3,
+								"message": "비쌈",
+								"currency": "\u20a9"
+							},
+							"rating": 7.5,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 16,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"hours": {
+								"isOpen": false,
+								"isLocalHoliday": false
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "507419bae4b0d053c99f0429",
+								"createdAt": 1349786042,
+								"text": "1인 15000원으로 칵테일 무제한! 안주도 따로 사와두 되요:)",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/507419bae4b0d053c99f0429",
+								"likes": {
+									"count": 3,
+									"groups": [],
+									"summary": "3명이 좋아함"
+								},
+								"logView": true,
+								"agreeCount": 3,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "15108566",
+									"firstName": "vivianna",
+									"lastName": "Kim",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/15108566-AJMSWUUIE2ENMYFC.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-5020f7b9e4b042bc29f97251-5"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "51db8d14498e318c1a19f83a",
+							"name": "스타벅스",
+							"contact": {
+								"phone": "027588631",
+								"formattedPhone": "02-758-8631",
+								"twitter": "starbuckskorea",
+								"instagram": "starbuckskorea",
+								"facebook": "122271421173562",
+								"facebookUsername": "starbuckskorea",
+								"facebookName": "Starbucks Korea"
+							},
+							"location": {
+								"address": "강남구 테헤란로 134",
+								"crossStreet": "역삼포스코점",
+								"lat": 37.49939319985862,
+								"lng": 127.03379631042479,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.49939319985862,
+										"lng": 127.03379631042479
+									}
+								],
+								"distance": 215,
+								"postalCode": "06235",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로 134 (역삼포스코점)",
+									"역삼1동",
+									"서울특별시",
+									"서울특별시",
+									"06235"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d1e0931735",
+									"name": "커피숍",
+									"pluralName": "커피숍",
+									"shortName": "커피숍",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/coffeeshop_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 9,
+								"usersCount": 668,
+								"checkinsCount": 2667
+							},
+							"url": "http:\/\/www.istarbucks.co.kr",
+							"price": {
+								"tier": 1,
+								"message": "저렴",
+								"currency": "\u20a9"
+							},
+							"rating": 7.5,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 87,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"hours": {
+								"status": "오후 11:30까지 개점",
+								"richStatus": {
+									"entities": [],
+									"text": "오후 11:30까지 개점"
+								},
+								"isOpen": true,
+								"isLocalHoliday": false
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "521d1f9b11d23363691e8fb3",
+								"createdAt": 1377640347,
+								"text": "크로스마일카드가 제공해주는 공짜 브런치가 이제 끝나요 흑.",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/521d1f9b11d23363691e8fb3",
+								"likes": {
+									"count": 7,
+									"groups": [],
+									"summary": "7명이 좋아함"
+								},
+								"logView": true,
+								"agreeCount": 7,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "54520625",
+									"firstName": "Hyuktae",
+									"lastName": "Kwon",
+									"gender": "male",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/M4O1PLDRK3TTIFHE.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-51db8d14498e318c1a19f83a-6"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "4dcc8adc8877851243ca3d95",
+							"name": "SLRRENT",
+							"contact": {
+								"phone": "025872470",
+								"formattedPhone": "02-587-2470",
+								"twitter": "slrrent"
+							},
+							"location": {
+								"address": "강남구 테헤란로6길 9",
+								"crossStreet": "강남점",
+								"lat": 37.498030319362975,
+								"lng": 127.03067679331951,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.498030319362975,
+										"lng": 127.03067679331951
+									}
+								],
+								"distance": 184,
+								"postalCode": "06233",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로6길 9 (강남점)",
+									"역삼1동",
+									"서울특별시",
+									"서울특별시",
+									"06233"
+								]
+							},
+							"categories": [
+								{
+									"id": "56aa371be4b08b9a8d573552",
+									"name": "대여 서비스",
+									"pluralName": "대여 서비스",
+									"shortName": "대여 서비스",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/default_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 5,
+								"usersCount": 83,
+								"checkinsCount": 213
+							},
+							"url": "http:\/\/www.slrrent.com",
+							"rating": 7.4,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 8,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "51ecd534498ece6061fce020",
+								"text": "역삼동 824-38 장원빌딩 1층으로 이전",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/51ecd534498ece6061fce020",
+								"likes": {
+									"count": 8,
+									"groups": [],
+									"summary": "8명이 좋아함"
+								},
+								"logView": true,
+								"agreeCount": 8,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 1
+								},
+								"user": {
+									"id": "6717307",
+									"firstName": "Kate",
+									"lastName": "K",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/6717307-ZNL044QKV5KIVW5D.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-4dcc8adc8877851243ca3d95-7"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "5767ba6a498e0e981d8e9c09",
+							"name": "Stubborn",
+							"contact": {
+								
+							},
+							"location": {
+								"address": "역삼동 647-2",
+								"lat": 37.500694,
+								"lng": 127.032882,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.500694,
+										"lng": 127.032882
+									}
+								],
+								"distance": 180,
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"역삼동 647-2",
+									"역삼1동",
+									"강남구",
+									"서울특별시"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d14e941735",
+									"name": "미국 음식점",
+									"pluralName": "미국 음식점",
+									"shortName": "아메리칸",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/default_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 3,
+								"usersCount": 77,
+								"checkinsCount": 100
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 7.3,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 16,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5961fc51a795bd541da4006b",
+								"createdAt": 1499593809,
+								"text": "런치스테이크 메뉴가 가격대비 만족스러웠다! 블루하몽 파스타는 예전보다는 감흥이 덜했다. 역삼 런치에 분위기 좋고 맛 괜찮은 거의 유일한 곳",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5961fc51a795bd541da4006b",
+								"logView": true,
+								"agreeCount": 1,
+								"disagreeCount": 0,
+								"lastVoteText": "좋아요 - Aug 26",
+								"lastUpvoteTimestamp": 1566813749,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "96709348",
+									"firstName": "한솔",
+									"lastName": "윤",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/blank_girl.png",
+										"default": true
+									}
+								}
+							}
+						],
+						"referralId": "e-0-5767ba6a498e0e981d8e9c09-8"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "578ae651498e99df0b491ff1",
+							"name": "마키노차야",
+							"contact": {
+								"phone": "025651116",
+								"formattedPhone": "02-565-1116"
+							},
+							"location": {
+								"address": "강남구 테헤란로8길 8",
+								"crossStreet": "역삼점",
+								"lat": 37.49834725483883,
+								"lng": 127.03127702453256,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.49834725483883,
+										"lng": 127.03127702453256
+									}
+								],
+								"distance": 139,
+								"postalCode": "06233",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로8길 8 (역삼점)",
+									"역삼1동",
+									"강남구",
+									"서울특별시",
+									"06233"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d1ce941735",
+									"name": "해산물 전문점",
+									"pluralName": "해산물 전문점",
+									"shortName": "해산물",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/seafood_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 5,
+								"usersCount": 252,
+								"checkinsCount": 364
+							},
+							"url": "http:\/\/www.makinochaya.co.kr",
+							"price": {
+								"tier": 3,
+								"message": "비쌈",
+								"currency": "\u20a9"
+							},
+							"rating": 7.3,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 44,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"hours": {
+								"status": "개점했을 것으로 예상",
+								"richStatus": {
+									"entities": [],
+									"text": "개점했을 것으로 예상"
+								},
+								"isOpen": true,
+								"isLocalHoliday": false
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5a3f91c33fcee87773ebefa8",
+								"createdAt": 1514115523,
+								"text": "해산물부페답게 신선한 회와 초밥이 많고 스테이크도 맛있게 구워줘요. 선택지가 많은 편이고 즉석에서 해주시는 샤브샤브도 좋았어요. 다만 사람이 많다보니 인원관리가 잘 안되는 분위기고 스텝들도 딱히 친절하지는 않습니다.가성비 아주 훌륭한지는 모르겠고 딱 그정도.",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5a3f91c33fcee87773ebefa8",
+								"likes": {
+									"count": 1,
+									"groups": [],
+									"summary": "1명이 좋아함"
+								},
+								"logView": true,
+								"agreeCount": 2,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "459492739",
+									"firstName": "EJ",
+									"lastName": "Hwang",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/459492739_eGBhxav8_Wi_Zkysx28omQktfema4-a4JSD97UBLIjJtdmLv58THNkwZeZYsTopk-fwFChwf8.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-578ae651498e99df0b491ff1-9"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "518e1b61498e61b11c1dee62",
+							"name": "계절미각",
+							"contact": {
+								"phone": "07088831586",
+								"formattedPhone": "070-8883-1586"
+							},
+							"location": {
+								"address": "강남구 테헤란로13길 18",
+								"lat": 37.500798458878194,
+								"lng": 127.0321611089469,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.500798458878194,
+										"lng": 127.0321611089469
+									}
+								],
+								"distance": 150,
+								"postalCode": "135-909",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로13길 18",
+									"역삼1동",
+									"서울특별시",
+									"서울특별시",
+									"135-909"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d142941735",
+									"name": "아시아 음식점",
+									"pluralName": "아시아 음식점",
+									"shortName": "아시안",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/asian_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 2,
+								"usersCount": 142,
+								"checkinsCount": 189
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 7.2,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 9,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "518e347e498ec37209327f6e",
+								"createdAt": 1368274046,
+								"text": "스테이크버섯샐러드 스테이크가 질이좋고 완전맛있음!",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/518e347e498ec37209327f6e",
+								"logView": true,
+								"agreeCount": 1,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 1
+								},
+								"user": {
+									"id": "45721574",
+									"firstName": "Elaine",
+									"lastName": "Lee",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/FNKFM4W15JZMXTNN.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-518e1b61498e61b11c1dee62-10"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "55d14209498e0440be95e602",
+							"name": "유리카모메",
+							"contact": {
+								"phone": "025086906",
+								"formattedPhone": "02-508-6906"
+							},
+							"location": {
+								"address": "강남구 테헤란로19길 7",
+								"crossStreet": "역삼식당",
+								"lat": 37.50060990777496,
+								"lng": 127.03354638252215,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.50060990777496,
+										"lng": 127.03354638252215
+									}
+								],
+								"distance": 222,
+								"postalCode": "06133",
+								"cc": "KR",
+								"neighborhood": "Yeok sam 1 dong",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 테헤란로19길 7 (역삼식당)",
+									"역삼1동",
+									"서울특별시",
+									"서울특별시",
+									"06133"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d111941735",
+									"name": "일본 음식점",
+									"pluralName": "일본 음식점",
+									"shortName": "일본 음식",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/japanese_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 4,
+								"usersCount": 59,
+								"checkinsCount": 108
+							},
+							"price": {
+								"tier": 2,
+								"message": "보통",
+								"currency": "\u20a9"
+							},
+							"rating": 7.2,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 14,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "58107bbb38fae59a955b2ea3",
+								"createdAt": 1477475259,
+								"text": "주문 후 10분 이상 기다려야하는건 기본! 양은 진짜 엄청 푸짐하고 엄마가 신경써서 잘 차려준 밥상 느낌! 돈까스&샐러드 또는 세트2를 즐겨 먹음 :)",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/58107bbb38fae59a955b2ea3",
+								"photo": {
+									"id": "58107bbe38fac9680754106e",
+									"createdAt": 1477475262,
+									"source": {
+										"name": "Foursquare for iOS",
+										"url": "https:\/\/foursquare.com\/download\/#\/iphone"
+									},
+									"prefix": "https:\/\/fastly.4sqi.net\/img\/general\/",
+									"suffix": "\/200095547_H-QSH3msgLBR30ye0Laa_bGh1KPGsYGqgRQzWzhXtj8.jpg",
+									"width": 1440,
+									"height": 1440,
+									"visibility": "public"
+								},
+								"photourl": "https:\/\/fastly.4sqi.net\/img\/general\/original\/200095547_H-QSH3msgLBR30ye0Laa_bGh1KPGsYGqgRQzWzhXtj8.jpg",
+								"logView": true,
+								"agreeCount": 0,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "200095547",
+									"firstName": "Kristine",
+									"gender": "female",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/200095547-QLQ54U1TUIQSSA3U.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-55d14209498e0440be95e602-11"
+					},
+					{
+						"reasons": {
+							"count": 0,
+							"items": [
+								{
+									"summary": "이 장소는 인기가 있습니다.",
+									"type": "general",
+									"reasonName": "globalInteractionReason"
+								}
+							]
+						},
+						"venue": {
+							"id": "55eebbe9498eac9b7befe37e",
+							"name": "브롱스",
+							"contact": {
+								"phone": "025667871",
+								"formattedPhone": "02-566-7871"
+							},
+							"location": {
+								"address": "강남구 강남대로94길 15",
+								"crossStreet": "강남점",
+								"lat": 37.499546832846626,
+								"lng": 127.02865850971942,
+								"labeledLatLngs": [
+									{
+										"label": "display",
+										"lat": 37.499546832846626,
+										"lng": 127.02865850971942
+									}
+								],
+								"distance": 239,
+								"postalCode": "06129",
+								"cc": "KR",
+								"city": "서울특별시",
+								"state": "서울특별시",
+								"country": "대한민국",
+								"formattedAddress": [
+									"강남구 강남대로94길 15 (강남점)",
+									"역삼1동",
+									"강남구",
+									"서울특별시",
+									"06129"
+								]
+							},
+							"categories": [
+								{
+									"id": "4bf58dd8d48988d117941735",
+									"name": "비어 가든",
+									"pluralName": "비어 가든",
+									"shortName": "비어 가든",
+									"icon": {
+										"prefix": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/beergarden_",
+										"suffix": ".png"
+									},
+									"primary": true
+								}
+							],
+							"verified": false,
+							"stats": {
+								"tipCount": 3,
+								"usersCount": 114,
+								"checkinsCount": 157
+							},
+							"url": "http:\/\/pubbronx.com",
+							"price": {
+								"tier": 1,
+								"message": "저렴",
+								"currency": "\u20a9"
+							},
+							"rating": 7.3,
+							"ratingColor": "C5DE35",
+							"ratingSignals": 19,
+							"allowMenuUrlEdit": true,
+							"beenHere": {
+								"count": 0,
+								"marked": false,
+								"lastCheckinExpiredAt": 0
+							},
+							"photos": {
+								"count": 0,
+								"groups": []
+							},
+							"hereNow": {
+								"count": 0,
+								"summary": "여기에 아무도 없음",
+								"groups": []
+							}
+						},
+						"tips": [
+							{
+								"id": "5ae8964a2a7ab6002cca2698",
+								"createdAt": 1525192266,
+								"text": "Not true nyc pizza but it's a decent.  They sell by the slice which is great.  4000 W per slice",
+								"type": "user",
+								"canonicalUrl": "https:\/\/foursquare.com\/item\/5ae8964a2a7ab6002cca2698",
+								"photo": {
+									"id": "5ae896783b4e00002c475450",
+									"createdAt": 1525192312,
+									"source": {
+										"name": "Foursquare for iOS",
+										"url": "https:\/\/foursquare.com\/download\/#\/iphone"
+									},
+									"prefix": "https:\/\/fastly.4sqi.net\/img\/general\/",
+									"suffix": "\/17605865_Wa2gDkQS7vb4YgETbKlcv0i1UktlCa-HMhmfOVbggI0.jpg",
+									"width": 1920,
+									"height": 1440,
+									"visibility": "public"
+								},
+								"photourl": "https:\/\/fastly.4sqi.net\/img\/general\/original\/17605865_Wa2gDkQS7vb4YgETbKlcv0i1UktlCa-HMhmfOVbggI0.jpg",
+								"logView": true,
+								"agreeCount": 1,
+								"disagreeCount": 0,
+								"todo": {
+									"count": 0
+								},
+								"user": {
+									"id": "17605865",
+									"firstName": "Gregory",
+									"lastName": "K.",
+									"gender": "male",
+									"photo": {
+										"prefix": "https:\/\/fastly.4sqi.net\/img\/user\/",
+										"suffix": "\/4OVLSSU2BCK3LIHP.jpg"
+									}
+								}
+							}
+						],
+						"referralId": "e-0-55eebbe9498eac9b7befe37e-12"
+					}
+				]
+			}
+		]
+	}
+}
