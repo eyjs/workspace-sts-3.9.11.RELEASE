@@ -1,6 +1,6 @@
 <%@page import="com.itwill.user.User"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 	User fuser=(User)request.getAttribute("fuser");
 	if(fuser==null){
@@ -14,8 +14,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>»ç¿ëÀÚ °ü¸®</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>ì‚¬ìš©ì ê´€ë¦¬</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
 <style type="text/css" media="screen">
@@ -23,38 +23,38 @@
 <script type="text/javascript">
 	function userCreate() {
 		if (document.f.userId.value == "") {
-			alert("»ç¿ëÀÚ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+			alert("ì‚¬ìš©ì ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 			f.userId.focus();
 			return false;
 		}
 		if (document.f.password.value == "") {
-			alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+			alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 			f.password.focus();
 			return false;
 		}
 		if (document.f.password2.value == "") {
-			alert("ºñ¹Ğ¹øÈ£È®ÀÎÀ» ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+			alert("ë¹„ë°€ë²ˆí˜¸í™•ì¸ì„ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 			f.password2.focus();
 			return false;
 		}
 		if (document.f.name.value == "") {
-			alert("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+			alert("ì´ë¦„ì„ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 			f.name.focus();
 			return false;
 		}
 		if (document.f.email.value == "") {
-			alert("ÀÌ¸ŞÀÏ ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+			alert("ì´ë©”ì¼ ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 			f.email.focus();
 			return false;
 		}
 		if (f.password.value != f.password2.value) {
-			alert("ºñ¹Ğ¹øÈ£¿Í ºñ¹Ğ¹øÈ£È®ÀÎÀº ÀÏÄ¡ÇÏ¿©¾ßÇÕ´Ï´Ù.");
+			alert("ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë°€ë²ˆí˜¸í™•ì¸ì€ ì¼ì¹˜í•˜ì—¬ì•¼í•©ë‹ˆë‹¤.");
 			f.password.focus();
 			f.password.select();
 			return false;
 		}
 		if (document.f.idDuplication.value!='idCheck') {
-			alert("¾ÆÀÌµğÁßº¹Ã¼Å©¸¦ ÇÏ¿©¾ßÇÕ´Ï´Ù.");
+			alert("ì•„ì´ë””ì¤‘ë³µì²´í¬ë¥¼ í•˜ì—¬ì•¼í•©ë‹ˆë‹¤.");
 			document.f.userId.focus();
 			document.f.userId.select();
 			
@@ -71,24 +71,22 @@
 		f.submit();
 	}
 	
-	// ¾ÆÀÌµğ Áßº¹Ã¼Å© È­¸éopen
+	// ì•„ì´ë”” ì¤‘ë³µì²´í¬ í™”ë©´open
 	function openIdChk(){
-		/*
 		if (document.f.userId.value == "") {
-			alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+			alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 			document.f.userId.focus();
 			return false;
 		}
-		*/
 		var param="?userId="+document.f.userId.value;
 		window.name = "parentForm";
 		window.open("user_id_check_form.jsp"+param,
 				"chkForm", "width=500,height=300,resizable = no,scrollbars = no");	
 	}
 
-	// ¾ÆÀÌµğ ÀÔ·ÂÃ¢¿¡ °ª ÀÔ·Â½Ã hidden¿¡ idUncheck¸¦ ¼¼ÆÃÇÑ´Ù.
-	// ÀÌ·¸°Ô ÇÏ´Â ÀÌÀ¯´Â Áßº¹Ã¼Å© ÈÄ ´Ù½Ã ¾ÆÀÌµğ Ã¢ÀÌ »õ·Î¿î ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇßÀ» ¶§
-	// ´Ù½Ã Áßº¹Ã¼Å©¸¦ ÇÏµµ·Ï ÇÑ´Ù.
+	// ì•„ì´ë”” ì…ë ¥ì°½ì— ê°’ ì…ë ¥ì‹œ hiddenì— idUncheckë¥¼ ì„¸íŒ…í•œë‹¤.
+	// ì´ë ‡ê²Œ í•˜ëŠ” ì´ìœ ëŠ” ì¤‘ë³µì²´í¬ í›„ ë‹¤ì‹œ ì•„ì´ë”” ì°½ì´ ìƒˆë¡œìš´ ì•„ì´ë””ë¥¼ ì…ë ¥í–ˆì„ ë•Œ
+	// ë‹¤ì‹œ ì¤‘ë³µì²´í¬ë¥¼ í•˜ë„ë¡ í•œë‹¤.
 	function inputIdChk(){
 		document.userInfo.idDuplication.value ="idUncheck";
 	}
@@ -124,48 +122,49 @@
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>»ç¿ëÀÚ °ü¸®
-											- È¸¿ø °¡ÀÔ</b></td>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>ì‚¬ìš©ì ê´€ë¦¬
+											- íšŒì› ê°€ì…</b></td>
 								</tr>
 							</table> <!-- write Form  -->
 							<form name="f" method="post">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">»ç¿ëÀÚ
-											¾ÆÀÌµğ</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ì‚¬ìš©ì
+											ì•„ì´ë””</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" readonly="readonly" style="width: 150px" name="userId"  value="<%=fuser.getUserId()%>">&nbsp;&nbsp;
-											<input type="button" value="¾ÆÀÌµğÁßº¹°Ë»ç" onclick="openIdChk();">
+											<input type="text" style="width: 150px" name="userId" 
+											value="<%=fuser.getUserId()%>">&nbsp;&nbsp;
+											<input type="button" value="ì•„ì´ë””ì¤‘ë³µê²€ì‚¬" onclick="openIdChk();">
 											<input type="hidden" name="idDuplication" value="idUncheck" >
 											<font color="red"><%=MSG%></font>
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">ºñ¹Ğ¹øÈ£</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ë¹„ë°€ë²ˆí˜¸</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="password" style="width: 150px" name="password"
 											value="<%=fuser.getPassword()%>">
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">ºñ¹Ğ¹øÈ£
-											È®ÀÎ</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ë¹„ë°€ë²ˆí˜¸
+											í™•ì¸</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="password" style="width: 150px" name="password2"
 											value="<%=fuser.getPassword()%>">
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">ÀÌ¸§</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ì´ë¦„</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="name"
 											value="<%=fuser.getName()%>">
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">ÀÌ¸ŞÀÏ
-											ÁÖ¼Ò</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ì´ë©”ì¼
+											ì£¼ì†Œ</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="email"
 											value="<%=fuser.getEmail()%>">
@@ -176,9 +175,9 @@
 
 							<table border=0 cellpadding=0 cellspacing=1>
 								<tr>
-									<td align=center><input type="button" value="È¸¿ø °¡ÀÔ"
+									<td align=center><input type="button" value="íšŒì› ê°€ì…"
 										onClick="userCreate()"> &nbsp; <input type="button"
-										value="¸ñ·Ï" onClick="userList()"></td>
+										value="ëª©ë¡" onClick="userList()"></td>
 								</tr>
 							</table>
 

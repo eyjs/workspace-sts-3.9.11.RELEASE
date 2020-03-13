@@ -1,22 +1,7 @@
 <%@page import="com.itwill.user.User"%>
-<%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	/*********   case2********************
-	String msg = request.getParameter("msg");
-	if(msg==null){
-		msg="";
-	}
-	msg=URLDecoder.decode(msg,"UTF-8");
-	*/
-	User fuser = (User)request.getAttribute("fuser");
-	if(fuser==null){
-		fuser=new User("","","","");
-	}
-	String msg=(String)request.getAttribute("msg");
-	if(msg==null)msg="";
-%>    
+  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,25 +15,25 @@
 	function userCreate() {
 		if (document.f.userId.value == "") {
 			alert("사용자 아이디를 입력하십시요.");
-			document.f.userId.focus();
+			f.userId.focus();
 			return false;
 		}
-		if (f.password.value == "") {
+		if (document.f.password.value == "") {
 			alert("비밀번호를 입력하십시요.");
 			f.password.focus();
 			return false;
 		}
-		if (f.password2.value == "") {
+		if (document.f.password2.value == "") {
 			alert("비밀번호확인을 입력하십시요.");
 			f.password2.focus();
 			return false;
 		}
-		if (f.name.value == "") {
+		if (document.f.name.value == "") {
 			alert("이름을 입력하십시요.");
 			f.name.focus();
 			return false;
 		}
-		if (f.email.value == "") {
+		if (document.f.email.value == "") {
 			alert("이메일 주소를 입력하십시요.");
 			f.email.focus();
 			return false;
@@ -59,9 +44,9 @@
 			f.password.select();
 			return false;
 		}
-		f.action = "user_write_action.do";
-		f.method='POST';
-		f.submit();
+		document.f.action = "user_write_action.do";
+		document.f.method='POST';
+		document.f.submit();
 	}
 
 	function userList() {
@@ -112,14 +97,14 @@
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="userId"
-											value="<%=fuser.getUserId()%>">&nbsp;&nbsp;<font color="red"><%=msg%></font>
+											value="${fuser.userId}">&nbsp;&nbsp;<font color="red">${MSG}</font>
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="password" style="width: 150px" name="password"
-											value="<%=fuser.getPassword()%>">
+											value="${fuser.password}">
 										</td>
 									</tr>
 									<tr>
@@ -127,14 +112,14 @@
 											확인</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="password" style="width: 150px" name="password2"
-											value="<%=fuser.getPassword()%>">
+											value="${fuser.password}">
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="name"
-											value="<%=fuser.getName()%>">
+											value="${fuser.name}">
 										</td>
 									</tr>
 									<tr>
@@ -142,7 +127,7 @@
 											주소</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="email"
-											value="<%=fuser.getEmail()%>">
+											value="${fuser.email}">
 										</td>
 									</tr>
 								</table>
@@ -150,11 +135,9 @@
 
 							<table border=0 cellpadding=0 cellspacing=1>
 								<tr>
-									<td align=center>
-										<input type="button" value="회원 가입"
-											onclick="userCreate();"> &nbsp; 
-										<input type="button"
-											value="취소" onClick=""></td>
+									<td align=center><input type="button" value="회원 가입"
+										onClick="userCreate()"> &nbsp; <input type="button"
+										value="목록" onClick="userList()"></td>
 								</tr>
 							</table>
 
@@ -168,7 +151,7 @@
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/>
+			<jsp:include page="include_common_bottom.jsp"/>	
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

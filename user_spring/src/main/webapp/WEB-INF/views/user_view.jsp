@@ -1,12 +1,11 @@
-
+<%@page import="com.itwill.user.exception.ExistedUserException"%>
 <%@page import="com.itwill.user.User"%>
 <%@page import="com.itwill.user.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>	
 <%@ include file="user_login_check.jspf"%>
-<%
-	User user=(User)request.getAttribute("user");
-%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,19 +20,28 @@
 		f.submit();
 	}
 	function userModify() {
-		document.f.action = "user_modify_form.do";
-		document.f.submit();
+		<c:if test="${sUserId eq user.userId}">
+			document.f.action = "user_modify_form.do";
+			document.f.submit();
+		</c:if>
+		<c:if test="${!(sUserId eq user.userId)}">
+			alert("본인외에는 수정할수없어요!!");
+		</c:if>
 	}
 
 	function userRemove() {
-		
+		<c:if test="${sUserId eq user.userId}">
 		if (confirm("정말 삭제하시겠습니까?")) {
 			document.f.action = "user_remove_action.do";
 			document.f.method='POST';
 			document.f.submit();
 		}
-		
+		</c:if>
+		<c:if test="${!(sUserId eq user.userId)}">
+		 alert("본인외에는 삭제할수없어요!!");
+		</c:if>
 	}
+	
 </script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
@@ -73,24 +81,24 @@
 							</table>
 							<!-- view Form  -->
 							<form name="f" method="post">
-								<input type="hidden" name="userId" value="<%=user.getUserId()%>" />
+								<input type="hidden" name="userId" value="${user.userId}" />
 							<table border="0" cellpadding="0" cellspacing="1" width="590"
 								bgcolor="BBBBBB">
 								<tr>
 									<td width=100 align=center bgcolor="E6ECDE" height="22">사용자
 										아이디</td>
-									<td width=490 bgcolor="ffffff" style="padding-left: 10"><%=user.getUserId()%>
+									<td width=490 bgcolor="ffffff" style="padding-left: 10">${user.userId}
 									</td>
 								</tr>
 								<tr>
 									<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
-									<td width=490 bgcolor="ffffff" style="padding-left: 10"><%=user.getName()%>
+									<td width=490 bgcolor="ffffff" style="padding-left: 10">${user.name}
 									</td>
 								</tr>
 								<tr>
 									<td width=100 align=center bgcolor="E6ECDE" height="22">이메일
 										주소</td>
-									<td width=490 bgcolor="ffffff" style="padding-left: 10"><%=user.getEmail()%>
+									<td width=490 bgcolor="ffffff" style="padding-left: 10">${user.email}
 									</td>
 								</tr>
 							</table> 

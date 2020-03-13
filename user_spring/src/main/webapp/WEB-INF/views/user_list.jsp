@@ -4,12 +4,14 @@
 <%@page import="com.itwill.user.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>	
 <%@ include file="user_login_check.jspf" %>   
     
-<%
-       	String USER_NOT_FOUND_MSG = (String)request.getAttribute("USER_NOT_FOUND_MSG");
-                     	ArrayList<User> userList = (ArrayList<User>)request.getAttribute("userList");
-       %>    
+<%--
+	String USER_NOT_FOUND_MSG = (String)request.getAttribute("USER_NOT_FOUND_MSG");
+	ArrayList<User> userList = (ArrayList<User>)request.getAttribute("userList");
+
+--%>    
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,9 +21,9 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
 <script type="text/javascript">
-<%if(USER_NOT_FOUND_MSG!=null){%>
-	alert('<%=USER_NOT_FOUND_MSG%>')
-<%}%>
+<c:if test="${!empty(USER_NOT_FOUND_MSG)}">
+	alert('${USER_NOT_FOUND_MSG}')
+</c:if>
 </script>
 	
 <style type="text/css" media="screen">
@@ -70,33 +72,29 @@
 										<td align=center bgcolor="E6ECDE">이름</td>
 										<td align=center bgcolor="E6ECDE">이메일</td>
 									</tr>
-									<%
-										for(User user:userList){
-																															if(!user.getUserId().equals(sUserId)){
-									%>
+									
+									<c:forEach var="user" items="${userList}">
 									<!-- loop start -->
 									<tr>
 										<td width=190 align=center bgcolor="ffffff" height="20">
-											<%=user.getUserId() %>
+											${user.userId}
 										</td>
 										<td width=200 bgcolor="ffffff" style="padding-left: 10">
-											<a href="user_view.do?userId=<%=URLEncoder.encode(user.getUserId(),"UTF-8")%>"
-											class="user"> <%=user.getName() %>
+											<a href="user_view?userId=${user.userId}"
+											class="user"> ${user.name}
 										</a>
 										</td>
-										<td width=200 align=center bgcolor="ffffff"><%=user.getEmail()%>
+										<td width=200 align=center bgcolor="ffffff">${user.email}
 										</td>
 									</tr>
 									<!-- loop end -->
-									<%	
-										}
-									}
-									%>								
+									</c:forEach>								
 									</table>
 							</form> <br />
 							<table border="0" cellpadding="0" cellspacing="1">
 								<tr>
 									<td align="right">
+									
 									</td>
 								</tr>
 							</table></td>
@@ -109,7 +107,7 @@
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp" />
+			<jsp:include page="include_common_bottom.jsp"/>
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

@@ -1,12 +1,12 @@
-
+<%@page import="com.itwill.user.exception.UserNotFoundException"%>
 <%@page import="com.itwill.user.User"%>
 <%@page import="com.itwill.user.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="user_login_check.jspf" %>  
 <%
-  	User user=(User)request.getAttribute("user");
-  %>
+	User user=(User)request.getAttribute("user");
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

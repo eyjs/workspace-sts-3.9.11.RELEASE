@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	String sUserId = (String)session.getAttribute("sUserId");
-	if(sUserId==null){
-		response.sendRedirect("user_login_form.do");
-		return;
-	}
-%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<c:if test="${empty(sUserId)}">
+	<c:redirect url="user_main.do"/>
+</c:if>    
