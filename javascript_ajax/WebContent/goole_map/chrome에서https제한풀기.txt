@@ -1,6 +1,4 @@
-1.Å©·ÒÁÖ¼ÒÁÙ¿¡ ÀÔ·Â
+1.í¬ë¡¬ì£¼ì†Œì¤„ì— ìž…ë ¥
  chrome://flags/#unsafely-treat-insecure-origin-as-secure
-2.Insecure origins treated as secure Ç×¸ñ¿¡ ipÀÔ·ÂÈÄ
-   Disabled --> Enable º¯°æÈÄ Relaunch
-
-
+2.Insecure origins treated as secure í•­ëª©ì— ipìž…ë ¥í›„
+   Disabled --> Enable ë³€ê²½í›„ Relaunch

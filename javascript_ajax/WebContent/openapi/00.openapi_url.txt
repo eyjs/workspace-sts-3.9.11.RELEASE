@@ -36,3 +36,16 @@ http://api.androidhive.info/contacts/
 	....
 	]
 }
+네이버뉴스회사
+http://www.naver.com/include/newsstand/press_info.json
+네이버실검
+https://www.naver.com/srchrank?frm=main&ag=all&gr=1&ma=-2&si=0&en=0&sp=0
+
+
+
+
+
+
+
+
+
