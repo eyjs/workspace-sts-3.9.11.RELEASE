@@ -1,16 +1,12 @@
 package com.itwill.user.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +20,7 @@ import com.itwill.user.exception.UserNotFoundException;
 public class UserController {
 	@Autowired
 	private UserService userService;
+	
 	@RequestMapping(value = "/user_main")
 	public String user_main() {
 		return "user_main";
@@ -64,19 +61,9 @@ public class UserController {
 		return "user_login_form";
 	}
 	@RequestMapping(value = "/user_login_action", method = RequestMethod.POST)
-	public String user_logind_action_post(@ModelAttribute(name = "fuser") @Valid User user,
-			BindingResult bindingResult, HttpSession session, Model model) {
+	public String user_logind_action_post(@ModelAttribute(name = "fuser") User user,
+			 HttpSession session, Model model) {
 		String forwardPath = "";
-		/*
-		List<String> resultMessages = new ArrayList<>();
-		if (bindingResult.hasErrors()) {
-			List<FieldError> fieldsErrors = bindingResult.getFieldErrors();
-			for (FieldError fieldError : fieldsErrors) {
-				resultMessages
-						.add(fieldError.getObjectName() + "," + fieldError.getField() + "," + fieldError.getCode());
-			}
-		}
-		*/
 		try {
 			User loginUser = userService.login(user.getUserId(), user.getPassword());
 			session.setAttribute("sUserId", user.getUserId());
@@ -98,21 +85,10 @@ public class UserController {
 		}
 		return forwardPath;
 	}
-	
 	@RequestMapping(value = "/user_view")
-	public String user_view(@ModelAttribute @Valid User user, Model model,BindingResult bindingResult) {
+	public String user_view(@ModelAttribute User user, Model model){
 		String forwardPath = "";
 		
-		List<String> resultMessages = new ArrayList<>();
-		if (bindingResult.hasErrors()) {
-			
-			List<FieldError> fieldsErrors = bindingResult.getFieldErrors();
-			for (FieldError fieldError : fieldsErrors) {
-				resultMessages
-						.add(fieldError.getObjectName() + "," + fieldError.getField() + "," + fieldError.getCode());
-			}
-		}
-		System.out.println(resultMessages);
 		User findUser = null;
 		try {
 			findUser = userService.findUser(user.getUserId());

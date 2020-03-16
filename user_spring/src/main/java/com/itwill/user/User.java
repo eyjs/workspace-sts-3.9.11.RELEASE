@@ -1,7 +1,5 @@
 package com.itwill.user;
 
-import javax.validation.constraints.NotBlank;
-
 /*
  *  사용자관리를 위하여 필요한 도메인클래스(VO,DTO)
  *  USERINFO 테이블의 각컬럼에해당하는 멤버를 가지고있다
@@ -18,7 +16,7 @@ public class User {
 	 * EMAIL 			 VARCHAR2(300)
 	 * ===================================
 	 */
-	@NotBlank
+	
 	private String userId;
 	private String password;
 	private String name;
