@@ -3,7 +3,7 @@ package com.itwill.controller.annotation;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class ExceptionControllerGlobal {
 	
 	@ExceptionHandler(RuntimeException.class)
