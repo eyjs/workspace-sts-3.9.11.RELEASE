@@ -1,3 +1,14 @@
+/*
+Student = function(id, name, kor, eng, math) {
+	this.id = id;
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.math = math;
+	this.tot = 0;
+	this.avg = 0.0;
+}
+*/
 function Student(id, name, kor, eng, math) {
 	this.id = id;
 	this.name = name;

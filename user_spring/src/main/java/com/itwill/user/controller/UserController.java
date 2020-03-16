@@ -2,6 +2,8 @@ package com.itwill.user.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itwill.user.User;
 import com.itwill.user.UserService;
@@ -115,6 +118,24 @@ public class UserController {
 			e.printStackTrace();
 		}
 		return forwardPath;
+	}
+	@RequestMapping(value = "/user_modify_form",method = RequestMethod.GET)
+	public String user_modify_form_get() {
+		return "redirect:user_main.do";
+	}
+	@RequestMapping(value = "/user_modify_form",method = RequestMethod.POST)
+	public String user_modify_form_post(@RequestParam String userId,Model model) {
+			String forwardPath="";
+			User user=null;
+			try{
+			    user = userService.findUser(userId);
+			    model.addAttribute("user", user);
+			    forwardPath="user_modify_form";
+			}catch(Exception e){
+				e.printStackTrace();
+				forwardPath="user_error";
+			}
+			return forwardPath;
 	}
 	
 

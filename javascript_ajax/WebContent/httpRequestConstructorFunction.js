@@ -1,3 +1,4 @@
+
 function AjaxRequest(url,params,callback,method){
 	this.xhr=null;
 	this.url=url;
@@ -25,13 +26,10 @@ AjaxRequest.prototype={
 			if (httpMethod == 'GET' && httpParams != null) {
 				httpUrl = httpUrl + "?" + httpParams;
 			}
-			//var ajaxRequest = this;
-			//this.xhr.onreadystatechange =this.callback;
-			
-			this.xhr.onreadystatechange = function(){
-				ajaxRequest.callback(this,"어렵네요 ㅠㅠ");
+			var ajaxRequest=this;
+			this.xhr.onreadystatechange=function(){
+				ajaxRequest.callback(this,"어렵네요!!!");
 			};
-			
 			this.xhr.open(httpMethod, httpUrl, true);
 			this.xhr.setRequestHeader(
 				'Content-Type', 'application/x-www-form-urlencoded');

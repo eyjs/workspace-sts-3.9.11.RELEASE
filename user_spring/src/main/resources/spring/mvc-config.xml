@@ -20,6 +20,7 @@
     <mvc:interceptor>
         <mvc:mapping path="/**"/>  
         <mvc:exclude-mapping path="/user_main"/>       
+        <mvc:exclude-mapping path="/user_write_form"/>       
         <mvc:exclude-mapping path="/user_login_form"/>       
         <mvc:exclude-mapping path="/user_login_action"/>       
         <mvc:exclude-mapping path="/user_write_action"/>       

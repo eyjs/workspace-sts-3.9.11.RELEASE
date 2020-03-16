@@ -41,18 +41,77 @@
 	}
 	
 </style>
+<!-- 
+<script type="text/javascript" src="httpRequest.js"></script>
+ -->
 <script type="text/javascript" src="httpRequestConstructorFunction.js"></script>
 <script type="text/javascript">
-	function showNewsDiv(){
+	function showNewsDiv() {
+		document.getElementById("newsDiv").style.display = 'block';
 	}
-	function hideNewsDiv(){
+	function hideNewsDiv() {
+		document.getElementById("newsDiv").style.display = 'none';
 	}
 	
-	function requestNews(){
+	function requestNews() {
+		
+		//sendRequest('08.newsTitlesJSON.jsp', null, responseNews, 'GET');
+		new AjaxRequest('08.newsTitlesJSON.jsp',
+						null, 
+						responseNews, 
+						'GET')
+			.sendRequest();
+		
 		
 	}
-	window.onload=function(){
-		
+	function responseNews(xhr,msg) {
+		console.log("----->"+ xhr+","+msg);
+		if (xhr.readyState == 4) {
+			var jsonStr = xhr.responseText;
+			var jsonObject = JSON.parse(jsonStr);
+			/*
+			{
+			"count": 9,
+			"data": [
+						{
+							"newsTitle": "참으로 수고 많으셨습니다…",
+							"company": "연합뉴스",
+							"date": "2020. 3. 16 오후 12:14:43"
+						},
+						{
+							"newsTitle": "IS 60개국 테러 위협 영상 공개…한국도 포함 포토",
+							"company": "SBS뉴스",
+							"date": "2020. 3. 16 오후 12:14:43"
+						}
+					]
+			}
+			*/
+			if(jsonObject.count == 0){
+				return;
+			}
+			var newsJsonArray =  jsonObject.data;
+			var html="<ul>";
+			for (var i = 0; i < newsJsonArray.length; i++) {
+				var newsJsonObject = newsJsonArray[i];
+				/*
+				{
+							"newsTitle": "참으로 수고 많으셨습니다…",
+							"company": "연합뉴스",
+							"date": "2020. 3. 16 오후 12:14:43"
+				}
+				*/
+				var titleStr = newsJsonObject.newsTitle;
+				var companyStr = newsJsonObject.company;
+				var dateStr = newsJsonObject.date;
+				html+="<li>"+titleStr+"["+companyStr+"("+dateStr+")]JSON</li>";
+			}
+			html += "</ul>";
+			document.getElementById('newsDiv').innerHTML=html;
+		}
+	}
+	window.onload = function() {
+		setInterval(requestNews, 2000);
+		//hideNewsDiv();
 	};
 </script>
 </head>
