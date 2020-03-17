@@ -15,8 +15,8 @@ import com.itwill.guest.GuestService;
 public class GuestRestController {
 	@Autowired
 	private GuestService guestService;
-	@RequestMapping(value = "guest_list_html", produces = "text/plain;charset=UTF-8")
-	public @ResponseBody String guest_list_html() throws Exception {
+	@RequestMapping(value = "guest/guest_list_html", produces = "text/plain;charset=UTF-8")
+	public String guest_list_html() throws Exception {
 		StringBuffer sb = new StringBuffer();
 		List<Guest> guestList = guestService.selectAll();
 		for (int i = 0; i < guestList.size(); i++) {
