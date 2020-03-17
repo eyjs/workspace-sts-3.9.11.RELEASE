@@ -44,7 +44,7 @@
 <!-- 
 <script type="text/javascript" src="httpRequest.js"></script>
  -->
-<script type="text/javascript" src="httpRequestConstructorFunction.js"></script>
+<script type="text/javascript" src="httpRequestConstructorFunctionPackage.js"></script>
 <script type="text/javascript">
 	function showNewsDiv() {
 		document.getElementById("newsDiv").style.display = 'block';
@@ -56,7 +56,7 @@
 	function requestNews() {
 		
 		//sendRequest('08.newsTitlesJSON.jsp', null, responseNews, 'GET');
-		var ajaxRequest=new AjaxRequest('08.newsTitlesJSON.jsp',
+		var ajaxRequest=new com.itwill.AjaxRequest('08.newsTitlesJSON.jsp',
 						null, 
 						responseNews, 
 						'GET');
@@ -122,7 +122,7 @@
 </head>
 <body>
 <div id="content">
-	<h1 class="titleBackClass" >실시간늬우스[JSON]</h1><hr>
+	<h1 class="titleBackClass" >실시간늬우스[JSON package]</h1><hr>
 	<div id="newsDiv">
 		<ul>
 			<li>뉴스1[조상일보]2019-10-07</li>		

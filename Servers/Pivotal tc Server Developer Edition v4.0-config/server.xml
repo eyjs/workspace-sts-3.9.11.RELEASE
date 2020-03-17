@@ -20,10 +20,10 @@
 
 
 
-				<Context docBase="springWebJavaConfig" path="/springWebJavaConfig" reloadable="true" source="org.eclipse.jst.jee.server:springWebJavaConfig"/>
-				<Context docBase="springWeb" path="/springWeb" reloadable="true" source="org.eclipse.jst.jee.server:springWeb"/>
-				<Context docBase="javascript" path="/javascript" reloadable="true" source="org.eclipse.jst.jee.server:javascript"/>
-			<Context docBase="user_spring" path="/user_spring" reloadable="true" source="org.eclipse.jst.jee.server:user_spring"/><Context docBase="javascript_ajax" path="/javascript_ajax" reloadable="true" source="org.eclipse.jst.jee.server:javascript_ajax"/><Context docBase="springAjax" path="/springAjax" reloadable="true" source="org.eclipse.jst.jee.server:springAjax"/><Context docBase="guest_spring_java_config" path="/guest_spring_java_config" reloadable="true" source="org.eclipse.jst.jee.server:guest_spring_java_config"/></Host>
+				
+				
+				
+			<Context docBase="springAjax" path="/springAjax" reloadable="true" source="org.eclipse.jst.jee.server:springAjax"/></Host>
 		</Engine>
 		<Connector URIEncoding="UTF-8" acceptCount="100" connectionTimeout="20000" executor="tomcatThreadPool" maxKeepAliveRequests="15" port="${nio.http.port}" protocol="org.apache.coyote.http11.Http11NioProtocol" redirectPort="${nio.https.port}"/>
 	</Service>

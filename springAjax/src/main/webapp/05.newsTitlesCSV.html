@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/*
+	1.tag selector
+	*/
+	h1{
+		color: blue;
+		text-align: center;
+	}
+	ul{
+		list-style: none;
+		padding-left: 0px;
+	}
+	/*
+	2. class selector
+	*/
+	h1.titleBackClass{
+		background-color: yellow;
+	}
+
+	/*
+	3.id selector
+	*/
+	#content{
+		display: block;
+		border: 1px solid black;
+		/*
+		border-width: 1px;
+		border-color: black;
+		border-style: solid;
+		*/
+		background-color: silver;
+		width: 800px;
+		/*
+		margin-top: 50px;
+		margin-right: 50px;
+		margin-bottom: 50px;
+		margin-left: 50px;
+		*/
+		margin: 50px auto 50px auto;
+		padding: 20px;
+	}
+	#newsDiv{
+		padding-left: 10%;
+		border: 1px solid blue;
+		font-size: 13pt;
+		background: orange;
+	}
+	
+</style>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function showNewsDiv(){
+		document.getElementById("newsDiv").style.display='block';
+	}
+	function hideNewsDiv(){
+		document.getElementById("newsDiv").style.display='none';
+	}
+	function requestNews(){
+		sendRequest('05.newsTitlesCSV',null,responseNews,'GET');
+	}
+	function responseNews(){
+		if(xhr.readyState==4){
+			var newsCSV = xhr.responseText;
+			/*
+			0#
+			1#title1,company1,date1
+			2#title1,company1,date1|title2,company2,date2
+			*/
+			var newsCSVArray=newsCSV.split('#');
+			var newsCount = newsCSVArray[0];
+			if(newsCount.trim()=='0'){
+				return;
+			}
+			var newsListArray = newsCSVArray[1].split('|');
+			var html='<ul>';
+			for(var i=0;i<newsListArray.length;i++){
+				/*
+				 title1,company1,date
+				*/
+				var newsArray = newsListArray[i].split(","); 
+				html+="<li>"+newsArray[0]+"["+newsArray[1]+"("+newsArray[2]+")]CSV</li>";
+			}
+			html+='</ul>';
+			document.getElementById('newsDiv').innerHTML=html;
+		}
+	}
+	window.onload=function(){
+		setInterval(requestNews,2000);
+		//hideNewsDiv();
+	};
+</script>
+</head>
+<body>
+<div id="content">
+	<h1 class="titleBackClass">실시간늬우스[CSV]</h1><hr>
+	<div id="newsDiv" class="titleBackClass">
+		<ul>
+			<li>뉴스1[조상일보]2019-10-07</li>		
+			<li>뉴스2[동앙일보]2019-10-07</li>		
+			<li>뉴스3[중상일보]2019-10-07</li>		
+		</ul>
+	</div>
+</div>
+</body>
+</html>

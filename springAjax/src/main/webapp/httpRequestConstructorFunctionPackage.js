@@ -1,13 +1,14 @@
-
-function AjaxRequest(url,params,callback,method){
+var com={};
+com.itwill={};
+com.itwill.AjaxRequest = function(url,params,callback,method){
 	this.xhr=null;
 	this.url=url;
 	this.params=params;
 	this.callback=callback;
 	this.method=method;
 	//this.sendRequest();
-}
-AjaxRequest.prototype={
+};
+com.itwill.AjaxRequest.prototype={
 		'getXMLHttpRequest':function(){
 			if(window.XMLHttpRequest){
 				return new XMLHttpRequest();

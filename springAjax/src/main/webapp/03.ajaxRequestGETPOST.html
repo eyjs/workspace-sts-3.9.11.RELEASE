@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr=null;
+	function ajaxRequestPost(){
+		var idStr = document.postForm.id.value;
+		if(idStr.trim()==""){
+			xhr.abort();
+			document.getElementById('postResultSpan').innerHTML='';
+			return;
+		}
+		xhr=new XMLHttpRequest();
+		var params='id='+idStr;
+		var method='POST';
+		var url='03.ajaxRequestGETPOST';
+		var async=true;
+		xhr.onreadystatechange = postResponseCallBack;
+		xhr.open(method, url, async);
+		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		xhr.send(params);
+	}
+	function postResponseCallBack(){
+		if(xhr.readyState==4){
+			var responseText = xhr.responseText;
+			if(responseText.trim()=='Y'){
+				document.getElementById('postResultSpan').innerHTML='사용가능';
+			}else if(responseText.trim()=='N'){
+				document.getElementById('postResultSpan').innerHTML='사용불가능';
+			}
+		}	
+	}
+	window.onload=function(){
+		//이벤트등록
+		document.postForm.id.addEventListener('keyup', function(e) {
+			ajaxRequestPost();
+		});
+	};
+</script>
+</head>
+<body>
+<h1>AJAX GET,POST요청</h1><hr/>
+<form id="postForm" name="postForm">
+	아이디[POST]:<input type="text" name="id" id="id">
+	<span id="postResultSpan"></span>
+</form>
+</body>
+</html>

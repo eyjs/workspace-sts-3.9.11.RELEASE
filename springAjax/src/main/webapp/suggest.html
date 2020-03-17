@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	a{
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.suggest{
+		display: block;
+		position: absolute;
+		left:112px; 
+		top: 105x;
+		width:157px;
+		border: 1px dotted blue; 
+	}
+	
+</style>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function sendKeyword(){
+		var keyword = document.search.keyword.value;
+		if(keyword==null|| keyword.trim()==''){
+			showSuggestDiv(false);
+			return;
+		}
+		//ajax요청
+		sendRequest("suggest.jsp", "keyword="+keyword, responseKeyword, "GET")
+	}
+	function responseKeyword(){
+		if(xhr.readyState== 4 && xhr.status==200){
+			var resultText = xhr.responseText;
+			/*
+			8|AJAX,AJAX 실전 프로그래밍,ASSARA,AIM,ASURA,AAA,AJA,AZERA
+			3|AJAX,AJAX 실전 프로그래밍
+			0|
+			*/
+			var resultTextArray = resultText.split("|");
+			var resultCount =resultTextArray[0];
+			if(resultCount.trim()==0){
+				showSuggestDiv(false);
+				return;
+			}
+			var keywordArray = resultTextArray[1].split(',');
+			var html='';
+			for (var i = 0; i < keywordArray.length; i++) {
+				html+="<a href=\"javascript:select('"+keywordArray[i]+"')\">"+keywordArray[i]+"</a><br>"
+			}
+			document.getElementById('suggestList')
+				.innerHTML=html ;
+			showSuggestDiv(true);
+		}
+	}
+	function select(keyword){
+		document.search.keyword.value=keyword;
+		showSuggestDiv(false);
+		//document.search.submit();
+				
+	}
+	function showSuggestDiv(show){
+		if(show){
+			document.getElementById('suggest').style.display='block';
+		}else{
+			document.getElementById('suggest').style.display='none';
+			
+		}
+	}
+	window.onload=function(){
+		showSuggestDiv(false);
+		document.search.keyword.addEventListener('focusout', function(e) {
+			setTimeout(function(){
+				/*
+				0.2초이후에 실행
+				*/
+				showSuggestDiv(false);
+			},200);
+			
+			
+		});
+		document.search.keyword.addEventListener('focusin', function(e) {
+			sendKeyword();
+		});
+	}
+</script>
+</head>
+<body>
+<h1>제시어</h1>
+<hr/>
+<form action="server_search.jsp" name="search">
+	<img src="http://sstatic.naver.net/search/2015/h_logo.png">
+	<input 	type="text" name="keyword"  
+		onkeyup="sendKeyword();"> &nbsp;
+	<input type="submit" value="검색">
+	<div id="suggest" class="suggest">
+		<div id="suggestList">
+			<a>자바라</a><br> 
+			<a>자바바</a><br> 
+			<a>자바자</a><br> 
+		</div>
+	</div>
+</form>
+
+
+
+
+
+
+</body>
+</html>
