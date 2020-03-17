@@ -28,5 +28,14 @@ public class GuestRestController {
 		}
 		return sb.toString();
 	}
+	@RequestMapping(value = "guest/guest_list_xml", produces = "text/xml;charset=UTF-8")
+	public String guest_list_xml() throws Exception {
+		return "";
+	}
+	@RequestMapping(value = "guest/guest_list_json", produces = "application/json;charset=UTF-8")
+	public String guest_list_json() throws Exception {
+		return "";
+	}
+	
 	
 }
