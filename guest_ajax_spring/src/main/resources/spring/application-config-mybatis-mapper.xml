@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<context:property-placeholder location="classpath:db/jdbc.properties"/>
+	<!-- Apache DataSource -->
+	<bean id="apacheDataSource" 
+	      class="org.apache.commons.dbcp2.BasicDataSource">
+	      <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	      <property name="url" value="${jdbc.url}"/>
+	      <property name="username" value="${jdbc.username}"/>
+	      <property name="password" value="${jdbc.password}"/>
+	</bean>
+	<bean  id="sqlSessionFactory" 
+			class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="apacheDataSource"/>
+		<property name="configLocation" 
+		          value="classpath:mybatis-config-mapper-interface.xml"/>
+	</bean>
+	 <!--************************case 1**********************************-->
+	<bean id="guestMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.itwill.guest.mapper.GuestMapper"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	<!--******************************************************************-->
+	
+	<!--************************case 2********************************
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.guest.mapper" />
+	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
+	</bean>
+	*****************************************************************-->
+	
+	
+	<!-- ************************case 3********************************
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	     <property name="basePackage" value="com.itwill.user.mapper" />
+	     <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"/>
+	     <property name="annotationClass" value="com.itwill.user.mapper.SojinMapper" />
+	</bean>
+	************************case 3********************************-->
+	<!-- ****************************************************************-->
+	<bean id="guestDao" class="com.itwill.guest.GuestDaoImplMyBatisMapperInterface">
+		<property name="guestMapper" ref="guestMapper" />
+	</bean>
+	<bean id="guestService" class="com.itwill.guest.GuestServiceImpl">
+		<property name="guestDao" ref="guestDao"/>
+	</bean>
+
+</beans>

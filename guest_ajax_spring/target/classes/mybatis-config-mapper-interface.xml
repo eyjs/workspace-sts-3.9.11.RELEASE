@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>
+		<typeAlias type="com.itwill.guest.Guest" alias="Guest"/>
+	</typeAliases>
+	
+	<mappers>
+		<!-- 
+		com.itwill.guest.mapper.GuestMapper 인터페이스와 동일한패키지(디렉토리)
+		에있는(com/itwill/guest/mapper)
+		인터페이스와 동일한 이름의 GuestMapper.xml파일을 자동으로읽는다 
+		<mapper resource="com/mybatis3/mapper/GuestMapper.xml"/>
+		<mapper class="com.itwill.guest.mapper.GuestMapper"/>
+		 -->
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+

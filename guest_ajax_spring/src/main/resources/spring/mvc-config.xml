@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	<!-- 
+	 1.Controller객체를 Spring Container에등록 
+     2.Controller객체를 Mapping해줄객체를 SpringContainer에등록
+			- RequestMappingHandlerMapping
+			- BeanNameUrlHandlerMapping
+	-->
+	<!-- ********************RequestMappingHandlerMapping********************** -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.itwill.guest.controller"/>
+	<mvc:annotation-driven/>
+</beans>
