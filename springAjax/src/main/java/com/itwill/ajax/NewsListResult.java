@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class NewsListResult {
 	private int count;
 	private List<News> newsList;
-	//@XmlElement(name="count")
+	@XmlElement(name="count")
 	public int getCount() {
 		return count;
 	}

@@ -13,6 +13,45 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.itwill.ajax.controller"/>
     <mvc:resources mapping="/**" location="/" />
+    <!-- XMLView(Custom) -->
+    <bean id="xmlView" class="com.itwill.ajax.controller.XMLView"/>
+    <bean id="xmlMarshaller" 
+    	  class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+    	  <property name="packagesToScan">
+    	  	<list>
+    	  		<value>com.itwill.ajax</value>
+    	  	</list>
+    	  </property>
+    	  <!-- 
+    	  <property name="classesToBeBound">
+    	  	<array>
+    	  		<value>com.itwill.ajax.News</value>
+    	  		<value>com.itwill.ajax.NewsListResult</value>
+    	  	</array>	
+    	  </property>
+    	   -->
+    </bean> 
+    <!-- XMLView -->
+    <bean id="jaxbXmlView" 
+    	class="org.springframework.web.servlet.view.xml.MarshallingView">
+    	<property name="marshaller" ref="xmlMarshaller"/>
+    	<property name="contentType" value="text/xml;charset=UTF-8"/>
+    </bean>
+    <!-- JSONView -->
+    <bean id="jsonView" 
+    class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"></bean>
+    
+    <bean id="customJsonView" 
+    class="com.itwill.ajax.controller.CustomMappingJackson2JsonView"/>
+    
+    <!-- 
+    	BeanNameViewResolver
+    	  빈의 이름으로 View를 선택하는ViewResolver
+     -->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+    	<property name="order" value="0"/>
+    </bean>
+    
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <property name="order" value="1"/>
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->

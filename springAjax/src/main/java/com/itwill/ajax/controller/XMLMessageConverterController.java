@@ -1,40 +1,38 @@
 package com.itwill.ajax.controller;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.itwill.ajax.News;
 import com.itwill.ajax.NewsListResult;
-
-
 
 @RestController
 public class XMLMessageConverterController {
 	
-	@RequestMapping(value="newsTitleXML",
-					produces="text/xml;charset=UTF-8")
+	@RequestMapping(value="newsTitleXML",produces = "text/xml;charset=UTF-8")
 	public News newsTitleXML() {
-	
-		return null;
+		News news=new News("오늘은 화요일","ITWILL",new Date().toLocaleString());
+		return news;
 	} 
 	/*
 	 * 406 error
 	 *   - Controller에서 반환하는객체에 XML annotation
 	 *      이존재하지않으면 발생
-	 */
+	
 	@RequestMapping(value="newsTitleListXML",
 			produces="text/xml;charset=UTF-8")
 	public List<News> newsTitleListXML(){
 		return this.getNewsList();
 	}
-	@RequestMapping(value= {"newsTitleListResultXML","07.newsTitlesXML.do"},
+	 */
+	@RequestMapping(value= {"newsTitleListResultXML","07.newsTitlesXML"},
 			produces="text/xml;charset=UTF-8")
 	public NewsListResult newsTitleListResultXML(){
-		return null; 
+		NewsListResult newsListResult=new NewsListResult();
+		newsListResult.setCount(this.getNewsList().size());
+		newsListResult.setNewsList(this.getNewsList());
+		return newsListResult; 
 	}
 	
 	

@@ -51,7 +51,7 @@ ul {
 		document.getElementById("newsDiv").style.display = 'none';
 	}
 	function requestNews() {
-		sendRequest('07.newsTitlesXML.jsp', null, responseNews, 'GET');
+		sendRequest('07.newsTitlesXML', null, responseNews, 'GET');
 	}
 	function responseNews() {
 		if (xhr.readyState == 4) {

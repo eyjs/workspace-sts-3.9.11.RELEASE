@@ -37,14 +37,8 @@
 		var lng = crd.longitude;
 		//lat=37.347847;
 		//lng=126.955179;
-		var jsonUrl="https://api.foursquare.com/v2/venues/explore?"+
-				    "client_secret=4ZTOF5RTH4XPCVZVVX4QRNA41PYWM2KOSFL5DLNUK4X3ASD1&"+
-				    "client_id=4XW1NDXIE042PYDOA5ISWYB25ESRHPJZN4HGGWECIM22V3TT&"+
-				    "ll="+lat+","+lng+"&"+
-				    "radius=1000&"+
-				    "limit=50&"+
-				    "v=20130613"
-		sendRequest(jsonUrl, null,displayResult,'GET');
+		var foursquare_jsonURL ="../foursquare_json?lat="+lat+"&lng="+lng;		    
+		sendRequest(foursquare_jsonURL, null,displayResult,'GET');
 	}
 	function displayResult(){
 		if(xhr.readyState==4){
@@ -61,10 +55,11 @@
 				var name=venue.name;
 				var address=venue.location.address;
 				var url=venue.url;
+				var distance=venue.location.distance;
 				var iconPrefix = venue.categories[0].icon.prefix;
 				var iconSuffix = venue.categories[0].icon.suffix;
 				var iconUrl = iconPrefix+'32'+iconSuffix;
-				html+='<li><img  src=\''+iconUrl+'\'/><a href=\''+url+'\'>'+name+'</a>['+address+']</li>';
+				html+='<li><img  src=\''+iconUrl+'\'/><a href=\''+url+'\'>'+name+'</a>['+address+'] '+distance+'m</li>';
 			}
 			html+="</ul>";
 			document.getElementById('printDiv').innerHTML=html;

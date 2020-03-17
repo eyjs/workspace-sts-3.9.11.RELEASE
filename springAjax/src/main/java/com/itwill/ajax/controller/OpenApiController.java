@@ -12,6 +12,73 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OpenApiController {
+	@RequestMapping(value = "foursquare_json",produces = "application/json;charset=UTF-8")
+	public String foursquare_json(@RequestParam(value = "lat",defaultValue = "37.499555") String lat ,
+			                      @RequestParam(value = "lng",defaultValue = "127.031401") String lng) {
+		try {
+			String jsonUrl="https://api.foursquare.com/v2/venues/explore?"+
+				    "client_secret=4ZTOF5RTH4XPCVZVVX4QRNA41PYWM2KOSFL5DLNUK4X3ASD1&"+
+				    "client_id=4XW1NDXIE042PYDOA5ISWYB25ESRHPJZN4HGGWECIM22V3TT&"+
+				    "ll="+lat+","+lng+"&"+
+				    "radius=1000&"+
+				    "limit=50&"+
+				    "v=20130613";
+			URL url = new URL(jsonUrl);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("GET");
+			int responseCode = con.getResponseCode();
+			BufferedReader br;
+			if (responseCode == 200) { 
+				br = new BufferedReader(new InputStreamReader(con.getInputStream(),"UTF-8"));
+			} else { 
+				br = new BufferedReader(new InputStreamReader(con.getErrorStream(),"UTF-8"));
+			}
+			String inputLine;
+			StringBuffer resp = new StringBuffer();
+			while ((inputLine = br.readLine()) != null) {
+				resp.append(inputLine);
+			}
+			br.close();
+			con.disconnect();
+			
+			return resp.toString();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	@RequestMapping(value = "proxy_xml",produces = "text/xml;charset=UTF-8")
+	public String proxy_xml() {
+		try {
+			String apiURL="http://www.chosun.com/site/data/rss/ent.xml";
+			//String apiURL="http://api.flickr.com/services/feeds/photos_public.gne?id=117992213@N05&format=rest";
+			URL url = new URL(apiURL);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("GET");
+			int responseCode = con.getResponseCode();
+			BufferedReader br;
+			if (responseCode == 200) { 
+				br = new BufferedReader(new InputStreamReader(con.getInputStream(),"UTF-8"));
+			} else { 
+				br = new BufferedReader(new InputStreamReader(con.getErrorStream(),"UTF-8"));
+			}
+			String inputLine;
+			StringBuffer resp = new StringBuffer();
+			while ((inputLine = br.readLine()) != null) {
+				resp.append(inputLine);
+			}
+			br.close();
+			con.disconnect();
+			
+			return resp.toString();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+	
 	@RequestMapping(value = "/proxy_naver",produces = "text/xml;charset=UTF-8")
 	public String proxy_naver(@RequestParam(value = "searchBook",defaultValue = "자바스크립트") String searchBook) {
 		

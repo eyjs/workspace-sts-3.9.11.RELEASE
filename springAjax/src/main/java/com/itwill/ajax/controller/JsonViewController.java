@@ -13,14 +13,26 @@ import com.itwill.ajax.News;
 public class JsonViewController {
 	@RequestMapping(value="/newsTitleJsonView")
 	public String newsTitleJsonView(Model model) {
-		
+		model.addAttribute("news", 
+				new News("title","company",new Date().toLocaleString()));
 		return "customJsonView";
 	}
+	@RequestMapping(value="/listJsonView")
+	public String listJsonView(Model model) {
+		model.addAttribute("newsList", this.getNewsList());
+		return "customJsonView";
+	}
+	
 	@RequestMapping(value="/newsTitleListJsonView")
 	public String newsTitleListJsonView(Model model) {
+		List<News> newsList=this.getNewsList();
+		model.addAttribute("count", newsList.size());
+		model.addAttribute("data", newsList);
 		
 		return "customJsonView";
 	}
+	
+	
 	private List<News> getNewsList() {
 		
 		List<News> newsList = new ArrayList<News>();

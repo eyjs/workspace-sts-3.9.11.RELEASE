@@ -25,9 +25,9 @@ public class XMLViewController {
 		friendsList.add("김경미");
 		friendsList.add("김경양");
 		friendsList.add("김경가");
-		
-		
-		return null;
+		model.addAttribute("friendsList",friendsList);
+		XMLView xmlView=new XMLView();
+		return xmlView;
 	}
 	/*
 	 * xml출력CustomView이름반환
@@ -40,7 +40,7 @@ public class XMLViewController {
 		friendsList.add("김경미");
 		friendsList.add("김경양");
 		friendsList.add("김경가");
-		
+		model.addAttribute("friendsList",friendsList);
 		
 		return "xmlView";
 	}
@@ -50,17 +50,25 @@ public class XMLViewController {
 	 */
 	@RequestMapping(value="newsTitleXmlView")
 	public String newsTitleXmlView(Model model) {
+		model.addAttribute("news",
+				new News("title", "company", new Date().toLocaleString()));
 		
 		return  "jaxbXmlView";
 	} 
-	/************error*************/
+	/************error[406]*************/
 	@RequestMapping(value="newsTitleListXmlView")
 	public String newsTitleListXmlView(Model model) {
-		
+		List<News> newsList = this.getNewsList();
+		model.addAttribute("newsList", newsList);
 		return  "jaxbXmlView";
 	} 
 	@RequestMapping(value="newsTitleListResultXmlView")
 	public String newsTitleListResultXmlView(Model model) {
+		List<News> newsList=this.getNewsList();
+		NewsListResult newsListResult=new NewsListResult();
+		newsListResult.setCount(newsList.size());
+		newsListResult.setNewsList(newsList);
+		model.addAttribute("newsListResult", newsListResult);
 		return  "jaxbXmlView";
 	} 
 	

@@ -1,6 +1,14 @@
 package com.itwill.ajax;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+@XmlRootElement(name = "news")
 public class News {
+	
 	private String title;
 	private String company;
 	private String date;
@@ -14,7 +22,8 @@ public class News {
 		this.company = company;
 		this.date = date;
 	}
-
+	//@XmlElement(name = "newsTitle")
+	@JsonProperty(value = "newsTitle")
 	public String getTitle() {
 		return title;
 	}

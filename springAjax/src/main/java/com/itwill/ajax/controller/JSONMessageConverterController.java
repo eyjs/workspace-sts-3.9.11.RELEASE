@@ -34,9 +34,10 @@ public class JSONMessageConverterController {
 	@RequestMapping(value="newsTitleJson",
 			produces="application/json;charset=UTF-8")
 	public  News newsTitleJson() {
-		
-		return null;
+		News news=new News("오늘은 화요일","ITWILL",new Date().toLocaleString());
+		return news;
 	}
+	
 	@RequestMapping(value="newsTitleListJson",
 			produces="application/json;charset=UTF-8")
 	public  List<News> newsTitleListJson() {
@@ -44,13 +45,21 @@ public class JSONMessageConverterController {
 	}
 	@RequestMapping(value="testMapJson")
 	public Map testMapJson() {
-		
-		return null;
+		HashMap map=new HashMap();
+		map.put("id","guard");
+		map.put("married",true);
+		map.put("age",43);
+		map.put("news",new News("제목", "조세일보", new Date().toLocaleString()));
+		map.put("data",this.getNewsList());
+		return map;
 	}
 	@RequestMapping(value="/08.newsTitlesJSON")
 	public Map newsTitlesJSON() {
-		
-		return null;
+		List<News> newsList=this.getNewsList();
+		HashMap map=new HashMap();
+		map.put("count",newsList.size());
+		map.put("data",newsList);
+		return map;
 	}
 	
 	
