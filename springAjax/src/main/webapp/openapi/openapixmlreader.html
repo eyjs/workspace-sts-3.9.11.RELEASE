@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	li{
+		list-style: none;
+	}
+</style>
+<script type="text/javascript" src='../httpRequest.js'></script>
+<script type="text/javascript">
+	function requestOpenApi(){
+		//var url="http://192.168.15.31/javascript_ajax/openapi/naver_book_search_result.xml";
+		//var url="http://www.chosun.com/site/data/rss/ent.xml";
+		var url="proxy_xml.jsp";
+		sendRequest(url, null, displayResult,'GET');
+	}
+	/*
+	<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+		<channel>
+			<item>
+				<title>
+					<![CDATA[ '37kg 감량' 신동 "저때 저랬나? 꼭 유지할 것"…동해 "누구세요" ]]>
+				</title>
+				<link>
+					https://news.chosun.com/site/data/html_dir/2020/03/16/2020031602858.html
+				</link>
+				<description></description>
+				<dc:date>2020-03-16T15:24:33+09:00</dc:date>
+				<author></author>
+				<category></category>
+				<pubDate>Mon, 16 Mar 2020 15:24:33 +0900</pubDate>
+			</item>
+			<item></item>
+			<item></item>
+		<channel>
+	<rss>	
+		*/
+	function displayResult(){
+		if(xhr.readyState==4){
+			var xmlDoc = xhr.responseXML;
+			var itemNodeList = xmlDoc.getElementsByTagName('item');
+			var html="<ul>";
+			for (var i = 0; i < itemNodeList.length; i++) {
+				var itemE = itemNodeList.item(i);
+				var titleStr = itemE.getElementsByTagName('title')
+									.item(0)
+									.firstChild
+									.nodeValue;
+				var linkStr = itemE.getElementsByTagName('link')
+									.item(0)
+									.firstChild
+									.nodeValue;
+				
+				var imageNodeList = itemE.getElementsByTagName('image');
+				if(imageNodeList!=null && imageNodeList.length > 0){
+					var imageStr = imageNodeList
+										.item(0)
+										.firstChild
+										.nodeValue;
+					html+="<li><a href='"+linkStr+"'><img width='30px' height='30px' src='"+imageStr+"'>"+titleStr+"</a></li>";
+				}else{
+					html+="<li><a href='"+linkStr+"'>"+titleStr+"</a></li>";
+				}
+									
+			}
+			html+="</ul>";
+			document.getElementById('printDiv').innerHTML=html;
+		}
+	}
+	
+	function requestNaverOpenApi(){
+		var searchBook = document.getElementById('searchBook').value;
+		if(searchBook==null || searchBook.trim()==''){
+			return;
+		}
+		var url="proxy_naver.jsp?searchBook="+searchBook;
+		sendRequest(url, null, displayResult,'GET');
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+<h1 onclick="requestOpenApi();">OPEN API XML[클릭시뉴스요청]</h1>
+<hr/>
+
+책검색<input type="text" id='searchBook' 
+		onkeyup="if(event.keyCode==13)requestNaverOpenApi();" name='searchBook' >
+<input type="button" value="검색" onclick="requestNaverOpenApi();">
+
+<br/>
+<div id="printDiv" style="border: 1px solid blue;width: 70%">
+	
+</div>
+</body>
+</html>

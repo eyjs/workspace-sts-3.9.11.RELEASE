@@ -68,11 +68,7 @@ public class StringMessageConverterRestController {
 	
 	
 	private List<News> getNewsList(){
-	    /*
-		for(int i=0;i<300000;i++){
-	    	System.out.println("");
-	    }
-	    */
+	  
 		List<News> newsList=new ArrayList<News>();
 		newsList.add(new News("참으로 수고 많으셨습니다...","연합뉴스",new Date().toLocaleString()));
 		newsList.add(new News("IS 60개국 테러 위협 영상 공개…한국도 포함 포토","SBS뉴스",new Date().toLocaleString()));

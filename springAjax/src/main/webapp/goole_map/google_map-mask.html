@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<style>
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+	<div id="map"></div>
+	<script>
+		var map,infoWindow;
+		function initMap() {
+			
+			map = new google.maps.Map(document.getElementById('map'), {
+				center : {
+					lat : -34.397,
+					lng : 150.644
+				},
+				zoom : 16
+			});
+			
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var pos = {
+						lat : position.coords.latitude,
+						lng : position.coords.longitude
+					};
+					/*
+					pos = {
+						lat : 37.347847,
+						lng : 126.955179
+					};
+					*/
+					var currentIcon = new google.maps.MarkerImage(
+							"image/p_current.png", null, null, null,new google.maps.Size(80, 80));
+					
+					var marker = new google.maps.Marker({
+						position : pos,
+						map:map,
+						label : {color: 'red', // <= HERE
+					          	 fontSize: '20px',
+					          	 fontWeight: '900',
+					          	 text: '현재위치'},
+						icon:currentIcon
+					});
+					
+					/*
+					
+					*/
+					map.setCenter(pos);
+					downloadUrl('google_map_proxy.jsp?lat=' + pos.lat + '&lng='
+							+ pos.lng + '&m=2000', function(data) {
+						var jsonObject = JSON.parse(data.responseText);
+						var stores = jsonObject.stores;
+						for (var i = 0; i < stores.length; i++) {
+							var radius = 30;
+							var image='p_red.png';
+							switch (stores[i].remain_stat) {
+							case 'empty':
+								radius = 30;
+								image='p_red.png';
+								break;
+							case 'few':
+								radius = 30;
+								image='p_black.png';
+								break;
+							case 'some':
+								radius = 30;
+								break;
+							case 'plenty':
+								radius = 40;
+								image='p_blue.png';
+								break;
+							}
+							var myLatLng = {
+									lat : stores[i].lat,
+									lng : stores[i].lng
+							};
+							
+							/*
+							var pcircle = new google.maps.Circle({
+								strokeColor : '#FF0000',
+								strokeOpacity : 0,
+								strokeWeight : 0,
+								fillColor : '#FF0000',
+								fillOpacity : 0.1,
+								map : map,
+								center : myLatLng,
+								radius : radius
+							});
+							*/
+							var myIcon = new google.maps.MarkerImage(
+									"image/"+image, null, null, null,
+									new google.maps.Size(radius*1.5, radius*1.5));
+							
+							var marker = new google.maps.Marker({
+								position : myLatLng,
+								map : map,
+								label:{ color: 'blue', // <= HERE
+						          	 	fontSize: '13px',
+						          	 	fontWeight: '500',
+						          	 text: stores[i].name},
+								title : stores[i].addr,
+								icon:myIcon
+							});
+							/*
+							"addr": "서울특별시 서초구 서초대로40길 77 101호 (서초동)",
+						    "code": "11854201",
+						    "created_at": "2020/03/13 17:10:00",
+						    "lat": 37.4882212,
+						    "lng": 127.0087209,
+						    "name": "다보약국",
+						    "remain_stat": "empty",
+						    "stock_at": "2020/03/13 12:12:00",
+						    씨티약국
+						    공공마스크 제공을 위해 고생하시는 약사님들에게 격려와 응원의 말씀을 전해주세요
+						    최종 업데이트	2020/03/13 17:15:00
+						    입고시간	2020/03/13 11:22:00
+						    재고수량	2개 이상 ~ 30개 미만
+						    서울특별시 강남구 강남대로 416 1층 (역삼동, 창림빌딩)
+							*/
+						}
+
+					});
+				}, function() {
+					handleLocationError(true, infoWindow, map.getCenter());
+				});
+			} else {
+				// Browser doesn't support Geolocation
+				handleLocationError(false, infoWindow, map.getCenter());
+			}
+		}
+
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+			infoWindow.setPosition(pos);
+			infoWindow
+					.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.'
+							: 'Error: Your browser doesn\'t support geolocation.');
+			infoWindow.open(map);
+		}
+		function downloadUrl(url, callback) {
+			var request = window.ActiveXObject ? new ActiveXObject(
+					'Microsoft.XMLHTTP') : new XMLHttpRequest;
+
+			request.onreadystatechange = function() {
+				if (request.readyState == 4) {
+					request.onreadystatechange = doNothing;
+					callback(request, request.status);
+				}
+			};
+
+			request.open('GET', url, true);
+			request.send(null);
+		}
+
+		function doNothing() {
+		}
+	</script>
+	<!-- 
+	   	1.script 일반적인 실행
+	   	    <script async src="script.js">
+	 		
+	 		기본적으로 <script>는 인라인 코드의 경우 즉시 해석되고 실행될 수 있지만 
+	 		그렇지 않은 경우는 해당 파일을 가져올 때까지 HTML 문서의 구문 분석을 중단한다.
+	  
+	  
+	   2.async 속성이 추가된 경우의 실행
+	   		<script async src="script.js">
+	    	
+	    	async 속성은 브라우저에 스크립트 파일이 비동기적으로 실행될 수 있음을 나타내기 위해 사용된다.
+			HTML 구문 분석기는 스크립트 태그에 도달한 지점에서 
+			스크립트를 가져오고 실행하기 위해 일시 중지 할 필요가 없다.
+			따라서 HTML 구문 분석과 병행하여 스크립트를 가져온 후 
+			스크립트가 준비 될 때마다 즉시 실행이 가능하다. 
+			그러므로 실행의 순서가 다운로드 완료 시점의 결정되므로 
+			실행 순서가 중요한 스크립트들에 async를 사용할 때는 유의해야 한다.
+			(HTML5 spec에 async=false 속성 지정시 호출 순서대로 실행되도록 추가됨(default : true)).
+	  	
+		3.defer 속성이 추가된 경우의 실행
+			<script defer src="script.js">
+			
+			defer 속성은 HTML 구문 분석이 완전히 완료되면 스크립트 파일을 
+			실행하도록 브라우저에 지시한다.
+			비동기적으로 로드된 스크립트와 마찬가지로, 
+			HTML 구문 분석이 실행되는 동안 파일을 다운로드 할 수 있다.
+			그러나 HTML 구문 분석이 완료되기 전에 스크립트 다운로드가 완료 되더라도 
+			구문 분석이 완료 될 때까지 스크립트는 실행되지 않는다. 
+			또한, async와는 다르게 호출된 순서대로 실행된다.
+		
+		3.async,defer 속성이 모두 추가된 경우의 실행
+			<script defer async src="async.js">
+			
+			위와 같이 작성하면 async를 지원하는 최신 브라우저에서는
+			async가 defer에 우선하기 때문에 async의 특성을 따르고 
+			구식 브라우저에서는 defer의 특성을 따른다.	
+	 -->
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNDiCafhxZdCPVdQESh2qraQhtCnXlWlE&callback=initMap">
+		
+	</script>
+</body>
+</html>
