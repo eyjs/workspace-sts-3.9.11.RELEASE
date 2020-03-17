@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko_KR">
+<head>
+<title>WELCOME TO AJAX</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="guest.css" type="text/css" media="screen" />
+<style type="text/css">
+input.error, textarea.error {
+	border: 1px solid orange;
+}
+
+label.error {
+	margin-left: 10px;
+	color: orange;
+}
+</style>
+<script src="./js/httpRequest.js" type="text/javascript"></script>
+
+<!--
+<script src="guest.js" type="text/javascript"></script>
+-->
+<script type="text/javascript">
+	/*%%%%%%%%%%%%%%%%%%%%%%%응답도착했을시실행되는콜백함수%%%%%%%%%%%%%%%%%%%%%%%*/
+
+	/****************guest_list[HTML]콜백함수******************/
+	function displayGuestListHTML() {
+		
+	}
+	/****************guest_list[JSON]콜백함수******************/
+	function displayGuestListJSON() {
+		
+	}
+	/****************guest_list[XML]콜백함수******************/
+	function displayGuestListXML() {
+		
+	}
+	/****************guest_insert_form[HTML]콜백함수******************/
+	function displayGuestInsertForm() {
+		
+	}
+	/****************guest_detail[JSON]콜백함수******************/
+	function displayGuestDetailJSON(element) {
+
+	}
+	/****************guest_detail[XML]콜백함수******************/
+	function displayGuestDetailXML(element) {
+
+	}
+	/****************guest_detail[HTML]콜백함수******************/
+	function displayGuestDetailHTML(element) {
+		
+	}
+
+	/****************guest_insert_action[text]콜백함수******************/
+	function displayGuestInertAction() {
+
+	}
+	function login_check(){
+		
+	}
+	
+	/*%%%%%%%%%%%%%%%%%%%%%%%메뉴 UI이벤트처리%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+	window.onload = function() {
+		
+	}
+	/**************guest_list[HTML]이벤트*****************/
+	/*******************guest_list[JSON]이벤트************/
+	/*******************guest_list[XML]이벤트*************/
+	/**************guest_logout 이벤트[a]*****************/	
+	/*******************guest_insert_form[HTML]이벤트*****/
+	/**************guest_login_form이벤트[submit]*********/	
+	
+	/*%%%%%동적으로추가되는 Node 이벤트처리[DOMNodeInserted이벤트]%%%%%%*/
+	/*******************DOMNodeInserted이벤트*************/
+	/*******************guest_detail[HTML]이벤트**********/
+	/*******loading dialog************/
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>WELCOME TO AJAX</h1>
+		</div>
+		<div id="sidebar">
+
+			<h2>회원관리메뉴</h2>
+			<div class="menus">
+				<div class="menu" id="menu-a">
+					<h3>
+						<a href="test.jsp">방명록 리스트[html]</a>
+					</h3>
+				</div>
+				<div class="menu" id="menu-b">
+					<h3>
+						<a href="#">방명록 리스트[json]</a>
+					</h3>
+				</div>
+				<div class="menu" id="menu-c">
+					<h3>
+						<a href="#">방명록 리스트[xml]</a>
+					</h3>
+				</div>
+				<div class="menu" id="menu-d">
+					<h3>
+						<a href="#">방명록 쓰기</a>
+					</h3>
+				</div>
+
+				<form id="guest_login_form" method="get" action="vfbfcv">
+					<fieldset>
+						<legend>로그인</legend>
+						<p>
+							<label for="guest_id">아이디:</label> <input type="text"
+								id="guest_id" name="guest_id" />
+						</p>
+						<p>
+							<label for="guest_pass">패쓰워드:</label> <input type="text"
+								name="guest_pass" id="guest_pass" />
+						</p>
+						<p>
+							<input type="submit" name="write" value="로그인" id="write" /> <input
+								type="reset" name="cancle" value="취소" id="cancle" />
+
+						</p>
+						<div id="msg"></div>
+					</fieldset>
+				</form>
+				<form id="guest_logout_form">
+					<div>
+						<span id="idSpan"></span>님 로그인<br /> <a id="guest_logout_a" href='#'>로그아웃</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="content">
+			<div id="guest_list">
+				<!-- 
+                <form id="guest_write_form" action="xzxz">
+					    <fieldset>
+					        <legend>
+					            방명록쓰기
+					        </legend>
+					        <p>
+					            <label for="guest_name">이름:</label>
+					            <input type="text"
+					            id="guest_name" name="guest_name"/>
+					        </p>
+					        <p>
+					            <label for="guest_title">제목:</label>
+					            <input type="text"
+					            id="guest_title" name="guest_title"/>
+					        </p>
+					        <p>
+					            <label for="guest_content">내용:</label>
+					            <input type="text"
+					            id="guest_content" name="guest_content" />
+					        </p>
+					        <p>
+					            <label for="guest_homepage">홈피:</label>
+					            <input type="text"
+					            name="guest_homepage" id="guest_homepage" />
+					        </p>
+					        <p>
+					            <label for="guest_email">이메일:</label>
+					            <input type="text"
+					            name="guest_email" id="guest_email" />
+					        </p>
+					        <p>
+					            <input type="submit" name="write" value="쓰기" id="write" />
+					        </p>
+					    </fieldset>
+				</form>
+                 -->
+			</div>
+		</div>
+		<div id="footer">
+			<p>This page was built for jquery demonstration purposes.</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

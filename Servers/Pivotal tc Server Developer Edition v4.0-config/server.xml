@@ -23,7 +23,7 @@
 				
 				
 				
-			<Context docBase="springAjax" path="/springAjax" reloadable="true" source="org.eclipse.jst.jee.server:springAjax"/><Context docBase="guest_ajax_spring" path="/guest_ajax_spring" reloadable="true" source="org.eclipse.jst.jee.server:guest_ajax_spring"/></Host>
+			<Context docBase="springAjax" path="/springAjax" reloadable="true" source="org.eclipse.jst.jee.server:springAjax"/><Context docBase="guest_ajax_spring" path="/guest_ajax_spring" reloadable="true" source="org.eclipse.jst.jee.server:guest_ajax_spring"/><Context docBase="guest_ajax" path="/guest_ajax" reloadable="true" source="org.eclipse.jst.jee.server:guest_ajax"/><Context docBase="guest_spring" path="/guest_spring" reloadable="true" source="org.eclipse.jst.jee.server:guest_spring"/></Host>
 		</Engine>
 		<Connector URIEncoding="UTF-8" acceptCount="100" connectionTimeout="20000" executor="tomcatThreadPool" maxKeepAliveRequests="15" port="${nio.http.port}" protocol="org.apache.coyote.http11.Http11NioProtocol" redirectPort="${nio.https.port}"/>
 	</Service>
