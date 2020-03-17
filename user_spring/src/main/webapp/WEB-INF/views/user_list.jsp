@@ -12,7 +12,6 @@
 	ArrayList<User> userList = (ArrayList<User>)request.getAttribute("userList");
 
 --%>    
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,12 +19,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
-<script type="text/javascript">
-<c:if test="${!empty(USER_NOT_FOUND_MSG)}">
-	alert('${USER_NOT_FOUND_MSG}')
-</c:if>
-</script>
-	
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -75,6 +68,7 @@
 									
 									<c:forEach var="user" items="${userList}">
 									<!-- loop start -->
+									<c:if test="${sUserId!=user.userId}">
 									<tr>
 										<td width=190 align=center bgcolor="ffffff" height="20">
 											${user.userId}
@@ -87,6 +81,7 @@
 										<td width=200 align=center bgcolor="ffffff">${user.email}
 										</td>
 									</tr>
+									</c:if>
 									<!-- loop end -->
 									</c:forEach>								
 									</table>

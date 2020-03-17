@@ -28,6 +28,7 @@ public class UserController {
 	public String user_main() {
 		return "user_main";
 	}
+
 	@RequestMapping(value = "/user_write_form")
 	public String user_write_form() {
 		return "user_write_form";
@@ -35,12 +36,7 @@ public class UserController {
 
 	@RequestMapping(value = "/user_write_action", method = RequestMethod.GET)
 	public String user_write_action_get() {
-		return "user_write_form";
-	}
-
-	@RequestMapping(value = "user_login_form")
-	public String user_login_form() {
-		return "user_login_form";
+		return "redirect:user_write_form";
 	}
 	@RequestMapping(value = "/user_write_action", method = RequestMethod.POST)
 	public String user_write_action_post(@ModelAttribute(name = "fuser") User user, Model model) {
@@ -59,12 +55,16 @@ public class UserController {
 		}
 		return forwardPath;
 	}
+	@RequestMapping(value = "user_login_form")
+	public String user_login_form() {
+		return "user_login_form";
+	}
 	@RequestMapping(value = "/user_login_action", method = RequestMethod.GET)
-	public String user_logind_action_get() {
+	public String user_login_action_get() {
 		return "user_login_form";
 	}
 	@RequestMapping(value = "/user_login_action", method = RequestMethod.POST)
-	public String user_logind_action_post(@ModelAttribute(name = "fuser") User user,
+	public String user_login_action_post(@ModelAttribute(name = "fuser") User user,
 			 HttpSession session, Model model) {
 		String forwardPath = "";
 		try {
@@ -88,6 +88,13 @@ public class UserController {
 		}
 		return forwardPath;
 	}
+	@RequestMapping(value = "/user_logout_action")
+	public String user_logout_action(HttpSession session ) {
+		session.invalidate();
+		String forwardPath="redirect:user_main";
+		return forwardPath;
+	}
+	
 	@RequestMapping(value = "/user_view")
 	public String user_view(@ModelAttribute User user, Model model){
 		String forwardPath = "";
@@ -137,6 +144,42 @@ public class UserController {
 			}
 			return forwardPath;
 	}
-	
+	@RequestMapping(value = "/user_modify_action",method = RequestMethod.GET)
+	public String user_modify_action_get() {
+		return "redirect:user_main";
+	}
+	@RequestMapping(value = "/user_modify_action",method = RequestMethod.POST)
+	public String user_modify_action_post(@ModelAttribute User user) {
+		String forwardPath="";
+		try{
+			userService.update(user);
+			forwardPath="forward:user_view";
+		}catch(Exception e){
+			e.printStackTrace();
+			forwardPath="user_error";
+		}
+		return forwardPath;
+	}
+	@RequestMapping(value = "/user_remove_action",method = RequestMethod.GET)
+	public String user_remove_action_get() {
+		return "redirect:user_main";
+	}
+	@RequestMapping(value = "/user_remove_action",method = RequestMethod.POST)
+	public String user_remove_action_post(@RequestParam String userId,HttpServletRequest request) {
+		String forwardPath="";
+		try{
+			userService.remove(userId);
+			if(request.getSession().getAttribute("sUserId").equals(userId)) {
+				forwardPath="redirect:user_logout_action";
+			}else {
+				forwardPath="redirect:user_main";
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			forwardPath="user_error";
+		}
+		return forwardPath;
+	}
 
 }

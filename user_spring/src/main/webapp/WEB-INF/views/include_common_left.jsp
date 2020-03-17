@@ -16,10 +16,5 @@
 		</c:if>
 
 </ul>
-<script type="text/javascript">
-	function userLogin(){
-		alert('로그인 하세요!!')
-		location.href='user_login.jsp';
-	}
-</script>    
+  
 

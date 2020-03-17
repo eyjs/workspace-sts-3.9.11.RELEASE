@@ -16,30 +16,20 @@
 <link rel=stylesheet href="css/user.css" type="text/css">
 <script type="text/javascript">
 	function userList() {
-		f.action = "user_list.do";
+		f.action = "user_list";
 		f.submit();
 	}
 	function userModify() {
-		<c:if test="${sUserId eq user.userId}">
-			document.f.action = "user_modify_form.do";
+			document.f.action = "user_modify_form";
 			document.f.submit();
-		</c:if>
-		<c:if test="${!(sUserId eq user.userId)}">
-			alert("본인외에는 수정할수없어요!!");
-		</c:if>
 	}
 
 	function userRemove() {
-		<c:if test="${sUserId eq user.userId}">
 		if (confirm("정말 삭제하시겠습니까?")) {
-			document.f.action = "user_remove_action.do";
+			document.f.action = "user_remove_action";
 			document.f.method='POST';
 			document.f.submit();
 		}
-		</c:if>
-		<c:if test="${!(sUserId eq user.userId)}">
-		 alert("본인외에는 삭제할수없어요!!");
-		</c:if>
 	}
 	
 </script>

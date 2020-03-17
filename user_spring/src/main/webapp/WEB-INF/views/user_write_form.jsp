@@ -44,13 +44,13 @@
 			f.password.select();
 			return false;
 		}
-		document.f.action = "user_write_action.do";
+		document.f.action = "user_write_action";
 		document.f.method='POST';
 		document.f.submit();
 	}
 
 	function userList() {
-		f.action = "user_list.do";
+		f.action = "user_list";
 		f.submit();
 	}
 </script>
@@ -97,7 +97,7 @@
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input type="text" style="width: 150px" name="userId"
-											value="${fuser.userId}">&nbsp;&nbsp;<font color="red">${MSG}</font>
+											value="${fuser.userId}">&nbsp;&nbsp;<font color="red">${msg}</font>
 										</td>
 									</tr>
 									<tr>
