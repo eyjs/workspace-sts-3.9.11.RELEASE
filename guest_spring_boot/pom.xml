@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.itwill</groupId>
-	<artifactId>guest_boot</artifactId>
+	<artifactId>guest_spring_boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>guest_boot</name>
+	<name>guest_spring_boot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

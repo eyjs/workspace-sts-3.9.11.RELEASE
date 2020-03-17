@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: guest_boot
+Implementation-Title: guest_spring_boot
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: TEA
 Implementation-Vendor-Id: com.itwill
 Build-Jdk: 1.8.0_231
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/guest_boot
+ ot-starter-parent/guest_spring_boot
 Created-By: Maven Integration for Eclipse
 
