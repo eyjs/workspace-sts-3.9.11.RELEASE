@@ -1,12 +1,26 @@
 package com.itwill.ajax.controller;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.itwill.ajax.News;
 import com.itwill.ajax.NewsListResult;
-
+/*
+<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.9.6</version>
+</dependency>
+<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring-framework.version}</version>
+</dependency>
+ */
 @RestController
 public class XMLMessageConverterController {
 	
@@ -19,13 +33,23 @@ public class XMLMessageConverterController {
 	 * 406 error
 	 *   - Controller에서 반환하는객체에 XML annotation
 	 *      이존재하지않으면 발생
-	
+	*/
 	@RequestMapping(value="newsTitleListXML",
 			produces="text/xml;charset=UTF-8")
 	public List<News> newsTitleListXML(){
 		return this.getNewsList();
 	}
-	 */
+	@RequestMapping(value="testMapXML")
+	public Map testMapJson() {
+		HashMap map=new HashMap();
+		map.put("id","guard");
+		map.put("married",true);
+		map.put("age",43);
+		map.put("news",new News("제목", "조세일보", new Date().toLocaleString()));
+		map.put("data",this.getNewsList());
+		return map;
+	}
+	 
 	@RequestMapping(value= {"newsTitleListResultXML","07.newsTitlesXML"},
 			produces="text/xml;charset=UTF-8")
 	public NewsListResult newsTitleListResultXML(){

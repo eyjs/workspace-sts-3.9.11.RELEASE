@@ -27,6 +27,7 @@ import com.itwill.ajax.News;
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.6</version>
 		</dependency>
+		
  */
 @RestController
 public class JSONMessageConverterController {

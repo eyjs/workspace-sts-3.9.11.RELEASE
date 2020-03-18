@@ -14,6 +14,7 @@
 	<li><a href='newsTitleXML'>XML response[MessageConverter]News</a></li>
 	<li><a href='newsTitleListXML'>XML List response[MessageConverter]List</a></li>
 	<li><a href='newsTitleListResultXML'>XML List response[MessageConverter]NewsListResult </a></li>
+	<li><a href='testMapXML'>XML response[MessageConverter] Map </a></li>
 	<li><a href='newsTitleJson'>JSON response[MessageConverter] News </a></li>
 	<li><a href='newsTitleListJson'>JSON response[MessageConverter] List </a></li>
 	<li><a href='testMapJson'>JSON response[MessageConverter] Map </a></li>
