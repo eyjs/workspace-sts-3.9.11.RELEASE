@@ -15,7 +15,6 @@
 	GuestDao dao = new GuestDao();
 	Guest guest = dao.selectByNo(Integer.parseInt(guest_no.trim()));
 %>
-	<div class="guest_detail">
 		<div class="guest_date">
 			날짜:<%=guest.getGuest_date()%>
 		</div>
@@ -31,4 +30,3 @@
 		<div class="guest_content">
 			내용:<%=guest.getGuest_content()%>
 		</div>
-	</div>

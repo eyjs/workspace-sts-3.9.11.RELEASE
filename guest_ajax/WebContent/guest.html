@@ -84,6 +84,7 @@ label.error {
 					<h3 class="guest_title"  guest_no="2">
 						<a href=''>springTest11111[HTML]</a>
 					</h3>
+					
 				</div>
 				 */
 				
@@ -112,9 +113,54 @@ label.error {
 	}
 	/****************guest_detail[HTML]콜백함수******************/
 	function displayGuestDetailHTML(element) {
+		/*
+		element--> h3
+		*/
 		if(xhr.readyState==4){
 			if(xhr.status==200){
-				console.log(xhr.responseText);
+				var htmlData=xhr.responseText;
+				/*
+				<div class="guest_date">
+					날짜:2020-03-17 18:04:47
+				</div>
+				<div class="guest_name">
+					이름:김경호
+				</div>
+						...
+				*/
+				var divE=document.createElement('div');
+				divE.setAttribute('class','guest_detail');
+				divE.style.display='block';
+				divE.innerHTML=htmlData;
+				/*
+				<div class='guest_detail'>
+					<div class="guest_date">
+						날짜:2020-03-17 18:04:47
+					</div>
+					<div class="guest_name">
+						이름:김경호
+					</div>
+					..
+				</div>
+				
+				*/
+				element.parentElement.appendChild(divE);
+				/*
+				<div class="guest_item">
+					<h3 class="guest_title"  guest_no="2">
+						<a href=''>springTest11111[HTML]</a>
+					</h3>
+					<div class='guest_detail'>
+						<div class="guest_date">
+							날짜:2020-03-17 18:04:47
+						</div>
+						<div class="guest_name">
+							이름:김경호
+						</div>
+						..
+					</div>
+				</div>
+				*/
 			}
 		}
 		
@@ -245,30 +291,41 @@ label.error {
 			e.target.getElementsByTagName('a')
 				.item(0)
 				.addEventListener('click',function(e2){
-					//방명록상세보기ajax요청
-					var guest_no = e2.target.parentElement.getAttribute('guest_no');
+					if(e2.target.parentNode.parentNode.childElementCount >  1){
+						//방명록상세보기ajax요청안함
+						if(e2.target.parentNode.parentNode.lastChild.style.display=='block'){
+							e2.target.parentNode.parentNode.lastChild.style.display='none';
+						}else{
+							e2.target.parentNode.parentNode.lastChild.style.display='block';
+						}
+							
+					}else{
+						
+						var guest_no = e2.target.parentElement.getAttribute('guest_no');
+						//방명록상세보기ajax요청[HTML]
+						sendRequest('guest/guest_detail_html.jsp',
+									'guest_no='+guest_no,function(){
+										displayGuestDetailHTML(e2.target.parentElement);
+									},
+									'GET',true);
+						//방명록상세보기ajax요청[JSON]
+						/*
+						sendRequest('guest/guest_detail_json.jsp',
+									'guest_no='+guest_no,function(){
+										displayGuestDetailJSON(e2.target.parentElement);
+									},
+									'GET',true);
+						*/
+						//방명록상세보기ajax요청[XML]
+						/*
+						sendRequest('guest/guest_detail_xml.jsp',
+									'guest_no='+guest_no,function(){
+										displayGuestDetailXML(e2.target.parentElement);
+									},
+									'GET',true);
+						*/
+					}
 					
-					sendRequest('guest/guest_detail_html.jsp',
-								'guest_no='+guest_no,function(){
-									displayGuestDetailHTML(e2.target.parentElement);
-								},
-								'GET',true);
-					/*
-				
-					sendRequest('guest/guest_detail_json.jsp?guest_no='+guest_no,
-							    null,
-							    function(){
-									displayGuestDetailJSON(e2.target.parentElement);
-								},
-							    'GET');
-					sendRequest('guest/guest_detail_xml.jsp?guest_no='+guest_no,
-							    null,
-							    function(){
-									displayGuestDetailXML(e2.target.parentElement);
-								},
-							    'GET');
-													
-					*/
 					e2.preventDefault();
 				});
 		}
