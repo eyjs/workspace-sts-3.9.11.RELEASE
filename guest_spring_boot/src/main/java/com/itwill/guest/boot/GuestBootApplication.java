@@ -14,7 +14,6 @@ import org.springframework.context.annotation.ComponentScan;
   이 설정도 임의의 패키지로 스캔이 되도록 따로 지정할 수 있다.
  */
 @SpringBootApplication
-//@ServletComponentScan
 @ComponentScan(basePackages = "com.itwill.guest")
 @MapperScan(basePackages = "com.itwill.guest.mapper")
 public class GuestBootApplication {

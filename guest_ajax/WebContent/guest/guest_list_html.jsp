@@ -27,5 +27,7 @@ for(int i=0;i<guestList.size();i++){
 	<h3 class="guest_title"  guest_no="<%=guest.getGuest_no()%>"><a href=""><%=guest.getGuest_title()+"[HTML]"%></a></h3>
 </div>
 <%
+	
 }
+
 %>
