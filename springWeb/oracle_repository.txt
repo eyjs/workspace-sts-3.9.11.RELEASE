@@ -1,0 +1,19 @@
+//Maven
+     oracle
+     ORACLE JDBC Repository
+     https://maven.atlassian.com/3rdparty/
+
+  com.oracle
+  ojdbc6
+  12.1.0.1-atlassian-hosted
+//Gradle
+repositories {
+	maven() {
+    	url "https://maven.atlassian.com/3rdparty/"
+    }
+}
+
+
+dependencies {	
+	compile group: 'com.oracle', name: 'ojdbc6', version: '12.1.0.1-atlassian-hosted'	
+}
