@@ -1,10 +1,8 @@
 package com.itwill.ajax;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 @XmlRootElement(name = "news")
 public class News {

@@ -302,28 +302,36 @@ label.error {
 					}else{
 						
 						var guest_no = e2.target.parentElement.getAttribute('guest_no');
-						//방명록상세보기ajax요청[HTML]
-						sendRequest('guest/guest_detail_html.jsp',
-									'guest_no='+guest_no,function(){
-										displayGuestDetailHTML(e2.target.parentElement);
-									},
-									'GET',true);
-						//방명록상세보기ajax요청[JSON]
-						/*
-						sendRequest('guest/guest_detail_json.jsp',
-									'guest_no='+guest_no,function(){
-										displayGuestDetailJSON(e2.target.parentElement);
-									},
-									'GET',true);
-						*/
-						//방명록상세보기ajax요청[XML]
-						/*
-						sendRequest('guest/guest_detail_xml.jsp',
-									'guest_no='+guest_no,function(){
-										displayGuestDetailXML(e2.target.parentElement);
-									},
-									'GET',true);
-						*/
+						if(e2.target.innerHTML.endsWith('[HTML]')){
+							//방명록상세보기ajax요청[HTML]
+							sendRequest('guest/guest_detail_html.jsp',
+										'guest_no='+guest_no,function(){
+											displayGuestDetailHTML(e2.target.parentElement);
+										},
+										'GET',true);
+						}else if(e2.target.innerHTML.endsWith('[JSON]')){
+							//방명록상세보기ajax요청[JSON]
+							
+							sendRequest('guest/guest_detail_json.jsp',
+										'guest_no='+guest_no,function(){
+											displayGuestDetailJSON(e2.target.parentElement);
+										},
+										'GET',true);
+							
+						}else if(e2.target.innerHTML.endsWith('[XML]')){
+							//방명록상세보기ajax요청[XML]
+							
+							sendRequest('guest/guest_detail_xml.jsp',
+										'guest_no='+guest_no,function(){
+											displayGuestDetailXML(e2.target.parentElement);
+										},
+										'GET',true);
+							
+						
+						}
+						
+						
+						
 					}
 					
 					e2.preventDefault();
