@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko_KR">
@@ -204,7 +206,7 @@ label.error {
 	function displayGuestLogoutAction(){
 		if(xhr.readyState==4){
 			if(xhr.status==200){
-				location.href='guest.html';
+				location.href='guest.jsp';
 				//로그아웃
 				/*
 				//login form show
@@ -229,7 +231,7 @@ label.error {
 			if(xhr.status==200){
 				var loginResultText=xhr.responseText;
 				if(loginResultText.trim()=='success'){
-					location.href='guest.html';
+					location.href='guest.jsp';
 					//로그인성공
 					/*
 					//login form hide
@@ -296,63 +298,53 @@ label.error {
 			document.getElementById('idSpan').innerHTML='';
 		}
 		
-		if(loginResultJson.status.trim()=='success'){
-			/**************guest_list[HTML]이벤트*****************/
-			document.getElementById('menu-a')
-				.getElementsByTagName('a').item(0)
-				.addEventListener('click',function(e){
-					//ajax요청
-					sendRequest('guest/guest_list_html.jsp',
-								null,
-								displayGuestListHTML,
-								'GET',true);
-					showLoadingDialog(true);
-					e.preventDefault();
-				});
-			
-			/*******************guest_list[JSON]이벤트************/
-			document.getElementById('menu-b')
-				.getElementsByTagName('a').item(0)
-				.addEventListener('click',function(e){
-					//ajax요청
-					sendRequest('guest/guest_list_json.jsp',
-								null,
-								displayGuestListJSON,
-								'GET',true);
-					showLoadingDialog(true);
-					e.preventDefault();
-				});
-			/*******************guest_list[XML]이벤트*************/
-			document.getElementById('menu-c')
-				.getElementsByTagName('a').item(0)
-				.addEventListener('click',function(e){
-					//ajax요청
-					sendRequest('guest/guest_list_xml.jsp',
-								null,
-								displayGuestListXML,
-								'GET',true);
-					showLoadingDialog(true);
-					e.preventDefault();
-				});
-			/**************guest_logout 이벤트[a]*****************/	
-			document.querySelector('#guest_logout_a')
-				.addEventListener('click',function(){
-					//ajax로그아웃요청
-					sendRequest('guest/guest_logout_action.jsp',
-								null,displayGuestLogoutAction,
-								'GET',true);
-				});
-		}else{
-			var menuNodeList = document.querySelectorAll(
-					'#menu-a a,#menu-b a,#menu-c a,#guest_logout_a');
-			for (var i = 0; i < menuNodeList.length; i++) {
-				menuNodeList.item(i).addEventListener('click',function(e){
-					alert('로그인하세요')
-					e.preventDefault();
-				});
-			}
-			
-		}
+		
+		/**************guest_list[HTML]이벤트*****************/
+		document.getElementById('menu-a')
+			.getElementsByTagName('a').item(0)
+			.addEventListener('click',function(e){
+				//ajax요청
+				sendRequest('guest/guest_list_html.jsp',
+							null,
+							displayGuestListHTML,
+							'GET',true);
+				showLoadingDialog(true);
+				e.preventDefault();
+			});
+		
+		/*******************guest_list[JSON]이벤트************/
+		document.getElementById('menu-b')
+			.getElementsByTagName('a').item(0)
+			.addEventListener('click',function(e){
+				//ajax요청
+				sendRequest('guest/guest_list_json.jsp',
+							null,
+							displayGuestListJSON,
+							'GET',true);
+				showLoadingDialog(true);
+				e.preventDefault();
+			});
+		/*******************guest_list[XML]이벤트*************/
+		document.getElementById('menu-c')
+			.getElementsByTagName('a').item(0)
+			.addEventListener('click',function(e){
+				//ajax요청
+				sendRequest('guest/guest_list_xml.jsp',
+							null,
+							displayGuestListXML,
+							'GET',true);
+				showLoadingDialog(true);
+				e.preventDefault();
+			});
+		/**************guest_logout 이벤트[a]*****************/	
+		document.querySelector('#guest_logout_a')
+			.addEventListener('click',function(){
+				//ajax로그아웃요청
+				sendRequest('guest/guest_logout_action.jsp',
+							null,displayGuestLogoutAction,
+							'GET',true);
+			});
+		
 		/*******************guest_insert_form[HTML]이벤트*****/
 		document.getElementById('menu-d')
 			.getElementsByTagName('a').item(0)
@@ -526,7 +518,7 @@ label.error {
 						<a href="#">방명록 쓰기</a>
 					</h3>
 				</div>
-
+				
 				<form id="guest_login_form" method="get" action="vfbfcv">
 					<fieldset>
 						<legend>로그인</legend>
@@ -551,6 +543,7 @@ label.error {
 						<span id="idSpan"></span>님 로그인<br /> <a id="guest_logout_a" href='#'>로그아웃</a>
 					</div>
 				</form>
+				
 			</div>
 		</div>
 		<div id="content">

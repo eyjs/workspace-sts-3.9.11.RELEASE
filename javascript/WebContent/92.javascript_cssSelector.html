@@ -11,22 +11,35 @@
 	<h2>CSS 선택자를 이용한 HTML Element 검색2</h2>
 	<div id="title" style="border: 2px solid red;">Hello querySelector~~</div>
 	<p class="contents"></p>
+	
 	<script type="text/javascript">
 		/*
 		 1.id selector
 		*/
-		
+		document.querySelector('#title').innerHTML
+			= document.querySelector('h2').innerHTML;
 		/*
 		2.class selector
 		*/
-		
+		document.querySelector('.contents').innerHTML
+			='자바스크립트 query selector!!!';
 		/*
 		3. tag selector
 		*/
-		
-</script>
+		var h2NodeList = document.querySelectorAll('h2');
+		for (var i = 0; i < h2NodeList.length; i++) {
+			h2NodeList.item(i).style.backgroundColor='mistyrose';
+		}
+	</script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

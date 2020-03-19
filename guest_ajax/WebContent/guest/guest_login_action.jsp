@@ -18,8 +18,8 @@
 	/*  -----|------
 		 id  | pass 
 		-----|------	 
-		user1|user2
-		user1|user2
+		user1|user1
+		user2|user2
 	*/
 	if((guest_id.equals("user1") && guest_pass.equals("user1") )
 		||(guest_id.equals("user2") && guest_pass.equals("user2"))){

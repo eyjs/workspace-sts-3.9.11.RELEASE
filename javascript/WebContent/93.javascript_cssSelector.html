@@ -27,11 +27,19 @@ div, span {
 	<div class="myClass">DIV class="myClass"</div>
 	<script type="text/javascript">
 		/*******(,or)  #content or div**********/
-		
+		var nodeList1 = document.querySelectorAll('#content,div');
+		for (var i = 0; i < nodeList1.length; i++) {
+			nodeList1.item(i).style.border='3px solid blue';
+		}
 		/********class가 myClass인 모든 엘레멘트*****/
-		
+		var nodeList2=document.querySelectorAll('.myClass');
+		for (var i = 0; i < nodeList2.length; i++) {
+			nodeList2.item(i).style.background='yellow'
+		}
 		/********div 엘레멘트중에서 class가 myClass인 모든 엘레멘트*****/
-		/********p 엘레멘트중에서 id가 content인 엘레멘트*****/
+		document.querySelector('div.myClass').style.color='green';
+		/********(p 엘레멘트중에서) id가 content인 엘레멘트*****/
+		document.querySelector('#content').style.backgroundColor='gray'
 		
 </script>
 </body>

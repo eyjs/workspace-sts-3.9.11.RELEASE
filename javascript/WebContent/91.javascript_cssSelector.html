@@ -6,7 +6,7 @@
 		<script type="text/javascript">
 			/*
 			https://www.w3schools.com/jsref/met_document_queryselector.asp
-				1. querySelector
+				1. querySelector()
 				  - The querySelector() method returns 
 				     the first element that matches a 
 				     specified CSS selector(s) in the document.
@@ -15,8 +15,10 @@
 				    all elements in the document 
 				    that matches a specified CSS selector(s), as a static NodeList object.
 			*/
-			var element = document.querySelector('#PM_ID_themecastBody > div > div > div > ul > li:nth-child(4) > span > span:nth-child(1)');
-			document.querySelector("#cotent > div .back ")
+		    window.onload=function(){
+				document.querySelector('div').style.border='4px solid blue';
+				document.querySelector('div').style.background='rgb(100,200,0)'
+			};
 		
 		</script>
 	</head>

@@ -19,5 +19,7 @@
 	<context:annotation-config/>
 	<context:component-scan base-package="com.itwill.guest.controller"/>
 	<mvc:annotation-driven/>
+	
 	<mvc:resources mapping="/**" location="/" />
+	
 </beans>
