@@ -6,6 +6,22 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript">
 			$(function(){
+				$('div').css('border','4px solid rgb(0,0,123)');
+				$('div').css('background-color','blue');
+				console.log("1.css(border)-->"+$('div').css('border'));
+				console.log("2.css(background-color)-->"+$('div').css('background-color'));
+				console.log("3.css(['border','background-color'])-->"+$('div').css(["border","background-color"]));
+				$('div').css('background-color','pink');
+				
+				$('div').css('background-color',function(index,oldValue){
+					console.log(index+"-->"+ oldValue);
+					if(index%2==0){
+						return 'mystirose';
+					}else{
+						return 'aliceblue';
+					}
+				});
+				
 				
 				
 			});
@@ -20,6 +36,12 @@
 		</div>
 		<div>
 			CSS 선택자를 이용한 HTML Element 검색3
+		</div>
+		<div>
+			CSS 선택자를 이용한 HTML Element 검색4
+		</div>
+		<div>
+			CSS 선택자를 이용한 HTML Element 검색5
 		</div>
 		<script type="text/javascript">
 			

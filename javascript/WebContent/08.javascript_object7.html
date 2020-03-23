@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	ExampleClass = function(){};
+	ExampleClass.directM = function(){
+		console.log("this:"+this);
+	}  //M for method
+	ExampleClass.prototype.protoM = function(){}
+	var instanceOfExample = new ExampleClass();
+	ExampleClass.directM();     //o works
+	//instanceOfExample.directM();//x Error!
+	//ExampleClass.protoM();     //x Error!
+	instanceOfExample.protoM();//o works
+</script>
+<script type="text/javascript">
+	
+	
+	
+	
+</script>
+</head>
+<body>
+<h1>java script 생성자 함수6[prototype JSON]</h1><hr>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

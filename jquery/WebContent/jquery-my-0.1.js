@@ -5,7 +5,9 @@ window.jQuery = function(selector) {
 	if( typeof  selector == 'string'){
 	
 	}else if(typeof selector =='function'){
-	
+		
+		window.addEventListener('load',selector);
+		
 	}else if(typeof selector == 'object'){
 	}
 	

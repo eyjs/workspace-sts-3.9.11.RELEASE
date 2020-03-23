@@ -19,10 +19,11 @@
 	border: 2px solid blue;
 }
 .oddClass{
-	background-color: gray;
+	background-color: pink;
+	border: 1px dashed black;
 }
 .evenClass{
-	background-color: olive;
+	background-color: gold;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -34,6 +35,7 @@
 	/*
 	1 . $('h1')
 	2 . $(document)
+	2 . $(element)--> jQueryWrapperObject
 	3 . $(function(){})
 	*/
 	$(function(){
@@ -45,19 +47,44 @@
 		/*
 		2. filter selector(pseudo class)
 		*/
-		
+		$('div:odd').addClass('oddClass');
+		$('div:even').addClass('evenClass');
 		/*
 		3.DOM순회(id selector)
 		*/
+		var jQueryWrapperElements = $('#root').children();
+		console.log('jQueryWrapperElements.length:'+jQueryWrapperElements.length);
 		
-		
+		$('#root').children().each(function(index,element){
+			console.log(index+'-->'+element);
+			/*
+			 element ==> <div>name</div>
+			*/
+			console.log(index+'-->'+element.firstChild.nodeValue);
+			var jQueryWrapperObject = $(element);
+			var $element = $(element);
+			console.log(index+'-->'+jQueryWrapperObject.text());
+		});
 		/*
 		4.DOM Node변경
 		*/
-		
+		$('#h31').text('<u>h1변경 .text()</u>')
+		$('#h32').html('<u>h1변경 .html()</u>')
 		/*
-		5. 이벤트(effect)
+		5. 이벤트(event)
 		*/
+		$('#send').click(function(e){
+			console.log('이벤트객체:'+e);
+			console.log('이벤트타겟:'+e.target.firstChild.nodeValue);
+			/*
+			6. 이펙트(effect)
+			*/
+			$('p').slideToggle();
+			$('div').slideToggle();
+			$('h2').slideToggle();
+		});
+		
+		
 		
 		
 	});
