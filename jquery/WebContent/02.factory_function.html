@@ -5,8 +5,30 @@
 <title>Insert title here</title>
 <script type="text/javascript" src='jquery-my-0.1.js'></script>
 <script type="text/javascript">
+	/*
+	window.f1=function(selector){
+		document.querySelectorAll(selector);
+	};
+	window.$=window.f1;
+	*/
 
 	window.onload=function(){
+		console.log('1.'+window.$);
+		console.log('2.'+window.jQuery);
+		console.log('3.factory function'+ typeof window.$);
+		console.log('4.factory function'+ typeof window.jQuery);
+		
+		var h1jQueryWrapper = $('h1');
+		console.log('5.jQuery WrapperObject'+ h1jQueryWrapper);
+		h1jQueryWrapper.css('blue');
+		
+		$('h1').text('Factory Function Test!!!');
+		$('h2').css('pink');
+		$('h3').css('olive');
+		$('h4').css('red');
+		$('h5').css('gold');
+		$('h6').css('green');
+		alert("h1 text-->"+$('h1').text());
 		
 	}
 </script>

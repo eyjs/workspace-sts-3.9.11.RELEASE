@@ -27,12 +27,21 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	
+	/*
+	 $[factory function] 안에 인자로 function객체(익명함수)를
+	 대입할경우에는 대입된 익명함수는 DOM트리 로딩직후에 호출된다.      
+	*/
+	/*
+	1 . $('h1')
+	2 . $(document)
+	3 . $(function(){})
+	*/
 	$(function(){
 		/*
 		1.tag selector
 		*/
-	
+		$('h2').addClass('highlight1');
+		$('h2').css('color','blue');
 		/*
 		2. filter selector(pseudo class)
 		*/

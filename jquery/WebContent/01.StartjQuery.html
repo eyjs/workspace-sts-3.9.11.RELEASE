@@ -12,16 +12,17 @@
  -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	
+	console.log(window.$);
+	console.log(window.jQuery);
 	/*
 	 jQuery()[$()] 
 	 jQuery의 가장기본적인동작은 도큐먼트의 일부를 선택하는것이다
-	 jQuery() 팩토리함수를 사용해서 선택을 수행한다.
+	 jQuery팩토리함수[jQuery,$]를 사용해서 선택을 수행한다.
 	 이함수의 인자는 
 	 	문자열(표준객체(document),function)이며 
 	 	CSS선택자표현을 포함할수있다.
 	 
-	 jQuery()함수는 우리가 작업하는 대상객체(jQueryWrapper객체)
+	 jQuery팩토리함수[jQuery,$] 는 우리가 작업하는 대상객체(jQueryWrapper객체)
 	 를 만들어내는, jQuery의 Wrapper 객체생성공장같은역할을 한다.
 	 jQueryWrapper 객체는 여러개의 DOM요소를 캡슐화 할수있으며 
 	 이것을 다양한방식으로다룰수 있게해준다.
@@ -30,22 +31,88 @@
 		/*
 		DOM tree loading후 렌더링전에 호출
 		*/
+		/*
+		var h1jQueryWrapper1 = $('h1');
+		var h1jQueryWrapper2 = jQuery('h1');
+		console.log(h1jQueryWrapper1);
+		console.log(h1jQueryWrapper2);
 		
+		h1jQueryWrapper1.text("Hello jQuery Change!!!");
+		var h1Text = h1jQueryWrapper1.text();
+		console.log("h1 text-->"+h1Text);
 		
+		h1jQueryWrapper1.css('color','red');
+		
+		$('h2').css('color','blue');
+		jQuery('h3').css('color','orange');
+		$('h4').css('border','1px solid red');
+		$('h5').css('color','olive');
+		
+		console.log('---------jQueryWrapperObject------');
+		console.log("jQueryWrapperObject-->"+$('h1'));
+		console.log($('h2'));
+		console.log($('h3'));
+		console.log($('h4'));
+		console.log($('h5'));
+		*/
 	 }
 	
 	 $(document).ready(function(){
 		 /*
 			DOM tree loading후 렌더링전에 호출
 			*/
+			/*
+		 var h1jQueryWrapper1 = $('h1');
+			var h1jQueryWrapper2 = jQuery('h1');
+			console.log(h1jQueryWrapper1);
+			console.log(h1jQueryWrapper2);
 			
+			h1jQueryWrapper1.text("Hello jQuery Change!!!");
+			var h1Text = h1jQueryWrapper1.text();
+			console.log("h1 text-->"+h1Text);
+			
+			h1jQueryWrapper1.css('color','red');
+			
+			$('h2').css('color','blue');
+			jQuery('h3').css('color','orange');
+			$('h4').css('border','1px solid red');
+			$('h5').css('color','olive');
+			
+			console.log('---------jQueryWrapperObject------');
+			console.log("jQueryWrapperObject-->"+$('h1'));
+			console.log($('h2'));
+			console.log($('h3'));
+			console.log($('h4'));
+			console.log($('h5'));	
+			*/
 	 });
 	
 	 $(function(){
 		    /*
 			DOM tree loading후 렌더링전에 호출
 			*/
+		 	var h1jQueryWrapper1 = $('h1');
+			var h1jQueryWrapper2 = jQuery('h1');
+			console.log(h1jQueryWrapper1);
+			console.log(h1jQueryWrapper2);
 			
+			h1jQueryWrapper1.text("Hello jQuery Change!!!");
+			var h1Text = h1jQueryWrapper1.text();
+			console.log("h1 text-->"+h1Text);
+			
+			h1jQueryWrapper1.css('color','red');
+			
+			$('h2').css('color','blue');
+			jQuery('h3').css('color','orange');
+			$('h4').css('border','1px solid red');
+			$('h5').css('color','olive');
+			
+			console.log('---------jQueryWrapperObject------');
+			console.log("jQueryWrapperObject-->"+$('h1'));
+			console.log($('h2'));
+			console.log($('h3'));
+			console.log($('h4'));
+			console.log($('h5'));	
 			
 	 });
 	 
@@ -95,5 +162,6 @@
 	<h5>Bye Bye!!! h5</h5>
 	<h5>Bye Bye!!! h5</h5>
 	<h5>Bye Bye!!! h5</h5>
+	
 </body>
 </html>

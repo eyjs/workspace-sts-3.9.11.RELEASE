@@ -2,6 +2,13 @@ window.jQuery = function(selector) {
 	/*
 	 * selector : .className , #content ,h1
 	 */
+	if( typeof  selector == 'string'){
+	
+	}else if(typeof selector =='function'){
+	
+	}else if(typeof selector == 'object'){
+	}
+	
 	var elementNodeList = document.querySelectorAll(selector);
 	var elementNode = document.querySelector(selector);
 	var jQueryWrapperObject = {
