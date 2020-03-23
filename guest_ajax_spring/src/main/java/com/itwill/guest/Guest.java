@@ -13,13 +13,13 @@ public class Guest {
 	 * GUEST_CONTENT 	NOT NULL 		VARCHAR2(4000)
 	 * -------------------------------------- --------
 	 */
-	public int guest_no;
-	public String guest_name;
-	public String guest_date;
-	public String guest_email;
-	public String guest_homepage;
-	public String guest_title;
-	public String guest_content;
+	private int guest_no;
+	private String guest_name;
+	private String guest_date;
+	private String guest_email;
+	private String guest_homepage;
+	private String guest_title;
+	private String guest_content;
 
 	public Guest() {
 		// TODO Auto-generated constructor stub

@@ -6,11 +6,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "result")
+@XmlRootElement(name = "guestList")
 public class GuestResultList {
 	private List<Guest> guestList;
 
-	@XmlElementWrapper(name = "guest_list")
 	@XmlElement(name="guest")
 	public List<Guest> getGuestList() {
 		return guestList;

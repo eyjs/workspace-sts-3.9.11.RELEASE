@@ -275,7 +275,13 @@ label.error {
 	window.onload = loading_ui_event;
 	function loading_ui_event() {
 		/*******login check후 UI보여주기**************/
-		var loginResultJson = login_check();
+		//var loginResultJson = login_check();
+		loginResultJson ={
+					  "status": "success",
+					  "login_id": "user1"
+		};
+		
+		
 		console.log(loginResultJson);
 		if(loginResultJson.status.trim()=='success'){
 			//logout form show
@@ -315,7 +321,7 @@ label.error {
 				.getElementsByTagName('a').item(0)
 				.addEventListener('click',function(e){
 					//ajax요청
-					sendRequest('guest/guest_list_json.jsp',
+					sendRequest('guest/guest_list_json',
 								null,
 								displayGuestListJSON,
 								'GET',true);
@@ -446,7 +452,7 @@ label.error {
 						}else if(e2.target.innerHTML.endsWith('[JSON]')){
 							//방명록상세보기ajax요청[JSON]
 							
-							sendRequest('guest/guest_detail_json.jsp',
+							sendRequest('guest/guest_detail_json',
 										'guest_no='+guest_no,function(){
 											displayGuestDetailJSON(e2.target.parentElement);
 										},

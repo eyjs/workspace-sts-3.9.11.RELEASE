@@ -81,11 +81,11 @@ public class GuestDaoImplJDBC implements GuestDao  {
 		try{
 			con=dataSource.getConnection();
 			pstmt=con.prepareStatement(GuestSQL.GUEST_INSERT);
-			pstmt.setString(1, guest.guest_name);
-			pstmt.setString(2, guest.guest_email);
-			pstmt.setString(3, guest.guest_homepage);
-			pstmt.setString(4, guest.guest_title);
-			pstmt.setString(5, guest.guest_content);
+			pstmt.setString(1, guest.getGuest_name());
+			pstmt.setString(2, guest.getGuest_email());
+			pstmt.setString(3, guest.getGuest_homepage());
+			pstmt.setString(4, guest.getGuest_title());
+			pstmt.setString(5, guest.getGuest_content());
 			int insertRowCount=pstmt.executeUpdate();
 			if(insertRowCount==1){
 				isSuccess=true;
@@ -174,12 +174,12 @@ public class GuestDaoImplJDBC implements GuestDao  {
 		try{
 			con=dataSource.getConnection();
 			pstmt=con.prepareStatement(GuestSQL.GUEST_UPDATE);
-			pstmt.setString(1, guest.guest_name);
-			pstmt.setString(2, guest.guest_email);
-			pstmt.setString(3, guest.guest_homepage);
-			pstmt.setString(4, guest.guest_title);
-			pstmt.setString(5, guest.guest_content);
-			pstmt.setInt(6, guest.guest_no);
+			pstmt.setString(1, guest.getGuest_name());
+			pstmt.setString(2, guest.getGuest_email());
+			pstmt.setString(3, guest.getGuest_homepage());
+			pstmt.setString(4, guest.getGuest_title());
+			pstmt.setString(5, guest.getGuest_content());
+			pstmt.setInt(6, guest.getGuest_no());
 			int updateRowCount=pstmt.executeUpdate();
 			if(updateRowCount==1){
 				updateOK=true;

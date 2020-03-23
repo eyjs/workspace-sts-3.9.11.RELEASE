@@ -396,7 +396,12 @@ label.error {
 	/*%%%%%동적으로추가되는 Node 이벤트처리[DOMNodeInserted이벤트]시작%%%%%%*/
 	
 	document.addEventListener('DOMNodeInserted',function(e){
-		if(e.target.id == 'guest_write_form'){
+		if(e.target.className == 'guest_detail'){
+		   var deleteButtonE = e.target.querySelector(".guest_delete input[type='button'][value='삭제']");		
+		   deleteButtonE.addEventListener('click',function(){
+			   alert('삭제');
+		   });	
+		}else if(e.target.id == 'guest_write_form'){
 			/*****방명록쓰기폼 submit event등록******/
 			var guestWriteFormE = e.target;
 			guestWriteFormE.addEventListener('submit',function(e1){
