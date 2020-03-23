@@ -1,0 +1,105 @@
+
+<!--http://superkts.com/jquery/@easingEffects-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>jQuery 공작소 : easing(이징) 효과</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css"
+	href="http://superkts.com/css/common_css.css">
+<link rel="stylesheet" type="text/css"
+	href="http://superkts.com/css/jquery.css">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<style type="text/css">
+.wrapper {
+	padding: 0 !important;
+	margin-bottom: 30px;
+}
+
+.wrapper .contents .ex .e {
+	padding-top: 50px;
+}
+
+.wrapper .contents .ex .url {
+	font-size: 12pt;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.css_test {
+	text-align: center;
+}
+
+.css_test img {
+	cursor: pointer;
+	position: relative;
+	z-index: 100;
+}
+</style>
+<script type="text/javascript">
+	function j_test(o) {
+		var t = Math.ceil(Math.random() * -2000 + 1000); // -1000 ~ 1000 사이의 값
+		var l = Math.ceil(Math.random() * -2000 + 1000); // -1000 ~ 1000 사이의 값
+
+		var px1 = (t < 0 ? '-=' : '+=') + Math.abs(t).toString();
+		var px1_ = (t < 0 ? '+=' : '-=') + Math.abs(t).toString();
+
+		var px2 = (l < 0 ? '-=' : '+=') + Math.abs(l).toString();
+		var px2_ = (l < 0 ? '+=' : '-=') + Math.abs(l).toString();
+
+		$(o).animate({
+			top : px1,
+			left : px2
+		}, 500, 'easeOutBack', function() {
+			$(o).animate({
+				top : px1_,
+				left : px2_
+			}, 500, 'easeOutElastic');
+		});
+	}
+</script>
+</head>
+<body>
+
+	<div class="wrapper">
+		<h1>easing(이징) 효과 모음</h1>
+		<div class="contents">
+			<div class="ex">
+				<div class="t2">이징 효과란 이런것</div>
+				<div class="e ac">
+					<!-- 소스 시작 -->
+					땅콩을 클릭해 보세요.
+					<div class="css_test">
+						<img src="icon1.png"
+							onclick="j_test(this)"> <img
+							src="icon2.png" onclick="j_test(this)">
+						<img src="icon1.png"
+							onclick="j_test(this)"> <img
+							src="icon1.png" onclick="j_test(this)">
+						<img src="icon2.png"
+							onclick="j_test(this)"> <img
+							src="icon2.png" onclick="j_test(this)">
+						<img src="icon1.png"
+							onclick="j_test(this)"> <img
+							src="icon2.png" onclick="j_test(this)">
+					</div>
+
+					<!-- 소스 종료 -->
+
+
+
+
+
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

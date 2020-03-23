@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>속성 선택자를 이용한 HTML Element 검색</title>
+<style>
+div {
+	background: #FFF;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*
+		 a tag target 속성이 존재하는엘레멘트 
+		*/
+		
+		/*
+		 a tag href 속성의값이 http://www.slqer.com 인 엘레멘트 
+		*/
+		
+		/*
+		 a tag href 속성의값이 http://www.slqer.com 와 일치하지않는 엘레멘트 
+		*/
+		
+		
+	});
+</script>
+</head>
+<body style="padding: 10px;">
+	<h2>속성 선택자를 이용한 HTML Element 검색</h2>
+	<div>
+		<a href="http://www.slqer.com">SQLER.COM (No Target)</a><br/>
+		<a href="http://www.slqer.com" target="_blank">SQLER.COM (Target)</a><br/>
+		<a href="http://www.hoons.kr">Hoons.NET (No Target)</a><br />
+		<a href="http://www.hoons.kr" target="_blank">Hoons.NET (Target)</a><br/>
+		<a href="http://www.hows.kr">HowsNET (No Target)</a><br/>
+		<a href="http://www.hows.kr" target="_blank">HowsNET (No Target)</a><br/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery에서 제공하는 Event 핸들링 메소드</title>
+<style>
+div,pre {
+	background: #FFF;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+	/*
+	현재DOM Tree에있는 엘레멘트만 이벤트처리
+	
+	*/
+	/*
+	현재DOM Tree의 ul 에 동적으로추가되는 li 엘레멘트도 이벤트처리
+	*/
+	
+	
+	
+	$('#btnDie').click(function(e) {
+		// 제거시에는 항상 상위엘레멘트의 참조가필요
+		// .off() 메쏘드를 사용하여야함
+		// .on()  메쏘드를 사용해야 취소가가능
+		$('ul').off('click','li');
+	});
+
+});
+
+
+</script>
+</head>
+
+<body style="padding: 10px;">
+	<h2>jQuery에서 제공하는 Event 핸들링 메소드</h2>
+	<div>
+		<ul>
+			<li>list item 0</li>
+		</ul>
+		<input type="button" id="btnAdd" value="Add Element" /> 
+		<input type="button" id="btnDie" value="Event Die" />
+	</div>
+</body>
+</html>

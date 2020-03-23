@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery에서 제공하는 Form 제어 메소드</title>
+<style>
+div,pre {
+	background: #FFF;
+	padding: 10px;
+	margin: 10px;
+}
+
+table {
+	border: 1px solid #AAA;
+}
+
+td {
+	border: 1px solid #AAA;
+	width: 25px;
+	height: 25px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#f').on('submit',function(e){
+			//alert('submit');
+			/*
+			ajax요청
+			1.parameter생성
+			*/
+			
+		});
+		
+	});
+</script>
+</head>
+
+<body style="padding: 10px;">
+	<h2>jQuery에서 제공하는 Form 제어 메소드</h2>
+	<div>
+		<form id="f" action="xxx.jsp">
+			아이디:<input type="text" name="id" id="id" /><br />
+			이이름:<input type="text" name="name" /><br /> 
+			별명[히든]:<input type="hidden" name="alias" value="제임스" /><br />
+			직업:
+			<select name="job">
+				<option value="1" selected="selected">job1</option>
+				<option value="2">job2</option>
+				<option value="3">job3</option>
+			</select> <br /> 
+			<input type="submit" value="전송[submit]" />
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS 선택자를 이용한 HTML DOM Element 검색</title>
+<style>
+div, span {
+	width: 100px;
+	height: 40px;
+	float: left;
+	padding: 10px;
+	margin: 10px;
+	background-color: #EEEEEE;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/***********직계자식**********/
+		
+		/***********자손모두**********/
+		
+		
+	});
+	
+</script>
+</head>
+<body style="padding: 10px;">
+	<h2>CSS 선택자를 이용한 HTML Element 검색</h2>
+	<p id="content">jQuery에 대한 자세한 내용을 보려면 jquery.com 을 방문하세요</p>
+	<span class="myClass">SPAN class="myClass"</span>
+	<div>
+		DIV
+		<div>CHILD DIV</div>
+	</div>
+	<span>
+		SPAN
+		<span>CHILD SPAN</span>
+	</span>
+	<div class="myClass">DIV class="myClass"</div>
+
+</body>
+</html>

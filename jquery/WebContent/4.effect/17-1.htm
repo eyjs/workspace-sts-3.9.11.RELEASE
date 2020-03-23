@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+			$('h1').click(function(e) {
+				var clickH1Element = e.target;
+				/*
+				$(clickH1Element).next().hide(1000,function(){
+					alert('hide complete!!!');
+				});
+				*/
+				/*
+				$(clickH1Element).next().hide({
+					duration: 1000,
+					complete: function(){
+						alert('hide complete!!!');
+						console.log("complete function");
+					},
+					start:function(){
+						console.log("start function");
+					},
+					done:function(){
+						console.log("done function");
+					},
+					fail:function(){
+						console.log("fail function");
+					},
+					always: function(){
+						console.log("always function");
+					}
+				});
+				*/
+				//$(clickH1Element).next().show();
+				/*
+				$(clickH1Element).next().toggle({
+					duration: 1000,
+					complete: function(){
+						alert('toggle complete!!!');
+					}
+				});
+				
+				$(clickH1Element).next().slideToggle({
+					duration: 1000,
+					complete: function(){
+						alert('slideToggle complete!!!');
+					}
+				});
+				*/
+				$(clickH1Element).next().fadeToggle({
+					duration: 1000,
+					complete: function(){
+						//alert('fadeToggle complete!!!');
+					}
+				});
+				
+			});
+        });
+    </script>
+</head>
+<body>
+    <h1>OPEN & CLOSE</h1>
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <h1>OPEN & CLOSE</h1>
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Aenean vel augue dolor, at rhoncus tortor.</p>
+    </div>
+</body>
+</html>

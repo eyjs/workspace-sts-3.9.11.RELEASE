@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>속성 선택자를 이용한 HTML Element 검색</title>
+<style>
+div {
+	background: #FFF;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*
+		id속성이 content- 로 시작하는( ^= )
+		*/
+		/*
+		id속성이 1 로 끝나는( $= )
+		*/
+		/*
+		name 속성이 man과 일치하는( = )
+		*/
+		/*
+		name 속성이 man을 포함하는( *= )
+		*/
+		/*
+		name 속성이 man단어를  포함하는( ~= )
+		*/
+	});
+</script>
+</head>
+<body style="padding: 10px;">
+	<h2>속성 선택자를 이용한 HTML Element 검색</h2>
+	<div>
+		<p> "id"가 "content-"로 시작하는 요소를 표시한다.</p>
+		<div id="content-1">DIV Content-1</div>
+		<div id="content-2">DIV Content-2</div>
+		<div id="view-1">DIV View-1</div>
+		<div id="content-3">DIV Content-3</div>
+	</div>
+	
+	<div>
+		<p>"name"값에 man이 포함된 요소를 표시한다[토마토].(정확히일치[오렌지])</p>
+		<input type="text" name="man" value="name is man" /><br/>
+		<input type="text" name="superman" value="name is superman" /><br/>
+		<input type="text" name="iron man" value="name is iron man" /><br/>
+		<input type="text" name="bat man" value="name is bat man" /><br/>
+		<input type="text" name="joker" value="name is joker"/><br/>
+		<input type="text" name="manual" value="name is manual"/><br/>
+	</div>
+	
+</body>
+</html>

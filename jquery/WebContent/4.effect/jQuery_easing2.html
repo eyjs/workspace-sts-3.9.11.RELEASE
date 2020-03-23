@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>jQuery 공작소 : easing(이징) 효과 모음</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/css/common_css.css">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/css/jquery.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+	<h1>easing(이징) 효과 모음</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@easingEffects" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">이미지에 easing 효과 적용하기</div>
+			<div class="e ac">
+
+
+
+
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+		border:5px solid gray;
+		border-radius:10px;
+	}
+	.css_test td {
+		height:470px;
+		width:650px;
+		text-align:center;
+		overflow:hidden;
+		box-shadow:0 0 10px silver inset;
+	}
+	.css_test td img {
+		position:relative;
+	}
+	.css_test_btn span { /* 버튼 */
+		border:2px solid silver;
+		cursor:pointer;
+		display:inline-block;
+		font-size:9pt;
+		margin:2px 0;
+		padding:0 4px;
+		border-radius:5px;
+	}
+</style>
+
+<table class="css_test" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td><img src="http://cfile3.uf.tistory.com/image/27210A38555ABF422920F7" /></td>
+		
+	</tr>
+</table>
+<div class="css_test_btn mt20">
+	<span onclick="j_test_drop('linear')">linear</span>
+	<span onclick="j_test_drop('swing')">swing</span>
+	<span onclick="j_test_drop('easeInQuad')">easeInQuad</span>
+	<span onclick="j_test_drop('easeOutQuad')">easeOutQuad</span>
+	<span onclick="j_test_drop('easeInOutQuad')">easeInOutQuad</span>
+	<span onclick="j_test_drop('easeInCubic')">easeInCubic</span>
+	<span onclick="j_test_drop('easeOutCubic')">easeOutCubic</span>
+	<span onclick="j_test_drop('easeInOutCubic')">easeInOutCubic</span>
+	<span onclick="j_test_drop('easeInQuart')">easeInQuart</span>
+	<span onclick="j_test_drop('easeOutQuart')">easeOutQuart</span>
+	<span onclick="j_test_drop('easeInOutQuart')">easeInOutQuart</span>
+	<span onclick="j_test_drop('easeInQuint')">easeInQuint</span>
+	<span onclick="j_test_drop('easeOutQuint')">easeOutQuint</span>
+	<span onclick="j_test_drop('easeInOutQuint')">easeInOutQuint</span>
+	<span onclick="j_test_drop('easeInSine')">easeInSine</span>
+	<span onclick="j_test_drop('easeOutSine')">easeOutSine</span>
+	<span onclick="j_test_drop('easeInOutSine')">easeInOutSine</span>
+	<span onclick="j_test_drop('easeInExpo')">easeInExpo</span>
+	<span onclick="j_test_drop('easeOutExpo')">easeOutExpo</span>
+	<span onclick="j_test_drop('easeInOutExpo')">easeInOutExpo</span>
+	<span onclick="j_test_drop('easeInCirc')">easeInCirc</span>
+	<span onclick="j_test_drop('easeOutCirc')">easeOutCirc</span>
+	<span onclick="j_test_drop('easeInOutCirc')">easeInOutCirc</span>
+	<span onclick="j_test_drop('easeInElastic')">easeInElastic</span>
+	<span onclick="j_test_drop('easeOutElastic')">easeOutElastic</span>
+	<span onclick="j_test_drop('easeInOutElastic')">easeInOutElastic</span>
+	<span onclick="j_test_drop('easeInBack')">easeInBack</span>
+	<span onclick="j_test_drop('easeOutBack')">easeOutBack</span>
+	<span onclick="j_test_drop('easeInOutBack')">easeInOutBack</span>
+	<span onclick="j_test_drop('easeInBounce')">easeInBounce</span>
+	<span onclick="j_test_drop('easeOutBounce')">easeOutBounce</span>
+	<span onclick="j_test_drop('easeInOutBounce')">easeInOutBounce</span>
+	<br>위 효과의 이름을 눌러보세요. 누를때 마다 보였다 안보였다 합니다.
+</div>
+
+<script type="text/javascript">
+	function j_test_drop(v){ // 돌 낙하
+		$('.css_test img').stop().toggle(1000, v);
+	}
+</script>
+
+<!-- 소스 종료 -->
+
+
+
+
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

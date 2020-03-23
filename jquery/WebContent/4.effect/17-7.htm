@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { margin:0px; padding:0px; }
+        ul { list-style:none; }
+        img { width:500px; height:350px; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.js"></script>
+    <script src="jquery.innerfade.js"></script>
+    <!-- 
+    http://medienfreunde.com/lab/innerfade/
+     -->
+    <script>
+		  if($.innerfade){
+			  alert('innerface ready!!!');
+		  }
+		  $(function(){
+			 $('#inner_fade').innerfade({
+				 'animationtype':    'slide',
+		         'speed':            'fast',
+		         'type':             'random',
+		         'timeout':           1000,
+			 });	
+			 $('#news').innerfade({
+				 'animationtype':    'fade',
+		         'speed':            'fast',
+		         'type':             'random',
+		         'timeout':           500,
+			 });	
+		  });
+		  
+		  
+    </script>
+</head>
+<body>
+    <ul id="inner_fade">
+        <li><img src="Chrysanthemum.jpg"/></li>
+        <li><img src="Desert.jpg"/></li>
+        <li><img src="Hydrangeas.jpg"/></li>
+        <li><img src="Jellyfish.jpg"/></li>
+        <li><img src="Koala.jpg"/></li>
+        <li><img src="Lighthouse.jpg"/></li>
+        <li><img src="Penguins.jpg"/></li>
+    </ul>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <ul id="news">
+    	<li>검찰 과거사위원회, 활동 기한 두 달 연장 의결</li>
+		<li>文대통령 "버닝썬·김학의·장자연 사건, 성역없이 철저수사하라"</li>
+		<li>경찰, '성관계 몰카' 정준영·버닝썬 직원 구속영장 신청</li>
+		<li>'삼성 위장계열사' 이건희 회장, 벌금 1억원 약식기소</li>
+		<li>코스피, 기관 매수에 2170선 강보합세</li>
+    </ul>
+    
+</body>
+</html>
