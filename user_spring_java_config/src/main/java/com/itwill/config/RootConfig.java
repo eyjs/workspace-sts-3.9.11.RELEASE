@@ -47,7 +47,8 @@ public class RootConfig {
 	}
 	@Bean
 	public UserDao userDao() throws Exception{
-		return new UserDaoImpl();
+		return new UserDaoImpl(apacheDataSource());
+		
 	}
 	@Bean
 	public UserService userService() throws Exception{
