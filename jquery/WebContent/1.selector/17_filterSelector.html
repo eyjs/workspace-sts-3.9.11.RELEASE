@@ -22,7 +22,9 @@ td {
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-		
+		$('tr> td').css('border','0.5px dashed blue');
+		$('tr> td.notSelect').css('background','pink');
+		$('tr> td:not(.notSelect)').css('background','gray');
 	});
 </script>
 </head>

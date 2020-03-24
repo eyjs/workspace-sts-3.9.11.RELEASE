@@ -29,7 +29,15 @@ td {
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(function(){
-
+	$('td').click(function(e){
+		/*
+		alert('click target:'+e.target);
+		alert('click this:'+this);
+		alert('click td $(e.target).text():'+ $(e.target).text());
+		alert('click td $(this).text():'+ $(this).text());
+		*/
+		$(this).toggleClass('selected');
+	});
 	
 	
 });

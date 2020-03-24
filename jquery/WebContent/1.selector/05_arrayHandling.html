@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>배열 처리 메소드 활용</title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <script type="text/javascript">
 	
 	$(function(){
@@ -15,6 +16,16 @@
 				{'id':'guard4','name':'kim4','address':'경기파'},
 				{'id':'guard5','name':'kim5','address':'경기솔'}
 		];
+		$('h2').append('&nbsp;'+memberNameArray.length);
+		$('p').html(memberNameArray.join('<br>'));
+		$.each(memberNameArray,function(index,nameStr){
+			$('#memberNameList').append("<li>"+nameStr+"</li>");
+		});
+		$.each(memberArray,function(index,memberObject){
+			$('#memberList').append("<li>"+memberObject.id+","
+									+memberObject.name+","
+									+memberObject.address+"</li>");
+		});
 		
 	});
 	
@@ -27,3 +38,15 @@
 	<ol id="memberList"></ol>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

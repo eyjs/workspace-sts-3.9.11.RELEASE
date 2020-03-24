@@ -16,18 +16,24 @@ div {
 		/*
 		id속성이 content- 로 시작하는( ^= )
 		*/
+		$("div[id ^= 'content-']").css('border','1px solid blue');
+		$("[id ^= 'content-']").css('border','1px solid blue');
 		/*
 		id속성이 1 로 끝나는( $= )
 		*/
+		$("div[id $= '1']").css('background','orange');
 		/*
 		name 속성이 man과 일치하는( = )
 		*/
+		$("input[name='man']").css('border','1px dotted purple');
 		/*
 		name 속성이 man을 포함하는( *= )
 		*/
+		$("input[name *= 'man']").css('background','yellow');
 		/*
 		name 속성이 man단어를  포함하는( ~= )
 		*/
+		$("input[name ~= 'man']").css('color','red');
 	});
 </script>
 </head>

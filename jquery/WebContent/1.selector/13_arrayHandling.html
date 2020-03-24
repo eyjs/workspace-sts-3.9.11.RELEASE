@@ -27,7 +27,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-	
+		$('h1').each(function(i,e){
+			$(e).addClass('high_light_'+i);
+		});
 	});
 </script>
 </head>

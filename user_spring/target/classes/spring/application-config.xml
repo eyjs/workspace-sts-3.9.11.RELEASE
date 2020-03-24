@@ -13,6 +13,4 @@
 	<bean id="userService" class="com.itwill.user.UserServiceImpl">
 		<constructor-arg ref="userDao" index="0"/>
 	</bean>
-	
-		
 </beans>

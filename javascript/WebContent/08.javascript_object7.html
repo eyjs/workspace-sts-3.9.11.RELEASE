@@ -4,16 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	ExampleClass = function(){};
-	ExampleClass.directM = function(){
-		console.log("this:"+this);
-	}  //M for method
-	ExampleClass.prototype.protoM = function(){}
-	var instanceOfExample = new ExampleClass();
-	ExampleClass.directM();     //o works
-	//instanceOfExample.directM();//x Error!
-	//ExampleClass.protoM();     //x Error!
-	instanceOfExample.protoM();//o works
+	window.jQuery = function(){
+		
+	};
+	window.$=window.jQuery;
+	
+	
+	
+	jQuery.prototype.func1 = function(){
+		
+	};
+	var jqueryInstance = new jQuery();
+	jqueryInstance.func1();     //o works
+	
+	
+	jQuery.func2 = function(){
+		
+	};
+	
+	jQuery.func2(); // O
+	jQuery.func1(); // X
 </script>
 <script type="text/javascript">
 	
@@ -23,7 +33,7 @@
 </script>
 </head>
 <body>
-<h1>java script 생성자 함수6[prototype JSON]</h1><hr>
+<h1>java script 생성자 함수7[prototype JSON]</h1><hr>
 <script type="text/javascript">
 	
 </script>

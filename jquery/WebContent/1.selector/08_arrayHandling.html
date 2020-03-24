@@ -17,11 +17,30 @@
 		/*
 		$.grep();
 		*/
+		var filterNameArray = $.grep(memberNameArray, function(elt, i) {
+			if(elt.startsWith('k')){
+				return true;
+			}else{
+				return false;
+			}
+		}, true);
 		
+		$('.selected').html(filterNameArray.join("<br>"));
 		
+		var filterMemberArray=$.grep(memberArray, function(elt, i) {
+			if(elt.address=='경기도'){
+				return true;
+			}else{
+				return false;
+			}
+		}, false);
 		
-		
-		
+		$('.selected').append("<hr>");
+		$.each(filterMemberArray, function(i, elt) {
+			$('.selected').append(	elt.id+','+
+									elt.name+','+
+									elt.address+'<br>');
+		});
 		
 		
 		

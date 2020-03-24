@@ -11,16 +11,23 @@ $(function() {
 	/*
 	The .get() method grants us access to the DOM nodes underlying each jQuery object.
 	Suppose we had a simple unordered list on the page:
-	
+	*/
+	var listElementArray = $('#nameList > li').get();
+	console.log("e:"+listElementArray[0]);
+	console.log(listElementArray[0].firstChild.nodeValue);
+	$('h2').text("Members of Groups are "+listElementArray.length+" 명")
 	/*
-	text()
+	.text()
 	Get the combined text contents of each element in the set of matched elements,
 	including their descendants.
 	
-	text('string')
+	.text('string')
 	A string of text to set as the content of each matched element
 	*/
-	
+	alert($('#nameList').text());
+	alert($('#nameList').html());
+	//alert($('body').text());
+	//alert($('body').html());
 	
 });
 </script>

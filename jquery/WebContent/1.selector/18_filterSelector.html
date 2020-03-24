@@ -19,11 +19,38 @@ td {
 	width: 25px;
 	height: 25px;
 }
+a{
+	text-decoration: none;
+	cursor: progress;
+}
+a:link {
+	color: green;
+}
+a:visited {
+	color: gold;
+}
+a:hover {
+	color:navy;
+}
+a:active {
+	color:yellow;
+}
+
+
+
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-	
+		$('td').css('border','1px dotted red');
+		$('td:first').css('color','white');
+		$('td:first-child').css('background','pink');
+		$('td:last').css('color','white');
+		$('td:last-child').css('background','green');
+		
+		$('td:nth-child(2)').css('background','orange');
+		$('td:nth-child(3)').css('background','yellow');
+		$('td:nth-child(4)').css('background','olive');
 		
 	});
 </script>
@@ -69,5 +96,15 @@ td {
 			</tr>
 		</table>
 	</div>
+	
+	<div style="border: 1px dashed red">
+	    <pre>LVHA-순서(:link — :visited — :hover — :active)</pre>
+		<a href='http://www.naver.com'>네이버</a><br/>
+		<a href='http://www.daum.net'>다아음</a><br/>
+	</div>
+	
+	
+	
+	
 </body>
 </html>

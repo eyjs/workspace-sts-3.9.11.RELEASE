@@ -28,6 +28,25 @@ td {
 <script type="text/javascript">
 	$(function() {
 		
+		$('td').click(function(e){
+			console.log('------------td click event---------------');
+			console.log('1.event object:'+e);
+			console.log('2.event target:'+e.target);
+			console.log('3.this:'+this);
+			console.log('4.event type:'+e.type);
+			console.log('5.td text(Element):'+e.target.firstChild.nodeValue);
+			console.log('6.td text(jQueryWrapper):'+$(e.target).text());
+		});
+		$('td').mouseenter(function(e){
+			console.log('------------td mouseenter event---------------');
+			console.log('1.event object:'+e);
+			console.log('2.event target:'+e.target);
+			console.log('3.this:'+this);
+			console.log('4.event type:'+e.type);
+			console.log('5.td text(Element):'+e.target.firstChild.nodeValue);
+			console.log('6.td text(jQueryWrapper):'+$(e.target).text());
+			$(e.target).toggleClass('select');
+		});
 		
 		
 		/*

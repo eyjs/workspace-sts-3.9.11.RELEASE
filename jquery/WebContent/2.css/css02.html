@@ -32,8 +32,21 @@ td {
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(function() {
-	
-	
+	//$('tr').addClass('textStyle');
+	$('tr').addClass(function(index,currentClass){
+		if(currentClass=='bgred'){
+			return 'textStyle';
+		}
+	});
+	/*
+	//$('tr').removeClass('textStyle');
+	$('tr').removeClass(function(index,currentClass){
+		console.log(currentClass);
+		if(currentClass=='bgred textStyle'){
+			return 'bgred textStyle';
+		}
+	});
+	*/
 });
 </script>
 </head>
