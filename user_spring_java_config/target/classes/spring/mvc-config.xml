@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler/>
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/css/**" location="/resources/css/" />
+	<mvc:resources mapping="/js/**" location="/resources/js/" />
+	<mvc:resources mapping="/image/**" location="/resources/image/" />
+	<!-- 
+	<mvc:interceptors>
+	    <mvc:interceptor>
+	        <mvc:mapping path="/**"/>  
+	        <mvc:exclude-mapping path="/user_main"/>       
+	        <mvc:exclude-mapping path="/user_write_form"/>       
+	        <mvc:exclude-mapping path="/user_login_form"/>       
+	        <mvc:exclude-mapping path="/user_login_action"/>       
+	        <mvc:exclude-mapping path="/user_write_action"/>       
+	        <mvc:exclude-mapping path="/css/**"/>
+	        <mvc:exclude-mapping path="/js/**"/>
+	        <mvc:exclude-mapping path="/image/**"/>
+	        <bean class="com.itwill.user.controller.AuthLoginInterceptor" />
+	        <ref bean="authLoginInterceptor"/> 
+	    </mvc:interceptor>
+    </mvc:interceptors>
+     -->
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<mvc:view-controller path="/" view-name="user_main"/>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<context:component-scan base-package="com.itwill.user" />
+</beans>
