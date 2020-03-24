@@ -110,12 +110,7 @@ public class ServletConfig implements WebMvcConfigurer {
     }
     @Override
 	public void  configureContentNegotiation(ContentNegotiationConfigurer contentNegotiationConfigurer) {
-    	contentNegotiationConfigurer.defaultContentType(MediaType.APPLICATION_JSON);
-    	contentNegotiationConfigurer.favorPathExtension(true);
-    	contentNegotiationConfigurer.ignoreAcceptHeader(false);
-    	contentNegotiationConfigurer.mediaType("json", MediaType.APPLICATION_JSON);
-    	contentNegotiationConfigurer.mediaType("xml", MediaType.APPLICATION_XML);
-    	contentNegotiationConfigurer.mediaType("jsonp", new MediaType("application", "x-javascript"));
+    	
 	}
    
 
@@ -147,11 +142,10 @@ public class ServletConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry viewControllerRegistry) {
     	/*
-    	viewControllerRegistry.addViewController("/home").setViewName("myhome");
-    	viewControllerRegistry.addViewController("/hello").setViewName("helloworld");
-    	viewControllerRegistry.addRedirectViewController("/home", "/hello");
-    	viewControllerRegistry.addStatusController("/detail", HttpStatus.BAD_REQUEST);    
-    	*/  
+    	 <mvc:view-controller path="/" view-name="user_main"/>
+    	 */
+    	viewControllerRegistry.addViewController("/").setViewName("user_main");
+    	
     }
 
     @Override
