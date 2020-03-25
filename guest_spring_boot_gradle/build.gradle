@@ -27,6 +27,8 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	//compile group: 'oracle', name: 'ojdbc6', version: '11.2.0.3'
+	
 }
 
 test {

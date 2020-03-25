@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: guest_spring_boot_maven
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: TEA
+Implementation-Vendor-Id: com.itwill
+Build-Jdk: 1.8.0_231
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/guest_spring_boot_maven
+Created-By: Maven Integration for Eclipse
+
