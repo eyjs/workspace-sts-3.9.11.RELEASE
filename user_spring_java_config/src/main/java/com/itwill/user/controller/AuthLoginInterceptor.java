@@ -19,7 +19,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 	
 	- afterCompletion() : 모든 처리가 끝난 후 호출
  */
-@Controller
 public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 	public AuthLoginInterceptor() {
 		System.out.println("### AuthLoginInterceptor()생성자");
