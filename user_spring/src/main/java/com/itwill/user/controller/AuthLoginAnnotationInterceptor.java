@@ -19,16 +19,17 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 	
 	- afterCompletion() : 모든 처리가 끝난 후 호출
  */
+
 public class AuthLoginAnnotationInterceptor extends HandlerInterceptorAdapter {
 	public AuthLoginAnnotationInterceptor() {
-		System.out.println("### AuthLoginInterceptor()생성자");
+		System.out.println("### AuthLoginAnnotationInterceptor()생성자");
 	}
 
 	// preHandle() : 컨트롤러보다 먼저 수행되는 메서드
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("### AuthLoginInterceptor.preHandle()메써드");
+		System.out.println("### AuthLoginAnnotationInterceptor.preHandle()메써드");
 		// 1. handler 종류 확인
 		// 우리가 관심 있는 것은 Controller에 있는 메서드이므로 HandlerMethod 타입인지 체크
 		if (handler instanceof HandlerMethod == false) {
