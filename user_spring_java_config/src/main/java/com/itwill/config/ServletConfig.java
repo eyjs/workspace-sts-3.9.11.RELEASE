@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+import org.springframework.web.servlet.view.xml.MappingJackson2XmlView;
 
 import com.itwill.user.controller.AuthLoginInterceptor;
 /*
@@ -45,6 +48,9 @@ mvc-config.xml을 대신할 java 클래스
 */
 @EnableWebMvc
 @Configuration
+//@EnableAspectJAutoProxy  //ASPECT 사용을 위함.
+
+/*
 @ComponentScan (
         basePackages = "com.itwill"
        ,useDefaultFilters = false   // 기본 스캔 전략을 종료. 중요함.
@@ -56,6 +62,8 @@ mvc-config.xml을 대신할 java 클래스
                           @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Service.class)
        } //Configuration은 스캔대상에서 제외. Config는 명시적으로 지정
 )
+*/
+@ComponentScan (basePackages = "com.itwill")
 public class ServletConfig implements WebMvcConfigurer {
 	
 	/*
@@ -92,18 +100,18 @@ public class ServletConfig implements WebMvcConfigurer {
 	
 	 @Override
 	  public void configureViewResolvers(ViewResolverRegistry viewResolverRegistry) {
-	    	InternalResourceViewResolver bean1 = new InternalResourceViewResolver();
+		    InternalResourceViewResolver bean1 = new InternalResourceViewResolver();
 	        bean1.setViewClass(JstlView.class);
 	        bean1.setPrefix("/WEB-INF/views/");
 	        bean1.setSuffix(".jsp");
 	        bean1.setOrder(1);
 	        viewResolverRegistry.viewResolver(bean1);
-    }
+	}
 
     // '/'로 모든 요청을 받아들이는데 이 요청들을 처리할 url 설정에 대한 코드
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
-        resourceHandlerRegistry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        resourceHandlerRegistry.addResourceHandler("/**").addResourceLocations("/resources/");
     }
 
     @Override

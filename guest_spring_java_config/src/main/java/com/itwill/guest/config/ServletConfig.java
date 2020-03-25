@@ -107,7 +107,7 @@ public class ServletConfig implements WebMvcConfigurer {
     // '/'로 모든 요청을 받아들이는데 이 요청들을 처리할 url 설정에 대한 코드
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
-        resourceHandlerRegistry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        
     }
 
     @Override
