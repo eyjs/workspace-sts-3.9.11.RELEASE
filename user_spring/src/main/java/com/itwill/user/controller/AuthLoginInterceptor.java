@@ -19,7 +19,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 	
 	- afterCompletion() : 모든 처리가 끝난 후 호출
  */
-@Controller
+
 public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 	public AuthLoginInterceptor() {
 		System.out.println("### AuthLoginInterceptor()생성자");
@@ -38,14 +38,6 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 		}
 		// 2.형 변환
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
-		// 3. @LoginCheck 받아오기
-		LoginCheck loginCheck = handlerMethod.getMethodAnnotation(LoginCheck.class);
-
-		// 4. method에 @LoginCheck가 없는 경우, 즉 인증이 필요 없는 요청
-		if (loginCheck == null) {
-			return true;
-		}
-		// 5. @LoginCheck가 있는 경우이므로, 세션이 있는지 체크
 		
 		// session 객체를 가져옴
 		HttpSession session = request.getSession();

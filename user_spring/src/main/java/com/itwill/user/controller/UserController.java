@@ -88,13 +88,14 @@ public class UserController {
 		}
 		return forwardPath;
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_logout_action")
 	public String user_logout_action(HttpSession session ) {
 		session.invalidate();
 		String forwardPath="redirect:user_main";
 		return forwardPath;
 	}
-	
+	@LoginCheck
 	@RequestMapping(value = "/user_view")
 	public String user_view(@ModelAttribute User user, Model model){
 		String forwardPath = "";
@@ -113,6 +114,7 @@ public class UserController {
 		}
 		return forwardPath;
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_list")
 	public String user_list(Model model) {
 		String forwardPath="";
@@ -126,10 +128,12 @@ public class UserController {
 		}
 		return forwardPath;
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_modify_form",method = RequestMethod.GET)
 	public String user_modify_form_get() {
 		return "redirect:user_main.do";
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_modify_form",method = RequestMethod.POST)
 	public String user_modify_form_post(@RequestParam String userId,Model model) {
 			String forwardPath="";
@@ -144,10 +148,12 @@ public class UserController {
 			}
 			return forwardPath;
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_modify_action",method = RequestMethod.GET)
 	public String user_modify_action_get() {
 		return "redirect:user_main";
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_modify_action",method = RequestMethod.POST)
 	public String user_modify_action_post(@ModelAttribute User user) {
 		String forwardPath="";
@@ -160,10 +166,12 @@ public class UserController {
 		}
 		return forwardPath;
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_remove_action",method = RequestMethod.GET)
 	public String user_remove_action_get() {
 		return "redirect:user_main";
 	}
+	@LoginCheck
 	@RequestMapping(value = "/user_remove_action",method = RequestMethod.POST)
 	public String user_remove_action_post(@RequestParam String userId,HttpServletRequest request) {
 		String forwardPath="";

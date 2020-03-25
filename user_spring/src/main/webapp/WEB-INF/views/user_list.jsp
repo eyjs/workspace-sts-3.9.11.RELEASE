@@ -5,7 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>	
-<%@ include file="user_login_check.jspf" %>   
     
 <%--
 	String USER_NOT_FOUND_MSG = (String)request.getAttribute("USER_NOT_FOUND_MSG");
