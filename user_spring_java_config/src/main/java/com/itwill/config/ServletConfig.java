@@ -32,6 +32,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import com.itwill.user.controller.AuthLoginInterceptor;
 /*
 mvc-config.xml을 대신할 java 클래스
  - @EnableWebMvc: web mvc을 이용하는데 있어서 spring container가 가져야할 기본적인 bean component 등록. 
@@ -128,12 +130,39 @@ public class ServletConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry formatterRegistry) {
 
     }
-
+    /*
+     <!-- 
+	<mvc:interceptors>
+	    <mvc:interceptor>
+	        <mvc:mapping path="/**"/>  
+	        <mvc:exclude-mapping path="/user_main"/>       
+	        <mvc:exclude-mapping path="/user_write_form"/>       
+	        <mvc:exclude-mapping path="/user_login_form"/>       
+	        <mvc:exclude-mapping path="/user_login_action"/>       
+	        <mvc:exclude-mapping path="/user_write_action"/>       
+	        <mvc:exclude-mapping path="/css/**"/>
+	        <mvc:exclude-mapping path="/js/**"/>
+	        <mvc:exclude-mapping path="/image/**"/>
+	        <bean class="com.itwill.user.controller.AuthLoginInterceptor" />
+	        <ref bean="authLoginInterceptor"/> 
+	    </mvc:interceptor>
+    </mvc:interceptors>
+     -->
+     */
     @Override
     public void addInterceptors(InterceptorRegistry interceptorRegistry) {
-
+    	interceptorRegistry.addInterceptor(new AuthLoginInterceptor())
+        .addPathPatterns("/**")
+        .excludePathPatterns("/user_main")
+        .excludePathPatterns("/user_write_form") 
+        .excludePathPatterns("/user_login_form") 
+        .excludePathPatterns("/user_login_action") 
+        .excludePathPatterns("/user_write_action") 
+        .excludePathPatterns("/css/**") 
+        .excludePathPatterns("/js/**") 
+        .excludePathPatterns("/image/**"); 
     }
-
+    
     @Override
     public void addCorsMappings(CorsRegistry corsRegistry) {
 

@@ -25,6 +25,7 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping(value = "/user_main")
+	
 	public String user_main() {
 		return "user_main";
 	}
