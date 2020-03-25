@@ -9,6 +9,6 @@
 	}else{
 		msg="N";
 	}
-	Thread.sleep(1000);
+	//Thread.sleep(1000);
 %>
 <%=msg%>

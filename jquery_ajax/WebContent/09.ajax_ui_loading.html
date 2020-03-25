@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src='httpRequestConstructorFunction.js'></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	function showForm(){
+	$(function(){
+		$('#showBtn').click(function(){
+			$('#formContent').load('guest_write_form.html');
+		});
+		$('#hideBtn').click(function(){
+			$('#formContent').text("");
+		});
 		
-	}
-	function displayForm(xhr){
-		
-	}
-	function hideForm(){
-		
-	}
+	});
+	
 </script>
 </head>
 <body>
-<input type="button" value="회원가입폼" onclick="showForm();">
-<input type="button" value="회원가입취소" onclick="hideForm();">
+<input id="showBtn" type="button" value="회원가입폼" >
+<input id="hideBtn" type="button" value="회원가입취소">
 <div id='formContent'>
 	
 </div>

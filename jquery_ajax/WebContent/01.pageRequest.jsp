@@ -38,9 +38,7 @@
 <body>
 <h1>페이지기반요청</h1><hr/>
 <form action="01.pageRequest.jsp" name="f">
-아이디:<input 	type="text"  
-				id="id" name="id" value="<%=id %>" 
-				onkeyup="idCheck();">
+아이디:<input type="text"  id="id" name="id" value="<%=id %>" onkeyup="idCheck();">
 <span id="msg"><%=msg%></span>
 </form>
 </body>

@@ -54,27 +54,97 @@ function guest_list_html_function(){
 }
 /**********방명록리스트 ajax요청[JSON]************/
 function guest_list_json_function(){
+	$.ajax({
+		url:'guest/guest_list_json.jsp',
+		method:'GET',
+		dataType: "json",
+		success:function(jsonArray){
+			console.log(jsonArray);
+		}
+	});
 }
 /**********방명록리스트 ajax요청[XML]************/
 function guest_list_xml_function(){
+	$.ajax({
+		url:'guest/guest_list_xml.jsp',
+		method:'GET',
+		dataType: "xml",
+		data:null,
+		success:function(xmlDocument){
+			console.log(xmlDocument);
+			var $jqXmlDoc = $(xmlDocument);
+			/*
+			<guest_list>
+				<guest>
+					<guest_no>347</guest_no>
+					<guest_name>sad</guest_name>
+					...
+				</guest>
+				<guest></guest>
+			</guest_list>
+			*/
+			var html="";
+			$jqXmlDoc.find('guest').each(function(i,guestE){
+				/*
+				<div class="guest_item">
+					<h3 class="guest_title"  guest_no="347"><a href=''>sad[HTML]</a></h3>
+				</div>
+				*/
+				var guest_no=$(guestE).find('guest_no').text();
+				var guest_title=$(guestE).find('guest_title').text();
+				html+="<div class=\"guest_item\">";
+				html+="<h3 class=\"guest_title\"  guest_no=\""+guest_no+"\"><a href=\'\'>"+guest_title+"[XML]</a></h3>";
+				html+="</div>";
+			});
+			$('#guest_list').html(html);
+		}
+		
+	});
 }
 /*********방명록 쓰기폼로드 ajax요청*****************/
 function guest_insert_form_load_function(){
 	$('#guest_list').load('guest_insert_form.html');
-	
+	/*
 	$.ajax({
 		url:'guest_insert_form.html',
+		dataType:'html',
 		mathod:'GET',
 		success:function(){
 			$('#guest_list').html();
 		}
 	});
+	*/
 }
 
 
 /**********방명록상세보기[HTML]************/
 function guest_detail_html_function(h3E){
-	
+	var guest_no=$(h3E).attr('guest_no');
+	var params = 'guest_no='+guest_no;
+	if($(h3E).parent().children().length > 1){
+		//상세정보존재함
+		$(h3E).next().children().slideToggle(1000);	
+	}else{
+		//상세정보존재안함(ajax요청)
+		$.ajax({
+			url:'guest/guest_detail_html.jsp',
+			data:params,
+			method:'GET',
+			dataType: "html",
+			success:function(htmlData){
+				/*********삭제,수정버튼추가**********/
+				var deleteHtmlData="";
+				deleteHtmlData+="<div class='guest_delete' style='display:none'>";
+				deleteHtmlData+="<input type='button' value='삭제' guest_no='"+guest_no+"'>";
+				deleteHtmlData+="<input type='button' value='수정' guest_no='"+guest_no+"'>";
+				deleteHtmlData+="</div>";
+				/***********************************/
+				$("<div class='guest_detail' style='display:block'>"+htmlData+deleteHtmlData+"</div>")
+					.insertAfter($(h3E));
+				$(h3E).next().children().slideToggle(1000);	
+			}
+		});
+	}
 }
 /**********방명록상세보기[JSON]************/
 function guest_detail_json_function(h3E){
@@ -82,6 +152,7 @@ function guest_detail_json_function(h3E){
 /**********방명록상세보기[XML]************/
 function guest_detail_xml_function(h3E){
 }
+
 /*********방명록 쓰기*****************/
 function guest_insert_action_function(){
 }
@@ -104,20 +175,44 @@ function login_check(){
 /*%%%%%%%%%%%%%%%%%%%DOM트리로딩후 메뉴이벤트처리%%%%%%%%%%%%%%%%%%%%%%*/ 	
 $(function(){
 		/************login logoutUI*************/
-		
 		/**방명록리스트[html]이벤트처리**/
 		$('#menu-a a').click(function(e){
 			guest_list_html_function();
 			e.preventDefault();
 		});
 		/**방명록리스트[JSON]이벤트처리**/
-		$('#menu-b a').click();
+		$('#menu-b a').click(function(e){
+			guest_list_json_function();
+			e.preventDefault();
+		});
 		/**방명록리스트[XML]이벤트처리***/
-		$('#menu-c a').click();
+		$('#menu-c a').click(function(e){
+			guest_list_xml_function();
+			e.preventDefault();
+		});
 		
 		/**방명록상세보기이벤트처리[동적이벤트처리]******/
 		// 현재DOM Tree에 동적이벤트추가에는 항상 상위엘레멘트의 참조가필요
-		
+		$('#guest_list').on('click','.guest_title a',function(e){
+			/*
+			e.target --> a tag
+			this     --> a tag
+			*/
+			var titleStr = $(this).text();
+			//guest_detail_html_function(e.target.parentNode);
+			
+			if(titleStr.endsWith('[HTML]')){
+				guest_detail_html_function(e.target.parentNode);
+				//guest_detail_html_function($(e.target).parent());
+			}else if(titleStr.endsWith('[XML]')){
+				guest_detail_xml_function(e.target.parentNode);
+				
+			}else if(titleStr.endsWith('[JSON]')){
+				guest_detail_json_function(e.target.parentNode);
+			}
+			
+			e.preventDefault();
+		});
 		
 		/**방명록로그아웃이벤트처리******/
 		
@@ -141,9 +236,23 @@ $(function(){
 		
 		
 		/**방명록쓰기이벤트처리.validate() function 호출[validator plugin]**/
-	   /****************jQuery ajax global event handler************/
-	
+	   
+		/****************jQuery ajax global event handler************/
+	   $(document).ajaxStart(function(){
+		   console.log("div element wrapper:"+ $("<div id='loading'>loading...</div>"));
+		   
+		   $("<div id='loading'>loading...</div>").insertBefore('#guest_list').show();
+	   });
+	   $(document).ajaxComplete(function(){
+		  $('#loading').hide();
+		  $('#loading').remove();
+	   });
+		
+	   $(document).ajaxSuccess(function(){});
+	   $(document).ajaxError(function(){});
 });
+
+
 </script>
 </head>
 <body>

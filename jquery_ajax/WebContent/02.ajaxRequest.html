@@ -3,79 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-    var xhr=null;
-	function ajaxRequestIdCheck(){
-			var idStr=document.f.id.value;
-			if(idStr.length==0 || idStr.trim()==""){
-				document.getElementById("msg").innerHTML='';
-				document.getElementById("msg").style.color='black';
-				document.f.id.focus();
-				/*
-				xhr.abort();
-				현재진행중인 xhr의 요청을 모두취소
-				*/
-				return;
-			}
-			/*
-			AJAX요청순서
-			*/
-			
-			/*
-			1. XMLHttpRequest객체생성
-			*/
-			xhr=new XMLHttpRequest();
-			/*
-			2. 요청속성설정 
-			*/
-			var method='GET';
-			var params = 'id='+idStr;
-			var url='02.ajaxRequest.jsp?'+params;
-			var async = true;
-			xhr.open(method, url, async);
-			/*
-			응답이 도착했을때 실행되는 콜백함수등록
-			*/
-			xhr.onreadystatechange = responseCallBack
-			/*
-			3.요청
-			*/
-			xhr.send(null);
-	}	
-	/*
-	응답이 도착했을때 실행되는 사용자정의 콜백함수
-	*/
-	function responseCallBack(){
-		/*
-		<< xhr.readyState >>
-		The state of the request. 
-		 0=unsent
-		 1=opened
-		 2=headers_received
-		 3=loading
-		 4=done
-		*/
-		if(xhr.readyState==4){
-		    var responseText = xhr.responseText;
-		    if(responseText.trim()=='Y'){
-				document.getElementById("msg").innerHTML='사용가능';
-				document.getElementById("msg").style.color='blue';
-				
-		    }if(responseText.trim()=='N'){
-				document.getElementById("msg").innerHTML='사용불가';		
-				document.getElementById("msg").style.color='red';
-		    }
-		
-		}else{
-			//progress dialog
-			document.getElementById('msg').innerHTML=
-				"<img width='15px' height='15px' src='loading.gif'>";
-		}
+function ajaxRequestIdCheck(){
+	var idStr = document.f.id.value;
+	if(idStr.length==0 || idStr.trim()==""){
+		document.getElementById("msg").innerHTML='';
+		document.getElementById("msg").style.color='black';
+		document.f.id.focus();
+		return;
 	}
+	
+	var paramString="id="+idStr;
+	var paramJsonObject={
+			'id':idStr,
+			'pass':'xxx'
+	};
+	var paramJsonArry=[
+		{name:'id',value:idStr},
+		{name:'pass',value:'xxx'}
+	];
+	/*
+	AJAX요청순서
+	*/
+	$.ajax({
+		url:'02.ajaxRequest.jsp',
+		async:true,
+		data:paramString,
+		method:'GET',
+		dataType:'text',
+		beforeSend:function(){
+			document.getElementById("msg").innerHTML=
+	    		"<img width='15px' height='15px' src='loading.gif'>";
+		},
+		success:function(responseText,textStatus,jqXHR){
+				//완전한응답이 도착했을때.
+				console.log('readyState:'+jqXHR.readyState);
+				console.log("responseText:"+responseText);
+				if(responseText.trim()=='Y'){
+					document.getElementById("msg").innerHTML='사용가능';
+					document.getElementById("msg").style.color='green';
+				}else if(responseText.trim()=='N'){
+					document.getElementById("msg").innerHTML='사용불가능';
+					document.getElementById("msg").style.color='red';
+				}
+		    }
+	 });
+}
+	
+	
+$(function(){
+		$('#id').on('keyup', ajaxRequestIdCheck);
+});
+	
 </script>
 </head>
 <body>
-<h1>ajax요청</h1><hr/>
+<h1 on>ajax요청</h1><hr/>
 <form name="f" id="f" action="">
 	아이디:<input type="text" name="id" id="id" 
 			onkeyup="ajaxRequestIdCheck();">
@@ -83,10 +67,3 @@
 </form>
 </body>
 </html>
-
-
-
-
-
-
-
