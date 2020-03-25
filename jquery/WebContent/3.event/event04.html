@@ -16,13 +16,25 @@ $(function() {
 	
 	/*
 	현재DOM Tree에있는 엘레멘트만 이벤트처리
-	
+	$('li').click(function(e){
+		alert(e.target.firstChild.nodeValue);
+	});
 	*/
 	/*
 	현재DOM Tree의 ul 에 동적으로추가되는 li 엘레멘트도 이벤트처리
 	*/
+	$('ul').on('click','li',function(e){
+		 alert(e.target.firstChild.nodeValue);
+	});
+	/*
+	$(document).on('click','li',function(e){
+		 alert(e.target.firstChild.nodeValue);
+	});
+	*/
 	
-	
+	$('#btnAdd').click(function(){
+		$('ul').append("<li>list item "+$('li').length+"</li>");
+	});
 	
 	$('#btnDie').click(function(e) {
 		// 제거시에는 항상 상위엘레멘트의 참조가필요

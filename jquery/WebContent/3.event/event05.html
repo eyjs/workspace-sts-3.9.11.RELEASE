@@ -13,7 +13,12 @@ div,pre {
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(function() {
-	
+	/*
+	이벤트 1회발생후 이벤트제거
+	*/
+	$('li').one('click',function(){
+		alert($(this).text());
+	});
 
 });
 </script>

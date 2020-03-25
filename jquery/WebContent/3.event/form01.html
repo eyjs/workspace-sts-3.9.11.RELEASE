@@ -23,13 +23,22 @@ td {
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$('#f').on('submit',function(e){
-			//alert('submit');
+		$(document).on('submit','#f',function(e){
+			alert('submit');
 			/*
 			ajax요청
 			1.parameter생성
 			*/
+			var parameter=$('#f').serialize();
+			var parameterArray=$('#f').serializeArray();
+			var parameterArraytoString=$.param(parameterArray);
+			console.log("1.parameter:"+parameter);
+			console.log("2.parameterArray:"+parameterArray);
+			console.log(parameterArray);
+			console.log("3.parameterArraytoString:"+parameterArraytoString);
 			
+			
+			e.preventDefault();
 		});
 		
 	});
@@ -39,7 +48,7 @@ td {
 <body style="padding: 10px;">
 	<h2>jQuery에서 제공하는 Form 제어 메소드</h2>
 	<div>
-		<form id="f" action="xxx.jsp">
+		<form id="f"  name='f' action="xxx.jsp" style="padding:20px;border: 1px solid blue;width:50%">
 			아이디:<input type="text" name="id" id="id" /><br />
 			이이름:<input type="text" name="name" /><br /> 
 			별명[히든]:<input type="hidden" name="alias" value="제임스" /><br />

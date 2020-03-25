@@ -1,0 +1,99 @@
+html,body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding-bottom: 20px;
+	text-align: center;
+}
+/****************/
+ul{
+	list-style: none;
+}
+h2{
+	text-align:center;
+	
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	color: #808080;
+}
+.menus {
+  float: left;
+  width: 200px;
+  padding-right: 10px;
+  border-right: 1px solid #eee;
+  margin-right: 10px;
+}
+
+.menu {
+  margin: 10px;
+}
+.menu h3 {
+  font-weight: bold;
+}
+
+.menu ul {
+  
+  list-style: none;
+  padding: 0;
+  margin: 0 1em;
+ 
+}
+.menu ul li {
+  display:inline;
+  list-style: none;
+  padding: 0;
+  margin: 0 1em;
+ 
+}
+/****************/
+#container {
+	text-align: left;
+	margin: 0 auto;
+	width: 1000px;
+}
+
+#header {
+	color: white;
+	background-image: url("jquery-background.jpg");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-color: black;
+	border: 1px solid black;
+	margin: 20px;
+	padding: 20px;
+	padding-bottom: 0;
+}
+
+#sidebar {
+	padding-top:20px;
+	border: 1px solid black;
+	width: 200px;
+	margin-left: 20px;
+	float: left;
+	margin-bottom: 10px;
+	/*
+	display: inline;
+	*/
+	/* floats are handled as block elements, this is to fix 
+							   a margin collapsing bug in IE */
+}
+
+#content {
+	margin-left: 242px;
+	margin-right: 20px;
+	border: 1px solid black;
+	padding: 20px;
+	
+}
+
+#footer {
+	margin: 20px 20px 0 20px;
+	padding: 20px;
+	border: 1px solid black;
+	clear: left;
+}

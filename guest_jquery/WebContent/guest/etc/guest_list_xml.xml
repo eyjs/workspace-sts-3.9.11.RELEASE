@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guest_list>
+	<guest>
+		<guest_no>1</guest_no>
+		<guest_name>김경호1</guest_name>
+		<guest_date>2012-11-16 11:43:46</guest_date>
+		<guest_email>guard@naver.com</guest_email>
+		<guest_homepage>http://</guest_homepage>
+		<guest_title>방명록 사용법1</guest_title>
+		<guest_content>방명록처럼 사용하시면 됩니다1</guest_content>
+	</guest>
+	
+	<guest>
+		<guest_no>2</guest_no>
+		<guest_name>김경호2</guest_name>
+		<guest_date>2012-11-16 11:43:46</guest_date>
+		<guest_email>guard@naver.com</guest_email>
+		<guest_homepage>http://</guest_homepage>
+		<guest_title>방명록 사용법2</guest_title>
+		<guest_content>방명록처럼 사용하시면 됩니다2</guest_content>
+	</guest>
+	
+	<guest>
+		<guest_no>3</guest_no>
+		<guest_name>김경호3</guest_name>
+		<guest_date>2012-11-16 11:43:46</guest_date>
+		<guest_email>guard@naver.com</guest_email>
+		<guest_homepage>http://</guest_homepage>
+		<guest_title>방명록 사용법3</guest_title>
+		<guest_content>방명록처럼 사용하시면 됩니다3</guest_content>
+	</guest>
+	
+	<guest>
+		<guest_no>4</guest_no>
+		<guest_name>김경호4</guest_name>
+		<guest_date>2012-11-16 11:43:46</guest_date>
+		<guest_email>guard@naver.com</guest_email>
+		<guest_homepage>http://</guest_homepage>
+		<guest_title>방명록 사용법4</guest_title>
+		<guest_content>방명록처럼 사용하시면 됩니다4</guest_content>
+	</guest>
+	
+	<guest>
+		<guest_no>5</guest_no>
+		<guest_name>김경호5</guest_name>
+		<guest_date>2012-11-16 11:43:46</guest_date>
+		<guest_email>guard@naver.com</guest_email>
+		<guest_homepage>http://</guest_homepage>
+		<guest_title>방명록 사용법5</guest_title>
+		<guest_content>방명록처럼 사용하시면 됩니다5</guest_content>
+	</guest>
+</guest_list>

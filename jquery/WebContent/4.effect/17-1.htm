@@ -4,58 +4,62 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
         $(document).ready(function () {
-			$('h1').click(function(e) {
+			/*
+        	$('h1').click(function(e){
 				var clickH1Element = e.target;
-				/*
-				$(clickH1Element).next().hide(1000,function(){
+				$(clickH1Element).next().hide(500,function(){
 					alert('hide complete!!!');
 				});
-				*/
-				/*
+			});
+			*/
+			/*
+        	$('h1').click(function(e){
+				var clickH1Element = e.target;
 				$(clickH1Element).next().hide({
-					duration: 1000,
+					duration: 500,
 					complete: function(){
-						alert('hide complete!!!');
-						console.log("complete function");
+						console.log('complete');
+						$(clickH1Element).next().show(500);
 					},
 					start:function(){
-						console.log("start function");
+						console.log('start');
+						
 					},
 					done:function(){
-						console.log("done function");
+						console.log('done');
 					},
 					fail:function(){
-						console.log("fail function");
+						console.log('fail');
 					},
-					always: function(){
-						console.log("always function");
+					always:function(){
+						console.log('always');
 					}
+					
 				});
-				*/
-				//$(clickH1Element).next().show();
-				/*
-				$(clickH1Element).next().toggle({
-					duration: 1000,
-					complete: function(){
-						alert('toggle complete!!!');
-					}
-				});
-				
-				$(clickH1Element).next().slideToggle({
-					duration: 1000,
-					complete: function(){
-						alert('slideToggle complete!!!');
-					}
-				});
-				*/
-				$(clickH1Element).next().fadeToggle({
-					duration: 1000,
-					complete: function(){
-						//alert('fadeToggle complete!!!');
-					}
-				});
-				
 			});
+			
+			$('h1').click(function(e){
+				$(e.target).next().toggle({
+					duration: 500,
+					complete:function(){
+						console.log('toggle complete!!!');
+					}
+				});
+			});
+			
+			$('h1').click(function(e){
+				$(e.target).next().fadeToggle({
+					duration: 1000,
+					complete:function(){
+						console.log('face toggle complete!!!');
+					}
+				});
+			});
+        	*/
+        	
+        	
+        	
+			
         });
     </script>
 </head>

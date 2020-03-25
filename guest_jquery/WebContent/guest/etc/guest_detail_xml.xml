@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<guest_list>
+	<guest>
+		<guest_no>207</guest_no>
+		<guest_name>김형수</guest_name>
+		<guest_date>2019-10-10 15:36:46</guest_date>
+		<guest_email>guard@naver.com</guest_email>
+		<guest_homepage>www.naver.com</guest_homepage>
+		<guest_title>형수는 정보처리땃따...</guest_title>
+		<guest_content>내용</guest_content>
+	</guest>
+</guest_list>

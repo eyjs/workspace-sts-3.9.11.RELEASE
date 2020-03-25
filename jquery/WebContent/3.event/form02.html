@@ -24,21 +24,31 @@ td {
 <script type="text/javascript">
 	$(function() {
 		$('#f').on('submit',function(e){
-			
+			console.log($('#p_image').attr('src'));
+			$('#p_image').attr('src','icon1.png');
+			$('#p_image').attr('width','20px');
+			$('#p_image').attr('height','20px');
+			console.log($('#p_image').attr('src'));
 			/*
 			input element접근
 			*/
 			//read
-			
+			console.log('.val() -->'+$("#f input[name='id']").val());
+			//console.log('.attr()-->'+$("#f input[name='id']").attr('value'));
 			//set
 			
+			//$('#id').attr('value','zzz');
+			$('#id').val('zzz');
 			
 			/*
 			 입력 엘레멘트의 값을 접근할때는  .val() 을사용
 		      - .val() 은 DOM트리생성이후에 동적으로변하는 
 		        사용자입력데이타를 읽을수있다
 		     */
-		  
+		  console.log('id-->'+$('#id').val());
+		  console.log('name-->'+$('#name').val());
+		  console.log('alias-->'+$('#f input[name=\'alias\']').val());
+		  console.log('job-->'+$('#job option:selected').val());
 		     
 		 e.preventDefault();
 		});
