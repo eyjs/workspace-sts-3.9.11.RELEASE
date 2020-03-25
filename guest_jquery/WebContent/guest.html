@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="guest.css" type="text/css" media="screen" />
-<style type="text/css">
+<style type="text/css" >
 input.error, textarea.error {
 	border: 1px solid red;
 }
@@ -29,23 +29,46 @@ label.error {
 <script type="text/javascript">
 /*****browser locale[navigator.language] 에따른message 동적설정***/
 
- /*************************************/	
+/*************************************/	
 </script>
 <script type="text/javascript">
-/**********방명록리스트[html]************/
+/**********방명록리스트 ajax요청[html]************/
 function guest_list_html_function(){
-	
+	$.ajax({
+		url:'guest/guest_list_html.jsp',
+		method:'GET',
+		dataType:'html',
+		data:null,
+		success:function(htmlData){
+			$('#guest_list').html(htmlData);
+		},
+		statusCode:{
+			200:function(){console.log('200');},
+			500:function(){console.log('500');},
+			404:function(){console.log('404');},
+			403:function(){console.log('403');}
+		}
+		
+	});
 	
 }
-/**********방명록리스트[JSON]************/
+/**********방명록리스트 ajax요청[JSON]************/
 function guest_list_json_function(){
 }
-/**********방명록리스트[XML]************/
+/**********방명록리스트 ajax요청[XML]************/
 function guest_list_xml_function(){
 }
-/*********방명록 쓰기폼로드*****************/
+/*********방명록 쓰기폼로드 ajax요청*****************/
 function guest_insert_form_load_function(){
+	$('#guest_list').load('guest_insert_form.html');
 	
+	$.ajax({
+		url:'guest_insert_form.html',
+		mathod:'GET',
+		success:function(){
+			$('#guest_list').html();
+		}
+	});
 }
 
 
@@ -71,7 +94,6 @@ function guest_login_action_function(){
 	//유효성체크
 	
 }
-
 /*********방명록 로그아웃*****************/
 function guest_logout_action_function(){
 	
@@ -81,25 +103,17 @@ function login_check(){
 }
 /*%%%%%%%%%%%%%%%%%%%DOM트리로딩후 메뉴이벤트처리%%%%%%%%%%%%%%%%%%%%%%*/ 	
 $(function(){
-	
-	var loginCheckJsonData = login_check();
-	/*
-	{
-	  "status": "success",
-	  "login_id": "user1"
-	}
-	*/
-	if(loginCheckJsonData.status.trim()=='success'){
-		//login 한경우
 		/************login logoutUI*************/
 		
-		
 		/**방명록리스트[html]이벤트처리**/
-		
+		$('#menu-a a').click(function(e){
+			guest_list_html_function();
+			e.preventDefault();
+		});
 		/**방명록리스트[JSON]이벤트처리**/
-		
+		$('#menu-b a').click();
 		/**방명록리스트[XML]이벤트처리***/
-		
+		$('#menu-c a').click();
 		
 		/**방명록상세보기이벤트처리[동적이벤트처리]******/
 		// 현재DOM Tree에 동적이벤트추가에는 항상 상위엘레멘트의 참조가필요
@@ -107,44 +121,27 @@ $(function(){
 		
 		/**방명록로그아웃이벤트처리******/
 		
-		
-		
-		
-	}else{
-		//login 안한경우
-		$('#menu-a a,#menu-b a,#menu-c a').click(function(e){
-		
+		/**방명록쓰기폼이벤트처리******/
+		$('#menu-d a').click(function(e) {
+			guest_insert_form_load_function();
+			
 		});
-	}
+		/**방명록로그인이벤트처리*******/
+		$(document).on('submit','#guest_login_form',function(e){
+			
+		});
+		
 	
-	
-	
-	/**방명록쓰기폼이벤트처리******/
-	$('#menu-d a').click(function(e) {
+		/************form validator**************
+		 https://jqueryvalidation.org/
+		    1. .validate() function은 DOM tree loading시에 미리 호출되어있어야한다.
+		    2. .validate() function은 DOM tree insert 될때 미리 호출되어있어야한다.
+		*****************************************/
+		/**방명록로그인이벤트처리.validate() function 호출[validator plugin]**/
 		
 		
-	});
-	/**방명록로그인이벤트처리*******/
-	$(document).on('submit','#guest_login_form',function(e){
-		
-	});
-	
-	
-	/************form validator**************
-	 https://jqueryvalidation.org/
-	    1. .validate() function은 DOM tree loading시에 미리 호출되어있어야한다.
-	    2. .validate() function은 DOM tree insert 될때 미리 호출되어있어야한다.
-	*****************************************/
-	/**방명록로그인이벤트처리.validate() function 호출[validator plugin]**/
-	
-	
-	/**방명록쓰기이벤트처리.validate() function 호출[validator plugin]**/
-	
-	
-	
-	
-	
-	/****************jQuery ajax global event handler************/
+		/**방명록쓰기이벤트처리.validate() function 호출[validator plugin]**/
+	   /****************jQuery ajax global event handler************/
 	
 });
 </script>

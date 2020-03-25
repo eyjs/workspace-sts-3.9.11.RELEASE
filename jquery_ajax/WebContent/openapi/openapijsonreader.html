@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-color: gray;
+	}
+	li{
+		list-style: none;
+	}
+</style>
+<script type="text/javascript" src='../httpRequest.js'></script>
+<script type="text/javascript">
+	function getCurrentLocation(){
+		if(navigator.geolocation){
+			navigator.geolocation
+			.getCurrentPosition(
+					requestOpenApi,
+					locationError);
+			
+		}
+	}
+	function locationError(e){
+		
+	}
+	function requestOpenApi(pos){
+		var crd=pos.coords;
+		console.log("현재위치는:");
+		console.log("위도:"+crd.latitude);
+		console.log("경도:"+crd.longitude);
+		/*
+		https://api.foursquare.com/v2/venues/explore?client_secret=4ZTOF5RTH4XPCVZVVX4QRNA41PYWM2KOSFL5DLNUK4X3ASD1&client_id=4XW1NDXIE042PYDOA5ISWYB25ESRHPJZN4HGGWECIM22V3TT&ll=37.499597,127.031372&radius=500&limit=50&v=20190313
+		*/
+		var lat = crd.latitude;
+		var lng = crd.longitude;
+		//lat=37.347847;
+		//lng=126.955179;
+		var jsonUrl="https://api.foursquare.com/v2/venues/explore?"+
+				    "client_secret=4ZTOF5RTH4XPCVZVVX4QRNA41PYWM2KOSFL5DLNUK4X3ASD1&"+
+				    "client_id=4XW1NDXIE042PYDOA5ISWYB25ESRHPJZN4HGGWECIM22V3TT&"+
+				    "ll="+lat+","+lng+"&"+
+				    "radius=1000&"+
+				    "limit=50&"+
+				    "v=20130613"
+		sendRequest(jsonUrl, null,displayResult,'GET');
+	}
+	function displayResult(){
+		if(xhr.readyState==4){
+			var jsonStr = xhr.responseText;
+			var jsonObject = JSON.parse(jsonStr);	
+			console.log(jsonObject);
+			var venueArray=jsonObject.response.groups[0].items;
+			console.log(venueArray.length);
+			console.log(venueArray);
+			var html="<ul>";
+			for (var i = 0; i < venueArray.length; i++) {
+				var venue = venueArray[i].venue;	
+				console.log(venue.name);
+				var name=venue.name;
+				var address=venue.location.address;
+				var url=venue.url;
+				var iconPrefix = venue.categories[0].icon.prefix;
+				var iconSuffix = venue.categories[0].icon.suffix;
+				var iconUrl = iconPrefix+'32'+iconSuffix;
+				html+='<li><img  src=\''+iconUrl+'\'/><a href=\''+url+'\'>'+name+'</a>['+address+']</li>';
+			}
+			html+="</ul>";
+			document.getElementById('printDiv').innerHTML=html;
+			
+		}
+	}
+	
+</script>
+</head>
+<body>
+<h1 onclick="getCurrentLocation();">OPEN API JSON[클릭시요청]</h1>
+<hr/>
+<div id="printDiv" style="border: 1px solid blue;width: 70%">
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	1.tag selector
+	*/
+h1 {
+	color: blue;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0px;
+}
+/*
+	2. class selector
+	*/
+.titleBackClass {
+	background-color: yellow;
+}
+/*
+	3.id selector
+	*/
+#content {
+	display: block;
+	border: 1px solid black;
+	background-color: silver;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 20px 20px 20px;
+}
+
+#newsDiv {
+	padding-left: 10%;
+	border: 1px solid blue;
+	font-size: 13pt;
+	background: orange;
+}
+</style>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function showNewsDiv() {
+		document.getElementById("newsDiv").style.display = 'block';
+	}
+	function hideNewsDiv() {
+		document.getElementById("newsDiv").style.display = 'none';
+	}
+	function requestNews() {
+		sendRequest('07.newsTitlesXML.jsp', null, responseNews, 'GET');
+	}
+	function responseNews() {
+		if (xhr.readyState == 4) {
+			var xmlDocument = xhr.responseXML;
+			/*
+			<?xml version="1.0" encoding="UTF-8" ?>
+			<result>
+			    <count>9</count>
+			    <data>
+			        <newsList>
+			            <news>
+			                <title>참으로 수고 많으셨습니다</title>
+			                <company>연합뉴스</company>
+			                <date>2020. 3. 16 오전 11:24:31</date>
+			            </news>
+			            <news></news>
+	        	  </newsList>
+			    </data>
+			</result>
+			*/
+			var countStr = xmlDocument
+							.getElementsByTagName('count')
+							.item(0)
+							.firstChild
+							.nodeValue;
+			if(countStr.trim()=='0'){
+				return;
+			}
+			var newsNodeList=
+				xmlDocument.getElementsByTagName('news');
+			var html="<ul>";
+			for (var i = 0; i < newsNodeList.length; i++) {
+				var newsE = newsNodeList.item(i);
+				//console.log("------>"+newsE.childElementCount);
+				/*
+				<news>
+	               <title>참으로 수고 많으셨습니다</title>
+	               <company>연합뉴스</company>
+	               <date>2020. 3. 16 오전 11:24:31</date>
+			    </news>
+				*/
+				var titleStr = newsE.getElementsByTagName('title')
+				               .item(0)
+				               .firstChild
+				               .nodeValue;
+				var companyStr = newsE.getElementsByTagName('company')
+				               .item(0)
+				               .firstChild
+				               .nodeValue;
+				var dateStr = newsE.getElementsByTagName('date')
+				               .item(0)
+				               .firstChild
+				               .nodeValue;
+				html+="<li>"+titleStr+"["+companyStr+"("+dateStr+")]XML</li>"
+			}
+			html+="</ul>";
+			document.getElementById('newsDiv').innerHTML=html;
+		}
+	}
+	window.onload = function() {
+		setInterval(requestNews, 2000);
+		//hideNewsDiv();
+	};
+</script>
+</head>
+<body>
+	<div id="content">
+		<h1 class="titleBackClass">실시간늬우스[XML]</h1>
+		<hr>
+		<div id="newsDiv">
+			<ul>
+				<li>뉴스1[조상일보]2019-10-07</li>
+				<li>뉴스2[동앙일보]2019-10-07</li>
+				<li>뉴스3[중상일보]2019-10-07</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

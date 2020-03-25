@@ -1,0 +1,51 @@
+﻿<< 조선일보 xml>>
+http://www.chosun.com/site/data/rss/ent.xml
+<<foursquare JSON>>
+https://api.foursquare.com/v2/venues/explore?ll=37.499597,127.031372&radius=250&limit=50&oauth_token=45HKGUJ5WESVY2X1GD0BNDOGWABCPCG2GUH5BWBR2NUXZG5L&v=20160613
+<<foursquare JSONP>>
+https://api.foursquare.com/v2/venues/explore?ll=37.499597,127.031372&radius=250&limit=10&oauth_token=45HKGUJ5WESVY2X1GD0BNDOGWABCPCG2GUH5BWBR2NUXZG5L&v=20150709&callback=foursquareCallBack
+<<flickr JSONP>>
+http://api.flickr.com/services/feeds/photos_public.gne?id=117992213@N05&format=json
+<<etc JSON>>
+http://api.androidhive.info/contacts/
+{"contacts": [ 
+        { 
+                "id": "c200", 
+                "name": "Ravi Tamada", 
+                "email": "ravi@gmail.com", 
+                "address": "xx-xx-xxxx,x - street, x - country", 
+                "gender" : "male", 
+                "phone": { 
+                    "mobile": "+91 0000000000", 
+                    "home": "00 000000", 
+                    "office": "00 000000"
+                } 
+        }, 
+        { 
+                "id": "c201", 
+                "name": "Johnny Depp", 
+                "email": "johnny_depp@gmail.com", 
+                "address": "xx-xx-xxxx,x - street, x - country", 
+                "gender" : "male", 
+                "phone": { 
+                    "mobile": "+91 0000000000", 
+                    "home": "00 000000", 
+                    "office": "00 000000"
+		}
+	},
+	....
+	]
+}
+네이버뉴스회사
+http://www.naver.com/include/newsstand/press_info.json
+네이버실검
+https://www.naver.com/srchrank?frm=main&ag=all&gr=1&ma=-2&si=0&en=0&sp=0
+
+
+
+
+
+
+
+
+

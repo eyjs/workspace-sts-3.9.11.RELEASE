@@ -1,0 +1,4 @@
+1.크롬주소줄에 입력
+ chrome://flags/#unsafely-treat-insecure-origin-as-secure
+2.Insecure origins treated as secure 항목에 ip입력후
+   Disabled --> Enable 변경후 Relaunch

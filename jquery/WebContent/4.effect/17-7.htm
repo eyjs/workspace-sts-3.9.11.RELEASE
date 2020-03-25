@@ -12,22 +12,19 @@
     http://medienfreunde.com/lab/innerfade/
      -->
     <script>
-		  if($.innerfade){
-			  alert('innerface ready!!!');
-		  }
 		  $(function(){
 			 $('#inner_fade').innerfade({
-				 'animationtype':    'slide',
-		         'speed':            'fast',
-		         'type':             'random',
-		         'timeout':           1000,
-			 });	
+				 animationtype:'slide',
+				 speed:'fast',
+				 type:'random',
+				 timeout:1000
+			 });
 			 $('#news').innerfade({
-				 'animationtype':    'fade',
-		         'speed':            'fast',
-		         'type':             'random',
-		         'timeout':           500,
-			 });	
+				 animationtype:'fade',
+				 speed:'fast',
+				 type:'sequence',
+				 timeout:500
+			 });
 		  });
 		  
 		  
