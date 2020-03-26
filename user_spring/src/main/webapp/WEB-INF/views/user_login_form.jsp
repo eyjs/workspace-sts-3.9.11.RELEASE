@@ -91,7 +91,7 @@
 										<td width=100 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
 										<td width=490 align="left" bgcolor="ffffff"
 											style="padding-left: 10px"><input type="password"
-											style="width: 150" name="password" value="${fuser.password}">&nbsp;&nbsp;<font color="red">${msg}</font></td>
+											style="width: 150" name="password" value="${fuser.password}">&nbsp;&nbsp;<font color="red">${msg2}</font></td>
 									</tr>
 								</table>
 							</form> <br />

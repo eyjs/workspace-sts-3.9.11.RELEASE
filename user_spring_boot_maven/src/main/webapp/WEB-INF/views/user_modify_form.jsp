@@ -17,12 +17,12 @@
 <script type="text/javascript">
 	function userModify() {
 		document.f.method='POST';
-		document.f.action = "user_modify_action.do";
+		document.f.action = "user_modify_action";
 		document.f.submit();
 		
 	}
 	function userList() {
-		f.action = "user_list.do";
+		f.action = "user_list";
 		f.submit();
 	}
 </script>

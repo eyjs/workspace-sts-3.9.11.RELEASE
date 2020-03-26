@@ -129,7 +129,7 @@ public class UserController {
 	}
 	@RequestMapping(value = "/user_modify_form",method = RequestMethod.GET)
 	public String user_modify_form_get() {
-		return "redirect:user_main.do";
+		return "redirect:user_main";
 	}
 	@RequestMapping(value = "/user_modify_form",method = RequestMethod.POST)
 	public String user_modify_form_post(@RequestParam String userId,Model model) {
