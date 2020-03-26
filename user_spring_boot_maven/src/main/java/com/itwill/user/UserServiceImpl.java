@@ -7,12 +7,15 @@
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.itwill.user.exception.ExistedUserException;
 import com.itwill.user.exception.PasswordMismatchException;
 import com.itwill.user.exception.UserNotFoundException;
-
+@Service
 public class UserServiceImpl implements UserService {
-	
+	@Autowired
 	private UserDao userDao;
 	
 	public UserServiceImpl() throws Exception{

@@ -1,0 +1,9 @@
+@SpringBootApplication
+@ComponentScan(basePackages = "com.itwill")
+public class UserSpringBootMavenApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserSpringBootMavenApplication.class, args);
+	}
+
+}

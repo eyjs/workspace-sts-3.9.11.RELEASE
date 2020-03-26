@@ -56,7 +56,7 @@ public class UserController {
 		}
 		return forwardPath;
 	}
-	@RequestMapping(value = "user_login_form")
+	@RequestMapping(value = "/user_login_form")
 	public String user_login_form() {
 		return "user_login_form";
 	}

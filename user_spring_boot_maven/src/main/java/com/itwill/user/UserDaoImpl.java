@@ -8,14 +8,17 @@ import java.util.ArrayList;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.itwill.common.Util;
 /*
  사용자관리에서 데이타베이스와의 작업을 전담하는 클래스
  USERINFO 테이블에 사용자를 추가,삭제,검색,수정등의 작업을한다.
  */
+@Repository
 public class UserDaoImpl implements UserDao  {
+	@Autowired
 	private DataSource dataSource;
 	
 	public UserDaoImpl() throws Exception {
