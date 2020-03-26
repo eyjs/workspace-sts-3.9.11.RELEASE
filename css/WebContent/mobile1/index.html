@@ -10,6 +10,15 @@
         <script  src="https://code.jquery.com/jquery-1.12.4.js"></script>
     	<script type="text/javascript">
     		$(function(){
+    			//메뉴숨기기
+    			$('#header ul').addClass('hide');
+    			//버튼추가
+    			$('#header')
+    			.append("<div class='menuButton'>Menu</div>");
+    			$('#header').on('click','.menuButton',function(e){
+    				$('#header ul').slideToggle();
+    				$('#header .menuButton').toggleClass('pressed');
+    			});
     			
     		});
     	</script>
@@ -17,6 +26,7 @@
     <body>
         <div id="container">
             <div id="header">
+            	
                 <h1><a href="./">Jonathan Stark</a></h1>
                 <div id="utility">
                     <ul>
