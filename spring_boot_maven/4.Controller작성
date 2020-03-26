@@ -1,0 +1,10 @@
+
+<<HelloController 작성 annotation 기술 >>
+
+@Controller
+public class HelloController {
+	@RequestMapping("/hello")
+	public String hello() {
+		return "hello";
+	}
+}

@@ -1,0 +1,11 @@
+<< Spring Boot App로 --> SpringBootMavenApplication실행 >>
+  
+
+@SpringBootApplication
+public class SpringBootMavenApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootMavenApplication.class, args);
+	}
+
+}
