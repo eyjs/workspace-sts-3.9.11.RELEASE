@@ -1,0 +1,17 @@
+/* Your CSS style declarations for desktop browsers would go in this file. 
+
+For example:
+
+body {
+    margin:0;
+    padding:0;
+    font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+*/
+body{
+	margin:0px auto 0px auto; 
+	background: pink;
+	width:400px;
+	padding: 0px
+}

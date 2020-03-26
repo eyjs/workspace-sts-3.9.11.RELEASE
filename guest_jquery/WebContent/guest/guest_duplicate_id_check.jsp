@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/plain; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/plain; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 	String guest_id=request.getParameter("guest_id");
-	
 	if(guest_id==null){
 		guest_id="";
 	}
