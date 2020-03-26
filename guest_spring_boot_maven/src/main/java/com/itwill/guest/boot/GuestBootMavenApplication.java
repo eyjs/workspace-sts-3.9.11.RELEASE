@@ -16,9 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.itwill.guest")
 @MapperScan(basePackages = "com.itwill.guest.mapper")
-public class GuestBootApplication {
+public class GuestBootMavenApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(GuestBootApplication.class, args);
+		SpringApplication.run(GuestBootMavenApplication.class, args);
 	}
 
 }
