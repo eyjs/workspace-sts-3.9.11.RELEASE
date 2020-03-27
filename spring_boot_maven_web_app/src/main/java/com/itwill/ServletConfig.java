@@ -1,6 +1,7 @@
 package com.itwill;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
@@ -55,6 +56,7 @@ mvc-config.xml을 대신할 java 클래스
 </beans>
 */
 @Configuration
+@ImportResource("classpath:spring/mvc-config.xml") 
 public class ServletConfig implements WebMvcConfigurer {
 	
     @Override
