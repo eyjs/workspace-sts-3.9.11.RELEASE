@@ -16,12 +16,14 @@ configurations {
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.2'
+	
 	compile group: 'jstl', name: 'jstl', version: '1.2' 
 	compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
 	compileOnly 'org.projectlombok:lombok'
@@ -29,8 +31,10 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	//compile group: 'oracle', name: 'ojdbc6', version: '11.2.0.3'
-	 compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	//runtime  fileTree(dir:'$buildDir', include: ['ojdbc6.jar'])
+	//runtime files('$buildDir/lib/ojdbc6.jar')
+	runtime files('C:/JAVA_SPRING/workspace-sts-3.9.11.RELEASE/guest_spring_boot_gradle/src/main/resources/lib/ojdbc6.jar')
 }
 
 test {
