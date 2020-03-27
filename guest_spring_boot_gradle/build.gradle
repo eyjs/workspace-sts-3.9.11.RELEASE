@@ -16,7 +16,7 @@ configurations {
 
 repositories {
 	mavenCentral()
-	mavenLocal()
+	
 }
 
 dependencies {
@@ -32,8 +32,6 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	compile("org.springframework.boot:spring-boot-starter-actuator")
-	//runtime  fileTree(dir:'$buildDir', include: ['ojdbc6.jar'])
-	//runtime files('$buildDir/lib/ojdbc6.jar')
 	runtime files('C:/JAVA_SPRING/workspace-sts-3.9.11.RELEASE/guest_spring_boot_gradle/src/main/resources/lib/ojdbc6.jar')
 }
 

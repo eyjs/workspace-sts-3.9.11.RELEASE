@@ -1,0 +1,15 @@
+﻿1. New-->Spring Boot-->
+2. Spring Starter Project
+	Name:spring_boot_gradle_web_app
+3. New Spring Starter Project Dependencies
+    Spring Boot Version:2.2.5
+    
+	 Available:
+		▶Web 
+			--> Spring Web 체크
+		▶SQL 
+			--> JDBC API
+			--> MyBatis FrameWork
+		▶Developer Tools
+            --> Lombok
+			

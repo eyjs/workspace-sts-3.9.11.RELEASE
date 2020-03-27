@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello Boot Maven!!!</h1><hr/>
+<h1>Hello Boot Gradle!!!</h1><hr/>
 <ol>
 <c:forEach var="hello"  items="${helloList}">
 	<ul>${hello.no} : ${hello.name}</ul>

@@ -1,12 +1,6 @@
 package com.itwill;
 
-import javax.sql.DataSource;
-
-
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.annotation.PropertySource;
 
 
 /*
@@ -29,7 +23,7 @@ import org.springframework.context.annotation.PropertySource;
 	</bean>
 */
 @Configuration
-@ImportResource("classpath:spring/application-config.xml") 
+//@ImportResource("classpath:spring/application-config.xml") 
 public class RootConfig {
 	
     

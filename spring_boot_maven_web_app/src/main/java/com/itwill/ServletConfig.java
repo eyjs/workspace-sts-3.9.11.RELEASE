@@ -56,7 +56,7 @@ mvc-config.xml을 대신할 java 클래스
 </beans>
 */
 @Configuration
-@ImportResource("classpath:spring/mvc-config.xml") 
+//@ImportResource("classpath:spring/mvc-config.xml") 
 public class ServletConfig implements WebMvcConfigurer {
 	
     @Override

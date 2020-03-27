@@ -1,0 +1,5 @@
+
+0. src/main 디렉토리하위에 
+        - webapp디렉토리생성
+        - webapp디렉토리하위에 /WEB-INF/view/디렉토리생성   
+
